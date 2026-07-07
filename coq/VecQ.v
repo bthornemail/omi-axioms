@@ -18,8 +18,14 @@ Import VectorNotations.
 
 Definition Vec (n : nat) : Type := Vector.t Q n.
 
-Definition dot {n : nat} (v w : Vec n) : Q :=
-  Vector.fold_left Qplus 0 (Vector.map2 Qmult v w).
+Fixpoint dotn (n : nat) : Vec n -> Vec n -> Q :=
+  match n with
+  | 0 => fun _ _ => 0
+  | S n' => fun v w => Qplus (Qmult (Vector.hd v) (Vector.hd w))
+                              (dotn n' (Vector.tl v) (Vector.tl w))
+  end.
+
+Definition dot {n : nat} (v w : Vec n) : Q := dotn n v w.
 
 Definition norm_sq {n : nat} (v : Vec n) : Q :=
   dot v v.
@@ -67,51 +73,44 @@ Qed.
 Lemma fold_left_Qplus_add : forall n a (v : Vec n),
   Vector.fold_left Qplus a v = Qplus a (Vector.fold_left Qplus 0 v).
 Proof.
-  induction n; intros a v;
-    [ refine (Vector.case0 (fun v' => Vector.fold_left Qplus a v' = Qplus a (Vector.fold_left Qplus 0 v')) _ v);
-      simpl; symmetry; apply Qplus_0_r_eq |].
-  apply (Vector.caseS v); intros h t; simpl.
-  rewrite (IHn (Qplus a h) t).
-  rewrite (IHn h t).
-  rewrite Qplus_0_l_eq.
-  apply Qplus_assoc_eq.
+  intros n a v.
+  induction v as [| h n t IHv] in a |- *; simpl.
+  - symmetry; apply Qplus_0_r_eq.
+  - rewrite (IHv (Qplus a h)).
+    rewrite (IHv (Qplus 0 h)).
+    rewrite Qplus_0_l_eq.
+    apply Qplus_assoc_eq.
 Qed.
 
 Theorem dot_comm : forall n (v w : Vec n), dot v w = dot w v.
 Proof.
   unfold dot.
-  induction n; intros v w; [reflexivity |].
-  inversion v as [| h1 t1]; subst; clear v.
-  inversion w as [| h2 t2]; subst; clear w.
-  simpl.
-  rewrite (fold_left_Qplus_add n (Qmult h1 h2) (Vector.map2 Qmult t1 t2)).
-  rewrite (fold_left_Qplus_add n (Qmult h2 h1) (Vector.map2 Qmult t2 t1)).
-  rewrite (Qmult_comm_eq h1 h2).
-  rewrite (IHn t1 t2).
-  reflexivity.
+  induction n; intros v w; simpl.
+  - reflexivity.
+  - rewrite (Qmult_comm_eq (Vector.hd v) (Vector.hd w)).
+    rewrite (IHn (Vector.tl v) (Vector.tl w)).
+    reflexivity.
 Qed.
 
 Theorem dot_add_l : forall n (u v w : Vec n),
   dot (vadd u v) w == dot u w + dot v w.
 Proof.
-  intros n u v w.
-  unfold dot, vadd.
-  induction n as [| n IH].
-  - reflexivity.
-  - simpl.
-    rewrite IH.
+  unfold dot.
+  induction n; intros u v w; simpl.
+  - ring.
+  - rewrite !Vector.hd_map2, !Vector.tl_map2.
+    rewrite (IHn (Vector.tl u) (Vector.tl v) (Vector.tl w)).
     ring.
 Qed.
 
 Theorem dot_scale_l : forall n (c : Q) (v w : Vec n),
   dot (vscale c v) w == c * dot v w.
 Proof.
-  intros n c v w.
-  unfold dot, vscale.
-  induction n as [| n IH].
-  - simpl; ring.
-  - simpl.
-    rewrite IH.
+  unfold dot.
+  induction n; intros c v w; simpl.
+  - ring.
+  - rewrite !Vector.hd_map, !Vector.tl_map.
+    rewrite (IHn c (Vector.tl v) (Vector.tl w)).
     ring.
 Qed.
 
@@ -120,12 +119,11 @@ Theorem norm_sq_nonneg : forall n (v : Vec n),
 Proof.
   intros n v.
   unfold norm_sq, dot.
-  induction n as [| n IH].
-  - simpl; apply Qle_refl.
-  - simpl.
-    apply Qplus_le_0_compat.
+  induction n; simpl.
+  - apply Qle_refl.
+  - apply Qplus_le_0_compat.
     + apply Qmult_le_0_compat; [apply Qle_refl | apply Qle_refl].
-    + exact IH.
+    + apply IHn.
 Qed.
 
 Theorem vadd_comm : forall n (v w : Vec n), vadd v w = vadd w v.
