@@ -17,7 +17,33 @@ PROOF_TARGETS= \
 	$(COQDIR)/functorial_semantics.vo \
 	$(COQDIR)/coalgebraic_bisimulation.vo \
 	$(COQDIR)/OMI_bialgebra.vo \
-	$(COQDIR)/verified_execution.vo
+	$(COQDIR)/verified_execution.vo \
+	$(COQDIR)/VecQ.vo \
+	$(COQDIR)/GoldenField.vo \
+	$(COQDIR)/GoldenQuaternion.vo \
+	$(COQDIR)/IcosianUnits.vo \
+	$(COQDIR)/IcosianSpan.vo \
+	$(COQDIR)/E8Roots.vo \
+	$(COQDIR)/WeylReflection.vo \
+	$(COQDIR)/FanoIncidence.vo \
+	$(COQDIR)/OmiRingIcosian.vo \
+	$(COQDIR)/OmiRingQuotation.vo \
+	$(COQDIR)/ProofStatus00.vo \
+	$(COQDIR)/FiniteBasics01.vo \
+	$(COQDIR)/FanoIncidence02.vo \
+	$(COQDIR)/BitmaskClosure03.vo \
+	$(COQDIR)/KarnaughReduction04.vo \
+	$(COQDIR)/GaugeTable05.vo \
+	$(COQDIR)/GoldenField06.vo \
+	$(COQDIR)/GoldenQuaternion07.vo \
+	$(COQDIR)/IcosianUnits08.vo \
+	$(COQDIR)/OmiRingStep09.vo \
+	$(COQDIR)/RelationalQuotation10.vo \
+	$(COQDIR)/E8Roots11.vo \
+	$(COQDIR)/WeylReflection12.vo \
+	$(COQDIR)/HopfProjection13.vo \
+	$(COQDIR)/PinchBranchLocalForms14.vo \
+	$(COQDIR)/ProofRegistry15.vo
 
 proof: $(PROOF_TARGETS)
 
@@ -65,6 +91,84 @@ $(COQDIR)/OMI_bialgebra.vo: $(COQDIR)/OMI_bialgebra.v $(COQDIR)/delta_orbit_theo
 
 $(COQDIR)/verified_execution.vo: $(COQDIR)/verified_execution.v $(COQDIR)/delta_orbit_theory.vo $(COQDIR)/functorial_semantics.vo $(COQDIR)/coalgebraic_bisimulation.vo $(COQDIR)/OMI_bialgebra.vo
 	cd $(COQDIR) && $(COQC) $(COQFLAGS) verified_execution.v
+
+$(COQDIR)/VecQ.vo: $(COQDIR)/VecQ.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) VecQ.v
+
+$(COQDIR)/GoldenField.vo: $(COQDIR)/GoldenField.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) GoldenField.v
+
+$(COQDIR)/GoldenQuaternion.vo: $(COQDIR)/GoldenQuaternion.v $(COQDIR)/GoldenField.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) GoldenQuaternion.v
+
+$(COQDIR)/IcosianUnits.vo: $(COQDIR)/IcosianUnits.v $(COQDIR)/GoldenField.vo $(COQDIR)/GoldenQuaternion.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) IcosianUnits.v
+
+$(COQDIR)/IcosianSpan.vo: $(COQDIR)/IcosianSpan.v $(COQDIR)/GoldenField.vo $(COQDIR)/GoldenQuaternion.vo $(COQDIR)/IcosianUnits.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) IcosianSpan.v
+
+$(COQDIR)/E8Roots.vo: $(COQDIR)/E8Roots.v $(COQDIR)/VecQ.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) E8Roots.v
+
+$(COQDIR)/WeylReflection.vo: $(COQDIR)/WeylReflection.v $(COQDIR)/VecQ.vo $(COQDIR)/E8Roots.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) WeylReflection.v
+
+$(COQDIR)/FanoIncidence.vo: $(COQDIR)/FanoIncidence.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) FanoIncidence.v
+
+$(COQDIR)/OmiRingIcosian.vo: $(COQDIR)/OmiRingIcosian.v $(COQDIR)/GoldenField.vo $(COQDIR)/GoldenQuaternion.vo $(COQDIR)/IcosianUnits.vo $(COQDIR)/FanoIncidence.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) OmiRingIcosian.v
+
+$(COQDIR)/OmiRingQuotation.vo: $(COQDIR)/OmiRingQuotation.v $(COQDIR)/GoldenField.vo $(COQDIR)/GoldenQuaternion.vo $(COQDIR)/IcosianUnits.vo $(COQDIR)/OmiRingIcosian.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) OmiRingQuotation.v
+
+$(COQDIR)/ProofStatus00.vo: $(COQDIR)/ProofStatus00.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) ProofStatus00.v
+
+$(COQDIR)/FiniteBasics01.vo: $(COQDIR)/FiniteBasics01.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) FiniteBasics01.v
+
+$(COQDIR)/FanoIncidence02.vo: $(COQDIR)/FanoIncidence02.v $(COQDIR)/FiniteBasics01.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) FanoIncidence02.v
+
+$(COQDIR)/BitmaskClosure03.vo: $(COQDIR)/BitmaskClosure03.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) BitmaskClosure03.v
+
+$(COQDIR)/KarnaughReduction04.vo: $(COQDIR)/KarnaughReduction04.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) KarnaughReduction04.v
+
+$(COQDIR)/GaugeTable05.vo: $(COQDIR)/GaugeTable05.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) GaugeTable05.v
+
+$(COQDIR)/GoldenField06.vo: $(COQDIR)/GoldenField06.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) GoldenField06.v
+
+$(COQDIR)/GoldenQuaternion07.vo: $(COQDIR)/GoldenQuaternion07.v $(COQDIR)/GoldenField06.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) GoldenQuaternion07.v
+
+$(COQDIR)/IcosianUnits08.vo: $(COQDIR)/IcosianUnits08.v $(COQDIR)/GoldenField06.vo $(COQDIR)/GoldenQuaternion07.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) IcosianUnits08.v
+
+$(COQDIR)/OmiRingStep09.vo: $(COQDIR)/OmiRingStep09.v $(COQDIR)/GoldenField06.vo $(COQDIR)/GoldenQuaternion07.vo $(COQDIR)/IcosianUnits08.vo $(COQDIR)/GaugeTable05.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) OmiRingStep09.v
+
+$(COQDIR)/RelationalQuotation10.vo: $(COQDIR)/RelationalQuotation10.v $(COQDIR)/GoldenField06.vo $(COQDIR)/GoldenQuaternion07.vo $(COQDIR)/IcosianUnits08.vo $(COQDIR)/OmiRingStep09.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) RelationalQuotation10.v
+
+$(COQDIR)/E8Roots11.vo: $(COQDIR)/E8Roots11.v $(COQDIR)/FiniteBasics01.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) E8Roots11.v
+
+$(COQDIR)/WeylReflection12.vo: $(COQDIR)/WeylReflection12.v $(COQDIR)/E8Roots11.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) WeylReflection12.v
+
+$(COQDIR)/HopfProjection13.vo: $(COQDIR)/HopfProjection13.v $(COQDIR)/GoldenField06.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) HopfProjection13.v
+
+$(COQDIR)/PinchBranchLocalForms14.vo: $(COQDIR)/PinchBranchLocalForms14.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) PinchBranchLocalForms14.v
+
+$(COQDIR)/ProofRegistry15.vo: $(COQDIR)/ProofRegistry15.v $(COQDIR)/ProofStatus00.vo $(COQDIR)/FiniteBasics01.vo $(COQDIR)/FanoIncidence02.vo $(COQDIR)/BitmaskClosure03.vo $(COQDIR)/KarnaughReduction04.vo $(COQDIR)/GaugeTable05.vo $(COQDIR)/GoldenField06.vo $(COQDIR)/GoldenQuaternion07.vo $(COQDIR)/IcosianUnits08.vo $(COQDIR)/OmiRingStep09.vo $(COQDIR)/RelationalQuotation10.vo $(COQDIR)/E8Roots11.vo $(COQDIR)/WeylReflection12.vo $(COQDIR)/HopfProjection13.vo $(COQDIR)/PinchBranchLocalForms14.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) ProofRegistry15.v
 
 clean:
 	find $(COQDIR) -type f \( \
