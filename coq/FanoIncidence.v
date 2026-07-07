@@ -31,10 +31,7 @@ Definition fano_lines : list Line7 :=
   ; [Fin.F1; Fin.FS (Fin.FS (Fin.FS (Fin.FS (Fin.FS Fin.F1)))); Fin.FS (Fin.FS (Fin.FS (Fin.FS (Fin.FS (Fin.FS Fin.F1)))))]
   ].
 
-Definition fano_point_to_nat (p : Point7) : nat :=
-  match Fin.to_nat p with
-  | exist n _ => n
-  end.
+Definition fano_point_to_nat (p : Point7) : nat := proj1_sig (Fin.to_nat p).
 
 Theorem fano_point_count : length all_points7 = 7.
 Proof. vm_compute; reflexivity. Qed.
@@ -53,9 +50,11 @@ Theorem fano_lines_cover_all_points : forall p,
   In p all_points7 ->
   exists l, In l fano_lines /\ In p l.
 Proof.
-  intros p Hp.
-  repeat (destruct Hp as [Hp | Hp];
-    [ subst p; repeat (exists (List.hd (Fin.FS Fin.F1) fano_lines)); simpl; auto | ]).
+  intros p Hp; simpl in Hp.
+  repeat match goal with
+  | H : In p ?xs |- _ =>
+    destruct H as [H | H]; [inversion H; clear H; subst | ]
+  end.
   destruct Hp.
 Qed.
 

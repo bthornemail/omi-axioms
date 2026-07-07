@@ -10,9 +10,13 @@ firmware remain in `omi-isa`.
 ## Layout
 
 - `coq/`: Coq source modules.
-- `docs/PROOF-SPINE.md`: dependency and layer map.
+- `docs/PROOF-SPINE.md`: dependency and layer map (Volumes I–VIII).
 - `docs/PROOF-HISTORY.md`: migration and provenance notes.
 - `docs/LAYERING.md`: claim-boundary discipline.
+- `docs/PROOF-COMPLEX.md`: proof complex, homology, cohomology, d²=0.
+- `docs/PROOF-ADJUDICATION.md`: proof status levels (P0–P4), claim registry.
+- `docs/PROOF-SUITE-BLUEPRINT.md`: module map and dependency graph for 00–18.
+- `docs/CANONIZATION-ADJUDICATION.md`: external-facing pattern — how to classify claims.
 
 Generated Coq artifacts and extraction outputs are intentionally ignored. Build
 them locally from source.
@@ -24,7 +28,8 @@ make proof
 ```
 
 The default proof target builds every current Coq module, including
-`verified_execution.v`.
+`verified_execution.v`.  The proof suite (modules 00–18) is built as part
+of `make proof`.
 
 Clean generated artifacts with:
 
