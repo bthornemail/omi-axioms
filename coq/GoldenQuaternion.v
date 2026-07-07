@@ -17,6 +17,12 @@ Record GQuat : Type := mkGQuat {
   qk : Golden
 }.
 
+Definition gqeq (x y : GQuat) : Prop :=
+  geq (qr x) (qr y) /\
+  geq (qi x) (qi y) /\
+  geq (qj x) (qj y) /\
+  geq (qk x) (qk y).
+
 Definition gq0 : GQuat := mkGQuat gr0 gr0 gr0 gr0.
 Definition gq1 : GQuat := mkGQuat gr1 gr0 gr0 gr0.
 Definition gq_i : GQuat := mkGQuat gr0 gr1 gr0 gr0.
@@ -58,111 +64,112 @@ Theorem gq_add_assoc : forall x y z : GQuat,
   gq_add (gq_add x y) z = gq_add x (gq_add y z).
 Proof.
   intros x y z; destruct x, y, z; unfold gq_add; simpl.
-  repeat f_equal; apply g_add_assoc.
+  f_equal; apply g_add_assoc.
 Qed.
 
 Theorem gq_add_comm : forall x y : GQuat,
   gq_add x y = gq_add y x.
 Proof.
   intros x y; destruct x, y; unfold gq_add; simpl.
-  repeat f_equal; apply g_add_comm.
+  f_equal; apply g_add_comm.
 Qed.
 
 Theorem gq_add_0_l : forall x : GQuat,
   gq_add gq0 x = x.
 Proof.
   intro x; destruct x; unfold gq_add, gq0; simpl.
-  repeat f_equal; apply g_add_0_l.
+  f_equal; apply g_add_0_l.
 Qed.
 
 Theorem gq_add_0_r : forall x : GQuat,
   gq_add x gq0 = x.
 Proof.
   intro x; destruct x; unfold gq_add, gq0; simpl.
-  repeat f_equal; apply g_add_0_r.
+  f_equal; apply g_add_0_r.
 Qed.
 
 Theorem gq_add_neg_r : forall x : GQuat,
-  gq_add x (gq_neg x) = gq0.
+  gqeq (gq_add x (gq_neg x)) gq0.
 Proof.
   intro x; destruct x; unfold gq_add, gq_neg, gq0; simpl.
-  repeat f_equal; apply g_add_neg_r.
+  repeat split; apply g_add_neg_r.
 Qed.
 
 Theorem gq_mul_assoc : forall x y z : GQuat,
-  gq_mul (gq_mul x y) z = gq_mul x (gq_mul y z).
+  gqeq (gq_mul (gq_mul x y) z) (gq_mul x (gq_mul y z)).
 Proof.
   intros x y z.
   destruct x as [a1 b1 c1 d1].
   destruct y as [a2 b2 c2 d2].
   destruct z as [a3 b3 c3 d3].
-  unfold gq_mul, gq_sub, gq_add, gq_neg; simpl.
-  repeat f_equal; ring.
+  repeat match goal with | g : Golden |- _ => let r := fresh "qR" in let s := fresh "qS" in destruct g as [r s] end.
+  unfold gqeq, geq, gq_mul, gq_sub, gq_add, gq_neg, g_mul, g_add, g_neg, g_sub, gr0, gr1; simpl.
+  repeat split; ring.
 Qed.
 
 Theorem gq_mul_1_l : forall x : GQuat,
-  gq_mul gq1 x = x.
+  gqeq (gq_mul gq1 x) x.
 Proof.
-  intro x; destruct x; unfold gq_mul, gq1, gq_sub, gq_add, gq_neg; simpl.
-  repeat f_equal; apply g_add_0_r || apply g_mul_1_l || apply g_mul_0_l.
+  intro x; destruct x; repeat match goal with | g : Golden |- _ => let r := fresh "qR" in let s := fresh "qS" in destruct g as [r s] end; unfold gq_mul, gq1, gq_sub, gq_add, gq_neg, g_mul, g_add, g_neg, g_sub, gr0, gr1; simpl.
+  unfold gqeq, geq; simpl; repeat split; ring.
 Qed.
 
 Theorem gq_mul_1_r : forall x : GQuat,
-  gq_mul x gq1 = x.
+  gqeq (gq_mul x gq1) x.
 Proof.
-  intro x; destruct x; unfold gq_mul, gq1, gq_sub, gq_add, gq_neg; simpl.
-  repeat f_equal; apply g_add_0_r || apply g_mul_1_r || apply g_mul_0_r.
+  intro x; destruct x; repeat match goal with | g : Golden |- _ => let r := fresh "qR" in let s := fresh "qS" in destruct g as [r s] end; unfold gq_mul, gq1, gq_sub, gq_add, gq_neg, g_mul, g_add, g_neg, g_sub, gr0, gr1; simpl.
+  unfold gqeq, geq; simpl; repeat split; ring.
 Qed.
 
 Theorem gq_distrib_l : forall x y z : GQuat,
-  gq_mul x (gq_add y z) = gq_add (gq_mul x y) (gq_mul x z).
+  gqeq (gq_mul x (gq_add y z)) (gq_add (gq_mul x y) (gq_mul x z)).
 Proof.
   intros x y z.
-  destruct x, y, z; unfold gq_mul, gq_add, gq_sub, gq_neg; simpl.
-  repeat f_equal; ring.
+  destruct x, y, z; repeat match goal with | g : Golden |- _ => let r := fresh "qR" in let s := fresh "qS" in destruct g as [r s] end; unfold gq_mul, gq_add, gq_sub, gq_neg, g_mul, g_add, g_neg, g_sub, gr0, gr1; simpl.
+  unfold gqeq, geq; simpl; repeat split; ring.
 Qed.
 
 Theorem gq_distrib_r : forall x y z : GQuat,
-  gq_mul (gq_add x y) z = gq_add (gq_mul x z) (gq_mul y z).
+  gqeq (gq_mul (gq_add x y) z) (gq_add (gq_mul x z) (gq_mul y z)).
 Proof.
   intros x y z.
-  destruct x, y, z; unfold gq_mul, gq_add, gq_sub, gq_neg; simpl.
-  repeat f_equal; ring.
+  destruct x, y, z; repeat match goal with | g : Golden |- _ => let r := fresh "qR" in let s := fresh "qS" in destruct g as [r s] end; unfold gq_mul, gq_add, gq_sub, gq_neg, g_mul, g_add, g_neg, g_sub, gr0, gr1; simpl.
+  unfold gqeq, geq; simpl; repeat split; ring.
 Qed.
 
 Theorem gq_conj_involutive : forall x : GQuat,
-  gq_conj (gq_conj x) = x.
+  gqeq (gq_conj (gq_conj x)) x.
 Proof.
-  intro x; destruct x; unfold gq_conj; simpl.
-  repeat f_equal; apply g_conj_involutive.
+  intro x; destruct x; repeat match goal with | g : Golden |- _ => let r := fresh "qR" in let s := fresh "qS" in destruct g as [r s] end; unfold gq_conj, g_neg, g_conj; simpl.
+  unfold gqeq, geq; simpl; repeat split; ring.
 Qed.
 
 Theorem gq_conj_add : forall x y : GQuat,
-  gq_conj (gq_add x y) = gq_add (gq_conj x) (gq_conj y).
+  gqeq (gq_conj (gq_add x y)) (gq_add (gq_conj x) (gq_conj y)).
 Proof.
-  intros x y; destruct x, y; unfold gq_conj, gq_add; simpl.
-  repeat f_equal; apply g_conj_add.
+  intros x y; destruct x, y; repeat match goal with | g : Golden |- _ => let r := fresh "qR" in let s := fresh "qS" in destruct g as [r s] end; unfold gq_conj, gq_add, g_add, g_neg, g_conj; simpl.
+  unfold gqeq, geq; simpl; repeat split; ring.
 Qed.
 
 Theorem gq_conj_mul : forall x y : GQuat,
-  gq_conj (gq_mul x y) = gq_mul (gq_conj y) (gq_conj x).
+  gqeq (gq_conj (gq_mul x y)) (gq_mul (gq_conj y) (gq_conj x)).
 Proof.
-  intros x y; destruct x, y; unfold gq_conj, gq_mul, gq_sub, gq_add, gq_neg; simpl.
-  repeat f_equal; ring.
+  intros x y; destruct x, y; repeat match goal with | g : Golden |- _ => let r := fresh "qR" in let s := fresh "qS" in destruct g as [r s] end; unfold gq_conj, gq_mul, gq_sub, gq_add, gq_neg, g_mul, g_add, g_neg, g_sub, g_conj, gr0, gr1; simpl.
+  unfold gqeq, geq; simpl; repeat split; ring.
 Qed.
 
 Theorem gq_norm_sq_mul : forall x y : GQuat,
-  gq_norm_sq (gq_mul x y) = g_mul (gq_norm_sq x) (gq_norm_sq y).
+  geq (gq_norm_sq (gq_mul x y)) (g_mul (gq_norm_sq x) (gq_norm_sq y)).
 Proof.
-  intros x y; destruct x, y; unfold gq_norm_sq, gq_mul, gq_sub, gq_add, gq_neg; simpl.
-  repeat f_equal; ring.
+  intros x y; destruct x, y; repeat match goal with | g : Golden |- _ => let r := fresh "qR" in let s := fresh "qS" in destruct g as [r s] end; unfold gq_norm_sq, gq_mul, gq_sub, gq_add, gq_neg, g_mul, g_add, g_neg, g_sub, g_conj, gr0, gr1; simpl.
+  unfold geq; simpl; split; ring.
 Qed.
 
 Theorem gq_conj_mul_self : forall x : GQuat,
-  gq_mul x (gq_conj x) = mkGQuat (gq_norm_sq x) gr0 gr0 gr0.
+  gqeq (gq_mul x (gq_conj x)) (mkGQuat (gq_norm_sq x) gr0 gr0 gr0).
 Proof.
-  intro x; destruct x; unfold gq_mul, gq_conj, gq_norm_sq, gq_sub, gq_add, gq_neg; simpl.
-  repeat f_equal; ring.
+  intro x; destruct x; repeat match goal with | g : Golden |- _ => let r := fresh "qR" in let s := fresh "qS" in destruct g as [r s] end; unfold gq_mul, gq_conj, gq_norm_sq, gq_sub, gq_add, gq_neg, g_mul, g_add, g_neg, g_sub, g_conj, gr0, gr1; simpl.
+  unfold gqeq, geq; simpl; repeat split; ring.
 Qed.
 
 Theorem gq_norm_sq_nonneg_real : forall x : GQuat,
