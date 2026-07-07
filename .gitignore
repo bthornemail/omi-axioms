@@ -1,0 +1,23 @@
+# Coq compiler artifacts
+*.vo
+*.vos
+*.vok
+*.glob
+*.aux
+.*.aux
+*.vio
+*.v.beautified
+*.required_vo
+
+# Coq tactic caches
+.lia.cache
+.nia.cache
+.nra.cache
+
+# Extraction outputs
+*.ml
+*.mli
+
+# Local build/editor noise
+*~
+.#*
