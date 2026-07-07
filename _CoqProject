@@ -14,3 +14,13 @@ coq/functorial_semantics.v
 coq/coalgebraic_bisimulation.v
 coq/OMI_bialgebra.v
 coq/verified_execution.v
+coq/VecQ.v
+coq/GoldenField.v
+coq/GoldenQuaternion.v
+coq/IcosianUnits.v
+coq/IcosianSpan.v
+coq/E8Roots.v
+coq/WeylReflection.v
+coq/FanoIncidence.v
+coq/OmiRingIcosian.v
+coq/OmiRingQuotation.v

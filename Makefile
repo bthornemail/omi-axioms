@@ -17,7 +17,17 @@ PROOF_TARGETS= \
 	$(COQDIR)/functorial_semantics.vo \
 	$(COQDIR)/coalgebraic_bisimulation.vo \
 	$(COQDIR)/OMI_bialgebra.vo \
-	$(COQDIR)/verified_execution.vo
+	$(COQDIR)/verified_execution.vo \
+	$(COQDIR)/VecQ.vo \
+	$(COQDIR)/GoldenField.vo \
+	$(COQDIR)/GoldenQuaternion.vo \
+	$(COQDIR)/IcosianUnits.vo \
+	$(COQDIR)/IcosianSpan.vo \
+	$(COQDIR)/E8Roots.vo \
+	$(COQDIR)/WeylReflection.vo \
+	$(COQDIR)/FanoIncidence.vo \
+	$(COQDIR)/OmiRingIcosian.vo \
+	$(COQDIR)/OmiRingQuotation.vo
 
 proof: $(PROOF_TARGETS)
 
@@ -65,6 +75,36 @@ $(COQDIR)/OMI_bialgebra.vo: $(COQDIR)/OMI_bialgebra.v $(COQDIR)/delta_orbit_theo
 
 $(COQDIR)/verified_execution.vo: $(COQDIR)/verified_execution.v $(COQDIR)/delta_orbit_theory.vo $(COQDIR)/functorial_semantics.vo $(COQDIR)/coalgebraic_bisimulation.vo $(COQDIR)/OMI_bialgebra.vo
 	cd $(COQDIR) && $(COQC) $(COQFLAGS) verified_execution.v
+
+$(COQDIR)/VecQ.vo: $(COQDIR)/VecQ.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) VecQ.v
+
+$(COQDIR)/GoldenField.vo: $(COQDIR)/GoldenField.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) GoldenField.v
+
+$(COQDIR)/GoldenQuaternion.vo: $(COQDIR)/GoldenQuaternion.v $(COQDIR)/GoldenField.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) GoldenQuaternion.v
+
+$(COQDIR)/IcosianUnits.vo: $(COQDIR)/IcosianUnits.v $(COQDIR)/GoldenField.vo $(COQDIR)/GoldenQuaternion.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) IcosianUnits.v
+
+$(COQDIR)/IcosianSpan.vo: $(COQDIR)/IcosianSpan.v $(COQDIR)/GoldenField.vo $(COQDIR)/GoldenQuaternion.vo $(COQDIR)/IcosianUnits.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) IcosianSpan.v
+
+$(COQDIR)/E8Roots.vo: $(COQDIR)/E8Roots.v $(COQDIR)/VecQ.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) E8Roots.v
+
+$(COQDIR)/WeylReflection.vo: $(COQDIR)/WeylReflection.v $(COQDIR)/VecQ.vo $(COQDIR)/E8Roots.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) WeylReflection.v
+
+$(COQDIR)/FanoIncidence.vo: $(COQDIR)/FanoIncidence.v
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) FanoIncidence.v
+
+$(COQDIR)/OmiRingIcosian.vo: $(COQDIR)/OmiRingIcosian.v $(COQDIR)/GoldenField.vo $(COQDIR)/GoldenQuaternion.vo $(COQDIR)/IcosianUnits.vo $(COQDIR)/FanoIncidence.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) OmiRingIcosian.v
+
+$(COQDIR)/OmiRingQuotation.vo: $(COQDIR)/OmiRingQuotation.v $(COQDIR)/GoldenField.vo $(COQDIR)/GoldenQuaternion.vo $(COQDIR)/IcosianUnits.vo $(COQDIR)/OmiRingIcosian.vo
+	cd $(COQDIR) && $(COQC) $(COQFLAGS) OmiRingQuotation.v
 
 clean:
 	find $(COQDIR) -type f \( \
