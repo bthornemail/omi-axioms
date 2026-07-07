@@ -8,8 +8,10 @@
 From Coq Require Import QArith.QArith.
 From Coq Require Import QArith.Qreduction.
 From Coq Require Import QArith.Qminmax.
+From Coq Require Import QArith.Qpower.
 From Coq Require Import Vectors.VectorDef.
 From Coq Require Import Vectors.VectorSpec.
+From Coq Require Import Setoids.Setoid.
 From Coq Require Import micromega.Lia.
 From Coq Require Import Arith.Arith.
 From Coq Require Import ZArithRing.
@@ -18,8 +20,32 @@ Import VectorNotations.
 
 Definition Vec (n : nat) : Type := Vector.t Q n.
 
+Lemma Vec0_eq (v : Vec 0) : v = [].
+Proof.
+  refine (Vector.case0 (fun v' => v' = []) _ v).
+  reflexivity.
+Qed.
+
+Fixpoint veq {n : nat} : Vec n -> Vec n -> Prop :=
+  match n with
+  | O => fun _ _ => True
+  | S n' =>
+      fun v w =>
+        Vector.hd v == Vector.hd w /\ veq (Vector.tl v) (Vector.tl w)
+  end.
+
+Fixpoint dotn (n : nat) : Vec n -> Vec n -> Q :=
+  match n with
+  | O => fun _ _ => 0
+  | S n' =>
+      fun v w =>
+        Qplus
+          (Qmult (Vector.hd v) (Vector.hd w))
+          (dotn n' (Vector.tl v) (Vector.tl w))
+  end.
+
 Definition dot {n : nat} (v w : Vec n) : Q :=
-  Vector.fold_left Qplus 0 (Vector.map2 Qmult v w).
+  dotn n v w.
 
 Definition norm_sq {n : nat} (v : Vec n) : Q :=
   dot v v.
@@ -64,120 +90,146 @@ Proof.
   f_equal; [ring | apply Pos.mul_comm].
 Qed.
 
-Lemma fold_left_Qplus_add : forall n a (v : Vec n),
-  Vector.fold_left Qplus a v = Qplus a (Vector.fold_left Qplus 0 v).
+Lemma Qmult_1_l_eq : forall a : Q, Qmult 1 a = a.
 Proof.
-  induction n; intros a v;
-    [ refine (Vector.case0 (fun v' => Vector.fold_left Qplus a v' = Qplus a (Vector.fold_left Qplus 0 v')) _ v);
-      simpl; symmetry; apply Qplus_0_r_eq |].
-  apply (Vector.caseS v); intros h t; simpl.
-  rewrite (IHn (Qplus a h) t).
-  rewrite (IHn h t).
-  rewrite Qplus_0_l_eq.
-  apply Qplus_assoc_eq.
+  destruct a as [n d]; destruct n; reflexivity.
+Qed.
+
+Lemma Qsquare_nonneg : forall a : Q, 0 <= a * a.
+Proof.
+  intro a.
+  change (0 <= a ^ 2).
+  apply Qsqr_nonneg.
+Qed.
+
+Lemma Qplus_nonneg : forall a b : Q, 0 <= a -> 0 <= b -> 0 <= a + b.
+Proof.
+  intros a b Ha Hb.
+  change (0 + 0 <= a + b).
+  apply Qplus_le_compat; assumption.
 Qed.
 
 Theorem dot_comm : forall n (v w : Vec n), dot v w = dot w v.
 Proof.
   unfold dot.
-  induction n; intros v w; [reflexivity |].
-  inversion v as [| h1 t1]; subst; clear v.
-  inversion w as [| h2 t2]; subst; clear w.
-  simpl.
-  rewrite (fold_left_Qplus_add n (Qmult h1 h2) (Vector.map2 Qmult t1 t2)).
-  rewrite (fold_left_Qplus_add n (Qmult h2 h1) (Vector.map2 Qmult t2 t1)).
-  rewrite (Qmult_comm_eq h1 h2).
-  rewrite (IHn t1 t2).
-  reflexivity.
+  induction n; intros v w; simpl.
+  - reflexivity.
+  - rewrite (Qmult_comm_eq (Vector.hd v) (Vector.hd w)).
+    rewrite (IHn (Vector.tl v) (Vector.tl w)).
+    reflexivity.
 Qed.
 
 Theorem dot_add_l : forall n (u v w : Vec n),
   dot (vadd u v) w == dot u w + dot v w.
 Proof.
-  intros n u v w.
-  unfold dot, vadd.
-  induction n as [| n IH].
+  intros n.
+  induction n as [| n IH]; intros u v w; unfold dot, vadd; simpl.
   - reflexivity.
-  - simpl.
+  - rewrite (Vector.eta u).
+    rewrite (Vector.eta v).
+    rewrite (Vector.eta w).
+    simpl.
     rewrite IH.
+    unfold dot.
     ring.
 Qed.
 
 Theorem dot_scale_l : forall n (c : Q) (v w : Vec n),
   dot (vscale c v) w == c * dot v w.
 Proof.
-  intros n c v w.
-  unfold dot, vscale.
-  induction n as [| n IH].
-  - simpl; ring.
-  - simpl.
+  intros n.
+  induction n as [| n IH]; intros c v w; unfold dot; simpl.
+  - ring.
+  - unfold vscale.
+    rewrite (Vector.eta v).
+    rewrite (Vector.eta w).
+    simpl.
+    fold (vscale c (Vector.tl v)).
     rewrite IH.
+    unfold dot.
     ring.
 Qed.
 
 Theorem norm_sq_nonneg : forall n (v : Vec n),
   0 <= norm_sq v.
 Proof.
-  intros n v.
-  unfold norm_sq, dot.
-  induction n as [| n IH].
-  - simpl; apply Qle_refl.
-  - simpl.
-    apply Qplus_le_0_compat.
-    + apply Qmult_le_0_compat; [apply Qle_refl | apply Qle_refl].
-    + exact IH.
+  intros n.
+  induction n as [| n IH]; intros v; unfold norm_sq, dot; simpl.
+  - apply Qle_refl.
+  - apply Qplus_nonneg.
+    + apply Qsquare_nonneg.
+    + apply IH.
 Qed.
 
 Theorem vadd_comm : forall n (v w : Vec n), vadd v w = vadd w v.
 Proof.
-  intros n v w.
-  unfold vadd.
-  apply Vector.map2_ext.
-  intros x y.
-  apply Qplus_comm.
+  intros n.
+  induction n as [| n IH]; intros v w; unfold vadd; simpl.
+  - rewrite (Vec0_eq v), (Vec0_eq w).
+    reflexivity.
+  - rewrite (Vector.eta v).
+    rewrite (Vector.eta w).
+    simpl.
+    rewrite IH.
+    f_equal.
+    apply Qplus_comm_eq.
 Qed.
 
 Theorem vadd_assoc : forall n (u v w : Vec n),
   vadd (vadd u v) w = vadd u (vadd v w).
 Proof.
-  intros n u v w.
-  unfold vadd.
-  apply Vector.map2_ext.
-  intros x y z.
-  apply Qplus_assoc.
-Qed.
-
-Theorem vadd_neg_r : forall n (v : Vec n), vadd v (vneg v) = Vector.const 0 n.
-Proof.
-  intros n v.
-  unfold vadd, vneg.
-  induction n as [| n IH].
-  - reflexivity.
-  - simpl.
+  intros n.
+  induction n as [| n IH]; intros u v w; unfold vadd; simpl.
+  - rewrite (Vec0_eq u), (Vec0_eq v), (Vec0_eq w).
+    reflexivity.
+  - rewrite (Vector.eta u).
+    rewrite (Vector.eta v).
+    rewrite (Vector.eta w).
+    simpl.
     rewrite IH.
     f_equal.
-    rewrite Qplus_opp_r.
-    reflexivity.
+    apply Qplus_assoc_eq.
 Qed.
 
-Theorem vscale_zero : forall n (v : Vec n), vscale 0 v = Vector.const 0 n.
+Theorem vadd_neg_r : forall n (v : Vec n), veq (vadd v (vneg v)) (Vector.const 0 n).
 Proof.
-  intros n v.
-  unfold vscale.
-  induction n as [| n IH].
-  - reflexivity.
-  - simpl.
-    rewrite IH.
-    reflexivity.
+  intros n.
+  induction n as [| n IH]; intros v; simpl.
+  - exact I.
+  - unfold vadd, vneg.
+    rewrite (Vector.eta v).
+    simpl.
+    split.
+    + apply Qplus_opp_r.
+    + fold (vneg (Vector.tl v)).
+      fold (vadd (Vector.tl v) (vneg (Vector.tl v))).
+      apply IH.
+Qed.
+
+Theorem vscale_zero : forall n (v : Vec n), veq (vscale 0 v) (Vector.const 0 n).
+Proof.
+  intros n.
+  induction n as [| n IH]; intros v; simpl.
+  - exact I.
+  - unfold vscale.
+    rewrite (Vector.eta v).
+    simpl.
+    split.
+    + apply Qmult_0_l.
+    + fold (vscale 0 (Vector.tl v)).
+      apply IH.
 Qed.
 
 Theorem vscale_one : forall n (v : Vec n), vscale 1 v = v.
 Proof.
-  intros n v.
-  unfold vscale.
-  induction n as [| n IH].
-  - reflexivity.
-  - simpl.
-    rewrite IH.
+  intros n.
+  induction n as [| n IH]; intros v; unfold vscale; simpl.
+  - rewrite (Vec0_eq v).
     reflexivity.
+  - rewrite (Vector.eta v).
+    simpl.
+    fold (vscale 1 (Vector.tl v)).
+    rewrite IH.
+    f_equal.
+    apply Qmult_1_l_eq.
 Qed.
