@@ -442,7 +442,18 @@ Proof tells OMI what structures it is allowed to trust as deterministic.
 
 Validation decides whether a specific candidate relation is accepted.
 
-## 11. Canonical Lock
+## 11. Supporting Documents
+
+The proof canonization framework is supported by two companion documents:
+
+| Document | Role |
+|----------|------|
+| `docs/BOUNDARY-INTERIOR-FRAMEWORK.md` | Explains the boundary/interior role separation (BICF) that underlies chain complexes, homology, and the proof/admissibility boundary. |
+| `docs/OPERATIONAL-REALITY-BOUNDARY.md` | Explains why consensus/projection is not authority — the physical/operational/epistemic reality separation that protects the project from overclaiming. |
+
+The conversation records that informed these documents are archived in `research-history/06-omi-reduction/`.
+
+## 12. Canonical Lock
 
 ```text
 The proof suite is a canonization filter.

@@ -17,6 +17,12 @@ firmware remain in `omi-isa`.
 - `docs/PROOF-ADJUDICATION.md`: proof status levels (P0–P4), claim registry.
 - `docs/PROOF-SUITE-BLUEPRINT.md`: module map and dependency graph for 00–18.
 - `docs/CANONIZATION-ADJUDICATION.md`: external-facing pattern — how to classify claims.
+- `docs/BOUNDARY-INTERIOR-FRAMEWORK.md`: boundary/interior role separation (BICF).
+- `docs/OPERATIONAL-REALITY-BOUNDARY.md`: physical vs operational vs epistemic reality.
+- `docs/MOBIUS-KANTOR-KERNEL.md`: MK (8₃) closure kernel — data model, axioms, circuits.
+- `docs/MIQUEL-KERNEL.md`: Miquel (8₃;6₄) cube face-circle incidence kernel.
+- `docs/SYSTOLE-INVARIANTS.md`: discrete systolic geometry for closed incidence structures.
+- `docs/PAPPUS-HESSE-PIPELINE.md`: Pappus→Hesse→Seidel→E8 projection pipeline.
 
 Generated Coq artifacts and extraction outputs are intentionally ignored. Build
 them locally from source.

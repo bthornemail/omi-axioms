@@ -176,6 +176,21 @@ yet been promoted to `coq/`.  This volume becomes active when:
 Until then, the dev-docs artifacts remain dev proof sketches — usable for
 reference, not yet canonized.
 
+### Closure-kernel pipeline (future)
+
+Beyond the numbered suite, the following closure kernels are specified as
+mathematical models (P2) and targeted for Coq formalization:
+
+| Kernel | Document | Configuration | Status |
+|--------|----------|---------------|--------|
+| MK (Möbius–Kantor) | `docs/MOBIUS-KANTOR-KERNEL.md` | 8₃ | P2 — model complete |
+| Miquel | `docs/MIQUEL-KERNEL.md` | 8₃;6₄ | P2 — model complete |
+| Pappus–Hesse | `docs/PAPPUS-HESSE-PIPELINE.md` | 9₃ → E8 | P2 — pipeline specified |
+| Systole | `docs/SYSTOLE-INVARIANTS.md` | Levi graph invariants | P2 — metric specified |
+
+These are Phase 2 proof targets. They depend on `FanoIncidence02` and the
+core suite but are not yet in `_CoqProject` or `Makefile`.
+
 ## Boundary
 
 The proof spine justifies formal claims. It does not contain the runtime
