@@ -9,6 +9,8 @@
     P4 — Metaphor          (helps intuition, cannot drive validation)
 *)
 
+From Coq Require Import Strings.String.
+
 Inductive ProofStatus : Type :=
 | P0 : ProofStatus
 | P1 : ProofStatus
@@ -19,7 +21,7 @@ Inductive ProofStatus : Type :=
 Definition status_le (a b : ProofStatus) : Prop :=
   match a, b with
   | P0, _ => True
-  | P1, P1 => True | P1, _ => False
+  | P1, P0 => False | P1, _ => True
   | P2, P2 => True | P2, P3 => True | P2, P4 => True | P2, _ => False
   | P3, P3 => True | P3, P4 => True | P3, _ => False
   | P4, P4 => True | P4, _ => False
@@ -43,7 +45,7 @@ Record ClaimID : Type := mkClaimID {
 }.
 
 Record Claim : Type := mkClaim {
-  claim_id      : ClaimID;
+  claim_identifier : ClaimID;
   claim_formal  : Prop;
   claim_allowed : string;
   claim_forbidden : string;
@@ -54,8 +56,8 @@ Definition register_claim (id : ClaimID) (formal : Prop)
   (allowed forbidden notes : string) : Claim :=
   mkClaim id formal allowed forbidden notes.
 
-Theorem P0_is_strongest : forall s, status_le s P0.
+Theorem P0_is_strongest : forall s, status_le P0 s.
 Proof. intro s; destruct s; unfold status_le; auto. Qed.
 
-Theorem P4_is_weakest : forall s, status_le P4 s.
+Theorem P4_is_weakest : forall s, status_le s P4.
 Proof. intro s; destruct s; unfold status_le; auto. Qed.

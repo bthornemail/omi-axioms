@@ -10,8 +10,8 @@ From Coq Require Import Arith.PeanoNat.
 From Coq Require Import micromega.Lia.
 Open Scope N_scope.
 
-Require Import DiagonalClosure.
-Require Import FiniteIncidence.
+Require Import DiagonalGaugeCloses.
+Require Import FiniteIncidenceBalancesFlags.
 
 Definition bqf_high_shell (x : N) : N := 60 * x * x.
 
@@ -118,4 +118,3 @@ Theorem bqf_bridge_cross_is_16xy : forall n : nat,
   bridge_cross (bqf_bridge_at n) =
     (16 * (fano_selector n + 1) * (local240_selector n + 1))%N.
 Proof. reflexivity. Qed.
-

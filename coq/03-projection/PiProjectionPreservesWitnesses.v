@@ -10,9 +10,9 @@ From Coq Require Import micromega.Lra.
 From Coq Require Import micromega.Lia.
 Open Scope R_scope.
 
-Require Import DiagonalClosure.
-Require Import BQFBridge.
-Require Import MetricProjection.
+Require Import DiagonalGaugeCloses.
+Require Import BQFBridgePreservesForms.
+Require Import MetricProjectionPreservesBounds.
 
 Definition OMI_PI : R := Alt_PI.
 

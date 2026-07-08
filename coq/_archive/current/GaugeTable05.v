@@ -18,6 +18,8 @@ From Coq Require Import Fin.
 From Coq Require Import Arith.Arith.
 From Coq Require Import Lists.List.
 From Coq Require Import NArith.NArith.
+From Coq Require Import Lia.
+From Coq Require Import Program.Equality.
 Import ListNotations.
 Open Scope N_scope.
 
@@ -52,7 +54,7 @@ Definition gauge_decidable (g h : Gauge) : {g = h} + {g <> h} :=
 
 Definition gauge_to_N (g : Gauge) : N :=
   match Fin.to_nat g with
-  | exist n _ => N.of_nat n
+  | exist _ n _ => N.of_nat n
   end.
 
 Theorem gauge_N_bound : forall g, gauge_to_N g < 16.
@@ -61,7 +63,7 @@ Proof.
   unfold gauge_to_N.
   destruct (Fin.to_nat g) as [n Hn].
   simpl.
-  apply Nat2N.is_nonneg.
+  lia.
 Qed.
 
 Definition gauge_codepoint (band : EarnedBand) (g : Gauge) : N :=
@@ -73,13 +75,10 @@ Theorem gauge_codepoint_in_band : forall band g,
 Proof.
   intros band g.
   unfold gauge_codepoint.
-  destruct (Fin.to_nat g) as [n Hn].
   split.
-  - apply N.add_le_mono_l; apply N.le_0_l.
+  - apply N.le_add_r.
   - apply N.add_lt_mono_l.
-    apply N.lt_of_lt_of_le.
-    apply N.nat2N_inj_lt; exact Hn.
-    reflexivity.
+    apply gauge_N_bound.
 Qed.
 
 Definition project_gauge (band : EarnedBand) (g : Gauge) : N :=
@@ -91,7 +90,10 @@ Theorem gauge_projection_deterministic : forall band g,
 Proof.
   intros band g.
   exists (project_gauge band g).
-  split; reflexivity.
+  split.
+  - reflexivity.
+  - intros codepoint Hcodepoint.
+    exact Hcodepoint.
 Qed.
 
 Definition band_max (b : EarnedBand) : N :=
@@ -128,5 +130,5 @@ Definition all_gauges : list Gauge :=
 Theorem all_gauges_complete : forall g : Gauge, In g all_gauges.
 Proof.
   intro g.
-  repeat (destruct g using Fin.case_dep; [repeat apply in_eq orelse apply in_cons |]).
+  repeat (dependent destruction g; simpl; auto).
 Qed.

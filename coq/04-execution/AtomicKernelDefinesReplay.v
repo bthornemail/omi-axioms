@@ -4,10 +4,9 @@ Import ListNotations.
 Open Scope N_scope.
 
 (*
-  AtomicKernel is the first receipt: the original masked rotate/XOR delta law.
-  VNext keeps the same narrative root and extends it with replay structure.
+  Canonical atomic kernel: masked rotate/XOR delta with replay structure.
+  This is the sole active implementation of the atomic transition.
 *)
-Require AtomicKernel.
 
 Definition mask (n x : N) : N := N.land x (N.pred (N.pow 2 n)).
 
