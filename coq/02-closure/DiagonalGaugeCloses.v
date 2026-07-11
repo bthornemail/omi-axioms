@@ -77,6 +77,29 @@ Definition is_dplus (x : N) : bool :=
 Definition is_dminus (x : N) : bool :=
   (x =? dminus0) || (x =? dminus1) || (x =? dminus2) || (x =? dminus3).
 
+Definition polybius_row (x : N) : N := x / 4.
+Definition polybius_col (x : N) : N := x mod 4.
+
+Definition on_dplus (x : N) : bool :=
+  polybius_row x =? polybius_col x.
+
+Definition on_dminus (x : N) : bool :=
+  polybius_row x + polybius_col x =? 3.
+
+Theorem dplus_is_polybius_main_diagonal :
+  on_dplus 0 = true /\
+  on_dplus 5 = true /\
+  on_dplus 10 = true /\
+  on_dplus 15 = true.
+Proof. vm_compute; repeat split. Qed.
+
+Theorem dminus_is_polybius_mirror_diagonal :
+  on_dminus 3 = true /\
+  on_dminus 6 = true /\
+  on_dminus 9 = true /\
+  on_dminus 12 = true.
+Proof. vm_compute; repeat split. Qed.
+
 Definition complement_sum : N :=
   fold_left
     (fun acc x => if orb (is_dplus x) (is_dminus x) then acc else acc + x)
@@ -91,6 +114,12 @@ Definition wheel_sum : N :=
 
 Theorem full_wheel_sum_78 : wheel_sum = 120.
 Proof. vm_compute. reflexivity. Qed.
+
+Definition active_byte_surface : N := 15 * 16.
+
+Theorem active_byte_surface_is_240 :
+  active_byte_surface = 240.
+Proof. reflexivity. Qed.
 
 Definition mask16 (x : N) : N := x mod 65536.
 

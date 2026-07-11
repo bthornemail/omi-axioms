@@ -24,7 +24,8 @@ Fixpoint repeat_byte_1d_nat (m : nat) : N :=
   | S m' => N.lor (N.shiftl (repeat_byte_1d_nat m') 8) 29
   end.
 
-Definition constant_of_width (n : N) : N := repeat_byte_1d_nat (N.to_nat (N.div n 8)).
+Definition constant_of_width (n : N) : N :=
+  repeat_byte_1d_nat (N.to_nat (N.div n 8)).
 
 Definition delta (n x : N) : N :=
   mask n

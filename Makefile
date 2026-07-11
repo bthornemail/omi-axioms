@@ -19,9 +19,10 @@ endef
 
 FOUNDATION_MODULES := \
 	ProofStatusOrdersClaims FiniteBasicsEnumeratesSets \
-	RationalVectorsDefineOperations GoldenFieldDefinesArithmetic
+	RationalVectorsDefineOperations GoldenFieldDefinesArithmetic \
+	FiniteTruthTablesCountFunctions EarnedControlBandsEncode
 
-CLOSURE_MODULES := ComplexityBoundsArity DiagonalGaugeCloses
+CLOSURE_MODULES := ComplexityBoundsArity DiagonalGaugeCloses NullRingCloses
 
 INCIDENCE_MODULES := \
 	FiniteIncidenceBalancesFlags MiquelIncidenceBalancesFlags
@@ -31,8 +32,9 @@ PROJECTION_MODULES := \
 	PiProjectionPreservesWitnesses
 
 EXECUTION_MODULES := \
-	AtomicKernelDefinesReplay SabbathProtocolRejectsRestAttestation \
-	OmiPiBridgeConnectsKernel
+	AtomicKernelDefinesReplay Delta16HasExactPeriodEight \
+	SabbathProtocolRejectsRestAttestation OmiPiBridgeConnectsKernel \
+	AuthorityPipelinePreservesDecision
 
 CHECKED_MODULES := \
 	$(FOUNDATION_MODULES) $(CLOSURE_MODULES) $(INCIDENCE_MODULES) \
@@ -48,10 +50,13 @@ foundations-proof: prepare-artifacts
 	$(call compile_coq,00-foundations/FiniteBasicsEnumeratesSets.v)
 	$(call compile_coq,00-foundations/RationalVectorsDefineOperations.v)
 	$(call compile_coq,00-foundations/GoldenFieldDefinesArithmetic.v)
+	$(call compile_coq,00-foundations/FiniteTruthTablesCountFunctions.v)
+	$(call compile_coq,00-foundations/EarnedControlBandsEncode.v)
 
 closure-proof: foundations-proof
 	$(call compile_coq,02-closure/ComplexityBoundsArity.v)
 	$(call compile_coq,02-closure/DiagonalGaugeCloses.v)
+	$(call compile_coq,02-closure/NullRingCloses.v)
 
 incidence-proof: closure-proof
 	$(call compile_coq,01-incidence/FiniteIncidenceBalancesFlags.v)
@@ -64,13 +69,18 @@ projection-proof: incidence-proof
 
 execution-proof: projection-proof
 	$(call compile_coq,04-execution/AtomicKernelDefinesReplay.v)
+	$(call compile_coq,04-execution/Delta16HasExactPeriodEight.v)
 	$(call compile_coq,04-execution/SabbathProtocolRejectsRestAttestation.v)
 	$(call compile_coq,04-execution/OmiPiBridgeConnectsKernel.v)
+	$(call compile_coq,04-execution/AuthorityPipelinePreservesDecision.v)
 
 proof-strict:
 	./tools/check-strict-coq.sh
 	$(MAKE) proof
 	cd $(COQDIR) && $(COQCHK) $(COQFLAGS) $(CHECKED_MODULES)
+
+proof-book-check:
+	./tools/check-proof-book.sh
 
 proof-status:
 	@printf 'active_sources=%s\n' "$$(find $(COQDIR) -path '$(COQDIR)/_archive' -prune -o -name '*.v' -print | wc -l)"
@@ -91,4 +101,4 @@ clean:
 
 .PHONY: proof proof-strict proof-status foundations-proof closure-proof \
 	incidence-proof projection-proof execution-proof polyharmonic-proof \
-	prepare-artifacts clean
+	proof-book-check prepare-artifacts clean

@@ -5,6 +5,10 @@ They are not compiled, exported, or counted as proved. Purpose describes the
 intended formal role; summary describes the current draft and why it remains
 archived.
 
+The canonical explanation of the active/archived boundary is the
+[OMI Deterministic Computation Proof Book](OMI-DETERMINISTIC-COMPUTATION-PROOF-BOOK.md).
+This file remains a compact status manifest, not a second proof narrative.
+
 Only one archived file from a redundant family may be selected for repair.
 Other variants remain superseded unless the selected file demonstrably lacks
 required theorem content.

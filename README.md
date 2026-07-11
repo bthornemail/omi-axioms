@@ -11,9 +11,13 @@ remain in `omi-isa`.
 
 - `coq/00-foundations` through `coq/04-execution`: active, categorized proofs.
 - `coq/_archive/`: preserved drafts excluded from proof-completion claims.
-- `coq-docs/`: readable proof-address mirror and strict proof index.
+- `coq-docs/OMI-DETERMINISTIC-COMPUTATION-PROOF-BOOK.md`: sole authoritative
+  readable explanation and complete theorem atlas.
+- `coq-docs/PROOF-INDEX.md` and `coq-docs/ARCHIVE.md`: compact navigation and
+  status manifests.
 - `artifacts/coq/`: ignored Coq compiler output.
-- `docs/PROOF-SPINE.md`: dependency and layer map (Volumes I–VIII).
+- `docs/PROOF-SPINE.md`: short redirect from the superseded volume layout to
+  the current strict registry and proof book.
 - `docs/PROOF-HISTORY.md`: migration and provenance notes.
 - `docs/LAYERING.md`: claim-boundary discipline.
 - `docs/PROOF-COMPLEX.md`: proof complex, homology, cohomology, d²=0.

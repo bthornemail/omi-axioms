@@ -26,22 +26,7 @@ if [[ "$project_sources" != "$active_manifest" ]]; then
   exit 1
 fi
 
-missing_docs=0
-for source in "${active_sources[@]}"; do
-  case "$source" in
-    coq/00-foundations/*.v|coq/01-incidence/*.v|coq/02-closure/*.v|coq/03-projection/*.v|coq/04-execution/*.v)
-      doc="coq-docs/${source#coq/}"
-      doc="${doc%.v}.md"
-      if [[ ! -f "$doc" ]]; then
-        echo "missing proof documentation: $doc" >&2
-        missing_docs=1
-      fi
-      ;;
-  esac
-done
-if (( missing_docs != 0 )); then
-  exit 1
-fi
+./tools/check-proof-book.sh
 
 mapfile -t misplaced_artifacts < <(
   find coq -type f \( \
