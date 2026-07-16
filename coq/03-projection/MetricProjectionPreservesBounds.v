@@ -10,7 +10,7 @@ From Coq Require Import micromega.Lra.
 From Coq Require Import micromega.Lia.
 Open Scope R_scope.
 
-Require Import FiniteIncidence.
+Require Import FiniteIncidenceBalancesFlags.
 
 Record ProjectionBoundary : Type := mkProjectionBoundary {
   finite_incidence_exact : Prop;

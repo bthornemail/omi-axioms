@@ -60,6 +60,15 @@ Fixpoint sum_choose_succ_upto (n m : nat) : nat :=
 
 Definition sum_choose_all (n : nat) : nat := sum_choose_upto n n.
 
+Lemma sum_choose_upto_ge_one :
+  forall n m, 1 <= sum_choose_upto n m.
+Proof.
+  intros n m.
+  induction m; simpl.
+  - rewrite choose_n_0; lia.
+  - lia.
+Qed.
+
 Lemma sum_choose_upto_succ :
   forall n m, sum_choose_upto n (S m) = choose n 0 + sum_choose_succ_upto n m.
 Proof.
@@ -68,6 +77,10 @@ Proof.
   - simpl. rewrite choose_n_0. lia.
   - simpl (sum_choose_upto n (S (S m))).
     simpl (sum_choose_succ_upto n (S m)).
+    change
+      (sum_choose_upto n (S m) + choose n (S (S m)) =
+       choose n 0 +
+       (sum_choose_succ_upto n m + choose n (S (S m)))).
     rewrite IH.
     lia.
 Qed.
@@ -78,12 +91,11 @@ Proof.
   intros n m.
   induction m as [|m IH].
   - simpl.
-    rewrite choose_S_S.
+    rewrite !choose_n_1.
     rewrite choose_n_0.
     lia.
   - simpl.
     rewrite IH.
-    rewrite choose_S_S.
     lia.
 Qed.
 
@@ -100,8 +112,7 @@ Proof.
   rewrite choose_n_0 in Hsucc.
   (* Hsucc: sum_choose_upto n n = 1 + sum_choose_succ_upto n n *)
   rewrite Hsucc.
-  rewrite Nat.add_sub_cancel_l.
-  reflexivity.
+  lia.
 Qed.
 
 Lemma sum_choose_all_succ :
@@ -113,6 +124,8 @@ Proof.
   rewrite sum_choose_succ_upto_expand.
   rewrite sum_choose_succ_upto_all.
   rewrite choose_n_0.
+  unfold sum_choose_all.
+  pose proof (sum_choose_upto_ge_one n n).
   nia.
 Qed.
 

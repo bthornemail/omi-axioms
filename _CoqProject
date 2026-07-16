@@ -1,42 +1,25 @@
--R coq ''
-coq/AtomicKernel.v
-coq/AtomicKernelVNext.v
-coq/DiagonalClosure.v
-coq/FiniteIncidence.v
-coq/BQFBridge.v
-coq/MetricProjection.v
-coq/PiProjection.v
-coq/OMI_Exports.v
-coq/omi_pi_proof.v
-coq/omi_pi_bridge.v
-coq/delta_orbit_theory.v
-coq/functorial_semantics.v
-coq/coalgebraic_bisimulation.v
-coq/OMI_bialgebra.v
-coq/verified_execution.v
-coq/VecQ.v
-coq/GoldenField.v
-coq/GoldenQuaternion.v
-coq/IcosianUnits.v
-coq/IcosianSpan.v
-coq/E8Roots.v
-coq/WeylReflection.v
-coq/FanoIncidence.v
-coq/OmiRingIcosian.v
-coq/OmiRingQuotation.v
-coq/ProofStatus00.v
-coq/FiniteBasics01.v
-coq/FanoIncidence02.v
-coq/BitmaskClosure03.v
-coq/KarnaughReduction04.v
-coq/GaugeTable05.v
-coq/GoldenField06.v
-coq/GoldenQuaternion07.v
-coq/IcosianUnits08.v
-coq/OmiRingStep09.v
-coq/RelationalQuotation10.v
-coq/E8Roots11.v
-coq/WeylReflection12.v
-coq/HopfProjection13.v
-coq/PinchBranchLocalForms14.v
-coq/ProofRegistry15.v
+-Q coq/00-foundations ''
+-Q coq/01-incidence ''
+-Q coq/02-closure ''
+-Q coq/03-projection ''
+-Q coq/04-execution ''
+
+coq/00-foundations/ProofStatusOrdersClaims.v
+coq/00-foundations/FiniteBasicsEnumeratesSets.v
+coq/00-foundations/RationalVectorsDefineOperations.v
+coq/00-foundations/GoldenFieldDefinesArithmetic.v
+coq/00-foundations/FiniteTruthTablesCountFunctions.v
+coq/00-foundations/EarnedControlBandsEncode.v
+coq/02-closure/ComplexityBoundsArity.v
+coq/02-closure/DiagonalGaugeCloses.v
+coq/02-closure/NullRingCloses.v
+coq/01-incidence/FiniteIncidenceBalancesFlags.v
+coq/01-incidence/MiquelIncidenceBalancesFlags.v
+coq/03-projection/BQFBridgePreservesForms.v
+coq/03-projection/MetricProjectionPreservesBounds.v
+coq/03-projection/PiProjectionPreservesWitnesses.v
+coq/04-execution/AtomicKernelDefinesReplay.v
+coq/04-execution/Delta16HasExactPeriodEight.v
+coq/04-execution/SabbathProtocolRejectsRestAttestation.v
+coq/04-execution/OmiPiBridgeConnectsKernel.v
+coq/04-execution/AuthorityPipelinePreservesDecision.v

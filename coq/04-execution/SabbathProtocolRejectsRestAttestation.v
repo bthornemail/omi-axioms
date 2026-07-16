@@ -172,23 +172,8 @@ Lemma sabbath_mode_rejects_attestation :
   forall rest, validate SabbathMode (Attestation :: rest) = false.
 Proof. intros. simpl. reflexivity. Qed.
 
-(* After processing a trace ending with AttestSuspended,
-   the mode is SabbathMode. [PROVED] *)
-Lemma suspend_transitions_to_sabbath :
-  forall (before : Trace) (m : Mode),
-    final_mode m (before ++ [AttestSuspended]) = Some SabbathMode.
-Proof.
-  induction before as [| e rest IH]; intros m.
-  - simpl. destruct m; reflexivity.
-  - simpl. destruct (step m e) eqn:Hstep.
-    + apply IH.
-    + (* step m e = None means validate would fail; but we don't know that here *)
-      (* We need to carry a validity hypothesis - see the stronger version below *)
-      admit.
-Admitted.
-(* ADMITTED: Without a validity precondition, step m e could be None for some
-   prefix events. The correct statement requires validate m before = true.
-   See suspend_transitions_to_sabbath_valid below. *)
+(* A validity precondition is required: an invalid prefix can make
+   [final_mode] return [None] before the suspension event is reached. *)
 
 Lemma suspend_transitions_to_sabbath_valid :
   forall (before : Trace) (m : Mode),

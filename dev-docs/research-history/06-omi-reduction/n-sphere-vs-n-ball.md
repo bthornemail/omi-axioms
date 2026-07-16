@@ -6355,7 +6355,7 @@ Requirements:
 - Total: defined for all valid Anchors
 - Deterministic: same Anchor → same automorphism
 - Public: algorithm MUST be known to all agents
-- Stateless: no hidden memory or randomness
+- meta-memory: no hidden memory or randomness
 
 ---
 

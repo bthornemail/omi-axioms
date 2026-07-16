@@ -11,11 +11,11 @@ Import ListNotations.
 
 Definition cardinal (T : Type) (l : list T) : nat := length l.
 
-Theorem cardinal_nonnegative : forall T (l : list T), 0 <= cardinal l.
+Theorem cardinal_nonnegative : forall T (l : list T), 0 <= cardinal T l.
 Proof. intro T; induction l; simpl; auto. Qed.
 
 Theorem cardinal_app : forall T (a b : list T),
-  cardinal (a ++ b) = cardinal a + cardinal b.
+  cardinal T (a ++ b) = cardinal T a + cardinal T b.
 Proof. intros T a b; apply app_length. Qed.
 
 Definition subset {T : Type} (a b : list T) : Prop :=
@@ -48,7 +48,7 @@ Defined.
 Definition distinct {T : Type} (l : list T) : Prop :=
   forall x y, In x l -> In y l -> x = y -> x = y.
 
-Theorem finite_enumerated {T : Type} (l : list T) (P : T -> Prop) : Prop :=
+Definition finite_enumerated {T : Type} (l : list T) (P : T -> Prop) : Prop :=
   forall x, In x l -> P x.
 
 Record FiniteSet (T : Type) : Type := mkFiniteSet {
@@ -57,10 +57,10 @@ Record FiniteSet (T : Type) : Type := mkFiniteSet {
 }.
 
 Theorem finite_set_card_pos : forall T (fs : FiniteSet T),
-  0 < cardinal (fs_elements fs) \/ cardinal (fs_elements fs) = 0.
+  0 < cardinal T (fs_elements T fs) \/ cardinal T (fs_elements T fs) = 0.
 Proof.
   intros T fs.
-  destruct (cardinal (fs_elements fs)) eqn:Hc.
+  destruct (cardinal T (fs_elements T fs)) eqn:Hc.
   - right; reflexivity.
   - left; apply Nat.lt_0_succ.
 Qed.

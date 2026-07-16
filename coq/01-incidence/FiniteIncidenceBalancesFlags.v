@@ -1,5 +1,6 @@
 (*
-  FiniteIncidence.v -- finite tetrahedral, Fano, and rectified-core incidence.
+  FiniteIncidenceBalancesFlags.v -- finite tetrahedral, Fano, and
+  rectified-core incidence.
 
   This layer deliberately stays on exact finite combinatorics.  Metric meaning
   is introduced later by MetricProjection.v.
@@ -10,7 +11,7 @@ From Coq Require Import Lists.List.
 Import ListNotations.
 Open Scope N_scope.
 
-Require Import DiagonalClosure.
+Require Import DiagonalGaugeCloses.
 
 Record TetraIncidence : Type := mkTetraIncidence {
   tetra_vertices : N;
