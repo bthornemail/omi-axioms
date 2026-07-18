@@ -53,6 +53,8 @@ required theorem content.
 | `current/KERNEL.v` | Specify an algorithmic clock kernel with bit-width and edge operations. | A `nat`/`N` index mismatch prevents compilation, and equivalence to the active atomic kernel is not established. |
 | `current/Polynomials.v` | Build polynomial algebra over `F2` for later AAL verification. | Uses the removed `Omega` import and retains admitted degree, division, GCD, ring, and Adams-related claims. |
 | `current/extract.v` | Extract the verified Sabbath validator to Haskell. | Uses an obsolete logical import and remains disabled until the extraction target and generated-output contract are reviewed. |
+| `current/test_dd_show.v` | Preserve an exploratory vector-fold proof scratch file. | Contains `admit` and `Abort`; moved out of the active strict tree because it is not a canonical theorem owner. |
+| `current/phi_proof.v` | Preserve a standalone phi and pi proof draft. | Compiles as a draft but overlaps active golden-field and metric/projection owners; archived to avoid adding a duplicate canonical theorem family. |
 
 
 ## Re-entry Rule
