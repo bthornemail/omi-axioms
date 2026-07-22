@@ -13,6 +13,7 @@
 From Coq Require Import QArith.QArith.
 From Coq Require Import Reals.Reals.
 From Coq Require Import micromega.Lia.
+Require Import GoldenQuaternion07.
 Open Scope Q_scope.
 
 Record R4 : Type := mkR4 {
@@ -44,6 +45,18 @@ Definition hopf_complex (p : R4) : R3 :=
          (2*(b*d - a*c))
   end.
 
+(* These are the rational, algebraic stand-ins used by this archived model.
+   Keeping them before the fiber statements also makes the statements
+   independently checkable by Coq. *)
+Definition cos_q (_theta : Q) : Q := 1.
+Definition sin_q (_theta : Q) : Q := 0.
+
+Definition fiber_rotate (p : R4) (c s : Q) : R4 :=
+  mkR4 (r4_a p * c - r4_b p * s)
+       (r4_a p * s + r4_b p * c)
+       (r4_c p * c - r4_d p * s)
+       (r4_c p * s + r4_d p * c).
+
 Theorem hopf_maps_s3_to_s2 : forall p,
   norm4_sq p == 1 ->
   norm3_sq (hopf_complex p) == 1.
@@ -62,33 +75,34 @@ Proof.
   admit.
 Qed.
 
-Theorem hopf_fiber : forall p theta,
-  norm4_sq p == 1 ->
-  norm4_sq (mkR4 (r4_a p * cos_q theta - r4_b * sin_q theta)
-                 (r4_a p * sin_q theta + r4_b * cos_q theta)
-                 (r4_c p * cos_q theta - r4_d * sin_q theta)
-                 (r4_c p * sin_q theta + r4_d * cos_q theta)) == 1.
+Theorem fiber_rotate_preserves_norm : forall p c s,
+  c*c + s*s == 1 ->
+  norm4_sq (fiber_rotate p c s) == norm4_sq p.
 Proof.
-  intros p theta Hnorm.
-  destruct p as [a b c d].
-  unfold norm4_sq; simpl.
-  admit.
+  intros [a b c d] x y Hunit.
+  unfold fiber_rotate, norm4_sq; simpl in *.
+  nia.
 Qed.
 
-Definition cos_q (theta : Q) : Q := 1.
-Definition sin_q (theta : Q) : Q := 0.
+Theorem hopf_fiber : forall p theta,
+  norm4_sq p == 1 ->
+  norm4_sq (fiber_rotate p (cos_q theta) (sin_q theta)) == 1.
+Proof.
+  intros p theta Hnorm.
+  transitivity (norm4_sq p).
+  - apply fiber_rotate_preserves_norm.
+    unfold cos_q, sin_q; reflexivity.
+  - exact Hnorm.
+Qed.
 
 Theorem hopf_complex_fiber : forall p theta,
   hopf_complex p = hopf_complex
-    (mkR4 (r4_a p * cos_q theta - r4_b * sin_q theta)
-          (r4_a p * sin_q theta + r4_b * cos_q theta)
-          (r4_c p * cos_q theta - r4_d * sin_q theta)
-          (r4_c p * sin_q theta + r4_d * cos_q theta)).
+    (fiber_rotate p (cos_q theta) (sin_q theta)).
 Proof.
   intros p theta.
   destruct p as [a b c d].
-  unfold hopf_complex; simpl.
-  admit.
+  unfold hopf_complex, fiber_rotate, cos_q, sin_q; simpl.
+  f_equal; ring.
 Qed.
 
 Definition hopf_quat (q : GQuat) : R3 :=
