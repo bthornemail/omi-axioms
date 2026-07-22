@@ -21,21 +21,24 @@ endef
 FOUNDATION_MODULES := \
 	ProofStatusOrdersClaims FiniteBasicsEnumeratesSets \
 	RationalVectorsDefineOperations GoldenFieldDefinesArithmetic \
-	FiniteTruthTablesCountFunctions EarnedControlBandsEncode
+	FiniteTruthTablesCountFunctions OminoSECDEDCell \
+	EarnedControlBandsEncode
 
-CLOSURE_MODULES := ComplexityBoundsArity DiagonalGaugeCloses NullRingCloses
+CLOSURE_MODULES := \
+	ComplexityBoundsArity DiagonalGaugeCloses NullRingCloses \
+	PowerClosureGate
 
 INCIDENCE_MODULES := \
 	FiniteIncidenceBalancesFlags MiquelIncidenceBalancesFlags
 
 PROJECTION_MODULES := \
 	BQFBridgePreservesForms MetricProjectionPreservesBounds \
-	PiProjectionPreservesWitnesses
+	PiProjectionPreservesWitnesses E8RootsEnumerate240
 
 EXECUTION_MODULES := \
 	AtomicKernelDefinesReplay Delta16HasExactPeriodEight \
 	SabbathProtocolRejectsRestAttestation OmiPiBridgeConnectsKernel \
-	AuthorityPipelinePreservesDecision
+	AuthorityPipelinePreservesDecision OminoParallelSpatialScaling
 
 CHECKED_MODULES := \
 	$(FOUNDATION_MODULES) $(CLOSURE_MODULES) $(INCIDENCE_MODULES) \
@@ -52,12 +55,14 @@ foundations-proof: prepare-artifacts
 	$(call compile_coq,00-foundations/RationalVectorsDefineOperations.v)
 	$(call compile_coq,00-foundations/GoldenFieldDefinesArithmetic.v)
 	$(call compile_coq,00-foundations/FiniteTruthTablesCountFunctions.v)
+	$(call compile_coq,00-foundations/OminoSECDEDCell.v)
 	$(call compile_coq,00-foundations/EarnedControlBandsEncode.v)
 
 closure-proof: foundations-proof
 	$(call compile_coq,02-closure/ComplexityBoundsArity.v)
 	$(call compile_coq,02-closure/DiagonalGaugeCloses.v)
 	$(call compile_coq,02-closure/NullRingCloses.v)
+	$(call compile_coq,02-closure/PowerClosureGate.v)
 
 incidence-proof: closure-proof
 	$(call compile_coq,01-incidence/FiniteIncidenceBalancesFlags.v)
@@ -67,6 +72,7 @@ projection-proof: incidence-proof
 	$(call compile_coq,03-projection/BQFBridgePreservesForms.v)
 	$(call compile_coq,03-projection/MetricProjectionPreservesBounds.v)
 	$(call compile_coq,03-projection/PiProjectionPreservesWitnesses.v)
+	$(call compile_coq,03-projection/E8RootsEnumerate240.v)
 
 execution-proof: projection-proof
 	$(call compile_coq,04-execution/AtomicKernelDefinesReplay.v)
@@ -74,6 +80,7 @@ execution-proof: projection-proof
 	$(call compile_coq,04-execution/SabbathProtocolRejectsRestAttestation.v)
 	$(call compile_coq,04-execution/OmiPiBridgeConnectsKernel.v)
 	$(call compile_coq,04-execution/AuthorityPipelinePreservesDecision.v)
+	$(call compile_coq,04-execution/OminoParallelSpatialScaling.v)
 
 proof-registry-lock: SKILLS.md _CoqProject Makefile coq/README.md coq-docs/ARCHIVE.md
 	@rg -q 'coqc -Q \. OmiCore' SKILLS.md

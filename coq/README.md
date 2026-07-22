@@ -27,3 +27,19 @@ forms:
 Definition mask16 (x : N) : N := N.land x 0xFFFF.
 Definition r0 (x : N) : N := N.lxor x 0xAAAA.
 ```
+
+Active OMINO proof anchors:
+
+```text
+00-foundations/OminoSECDEDCell.v
+  canonical [8,4,4] bit map, syndrome, computed_omino, overall_mismatch
+
+02-closure/PowerClosureGate.v
+  total numerator factorization and explicit denominator boundary
+
+03-projection/E8RootsEnumerate240.v
+  assumption-free finite E8 root enumeration: 112 + 128 = 240
+
+04-execution/OminoParallelSpatialScaling.v
+  supplied-substrate constant step descriptor for parallel OMINO cells
+```

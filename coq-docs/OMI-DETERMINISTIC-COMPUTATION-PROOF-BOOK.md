@@ -1057,6 +1057,100 @@ malformed frame
 
 Changing addresses cannot repair failed closure.
 
+## 18.5 Active OMINO Extensions
+
+The following modules are active proof owners.  They are not archive citations
+and they must compile under the strict registry.
+
+### OMINO SECDED Cell
+
+Source: `coq/00-foundations/OminoSECDEDCell.v`
+
+The canonical streaming byte is:
+
+```text
+[LOGOS NOMOS FS PATHOS GS RS US OMINO]
+```
+
+Named anchors:
+
+```text
+`bitN_bound`
+`syndrome_bound`
+`result_code_bound`
+`pristine_result_code`
+`interior_single_result_code`
+`omino_single_result_code`
+`double_error_result_code`
+```
+
+The module defines `computed_omino`, `overall_mismatch`, correction masks, and
+bounded algebraic result codes for the [8,4,4] cell.
+
+### Power Closure Gate
+
+Source: `coq/02-closure/PowerClosureGate.v`
+
+Named anchors:
+
+```text
+`power_closure_numerator_factors`
+`power_closure_sedenion_breakpoint_zero`
+`omino_centroid_denominator_excluded`
+`nonzero_coordinate_is_admissible`
+```
+
+The total theorem proves the numerator identity:
+
+```text
+(64x - 64)(32x - 32)(16x - 16)(8x - 8)(4x - 4)(2x - 2)(x - 1)
+=
+2^21 * (x - 1)^7
+```
+
+The quotient form is only used with a nonzero denominator coordinate.
+
+### E8 Root Enumeration
+
+Source: `coq/03-projection/E8RootsEnumerate240.v`
+
+Named anchors:
+
+```text
+`e8_type1_count`
+`e8_type2_count`
+`e8_roots_count`
+`e8_roots_type_split`
+`e8_roots_norm_two`
+```
+
+The active theorem family proves the finite E8 enumeration split currently
+owned by Coq:
+
+```text
+112 + 128 = 240
+```
+
+and proves squared norm `2` for the enumerated roots.
+
+### OMINO Parallel Spatial Scaling
+
+Source: `coq/04-execution/OminoParallelSpatialScaling.v`
+
+Named anchors:
+
+```text
+`omino_cell_step_deterministic`
+`omino_parallel_step_deterministic`
+`supplied_substrate_step_count_independent_of_n`
+`supplied_substrate_step_count_independent_of_values`
+```
+
+The theorem family states the active usable claim: once a parallel OMINO
+substrate of width `n` is supplied, the core step descriptor remains constant
+with respect to `n` and with respect to cell values.  It does not hide substrate
+construction cost.
+
 ## 19. Reproducing the Proof
 
 Requirements:

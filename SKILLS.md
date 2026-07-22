@@ -99,3 +99,30 @@ parallel active owners for one theorem family
 
 The proof registry proves deterministic laws. Runtime behavior, C tests,
 firmware, renderers, and transport adapters remain outside this repository.
+
+## Active OMINO Proof Targets
+
+Use the active registry for bounded proof authority:
+
+```text
+00-foundations/OminoSECDEDCell.v
+  [LOGOS NOMOS FS PATHOS GS RS US OMINO]
+  computed_omino
+  overall_mismatch
+  algebraic SECDED result codes
+
+02-closure/PowerClosureGate.v
+  (64x - 64)(32x - 32)(16x - 16)(8x - 8)(4x - 4)(2x - 2)(x - 1)
+  =
+  2^21 * (x - 1)^7
+
+03-projection/E8RootsEnumerate240.v
+  E8 finite root count: 112 + 128 = 240
+
+04-execution/OminoParallelSpatialScaling.v
+  constant step descriptor over a supplied parallel OMINO substrate
+```
+
+Do not state archived E8, Weyl, octonion, or Cayley-Dickson material as active
+proof authority until the archive obligations are discharged and the file has
+entered the 00..04 registry.
