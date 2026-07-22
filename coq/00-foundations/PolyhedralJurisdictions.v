@@ -1,0 +1,44 @@
+(*
+  PolyhedralJurisdictions.v -- finite jurisdiction names and local footprints.
+*)
+
+From Coq Require Import NArith.NArith.
+From Coq Require Import Lists.List.
+Import ListNotations.
+Open Scope N_scope.
+
+Inductive PolyhedralJurisdiction : Type :=
+| TangentTetrahedron
+| RegularTetrahedron
+| StellatedTetrahedron
+| TriakisTetrahedron.
+
+Definition polyhedral_norm (p : PolyhedralJurisdiction) : N :=
+  match p with
+  | TangentTetrahedron => 0
+  | RegularTetrahedron => 1
+  | StellatedTetrahedron => 2
+  | TriakisTetrahedron => 4
+  end.
+
+Definition lambda_cube_trinity : list N := [4320; 4320 * 4320; 4320 * 4320 * 4320 * 4320].
+Definition context_word_footprint : N := 0xFFFF.
+
+Theorem polyhedral_domain_bounds_discrete :
+  forall p, polyhedral_norm p = 0 \/ polyhedral_norm p = 1 \/
+    polyhedral_norm p = 2 \/ polyhedral_norm p = 4.
+Proof.
+  intros []; auto.
+Qed.
+
+Theorem lambda_cube_trinity_count :
+  length lambda_cube_trinity = 3%nat.
+Proof. reflexivity. Qed.
+
+Theorem context_word_footprint_width :
+  context_word_footprint + 1 = 65536.
+Proof. reflexivity. Qed.
+
+Theorem polyhedral_jurisdiction_count_four :
+  length [TangentTetrahedron; RegularTetrahedron; StellatedTetrahedron; TriakisTetrahedron] = 4%nat.
+Proof. reflexivity. Qed.

@@ -23,6 +23,8 @@ coq/00-foundations/OminoAxiomaticSovereignty.v
 coq/00-foundations/PinchBranchLocalForms14.v
 coq/00-foundations/Polynomials.v
 coq/00-foundations/EarnedControlBandsEncode.v
+coq/00-foundations/PolyhedralJurisdictions.v
+coq/00-foundations/FieldVisibilityTypes.v
 coq/02-closure/ComplexityBoundsArity.v
 coq/02-closure/DiagonalGaugeCloses.v
 coq/02-closure/NullRingCloses.v
@@ -37,6 +39,8 @@ coq/01-incidence/IcosianUnits08.v
 coq/01-incidence/MiquelIncidenceBalancesFlags.v
 coq/01-incidence/OmiRingIcosian.v
 coq/01-incidence/OmiRingQuotation.v
+coq/01-incidence/PolyhedralProperties.v
+coq/01-incidence/PolyhedralVertexIncidence.v
 coq/03-projection/BQFBridgePreservesForms.v
 coq/03-projection/MetricProjectionPreservesBounds.v
 coq/03-projection/PiProjectionPreservesWitnesses.v
@@ -47,6 +51,7 @@ coq/03-projection/E8Roots11.v
 coq/03-projection/HopfProjection13.v
 coq/03-projection/WeylReflection.v
 coq/03-projection/WeylReflection12.v
+coq/03-projection/FieldVisibilityInvariants.v
 coq/04-execution/AtomicKernelDefinesReplay.v
 coq/04-execution/Delta16HasExactPeriodEight.v
 coq/04-execution/AAL.v
@@ -69,3 +74,4 @@ coq/04-execution/extract.v
 coq/04-execution/functorial_semantics.v
 coq/04-execution/test_dd_show.v
 coq/04-execution/verified_execution.v
+coq/04-execution/TangentLambdaTransform.v

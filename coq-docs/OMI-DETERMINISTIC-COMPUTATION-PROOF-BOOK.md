@@ -1265,6 +1265,47 @@ promoted modules by adding finite owner-local theorems:
 `verified_execution_step_deterministic`
 ```
 
+The Layer 0.5 and Layer 3.5 verification extension adds six active modules
+and twenty-four finite theorem anchors:
+
+```text
+`coq/00-foundations/PolyhedralJurisdictions.v`
+`polyhedral_domain_bounds_discrete`
+`lambda_cube_trinity_count`
+`context_word_footprint_width`
+`polyhedral_jurisdiction_count_four`
+
+`coq/00-foundations/FieldVisibilityTypes.v`
+`byte_plane_max_bounds`
+`chart_index_bounded_eight`
+`chart_position_bounded_thirty_two`
+`field_visibility_chart_partition_count`
+
+`coq/01-incidence/PolyhedralProperties.v`
+`norm_zero_isolates_graph`
+`norm_one_isolates_bigraph`
+`norm_two_isolates_multigraph`
+`norm_four_isolates_hypergraph`
+
+`coq/01-incidence/PolyhedralVertexIncidence.v`
+`tangent_block_layout_balanced`
+`regular_block_layout_balanced`
+`stellated_block_layout_balanced`
+`triakis_block_layout_balanced`
+
+`coq/03-projection/FieldVisibilityInvariants.v`
+`antipodal_mirror_involutive_identity`
+`local_plane_boundary_separation`
+`remote_plane_boundary_separation`
+`centroid_orientation_symmetry`
+
+`coq/04-execution/TangentLambdaTransform.v`
+`verified_execution_step_deterministic`
+`current_word_context_mask_bounds`
+`metatron_pre_closure_parity`
+`algorithmic_clock_torque_rotation`
+```
+
 ## 20. Reproducing the Proof
 
 Requirements:

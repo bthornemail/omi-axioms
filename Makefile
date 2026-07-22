@@ -24,7 +24,8 @@ FOUNDATION_MODULES := \
 	GoldenField06 phi_proof GoldenQuaternion GoldenQuaternion07 \
 	FiniteTruthTablesCountFunctions OminoSECDEDCell BitmaskClosure03 \
 	GaugeTable05 IdentityChain OMI_bialgebra OminoAxiomaticSovereignty \
-	PinchBranchLocalForms14 Polynomials EarnedControlBandsEncode
+	PinchBranchLocalForms14 Polynomials EarnedControlBandsEncode \
+	PolyhedralJurisdictions FieldVisibilityTypes
 
 CLOSURE_MODULES := \
 	ComplexityBoundsArity DiagonalGaugeCloses NullRingCloses \
@@ -33,12 +34,14 @@ CLOSURE_MODULES := \
 INCIDENCE_MODULES := \
 	FiniteIncidenceBalancesFlags FanoIncidence FanoIncidence02 \
 	Fano_PCG IcosianSpan IcosianUnits IcosianUnits08 \
-	MiquelIncidenceBalancesFlags OmiRingIcosian OmiRingQuotation
+	MiquelIncidenceBalancesFlags OmiRingIcosian OmiRingQuotation \
+	PolyhedralProperties PolyhedralVertexIncidence
 
 PROJECTION_MODULES := \
 	BQFBridgePreservesForms MetricProjectionPreservesBounds \
 	PiProjectionPreservesWitnesses E8RootsEnumerate240 CyclicClock \
-	E8Roots E8Roots11 HopfProjection13 WeylReflection WeylReflection12
+	E8Roots E8Roots11 HopfProjection13 WeylReflection WeylReflection12 \
+	FieldVisibilityInvariants
 
 EXECUTION_MODULES := \
 	AtomicKernelDefinesReplay Delta16HasExactPeriodEight \
@@ -48,7 +51,8 @@ EXECUTION_MODULES := \
 	OmiRingStep09 OminoArchivePromotionRegistry OminoFiveBinarySubstrate \
 	OminoParallelSpatialScaling ProofRegistry15 RelationalQuotation10 \
 	coalgebraic_bisimulation delta_orbit_theory extract \
-	functorial_semantics test_dd_show verified_execution
+	functorial_semantics test_dd_show verified_execution \
+	TangentLambdaTransform
 
 CHECKED_MODULES := \
 	$(FOUNDATION_MODULES) $(CLOSURE_MODULES) $(INCIDENCE_MODULES) \
@@ -78,6 +82,8 @@ foundations-proof: prepare-artifacts
 	$(call compile_coq,00-foundations/PinchBranchLocalForms14.v)
 	$(call compile_coq,00-foundations/Polynomials.v)
 	$(call compile_coq,00-foundations/EarnedControlBandsEncode.v)
+	$(call compile_coq,00-foundations/PolyhedralJurisdictions.v)
+	$(call compile_coq,00-foundations/FieldVisibilityTypes.v)
 
 closure-proof: foundations-proof
 	$(call compile_coq,02-closure/ComplexityBoundsArity.v)
@@ -96,6 +102,8 @@ incidence-proof: closure-proof
 	$(call compile_coq,01-incidence/MiquelIncidenceBalancesFlags.v)
 	$(call compile_coq,01-incidence/OmiRingIcosian.v)
 	$(call compile_coq,01-incidence/OmiRingQuotation.v)
+	$(call compile_coq,01-incidence/PolyhedralProperties.v)
+	$(call compile_coq,01-incidence/PolyhedralVertexIncidence.v)
 
 projection-proof: incidence-proof
 	$(call compile_coq,03-projection/BQFBridgePreservesForms.v)
@@ -108,6 +116,7 @@ projection-proof: incidence-proof
 	$(call compile_coq,03-projection/HopfProjection13.v)
 	$(call compile_coq,03-projection/WeylReflection.v)
 	$(call compile_coq,03-projection/WeylReflection12.v)
+	$(call compile_coq,03-projection/FieldVisibilityInvariants.v)
 
 execution-proof: projection-proof
 	$(call compile_coq,04-execution/AtomicKernelDefinesReplay.v)
@@ -132,6 +141,7 @@ execution-proof: projection-proof
 	$(call compile_coq,04-execution/functorial_semantics.v)
 	$(call compile_coq,04-execution/test_dd_show.v)
 	$(call compile_coq,04-execution/verified_execution.v)
+	$(call compile_coq,04-execution/TangentLambdaTransform.v)
 
 proof-registry-lock: SKILLS.md _CoqProject Makefile coq/README.md coq-docs/ARCHIVE.md
 	@rg -q 'coqc -Q \. OmiCore' SKILLS.md
