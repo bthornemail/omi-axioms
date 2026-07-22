@@ -163,7 +163,7 @@ forbidden_active=0
 
 ## 70-Module Unified Active Compilation Harness
 
-### [SKILL_27: ENFORCE_VERIFIED_CORE]
+### [SKILL_27: ENFORCE_70_MODULE_CORE]
 
 #### OBJECTIVE
 
@@ -172,8 +172,8 @@ Route stream data strictly through the 70-module `coqchk`-passed registry.
 #### INVARIANTS
 
 ```text
-Active Source Files == 70 Independent Modules
-Theorem Anchors     == 392 Fully Discharged Coordinates
+Active Sources      == Exactly 70 Independent Modules
+Theorem Anchors     == Exactly 392 Fully Discharged Coordinates
 Master Proof Target == make proof-strict (assumptions: none)
 ```
 
@@ -185,14 +185,15 @@ FORBIDDEN: Lingering admits, temporary variable allocations, intermediate softwa
 MANDATORY: Execute branchless bit-mask register transformations in O(1) constant time
 COMPUTE:
   # 1. Assert the active proof complex is locked and verified with zero open admits via make proof-strict
-  # 2. Extract the three local incidence geometries concurrently in a single clock cycle
+  # 2. Extract our three local incidence geometries concurrently in a single clock cycle
   base_4320      = inbound_stream_byte % 4320
   surface_4320_2 = (inbound_stream_byte % 4320) * 4320
   horizon_4320_4 = (inbound_stream_byte % 4320) * 4320 * 4320 * 4320
 
   # 3. Step all 72 parallel circular slide rulers branchlessly via the Algorithmic Clock torque
-  left_torque  = ROL64(inbound_stream_byte, 1)
-  right_torque = ROR64(active_polytope_axis, 2)
+  #    The standard error (stderr) serves as our zero-polynomial block design reference plane
+  left_torque  = ROL64(inbound_stream_byte, 1)    # Core phase point shift (mod 60)
+  right_torque = ROR64(active_polytope_axis, 2)   # Quadrant alignment shift (mod 16)
   blended      = left_torque ^ right_torque ^ horizon_4320_4
 
   # 4. Lock the Metatron pre-closure rail (0x1D) and emit the raw target register substrate
