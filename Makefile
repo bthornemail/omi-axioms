@@ -21,24 +21,34 @@ endef
 FOUNDATION_MODULES := \
 	ProofStatusOrdersClaims FiniteBasicsEnumeratesSets \
 	RationalVectorsDefineOperations GoldenFieldDefinesArithmetic \
-	FiniteTruthTablesCountFunctions OminoSECDEDCell \
-	EarnedControlBandsEncode
+	GoldenField06 phi_proof GoldenQuaternion GoldenQuaternion07 \
+	FiniteTruthTablesCountFunctions OminoSECDEDCell BitmaskClosure03 \
+	GaugeTable05 IdentityChain OMI_bialgebra OminoAxiomaticSovereignty \
+	PinchBranchLocalForms14 Polynomials EarnedControlBandsEncode
 
 CLOSURE_MODULES := \
 	ComplexityBoundsArity DiagonalGaugeCloses NullRingCloses \
 	PowerClosureGate
 
 INCIDENCE_MODULES := \
-	FiniteIncidenceBalancesFlags MiquelIncidenceBalancesFlags
+	FiniteIncidenceBalancesFlags FanoIncidence FanoIncidence02 \
+	Fano_PCG IcosianSpan IcosianUnits IcosianUnits08 \
+	MiquelIncidenceBalancesFlags OmiRingIcosian OmiRingQuotation
 
 PROJECTION_MODULES := \
 	BQFBridgePreservesForms MetricProjectionPreservesBounds \
-	PiProjectionPreservesWitnesses E8RootsEnumerate240
+	PiProjectionPreservesWitnesses E8RootsEnumerate240 CyclicClock \
+	E8Roots E8Roots11 HopfProjection13 WeylReflection WeylReflection12
 
 EXECUTION_MODULES := \
 	AtomicKernelDefinesReplay Delta16HasExactPeriodEight \
+	AAL AtomicKernelComputesDelta AtomicKernelReplayDeterministic \
 	SabbathProtocolRejectsRestAttestation OmiPiBridgeConnectsKernel \
-	AuthorityPipelinePreservesDecision OminoParallelSpatialScaling
+	AuthorityPipelinePreservesDecision KERNEL KarnaughReduction04 \
+	OmiRingStep09 OminoArchivePromotionRegistry OminoFiveBinarySubstrate \
+	OminoParallelSpatialScaling ProofRegistry15 RelationalQuotation10 \
+	coalgebraic_bisimulation delta_orbit_theory extract \
+	functorial_semantics test_dd_show verified_execution
 
 CHECKED_MODULES := \
 	$(FOUNDATION_MODULES) $(CLOSURE_MODULES) $(INCIDENCE_MODULES) \
@@ -54,8 +64,19 @@ foundations-proof: prepare-artifacts
 	$(call compile_coq,00-foundations/FiniteBasicsEnumeratesSets.v)
 	$(call compile_coq,00-foundations/RationalVectorsDefineOperations.v)
 	$(call compile_coq,00-foundations/GoldenFieldDefinesArithmetic.v)
+	$(call compile_coq,00-foundations/GoldenField06.v)
+	$(call compile_coq,00-foundations/phi_proof.v)
+	$(call compile_coq,00-foundations/GoldenQuaternion.v)
+	$(call compile_coq,00-foundations/GoldenQuaternion07.v)
 	$(call compile_coq,00-foundations/FiniteTruthTablesCountFunctions.v)
 	$(call compile_coq,00-foundations/OminoSECDEDCell.v)
+	$(call compile_coq,00-foundations/BitmaskClosure03.v)
+	$(call compile_coq,00-foundations/GaugeTable05.v)
+	$(call compile_coq,00-foundations/IdentityChain.v)
+	$(call compile_coq,00-foundations/OMI_bialgebra.v)
+	$(call compile_coq,00-foundations/OminoAxiomaticSovereignty.v)
+	$(call compile_coq,00-foundations/PinchBranchLocalForms14.v)
+	$(call compile_coq,00-foundations/Polynomials.v)
 	$(call compile_coq,00-foundations/EarnedControlBandsEncode.v)
 
 closure-proof: foundations-proof
@@ -66,21 +87,51 @@ closure-proof: foundations-proof
 
 incidence-proof: closure-proof
 	$(call compile_coq,01-incidence/FiniteIncidenceBalancesFlags.v)
+	$(call compile_coq,01-incidence/FanoIncidence.v)
+	$(call compile_coq,01-incidence/FanoIncidence02.v)
+	$(call compile_coq,01-incidence/Fano_PCG.v)
+	$(call compile_coq,01-incidence/IcosianSpan.v)
+	$(call compile_coq,01-incidence/IcosianUnits.v)
+	$(call compile_coq,01-incidence/IcosianUnits08.v)
 	$(call compile_coq,01-incidence/MiquelIncidenceBalancesFlags.v)
+	$(call compile_coq,01-incidence/OmiRingIcosian.v)
+	$(call compile_coq,01-incidence/OmiRingQuotation.v)
 
 projection-proof: incidence-proof
 	$(call compile_coq,03-projection/BQFBridgePreservesForms.v)
 	$(call compile_coq,03-projection/MetricProjectionPreservesBounds.v)
 	$(call compile_coq,03-projection/PiProjectionPreservesWitnesses.v)
 	$(call compile_coq,03-projection/E8RootsEnumerate240.v)
+	$(call compile_coq,03-projection/CyclicClock.v)
+	$(call compile_coq,03-projection/E8Roots.v)
+	$(call compile_coq,03-projection/E8Roots11.v)
+	$(call compile_coq,03-projection/HopfProjection13.v)
+	$(call compile_coq,03-projection/WeylReflection.v)
+	$(call compile_coq,03-projection/WeylReflection12.v)
 
 execution-proof: projection-proof
 	$(call compile_coq,04-execution/AtomicKernelDefinesReplay.v)
 	$(call compile_coq,04-execution/Delta16HasExactPeriodEight.v)
+	$(call compile_coq,04-execution/AAL.v)
+	$(call compile_coq,04-execution/AtomicKernelComputesDelta.v)
+	$(call compile_coq,04-execution/AtomicKernelReplayDeterministic.v)
 	$(call compile_coq,04-execution/SabbathProtocolRejectsRestAttestation.v)
 	$(call compile_coq,04-execution/OmiPiBridgeConnectsKernel.v)
 	$(call compile_coq,04-execution/AuthorityPipelinePreservesDecision.v)
+	$(call compile_coq,04-execution/KERNEL.v)
+	$(call compile_coq,04-execution/KarnaughReduction04.v)
+	$(call compile_coq,04-execution/OmiRingStep09.v)
+	$(call compile_coq,04-execution/OminoArchivePromotionRegistry.v)
+	$(call compile_coq,04-execution/OminoFiveBinarySubstrate.v)
 	$(call compile_coq,04-execution/OminoParallelSpatialScaling.v)
+	$(call compile_coq,04-execution/ProofRegistry15.v)
+	$(call compile_coq,04-execution/RelationalQuotation10.v)
+	$(call compile_coq,04-execution/coalgebraic_bisimulation.v)
+	$(call compile_coq,04-execution/delta_orbit_theory.v)
+	$(call compile_coq,04-execution/extract.v)
+	$(call compile_coq,04-execution/functorial_semantics.v)
+	$(call compile_coq,04-execution/test_dd_show.v)
+	$(call compile_coq,04-execution/verified_execution.v)
 
 proof-registry-lock: SKILLS.md _CoqProject Makefile coq/README.md coq-docs/ARCHIVE.md
 	@rg -q 'coqc -Q \. OmiCore' SKILLS.md

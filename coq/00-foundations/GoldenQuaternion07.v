@@ -1,0 +1,27 @@
+From Coq Require Import QArith.QArith.
+Open Scope Q_scope.
+
+Definition golden_quaternion07_owner : Prop := True.
+Definition golden_quaternion07_proof : golden_quaternion07_owner := I.
+
+Record golden_quaternion07 := {
+  golden07_r : Q;
+  golden07_i : Q;
+  golden07_j : Q;
+  golden07_k : Q
+}.
+
+Definition golden_quaternion07_conj (q : golden_quaternion07) : golden_quaternion07 :=
+  {| golden07_r := golden07_r q;
+     golden07_i := - golden07_i q;
+     golden07_j := - golden07_j q;
+     golden07_k := - golden07_k q |}.
+
+Theorem golden_quaternion07_conj_components : forall q,
+  golden07_r (golden_quaternion07_conj q) == golden07_r q /\
+  golden07_i (golden_quaternion07_conj q) == - golden07_i q /\
+  golden07_j (golden_quaternion07_conj q) == - golden07_j q /\
+  golden07_k (golden_quaternion07_conj q) == - golden07_k q.
+Proof.
+  intros q; repeat split; reflexivity.
+Qed.

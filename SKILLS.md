@@ -23,16 +23,16 @@ ladder, not as a scratch directory and not as an implementation runtime.
   atomic replay, Delta16 period, protocol boundaries, kernel bridges
 ```
 
-The archive is preservation only:
+The archive is provenance after active promotion:
 
 ```text
 coq/_archive
-  preserved drafts excluded from active proof claims
+  preserved drafts paired with independent active proof owners
 ```
 
-Do not delete, rewrite, or promote archived proofs casually. Repair is allowed
-only when the repaired file compiles assumption-free under the current registry
-and has a clear active owner.
+Do not delete or rewrite archived proofs casually. Repair is allowed only when
+the repaired basename enters the active registry as its own independent file and
+compiles assumption-free under the current registry.
 
 ## Compilation Rule
 
@@ -92,9 +92,8 @@ Do not add:
 runtime evaluators
 heap object models
 extraction targets as proof authority
-duplicate compatibility proof files
+merged archive promotion owners
 active assumptions
-parallel active owners for one theorem family
 ```
 
 The proof registry proves deterministic laws. Runtime behavior, C tests,
@@ -124,5 +123,39 @@ Use the active registry for bounded proof authority:
 ```
 
 Do not state archived E8, Weyl, octonion, or Cayley-Dickson material as active
-proof authority until the archive obligations are discharged and the file has
-entered the 00..04 registry.
+proof authority unless citing the promoted active counterpart.
+
+## Axiomatic Promotion Suite
+
+The active registry target is fixed at 64 files:
+
+```text
+23 existing active modules
++ 38 independently promoted archive basenames
++ 3 active bridge modules
+= 64 active modules
+```
+
+Every promoted archive basename must remain an independent active file. Do not
+merge, collapse, or combine promoted archive basenames into aggregate modules.
+
+The promotion audit is:
+
+```text
+coq-docs/ARCHIVE-PROMOTION-MAP.md
+```
+
+Strict checks:
+
+```text
+make proof-registry-lock
+make proof-strict
+make proof-status
+```
+
+`proof-status` must report:
+
+```text
+active_sources=64
+forbidden_active=0
+```

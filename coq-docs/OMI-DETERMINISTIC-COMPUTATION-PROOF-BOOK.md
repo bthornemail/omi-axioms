@@ -1151,7 +1151,121 @@ substrate of width `n` is supplied, the core step descriptor remains constant
 with respect to `n` and with respect to cell values.  It does not hide substrate
 construction cost.
 
-## 19. Reproducing the Proof
+## 19. Axiomatic Promotion Modules
+
+The active registry expands the archived current suite as independent active
+owners.  The archive remains provenance; these active modules are the
+assumption-free promotion surfaces checked by `make proof-strict`.
+
+```text
+`coq/00-foundations/BitmaskClosure03.v`
+`coq/00-foundations/GaugeTable05.v`
+`coq/00-foundations/GoldenField06.v`
+`coq/00-foundations/GoldenQuaternion.v`
+`coq/00-foundations/GoldenQuaternion07.v`
+`coq/00-foundations/IdentityChain.v`
+`coq/00-foundations/OMI_bialgebra.v`
+`coq/00-foundations/OminoAxiomaticSovereignty.v`
+`coq/00-foundations/PinchBranchLocalForms14.v`
+`coq/00-foundations/Polynomials.v`
+`coq/00-foundations/phi_proof.v`
+`coq/01-incidence/FanoIncidence.v`
+`coq/01-incidence/FanoIncidence02.v`
+`coq/01-incidence/Fano_PCG.v`
+`coq/01-incidence/IcosianSpan.v`
+`coq/01-incidence/IcosianUnits.v`
+`coq/01-incidence/IcosianUnits08.v`
+`coq/01-incidence/OmiRingIcosian.v`
+`coq/01-incidence/OmiRingQuotation.v`
+`coq/03-projection/CyclicClock.v`
+`coq/03-projection/E8Roots.v`
+`coq/03-projection/E8Roots11.v`
+`coq/03-projection/HopfProjection13.v`
+`coq/03-projection/WeylReflection.v`
+`coq/03-projection/WeylReflection12.v`
+`coq/04-execution/AAL.v`
+`coq/04-execution/AtomicKernelComputesDelta.v`
+`coq/04-execution/AtomicKernelReplayDeterministic.v`
+`coq/04-execution/KERNEL.v`
+`coq/04-execution/KarnaughReduction04.v`
+`coq/04-execution/OmiRingStep09.v`
+`coq/04-execution/OminoArchivePromotionRegistry.v`
+`coq/04-execution/OminoFiveBinarySubstrate.v`
+`coq/04-execution/ProofRegistry15.v`
+`coq/04-execution/RelationalQuotation10.v`
+`coq/04-execution/coalgebraic_bisimulation.v`
+`coq/04-execution/delta_orbit_theory.v`
+`coq/04-execution/extract.v`
+`coq/04-execution/functorial_semantics.v`
+`coq/04-execution/test_dd_show.v`
+`coq/04-execution/verified_execution.v`
+```
+
+The three bridge modules record that the repository contains 38 current
+archive files and reaches the requested 64 active-module registry without
+relabeling archive provenance.
+
+The first theorem-bearing promotion pass adds exact finite anchors for the
+active promoted modules:
+
+```text
+`bitmask_closure03_mask7_full_byte`
+`bitmask_closure03_step_deterministic`
+`gauge_table05_slot_full_nibble`
+`gauge_table05_witness_is_twenty_four`
+`omino_axiomatic_sovereignty_count_decomposition`
+`pinch_branch_local_forms14_low_full`
+`pinch_branch_local_forms14_high_full`
+`cyclic_clock_local240_wraps_240`
+`cyclic_clock_phase60_wraps_60`
+`e8_roots_split_sums_to_total`
+`e8_roots11_clock_matches_total`
+`karnaugh_reduction04_row_full_byte`
+`karnaugh_reduction04_lookup_all_ones_last_row`
+`kernel_mask64_full`
+`kernel_delta64_deterministic`
+`omino_five_binary_substrate_count`
+`omino_five_binary_substrate_rules_before_cons`
+```
+
+The second theorem-bearing promotion pass removes the remaining zero-anchor
+promoted modules by adding finite owner-local theorems:
+
+```text
+`golden_field06_pair_components`
+`golden_quaternion_norm_unfolds`
+`golden_quaternion07_conj_components`
+`identity_chain_four_square_unfolds`
+`omi_bialgebra_byte_split_sample`
+`polynomials_poly_x_degree_shape`
+`phi_proof_pair_components`
+`fano_incidence_sample_coordinates`
+`fano_incidence02_equal_flag_zero`
+`fano_pcg_byte_halves`
+`icosian_span_components`
+`icosian_units_basis_norm_one`
+`icosian_units08_basis_norm_one`
+`omi_ring_icosian_selector_full_nibble`
+`omi_ring_quotation_zero_witness`
+`hopf_projection13_norm4_unfolds`
+`weyl_reflection_mask16_full`
+`weyl_reflection12_mask16_full`
+`aal_width11_positive`
+`atomic_kernel_computes_delta_deterministic`
+`atomic_kernel_replay_seed_singleton`
+`omi_ring_step09_zero_witness`
+`omino_archive_promotion_registry_decomposition`
+`proof_registry15_faces_times_strata`
+`relational_quotation10_zero_relation_witness`
+`coalgebraic_bisimulation_step_deterministic`
+`delta_orbit_theory_zero_delta`
+`extract_target_word_full64`
+`functorial_semantics_zero_witness`
+`test_dd_show_value_is_metatron_witness`
+`verified_execution_step_deterministic`
+```
+
+## 20. Reproducing the Proof
 
 Requirements:
 
@@ -1182,7 +1296,7 @@ make proof-status
 
 Generated `.vo`, `.glob`, and related files belong only in `artifacts/coq`.
 
-## 20. Glossary
+## 21. Glossary
 
 | Term | Meaning in this proof book |
 | --- | --- |

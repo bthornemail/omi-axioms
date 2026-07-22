@@ -32,11 +32,29 @@ is the sole authoritative readable explanation of every active theorem.
 | Execution | `AuthorityPipelinePreservesDecision.v` | Proves Omnicron framing, Tetragrammatron decision, and Metatron preservation. | Proved |
 | Execution | `OminoParallelSpatialScaling.v` | Proves constant step descriptor over a supplied parallel OMINO substrate. | Proved |
 
+## Axiomatic Promotion Registry
+
+The strict registry now expands to 64 active Coq files:
+
+```text
+23 existing active modules
++ 38 independent archive promotions
++ 3 active bridge modules
+= 64 active modules
+```
+
+The promoted archive basenames compile as independent active owners under the
+same `coqc -Q . OmiCore` and `coqchk` chain.  Their full placement map is:
+
+```text
+coq-docs/ARCHIVE-PROMOTION-MAP.md
+```
+
 ## Policy
 
-Each theorem family has one active owner. Dependencies import that owner rather
-than reproduce its theorem. Archived files are preserved but are never compiled
-or counted as proved.
+Every active file is an independent proof owner.  Archived files are preserved
+as provenance, while their promoted active counterparts are compiled and
+counted only after they are assumption-free.
 
 ```text
 Coq proves.
