@@ -1,3 +1,4 @@
+-Q coq OmiCore
 -Q coq/00-foundations ''
 -Q coq/01-incidence ''
 -Q coq/02-closure ''

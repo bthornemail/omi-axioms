@@ -10,3 +10,20 @@
 | `_archive/` | Preserved unresolved drafts; excluded from the strict registry |
 
 Generated compiler output belongs in `../artifacts/coq/`, never beside source.
+
+Active compilation must preserve the canonical root map:
+
+```text
+coqc -Q . OmiCore
+```
+
+The existing categorized roots are retained for the current unqualified module
+imports, but `OmiCore` is the registry-wide logical root.
+
+Archived bitwise proofs repaired for active use must adopt the current 16-bit
+forms:
+
+```coq
+Definition mask16 (x : N) : N := N.land x 0xFFFF.
+Definition r0 (x : N) : N := N.lxor x 0xAAAA.
+```

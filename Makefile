@@ -3,7 +3,8 @@ COQCHK ?= coqchk
 COQDIR := coq
 ARTIFACTDIR := artifacts/coq
 COQARTIFACTS := ../$(ARTIFACTDIR)
-COQFLAGS := -Q $(COQARTIFACTS) '' \
+COQFLAGS := -Q . OmiCore \
+	-Q $(COQARTIFACTS) '' \
 	-Q 00-foundations '' \
 	-Q 01-incidence '' \
 	-Q 02-closure '' \
@@ -74,7 +75,20 @@ execution-proof: projection-proof
 	$(call compile_coq,04-execution/OmiPiBridgeConnectsKernel.v)
 	$(call compile_coq,04-execution/AuthorityPipelinePreservesDecision.v)
 
-proof-strict:
+proof-registry-lock: SKILLS.md _CoqProject Makefile coq/README.md coq-docs/ARCHIVE.md
+	@rg -q 'coqc -Q \. OmiCore' SKILLS.md
+	@rg -q 'Definition mask16 \(x : N\) : N := N\.land x 0xFFFF\.' SKILLS.md
+	@rg -q 'Definition r0 \(x : N\) : N := N\.lxor x 0xAAAA\.' SKILLS.md
+	@rg -q '00-foundations' SKILLS.md
+	@rg -q '01-incidence' SKILLS.md
+	@rg -q '02-closure' SKILLS.md
+	@rg -q '03-projection' SKILLS.md
+	@rg -q '04-execution' SKILLS.md
+	@rg -q -- '-Q \. OmiCore' Makefile
+	@rg -q -- '-Q coq OmiCore' _CoqProject
+	@printf '%s\n' "Coq registry lock verified"
+
+proof-strict: proof-registry-lock
 	./tools/check-strict-coq.sh
 	$(MAKE) proof
 	cd $(COQDIR) && $(COQCHK) $(COQFLAGS) $(CHECKED_MODULES)
@@ -99,6 +113,6 @@ clean:
 	rm -f $(COQDIR)/.lia.cache $(COQDIR)/.nia.cache $(COQDIR)/.nra.cache
 	find $(ARTIFACTDIR) -mindepth 1 ! -name '.gitkeep' -delete
 
-.PHONY: proof proof-strict proof-status foundations-proof closure-proof \
+.PHONY: proof proof-strict proof-registry-lock proof-status foundations-proof closure-proof \
 	incidence-proof projection-proof execution-proof polyharmonic-proof \
 	proof-book-check prepare-artifacts clean

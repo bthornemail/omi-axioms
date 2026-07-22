@@ -66,3 +66,22 @@ An archived module may return to an active category only after it:
 3. passes `coqchk`;
 4. has a dedicated `coq-docs` page;
 5. states any corrected or rejected historical claim explicitly.
+
+Archived bitwise modules that mention Golden Quaternions, E8, Pfister
+identities, orbit kernels, or Omi-Ring transitions must also be repaired against
+the current bounded primitives before promotion:
+
+```coq
+Definition mask16 (x : N) : N := N.land x 0xFFFF.
+Definition r0 (x : N) : N := N.lxor x 0xAAAA.
+```
+
+The required restoration obligations are:
+
+```text
+mask16 idempotence:
+  mask16 (mask16 x) = mask16 x
+
+r0 true involution:
+  r0 (r0 x) = x
+```
