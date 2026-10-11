@@ -184,3 +184,8 @@ clean:
 .PHONY: proof proof-strict proof-registry-lock proof-status foundations-proof closure-proof \
 	incidence-proof projection-proof execution-proof polyharmonic-proof \
 	proof-book-check prepare-artifacts clean
+
+# boxedPINE invariants, outside the 70-module registry (see tracking/BoxedPineInvariants.v).
+.PHONY: tracking
+tracking:
+	coqc -o tracking/BoxedPineInvariants.vo tracking/BoxedPineInvariants.v
