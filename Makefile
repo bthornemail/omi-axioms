@@ -189,3 +189,8 @@ clean:
 .PHONY: tracking
 tracking:
 	coqc -o tracking/BoxedPineInvariants.vo tracking/BoxedPineInvariants.v
+
+# The subject-predicate-object index of numeric constants (P1 candidates, outside coq/)
+.PHONY: js
+js:
+	node js/check.mjs
