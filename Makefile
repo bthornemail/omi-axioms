@@ -190,7 +190,11 @@ clean:
 tracking:
 	coqc -o tracking/BoxedPineInvariants.vo tracking/BoxedPineInvariants.v
 
-# The subject-predicate-object index of numeric constants (P1 candidates, outside coq/)
-.PHONY: js
+# The JavaScript proofs (P1 candidates, outside coq/): the subject-predicate-object
+# index of numeric constants, and the I-series catalogue with its documents.
+.PHONY: js js-docs
 js:
-	node js/check.mjs
+	node js/spo/check.mjs
+	for f in js/catalog/I-*.ts; do node "$$f" > /dev/null || exit 1; done
+js-docs:
+	node js/tools/build.mjs

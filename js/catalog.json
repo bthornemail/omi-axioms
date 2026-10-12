@@ -1,0 +1,6002 @@
+[
+  {
+    "id": "I-108",
+    "tag": "30",
+    "title": "head = modulus, tail = prime",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-108)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "5cfe47fd899a1f415d58c32e5df24a9022e7174e542db831ea35563fc1705d49",
+        "bytes": 1833
+      },
+      "base64": "js/vm/30.b64",
+      "base64url": "js/vm/30.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.deepStrictEqual(atoms, [0, 1, 2, 3]);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(xor(...atoms), 0);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(atoms.reduce((a, b) => a + b, 0), 6);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(xor(1, 1, 1, 1), 0);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(3960, 8 * 9 * 5 * 11);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-109",
+    "tag": "31",
+    "title": "two chains, shared zero (derived)",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-109)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "1cb196b0a0703bf2b4df54857bcc70eafcf4d2465e386a317f125c3937423dcd",
+        "bytes": 1719
+      },
+      "base64": "js/vm/31.b64",
+      "base64url": "js/vm/31.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.strictEqual(xor(...chainA), 0);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(xor(1, 2, 3), 0);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(10 % 10, 0);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(9 % 9, 0);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(11 % 11, 0);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-110",
+    "tag": "32",
+    "title": "cover = uncovering; NaN/RangeError/TypeError split",
+    "category": "catch-at-0",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-110)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "5d295b0653f766f179cb179d981220a6d7b788659b547e127ced8e39101f2770",
+        "bytes": 1824
+      },
+      "base64": "js/vm/32.b64",
+      "base64url": "js/vm/32.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.ok(apiThrew);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.ok(Number.isNaN(1 % 0));`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(1 / 0, Infinity);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.ok(typeThrew);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(17n + 17n, 34n);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(0x17n, 23n);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-111",
+    "tag": "33",
+    "title": "faces are the reverse view; no seam",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-111)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "f959210346c4ba005d3e5e11d0083df733cfc1989a89ebe090fffe0b67cc67af",
+        "bytes": 1796
+      },
+      "base64": "js/vm/33.b64",
+      "base64url": "js/vm/33.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.strictEqual(V.length, 2);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(E.length, 6);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.deepStrictEqual([...V, ...E].sort(), NIBBLE);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(faces.length, 64);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-112",
+    "tag": "34",
+    "title": "stellated tetrahedron; swap = presentation",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-112)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "5cb0b27901205bdb3276c674ee243c428372184ab2ff324d86fb0c2c7155cea4",
+        "bytes": 1683
+      },
+      "base64": "js/vm/34.b64",
+      "base64url": "js/vm/34.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.strictEqual(V - E + F, 2);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(0x8000 ^ 0x0000, 0x8000);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(swap16(0x1234), 0x3412);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(3 * 2, 6);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-113",
+    "tag": "35",
+    "title": "V/E/F partition; stellation at 0x3",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-113)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "eae2affb903072896b2d08ff9623b383df36b4cbd80e3ff389262481808e341b",
+        "bytes": 1841
+      },
+      "base64": "js/vm/35.b64",
+      "base64url": "js/vm/35.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.strictEqual(V.length + E.length, 8);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.ok(V.every(v => !E.includes(v)));`"
+      },
+      {
+        "section": null,
+        "text": "`assert.deepStrictEqual(NIBBLE.filter(n => within(n, 0x0, 0x3)), [0,1,2,3]);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.deepStrictEqual(NIBBLE.filter(n => !within(n, 0x0, 0x3)), [4,5,6,7]);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-114",
+    "tag": "36",
+    "title": "prefix = index length, not value",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-114)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "1daa49ce838818769d919f7bb6d46084ed4504172285343a96b2a2759f255775",
+        "bytes": 1590
+      },
+      "base64": "js/vm/36.b64",
+      "base64url": "js/vm/36.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.strictEqual(0b11, 3);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(0o17, 15);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(0x1F, 31);`"
+      },
+      {
+        "section": null,
+        "text": "bigint"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(2 + 2, 4);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-115",
+    "tag": "37",
+    "title": "0n vertex, 0u reference; swap permutes order",
+    "category": "head-value-tail",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-115)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "6f3eab00b403d83aaa9c23acb33c9a8047567d085f5d420ea195ab662579f171",
+        "bytes": 1785
+      },
+      "base64": "js/vm/37.b64",
+      "base64url": "js/vm/37.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.ok(threw);`"
+      },
+      {
+        "section": null,
+        "text": "<"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(0x003C, 60);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(swap16(0x003C), 0x3C00);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(60, 60);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-116",
+    "tag": "38",
+    "title": "index 60 pinned; 0,2,1 interchange",
+    "category": "catch-at-0",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-116)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "c26674d2f1828df0e84b31047de107dadd0b7095a4d1e6c9c2298ea7d45e7302",
+        "bytes": 1777
+      },
+      "base64": "js/vm/38.b64",
+      "base64url": "js/vm/38.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.strictEqual(prev, 60);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(readNibble(0x1F, false), 0xF);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(readNibble(0x1F, true), 0x1);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.notDeepStrictEqual([0, 2, 1], [0, 1, 2]);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-117",
+    "tag": "39",
+    "title": "PINE box",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-117)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "d0210e30ee64d103db29bb3e5a62b27493312f14d75d3da744b805a4e5273ee2",
+        "bytes": 1832
+      },
+      "base64": "js/vm/39.b64",
+      "base64url": "js/vm/39.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.strictEqual(PINE.length, 4);`"
+      },
+      {
+        "section": null,
+        "text": "0n"
+      },
+      {
+        "section": null,
+        "text": "0e"
+      },
+      {
+        "section": null,
+        "text": "0u"
+      },
+      {
+        "section": null,
+        "text": "0u"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(0x1F - 0x00 + 1, 32);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(0x9F - 0x80 + 1, 32);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-118",
+    "tag": "3A",
+    "title": "decimal = derivative, scientific = exception",
+    "category": "catch-at-0",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-118)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "8a94d1f183e4075acee431ee0d21014d5c02f5016a53858f2a248113e2727b90",
+        "bytes": 1759
+      },
+      "base64": "js/vm/3A.b64",
+      "base64url": "js/vm/3A.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.ok(fracPart > 0 && fracPart < 1);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.ok(Math.abs(((x + h) - x) / h - 1) < 1e-3);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.ok((1e21).toExponential().includes(\"e\"));`"
+      },
+      {
+        "section": null,
+        "text": "`assert.ok((1e-21).toExponential().includes(\"e\"));`"
+      },
+      {
+        "section": null,
+        "text": "1e+21"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-119",
+    "tag": "3B",
+    "title": "globalThis node; base-36 overlay",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-119)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "c737db23a731a0f9a71949d02ff008e32049a18b8309799106e4f8a082634067",
+        "bytes": 1765
+      },
+      "base64": "js/vm/3B.b64",
+      "base64url": "js/vm/3B.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "object"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(globalThis, globalThis.globalThis);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(count, 36);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-120",
+    "tag": "3C",
+    "title": "3! overlay (streams, GED)",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-120)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "f60f9a1bd4efcb323c79585992c07760269f55590f1af6ad597fd2a4811924e3",
+        "bytes": 1928
+      },
+      "base64": "js/vm/3C.b64",
+      "base64url": "js/vm/3C.b64url",
+      "vm": "holds",
+      "worker": "fails: Expected values to be strictly equal:"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.strictEqual(stdin.fd, 0);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(stdout.fd, 1);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(stderr.fd, 2);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(perms([0,1,2]).length, 6);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-121",
+    "tag": "3D",
+    "title": "nibble-pair root; (index, value)",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-121)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "8c85632dc020b76ac301cf9c35a8fb4215624db5046d2e04552305a2c6946d89",
+        "bytes": 1696
+      },
+      "base64": "js/vm/3D.b64",
+      "base64url": "js/vm/3D.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "number"
+      },
+      {
+        "section": null,
+        "text": "number"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(0x0, 0);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(0x00, 0);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(0x0, 0x00);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(0x1F - 0x00 + 1, 32);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-122",
+    "tag": "3E",
+    "title": "the roll-up: runs 44 records (I-108 … I-151) and reports their shared shapes",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "dd8c9ea1b98336487fee3762fc695cee65a01bc34dd662cc27cc2d9258a897b7",
+        "bytes": 49923
+      },
+      "base64": "js/vm/3E.b64",
+      "base64url": "js/vm/3E.b64url",
+      "vm": "holds",
+      "worker": "fails: Expected values to be strictly equal:"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "every record in it passes (44 of 44)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-123",
+    "tag": "3F",
+    "title": "S3 at four scales; XOR/Fano/byte",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-122.ts (roll-up record I-123)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "8969675c1a09fc863af0bb74d55fac55b61f056fba10d785a72a7a574b81cbbb",
+        "bytes": 1767
+      },
+      "base64": "js/vm/3F.b64",
+      "base64url": "js/vm/3F.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "`assert.strictEqual(GF2_3 - 1, FANO);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(1 ^ 2 ^ 3, 0);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-124",
+    "tag": "3G",
+    "title": "4 circuits, 7 positions, 12th meta, nibble-encoded",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-124.ts",
+      "js/catalog/I-122.ts (roll-up record I-124)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "3c25c6de905f2ae9e60d6baca4454f4bc4d056ba016a7214a664c1f8734aed8c",
+        "bytes": 2996
+      },
+      "base64": "js/vm/3G.b64",
+      "base64url": "js/vm/3G.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "I-124 4 XOR circuits"
+      },
+      {
+        "section": null,
+        "text": "I-124 7 logical positions"
+      },
+      {
+        "section": null,
+        "text": "I-124 GF(2)^3 \\\\ {0} = 7"
+      },
+      {
+        "section": null,
+        "text": "I-124 line (1,2,3)"
+      },
+      {
+        "section": null,
+        "text": "I-124 line (1,4,5)"
+      },
+      {
+        "section": null,
+        "text": "I-124 line (2,4,6)"
+      },
+      {
+        "section": null,
+        "text": "I-124 line (3,4,7)"
+      },
+      {
+        "section": null,
+        "text": "I-124 12 = 0xC"
+      },
+      {
+        "section": null,
+        "text": "I-124 12 = 7 + 5 (head/tail pair)"
+      },
+      {
+        "section": null,
+        "text": "I-124 meta above the 7"
+      },
+      {
+        "section": null,
+        "text": "I-124 high nibble of 12"
+      },
+      {
+        "section": null,
+        "text": "I-124 low nibble of 12"
+      },
+      {
+        "section": null,
+        "text": "I-124 position ${i} in low nibble range"
+      },
+      {
+        "section": null,
+        "text": "I-124 0xC0 = 192"
+      },
+      {
+        "section": null,
+        "text": "I-124 192 mod 8 = 0 (closes on octet)"
+      },
+      {
+        "section": null,
+        "text": "I-124 high nibble = meta"
+      },
+      {
+        "section": null,
+        "text": "I-124 low nibble = base"
+      },
+      {
+        "section": null,
+        "text": "I-124 encode 12 -> '0c'"
+      },
+      {
+        "section": null,
+        "text": "I-124 decode '0c' -> 12"
+      },
+      {
+        "section": null,
+        "text": "I-124 round-trip"
+      },
+      {
+        "section": null,
+        "text": "I-124 4 circuits -> 7 observable"
+      },
+      {
+        "section": null,
+        "text": "I-124 12 = 1100 in 4 bits"
+      },
+      {
+        "section": null,
+        "text": "I-124 high bit pair = 11"
+      },
+      {
+        "section": null,
+        "text": "I-124 low bit pair = 00"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-125",
+    "tag": "3H",
+    "title": "I-125 (corrected)",
+    "category": "catch-at-0",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-125.ts",
+      "js/catalog/I-122.ts (roll-up record I-125)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "f864685a68a9507a6b376706507c1be85885c442efbc1ed4fafa3893d4b1441d",
+        "bytes": 2436
+      },
+      "base64": "js/vm/3H.b64",
+      "base64url": "js/vm/3H.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "I-125 three calls"
+      },
+      {
+        "section": null,
+        "text": "`assert.deepStrictEqual(calls[0], { index: 60, expected: 128, replacement: 64 });`"
+      },
+      {
+        "section": null,
+        "text": "`assert.deepStrictEqual(calls[1], { index: 128, expected: 64, replacement: 60 });`"
+      },
+      {
+        "section": null,
+        "text": "`assert.deepStrictEqual(calls[2], { index: 64, expected: 60, replacement: 128 });`"
+      },
+      {
+        "section": null,
+        "text": "I-125 call 1 read 128"
+      },
+      {
+        "section": null,
+        "text": "I-125 call 1 wrote 64 at index 60"
+      },
+      {
+        "section": null,
+        "text": "I-125 E % 0 = NaN"
+      },
+      {
+        "section": null,
+        "text": "I-125 call landed at index 0"
+      },
+      {
+        "section": null,
+        "text": "I-125 call wrote index 0"
+      },
+      {
+        "section": null,
+        "text": "I-125 NaN -> index 0"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(chain[0] - chain[1], 12);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(chain[1] - chain[2], 12);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.deepStrictEqual(chain.map(v => v / 12), [6, 5, 4]);`"
+      },
+      {
+        "section": null,
+        "text": "I-125 reductions"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(fact(0), 1);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(fact(8), 40320);`"
+      },
+      {
+        "section": null,
+        "text": "`assert.strictEqual(fact(8) % fact(0), 0);`"
+      },
+      {
+        "section": null,
+        "text": "I-125 all close at 0"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-126",
+    "tag": "3I",
+    "title": "Node Buffer equivalents of I-108…I-125",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-126.ts",
+      "js/catalog/I-122.ts (roll-up record I-126)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "d821b492129b93cb9932b118a27956ab197a0c997ad84574940db71c9abfaef6",
+        "bytes": 5137
+      },
+      "base64": "js/vm/3I.b64",
+      "base64url": "js/vm/3I.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "I-126.1: byte indexing (0x00..0x1F window)",
+        "text": "I-126 byte index 60"
+      },
+      {
+        "section": "I-126.1: byte indexing (0x00..0x1F window)",
+        "text": "I-126 128 bytes"
+      },
+      {
+        "section": "I-126.1: byte indexing (0x00..0x1F window)",
+        "text": "I-126 high nibble of byte 0"
+      },
+      {
+        "section": "I-126.1: byte indexing (0x00..0x1F window)",
+        "text": "I-126 low nibble of byte 0"
+      },
+      {
+        "section": "I-126.2: declared endianness",
+        "text": "I-126 BE first byte = 0x12"
+      },
+      {
+        "section": "I-126.2: declared endianness",
+        "text": "I-126 BE last byte = 0x78"
+      },
+      {
+        "section": "I-126.2: declared endianness",
+        "text": "I-126 LE first byte = 0x78"
+      },
+      {
+        "section": "I-126.2: declared endianness",
+        "text": "I-126 LE last byte = 0x12"
+      },
+      {
+        "section": "I-126.2: declared endianness",
+        "text": "I-126 LE reads back"
+      },
+      {
+        "section": "I-126.2: declared endianness",
+        "text": "I-126 BE reads swapped"
+      },
+      {
+        "section": "I-126.3: native swaps = the 6 DOF (I-115)",
+        "text": "I-126 swap16"
+      },
+      {
+        "section": "I-126.3: native swaps = the 6 DOF (I-115)",
+        "text": "I-126 swap32"
+      },
+      {
+        "section": "I-126.3: native swaps = the 6 DOF (I-115)",
+        "text": "I-126 swap64"
+      },
+      {
+        "section": "I-126.3: native swaps = the 6 DOF (I-115)",
+        "text": "I-126 6 DOF"
+      },
+      {
+        "section": "I-126.4: value invariant under swap",
+        "text": "I-126 value before swap"
+      },
+      {
+        "section": "I-126.4: value invariant under swap",
+        "text": "I-126 value after swap (direction adjusted)"
+      },
+      {
+        "section": "I-126.5: no Atomics on Buffer; use a TypedArray view",
+        "text": "I-126 compareExchange on view"
+      },
+      {
+        "section": "I-126.5: no Atomics on Buffer; use a TypedArray view",
+        "text": "I-126 wrote through view"
+      },
+      {
+        "section": "I-126.5: no Atomics on Buffer; use a TypedArray view",
+        "text": "I-126 buffer sees the write"
+      },
+      {
+        "section": "I-126.5: no Atomics on Buffer; use a TypedArray view",
+        "text": "I-126 next byte untouched"
+      },
+      {
+        "section": "I-126.6: the 60/128/64 cycle on Buffer",
+        "text": "I-126 cycle read 1"
+      },
+      {
+        "section": "I-126.6: the 60/128/64 cycle on Buffer",
+        "text": "I-126 cycle read 2"
+      },
+      {
+        "section": "I-126.6: the 60/128/64 cycle on Buffer",
+        "text": "I-126 cycle read 3"
+      },
+      {
+        "section": "I-126.7: E % 0 coerces to index 0 (same as I-125)",
+        "text": "I-126 E % 0 = NaN"
+      },
+      {
+        "section": "I-126.7: E % 0 coerces to index 0 (same as I-125)",
+        "text": "I-126 NaN coerces to index 0"
+      },
+      {
+        "section": "I-126.7: E % 0 coerces to index 0 (same as I-125)",
+        "text": "I-126 wrote index 0"
+      },
+      {
+        "section": "I-126.8: base-36 overlay on Buffer bytes",
+        "text": "I-126 PINE bytes are in the 36-block"
+      },
+      {
+        "section": "I-126.8: base-36 overlay on Buffer bytes",
+        "text": "I-126 hex read"
+      },
+      {
+        "section": "I-126.8: base-36 overlay on Buffer bytes",
+        "text": "I-126 hex decode"
+      }
+    ],
+    "corrections": [],
+    "witnesses": [
+      "swap16 on Buffer"
+    ]
+  },
+  {
+    "id": "I-127",
+    "tag": "3J",
+    "title": "error taxonomy + DOM inheritance",
+    "category": "catch-at-0",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-127.ts",
+      "js/catalog/I-122.ts (roll-up record I-127)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "d408eaa6c8ad0904787c827144fc19f2f25459549b0d4a9876f550efb3e20fdb",
+        "bytes": 2445
+      },
+      "base64": "js/vm/3J.b64",
+      "base64url": "js/vm/3J.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "I-127 float -> TypeError"
+      },
+      {
+        "section": null,
+        "text": "I-127 exact message"
+      },
+      {
+        "section": null,
+        "text": "I-127 out-of-bounds -> RangeError"
+      },
+      {
+        "section": null,
+        "text": "I-127 mod 0 -> NaN (no frame)"
+      },
+      {
+        "section": null,
+        "text": "I-127 ${name} works"
+      },
+      {
+        "section": null,
+        "text": "I-127 8 integer spaces"
+      },
+      {
+        "section": null,
+        "text": "I-127 4 widths x 2 signedness"
+      },
+      {
+        "section": null,
+        "text": "I-127 html is EventTarget"
+      },
+      {
+        "section": null,
+        "text": "I-127 html is Node"
+      },
+      {
+        "section": null,
+        "text": "I-127 html is Element"
+      },
+      {
+        "section": null,
+        "text": "I-127 html is HTMLElement"
+      },
+      {
+        "section": null,
+        "text": "I-127 Node <: EventTarget"
+      },
+      {
+        "section": null,
+        "text": "I-127 Element <: Node"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-127b",
+    "tag": "3JB",
+    "title": "the octet of Atomics spaces",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-127b.ts",
+      "js/catalog/I-122.ts (roll-up record I-127b)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "d78167a434623cfd390cb35ae98d183d3d53d8f10f9d7b3b8faee2595459b731",
+        "bytes": 1102
+      },
+      "base64": "js/vm/3JB.b64",
+      "base64url": "js/vm/3JB.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "octet of spaces"
+      },
+      {
+        "section": null,
+        "text": "${name} works"
+      },
+      {
+        "section": null,
+        "text": "4 x 2 = 8"
+      }
+    ],
+    "corrections": [],
+    "witnesses": [
+      "TypeError: not an integer typed array",
+      "Atomics accepts exactly 8 integer spaces"
+    ]
+  },
+  {
+    "id": "I-128",
+    "tag": "3K",
+    "title": "prompt characters + Atomics cycle + mod-12 chain",
+    "category": "catch-at-0",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-128.ts",
+      "js/catalog/I-122.ts (roll-up record I-128)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "8160a7dc8a4e78d1fe166a22ea7cc2973a79883e70d32f7928948b6abd916708",
+        "bytes": 4995
+      },
+      "base64": "js/vm/3K.b64",
+      "base64url": "js/vm/3K.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "All prompt bytes are in the 36-block or control",
+        "text": "byte 0x${b.toString(16)} is in a known band"
+      },
+      {
+        "section": "mod-12 reductions of the indices",
+        "text": "60 mod 12 = 0"
+      },
+      {
+        "section": "mod-12 reductions of the indices",
+        "text": "128 mod 12 = 8"
+      },
+      {
+        "section": "mod-12 reductions of the indices",
+        "text": "64 mod 12 = 4"
+      },
+      {
+        "section": "The compare-exchange cycle at those indices",
+        "text": "swap 1 read index 60"
+      },
+      {
+        "section": "The compare-exchange cycle at those indices",
+        "text": "swap 1 wrote index 60"
+      },
+      {
+        "section": "The compare-exchange cycle at those indices",
+        "text": "swap 2 read index 128"
+      },
+      {
+        "section": "The compare-exchange cycle at those indices",
+        "text": "swap 2 wrote index 128"
+      },
+      {
+        "section": "The compare-exchange cycle at those indices",
+        "text": "swap 3 read index 64"
+      },
+      {
+        "section": "The compare-exchange cycle at those indices",
+        "text": "swap 3 wrote index 64"
+      },
+      {
+        "section": "The compare-exchange cycle at those indices",
+        "text": "final: 60 holds old 128"
+      },
+      {
+        "section": "The compare-exchange cycle at those indices",
+        "text": "final: 128 holds old 64"
+      },
+      {
+        "section": "The compare-exchange cycle at those indices",
+        "text": "final: 64 holds old 60"
+      },
+      {
+        "section": "The E % 0 hinge: NaN coerces to index 0",
+        "text": "E % 0 = NaN"
+      },
+      {
+        "section": "The E % 0 hinge: NaN coerces to index 0",
+        "text": "E % 0 lands at index 0"
+      },
+      {
+        "section": "The Unicode / control-plane bands of the prompt",
+        "text": "ESC is C0 control 0x1B"
+      },
+      {
+        "section": "The Unicode / control-plane bands of the prompt",
+        "text": "'[' after ESC"
+      },
+      {
+        "section": "The Unicode / control-plane bands of the prompt",
+        "text": "prompt has control codes"
+      },
+      {
+        "section": "uname output is pure printable ASCII",
+        "text": "uname byte 0x${b.toString(16)} printable"
+      },
+      {
+        "section": "The 0..64..128 range in the mod 0..12 frame",
+        "text": "chain 0/64/128 -> 0/4/8"
+      },
+      {
+        "section": "The 0..64..128 range in the mod 0..12 frame",
+        "text": "the mod-12 set {0,4,8}"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-128b",
+    "tag": "3KB",
+    "title": "cycle ON prompt characters",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-128b.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "ddfa7b706054f0a91a77db1eccdd0712ef8788cee2c4d176c03f960f7a250f14",
+        "bytes": 1244
+      },
+      "base64": "js/vm/3KB.b64",
+      "base64url": "js/vm/3KB.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "A now holds old B"
+      },
+      {
+        "section": null,
+        "text": "B now holds old C"
+      },
+      {
+        "section": null,
+        "text": "C now holds old A"
+      },
+      {
+        "section": null,
+        "text": "`assert.deepStrictEqual([m12(10), m12(20), m12(30)], [10, 8, 6]);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-129",
+    "tag": "3L",
+    "title": "prompt sigils, 64-blocks, 60^n, mod-12",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-129.ts",
+      "js/catalog/I-122.ts (roll-up record I-129)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "f2bff9c3a49db72ea81d06f393762841adcc8579b498ac065be6aaeac1622f54",
+        "bytes": 5061
+      },
+      "base64": "js/vm/3L.b64",
+      "base64url": "js/vm/3L.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The two 64-blocks: 0x00-0x3F, 0x40-0x7F",
+        "text": "low block = 64"
+      },
+      {
+        "section": "The two 64-blocks: 0x00-0x3F, 0x40-0x7F",
+        "text": "high block = 64"
+      },
+      {
+        "section": "The two 64-blocks: 0x00-0x3F, 0x40-0x7F",
+        "text": "low ends at 63"
+      },
+      {
+        "section": "The two 64-blocks: 0x00-0x3F, 0x40-0x7F",
+        "text": "high ends at 127"
+      },
+      {
+        "section": "60 ^ n over 0..63 = the comparison operators",
+        "text": "60^0..3 = 60..63"
+      },
+      {
+        "section": "60 ^ n over 0..63 = the comparison operators",
+        "text": "<=>? block"
+      },
+      {
+        "section": "60 ^ n over 64..67 = the brace/tilde block",
+        "text": "60^64..67 = 124..127"
+      },
+      {
+        "section": "60 ^ n over 64..67 = the brace/tilde block",
+        "text": "{|}~ block"
+      },
+      {
+        "section": "The 16-code block 0x30-0x3F, low nibbles",
+        "text": "0x30-0x3F low nibbles"
+      },
+      {
+        "section": "The 16 codes mod 12",
+        "text": "0x30-0x3F mod 12 wraps the full ring"
+      },
+      {
+        "section": "The 16 codes mod 12",
+        "text": "first 12 = full ring"
+      },
+      {
+        "section": "The :; group and its nibbles",
+        "text": "':' = 0x3A"
+      },
+      {
+        "section": "The :; group and its nibbles",
+        "text": "';' = 0x3B"
+      },
+      {
+        "section": "The :; group and its nibbles",
+        "text": "':' low nibble A"
+      },
+      {
+        "section": "The :; group and its nibbles",
+        "text": "';' low nibble B"
+      },
+      {
+        "section": "The :; group and its nibbles",
+        "text": "':' mod 12 = 10"
+      },
+      {
+        "section": "The :; group and its nibbles",
+        "text": "';' mod 12 = 11"
+      },
+      {
+        "section": "The digit-group descents (9876, 5432, 1)",
+        "text": "4 groups of 4 consecutive nibbles"
+      },
+      {
+        "section": "The crossing at 60 (0x3C)",
+        "text": "0x3C = 60"
+      },
+      {
+        "section": "The crossing at 60 (0x3C)",
+        "text": "60^0 = 60 = '<'"
+      },
+      {
+        "section": "The crossing at 60 (0x3C)",
+        "text": "60^64 = 124 = '|'"
+      },
+      {
+        "section": "The crossing at 60 (0x3C)",
+        "text": "60 mod 12 = 0 (the ring's start)"
+      },
+      {
+        "section": "The crossing at 60 (0x3C)",
+        "text": "124 mod 12 = 4"
+      },
+      {
+        "section": "Atomics.compareExchange at 60 on the two blocks",
+        "text": "swap at 60 read"
+      },
+      {
+        "section": "Atomics.compareExchange at 60 on the two blocks",
+        "text": "swap at 60 wrote 0x3C"
+      },
+      {
+        "section": "Atomics.compareExchange at 60 on the two blocks",
+        "text": "swap at 124 read"
+      },
+      {
+        "section": "Atomics.compareExchange at 60 on the two blocks",
+        "text": "swap at 124 wrote '|'"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-129b",
+    "tag": "3LB",
+    "title": "60^n hex-digit descent",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-129b.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "75182c25c452b45e1821cb6862739d2c174c8b0841046f12ea555075edbfb975",
+        "bytes": 5081
+      },
+      "base64": "js/vm/3LB.b64",
+      "base64url": "js/vm/3LB.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The orbit, n = 64..83",
+        "text": "high nibble crosses 7 -> 6 at n=80"
+      },
+      {
+        "section": "Low nibbles",
+        "text": "hex-digit descent"
+      },
+      {
+        "section": "The /A-F0-9/ partition",
+        "text": "group1 consecutive"
+      },
+      {
+        "section": "The /A-F0-9/ partition",
+        "text": "group2 consecutive"
+      },
+      {
+        "section": "The /A-F0-9/ partition",
+        "text": "group3 consecutive"
+      },
+      {
+        "section": "The /A-F0-9/ partition",
+        "text": "group4 consecutive"
+      },
+      {
+        "section": "The /A-F0-9/ partition",
+        "text": "g1 - g2 = 4"
+      },
+      {
+        "section": "The /A-F0-9/ partition",
+        "text": "g2 - g3 = 4"
+      },
+      {
+        "section": "The /A-F0-9/ partition",
+        "text": "g3 - g4 = 4"
+      },
+      {
+        "section": "The /A-F0-9/ partition",
+        "text": "group1 = letters (C D E F)"
+      },
+      {
+        "section": "The /A-F0-9/ partition",
+        "text": "group4 = digits (0 1 2 3)"
+      },
+      {
+        "section": "The /A-F0-9/ partition",
+        "text": "group2 starts with digits"
+      },
+      {
+        "section": "The /A-F0-9/ partition",
+        "text": "group2 ends with letters"
+      },
+      {
+        "section": "The comparison operators and braces",
+        "text": "60^0..3 = <=>?"
+      },
+      {
+        "section": "The comparison operators and braces",
+        "text": "60^64..67 = |}~DEL"
+      },
+      {
+        "section": "The 0x30-0x3F block",
+        "text": "0x30-0x3F block"
+      },
+      {
+        "section": "The 0x30-0x3F block",
+        "text": "0x30-0x3F mod 12"
+      },
+      {
+        "section": "The 0x30-0x3F block",
+        "text": "full mod-12 ring"
+      },
+      {
+        "section": "The 0x30-0x3F block",
+        "text": "4-tail = nibble"
+      },
+      {
+        "section": "Prompt sigils",
+        "text": "${ch} = 0x${code.toString(16)}"
+      },
+      {
+        "section": "The 64-blocks",
+        "text": "`assert.strictEqual(low[0], 0); assert.strictEqual(low[63], 63);`"
+      },
+      {
+        "section": "The 64-blocks",
+        "text": "`assert.strictEqual(high[0], 64); assert.strictEqual(high[63], 127);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-130",
+    "tag": "3M",
+    "title": "two rates + 5-slice + Unicode lift",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-130.ts",
+      "js/catalog/I-122.ts (roll-up record I-130)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "590d7f82f43b4d9b9e7e9eb6be6ef7782e42e09d86c279bc7f6aacf79b72515f",
+        "bytes": 5174
+      },
+      "base64": "js/vm/3M.b64",
+      "base64url": "js/vm/3M.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The two rates",
+        "text": "even rate step +2"
+      },
+      {
+        "section": "The two rates",
+        "text": "odd rate step +2"
+      },
+      {
+        "section": "The two rates",
+        "text": "even rate all even"
+      },
+      {
+        "section": "The two rates",
+        "text": "odd rate all odd"
+      },
+      {
+        "section": "The two rates",
+        "text": "evens = {8,10}"
+      },
+      {
+        "section": "The two rates",
+        "text": "odds = {9,11}"
+      },
+      {
+        "section": "The 5-slice: invariant under all four moduli",
+        "text": "5 mod ${m} = 5"
+      },
+      {
+        "section": "The 5-slice: invariant under all four moduli",
+        "text": "5 mod ${m} = 5"
+      },
+      {
+        "section": "The two rates converge at adjacent columns (4 and 5)",
+        "text": "even top = 0x40000000 (4-column)"
+      },
+      {
+        "section": "The two rates converge at adjacent columns (4 and 5)",
+        "text": "odd top = 0x4FFFFFFF (5-column - 1)"
+      },
+      {
+        "section": "The two rates converge at adjacent columns (4 and 5)",
+        "text": "difference = 0x0FFFFFFF"
+      },
+      {
+        "section": "The two rates converge at adjacent columns (4 and 5)",
+        "text": "= 2^28 - 1"
+      },
+      {
+        "section": "The two rates converge at adjacent columns (4 and 5)",
+        "text": "= 268435455"
+      },
+      {
+        "section": "The two rates converge at adjacent columns (4 and 5)",
+        "text": "odd top + 1 = 5-column"
+      },
+      {
+        "section": "The two rates converge at adjacent columns (4 and 5)",
+        "text": "odd top below 5-column"
+      },
+      {
+        "section": "The two rates converge at adjacent columns (4 and 5)",
+        "text": "odd top at or above 4-column"
+      },
+      {
+        "section": "The lift up to 32 bits",
+        "text": "even max within 32 bits"
+      },
+      {
+        "section": "The lift up to 32 bits",
+        "text": "odd max within 32 bits"
+      },
+      {
+        "section": "The 5-slice remains constant through the lift",
+        "text": "5-slice constant after lift"
+      },
+      {
+        "section": "The exceptional position: 5 is outside the {8..11} span",
+        "text": "5 below the span"
+      },
+      {
+        "section": "The exceptional position: 5 is outside the {8..11} span",
+        "text": "gcd(5,8)  = 1"
+      },
+      {
+        "section": "The exceptional position: 5 is outside the {8..11} span",
+        "text": "gcd(5,9)  = 1"
+      },
+      {
+        "section": "The exceptional position: 5 is outside the {8..11} span",
+        "text": "gcd(5,10) = 5"
+      },
+      {
+        "section": "The exceptional position: 5 is outside the {8..11} span",
+        "text": "gcd(5,11) = 1"
+      },
+      {
+        "section": "The exceptional position: 5 is outside the {8..11} span",
+        "text": "5 divides the even rate's upper modulus"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-131",
+    "tag": "3N",
+    "title": "adding 6; walls at 4, 5, 6",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-131.ts",
+      "js/catalog/I-122.ts (roll-up record I-131)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "15b27cb43f4fea6c7681dac479a42c854bd70c4834d78967f236bb151392c7a9",
+        "bytes": 4483
+      },
+      "base64": "js/vm/3N.b64",
+      "base64url": "js/vm/3N.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The extended modulus set",
+        "text": "even rate = {6,8,10}"
+      },
+      {
+        "section": "The extended modulus set",
+        "text": "odd rate = {9,11}"
+      },
+      {
+        "section": "The extended modulus set",
+        "text": "5 is the exception (below the set)"
+      },
+      {
+        "section": "6 bridges the two rates",
+        "text": "6 shares 2 with the even rate"
+      },
+      {
+        "section": "6 bridges the two rates",
+        "text": "6 shares 3 with the odd rate"
+      },
+      {
+        "section": "6 bridges the two rates",
+        "text": "6 = 2 × 3"
+      },
+      {
+        "section": "Even lift from 6",
+        "text": "6 -> 6-column"
+      },
+      {
+        "section": "Even lift from 6",
+        "text": "8 -> 4-column"
+      },
+      {
+        "section": "Even lift from 6",
+        "text": "10 -> 5-column"
+      },
+      {
+        "section": "Even lift from 6",
+        "text": "9 -> 5-column - 1"
+      },
+      {
+        "section": "Three walls: 4, 5, 6",
+        "text": "walls ascending 4 < 5 < 6"
+      },
+      {
+        "section": "Three walls: 4, 5, 6",
+        "text": "step 0x10000000 between walls"
+      },
+      {
+        "section": "Three walls: 4, 5, 6",
+        "text": "step 0x10000000 between walls"
+      },
+      {
+        "section": "Three walls: 4, 5, 6",
+        "text": "wall 4"
+      },
+      {
+        "section": "Three walls: 4, 5, 6",
+        "text": "wall 5"
+      },
+      {
+        "section": "Three walls: 4, 5, 6",
+        "text": "wall 6"
+      },
+      {
+        "section": "The 0,2,1 rate-offset pattern",
+        "text": "selector[0] = 0 (even offset)"
+      },
+      {
+        "section": "The 0,2,1 rate-offset pattern",
+        "text": "selector[1] = 2 (multiplier)"
+      },
+      {
+        "section": "The 0,2,1 rate-offset pattern",
+        "text": "selector[2] = 1 (odd offset)"
+      },
+      {
+        "section": "The 0,2,1 rate-offset pattern",
+        "text": "even step from 6"
+      },
+      {
+        "section": "The 0,2,1 rate-offset pattern",
+        "text": "odd step from 9"
+      },
+      {
+        "section": "The 9, 10, 11 run",
+        "text": "9,10,11 run"
+      },
+      {
+        "section": "The 9, 10, 11 run",
+        "text": "9 = 3²"
+      },
+      {
+        "section": "The 9, 10, 11 run",
+        "text": "10 = 2 × 5"
+      },
+      {
+        "section": "The 9, 10, 11 run",
+        "text": "11 = prime"
+      },
+      {
+        "section": "The 9, 10, 11 run",
+        "text": "extended set"
+      },
+      {
+        "section": "The 5-slice stays exceptional",
+        "text": "5 mod ${m} = 5 (still constant)"
+      }
+    ],
+    "corrections": [
+      "high bit exclusive (<= → <)"
+    ],
+    "witnesses": [
+      "high bit exclusive (<= → <)"
+    ]
+  },
+  {
+    "id": "I-132",
+    "tag": "3O",
+    "title": "the exponent meeting",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-132.ts",
+      "js/catalog/I-122.ts (roll-up record I-132)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "73613a464452ee0ec10b6e3758367b8dc5c88df0b44f07cd27bb655675471d37",
+        "bytes": 3995
+      },
+      "base64": "js/vm/3O.b64",
+      "base64url": "js/vm/3O.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The low powers",
+        "text": "2^4 = 16 (hex base)"
+      },
+      {
+        "section": "The low powers",
+        "text": "2^5 = 32 (C0 band)"
+      },
+      {
+        "section": "The low powers",
+        "text": "2^6 = 64 (64-block)"
+      },
+      {
+        "section": "The Unicode plane",
+        "text": "2^16 = 65536 (BMP)"
+      },
+      {
+        "section": "The Unicode plane",
+        "text": "2^16 - 1 = 0xFFFF"
+      },
+      {
+        "section": "The 16^10 = 2^40 identity",
+        "text": "16^10 = 2^40"
+      },
+      {
+        "section": "The 16^10 = 2^40 identity",
+        "text": "2^40 = 1.1 trillion"
+      },
+      {
+        "section": "The 16^10 = 2^40 identity",
+        "text": "2^40 is past 32 bits"
+      },
+      {
+        "section": "Every power of 16 is a power of 2 with exponent divisible by 4",
+        "text": "16^${n} = 2^${4*n}"
+      },
+      {
+        "section": "Every power of 16 is a power of 2 with exponent divisible by 4",
+        "text": "exponent ${exp} divisible by 4"
+      },
+      {
+        "section": "The two powers-of-16 in the set",
+        "text": "2^16 = 16^4"
+      },
+      {
+        "section": "The two powers-of-16 in the set",
+        "text": "16^10 = 2^40"
+      },
+      {
+        "section": "The gaps",
+        "text": "exponent gaps: 1,1,10,24"
+      },
+      {
+        "section": "The gaps",
+        "text": "value ratios: 2, 2, 1024, 16M"
+      },
+      {
+        "section": "The gaps",
+        "text": "2^10 = 1024 (KB)"
+      },
+      {
+        "section": "The gaps",
+        "text": "2^24 = 16M"
+      },
+      {
+        "section": "The hex-digit boundary alignment",
+        "text": "exponents divisible by 4: 4, 16, 40"
+      },
+      {
+        "section": "The complete chain from 2^4 to 2^40",
+        "text": "37 steps from 2^4 to 2^40"
+      },
+      {
+        "section": "The complete chain from 2^4 to 2^40",
+        "text": "chain starts at 16"
+      },
+      {
+        "section": "The complete chain from 2^4 to 2^40",
+        "text": "chain ends at 2^40"
+      },
+      {
+        "section": "Byte alignment",
+        "text": "2^16 bytes = 64 KiB"
+      },
+      {
+        "section": "Byte alignment",
+        "text": "2^40 bytes = 1024 GiB"
+      },
+      {
+        "section": "Byte alignment",
+        "text": "2^40 = 1024^4 = 1 TiB (in 1024-base)"
+      },
+      {
+        "section": "The Unicode plane anchors",
+        "text": "${p.name} = 2^16 points"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-133",
+    "tag": "3P",
+    "title": "base-36 delineation via 59/60, 127, 63",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-133.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "145c4ca7d757fb49bbc12dbd41c10617f60af439125ebddad29a8722bcf603bc",
+        "bytes": 4838
+      },
+      "base64": "js/vm/3P.b64",
+      "base64url": "js/vm/3P.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The base-36 block",
+        "text": "block has exactly 36 symbols"
+      },
+      {
+        "section": "The block's boundaries",
+        "text": "first symbol 0x30 = 48"
+      },
+      {
+        "section": "The block's boundaries",
+        "text": "last symbol 0x5A = 90"
+      },
+      {
+        "section": "The block's boundaries",
+        "text": "gap starts at 0x3A = 58"
+      },
+      {
+        "section": "The block's boundaries",
+        "text": "gap ends at 0x40 = 64"
+      },
+      {
+        "section": "The block's boundaries",
+        "text": "59 (';') is in the gap"
+      },
+      {
+        "section": "The block's boundaries",
+        "text": "60 ('<') is in the gap"
+      },
+      {
+        "section": "The block's boundaries",
+        "text": "59 is not in the block"
+      },
+      {
+        "section": "The block's boundaries",
+        "text": "60 is not in the block"
+      },
+      {
+        "section": "The block's boundaries",
+        "text": "63 ('?') is in the gap"
+      },
+      {
+        "section": "The block's boundaries",
+        "text": "63 is not in the block"
+      },
+      {
+        "section": "The block's boundaries",
+        "text": "127 (DEL) is not in the block"
+      },
+      {
+        "section": "The 0/1-based distinction",
+        "text": "59 and 60 are adjacent"
+      },
+      {
+        "section": "The 0/1-based distinction",
+        "text": "59 = 0x3B (';')"
+      },
+      {
+        "section": "The 0/1-based distinction",
+        "text": "60 = 0x3C ('<')"
+      },
+      {
+        "section": "Compare the mod-36 reductions",
+        "text": "A and B differ mod 36"
+      },
+      {
+        "section": "Which one delineates? The boundary test",
+        "text": "no values below the block"
+      },
+      {
+        "section": "The pattern that DOES delineate",
+        "text": "47 is just below the block"
+      },
+      {
+        "section": "The pattern that DOES delineate",
+        "text": "91 is just above the block"
+      },
+      {
+        "section": "The pattern that DOES delineate",
+        "text": "47 and 91 are outside the block"
+      },
+      {
+        "section": "The Atomics calls both ways",
+        "text": "A: read 127 at index 59"
+      },
+      {
+        "section": "The Atomics calls both ways",
+        "text": "A: wrote 63 at index 59"
+      },
+      {
+        "section": "The Atomics calls both ways",
+        "text": "B: read 127 at index 60"
+      },
+      {
+        "section": "The Atomics calls both ways",
+        "text": "B: wrote 63 at index 60"
+      },
+      {
+        "section": "The Atomics calls both ways",
+        "text": "A left 63 at 59"
+      },
+      {
+        "section": "The Atomics calls both ways",
+        "text": "B left 63 at 60"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-133b",
+    "tag": "3PB",
+    "title": "delineating :; <=>? {|}~",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-133b.ts",
+      "js/catalog/I-122.ts (roll-up record I-133b)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "7dc0bc8eee223b74538014547408e887d9fc248c1524c5fe703198958ee122ec",
+        "bytes": 5198
+      },
+      "base64": "js/vm/3PB.b64",
+      "base64url": "js/vm/3PB.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The three groups",
+        "text": "`:;` = 58-59"
+      },
+      {
+        "section": "The three groups",
+        "text": "`<=>?` = 60-63"
+      },
+      {
+        "section": "The three groups",
+        "text": "`{|}~` = 123-126"
+      },
+      {
+        "section": "The three groups",
+        "text": "DEL = 126 + 1"
+      },
+      {
+        "section": "The character checks",
+        "text": "58 = :"
+      },
+      {
+        "section": "The character checks",
+        "text": "59 = ;"
+      },
+      {
+        "section": "The character checks",
+        "text": "60 = <"
+      },
+      {
+        "section": "The character checks",
+        "text": "63 = ?"
+      },
+      {
+        "section": "The character checks",
+        "text": "123 = {"
+      },
+      {
+        "section": "The character checks",
+        "text": "124 = |"
+      },
+      {
+        "section": "The character checks",
+        "text": "125 = }"
+      },
+      {
+        "section": "The character checks",
+        "text": "126 = ~"
+      },
+      {
+        "section": "The character checks",
+        "text": "127 = DEL"
+      },
+      {
+        "section": "The two candidate patterns",
+        "text": "A starts at `;`"
+      },
+      {
+        "section": "The two candidate patterns",
+        "text": "B starts at `<`"
+      },
+      {
+        "section": "The two candidate patterns",
+        "text": "both use 127 (DEL)"
+      },
+      {
+        "section": "The two candidate patterns",
+        "text": "both use 63 (`?`)"
+      },
+      {
+        "section": "The groups each set touches",
+        "text": "A hits end of `:;`"
+      },
+      {
+        "section": "The groups each set touches",
+        "text": "B hits start of `<=>?`"
+      },
+      {
+        "section": "The groups each set touches",
+        "text": "both hit end of `<=>?`"
+      },
+      {
+        "section": "The groups each set touches",
+        "text": "both hit past `{|}~`"
+      },
+      {
+        "section": "The group sizes",
+        "text": "sizes 2,4,4"
+      },
+      {
+        "section": "The group sizes",
+        "text": "2 + 4 = 6"
+      },
+      {
+        "section": "The group sizes",
+        "text": "4 + 1 (DEL) = 5"
+      },
+      {
+        "section": "The mod-36 anchors",
+        "text": "59 -> N"
+      },
+      {
+        "section": "The mod-36 anchors",
+        "text": "60 -> O"
+      },
+      {
+        "section": "The mod-36 anchors",
+        "text": "63 -> R"
+      },
+      {
+        "section": "The mod-36 anchors",
+        "text": "127 -> J"
+      },
+      {
+        "section": "The mod-36 anchors",
+        "text": "R - J = 8 (octet)"
+      },
+      {
+        "section": "The Atomics calls",
+        "text": "A read at 59"
+      },
+      {
+        "section": "The Atomics calls",
+        "text": "A wrote at 59"
+      },
+      {
+        "section": "The Atomics calls",
+        "text": "B read at 60"
+      },
+      {
+        "section": "The Atomics calls",
+        "text": "B wrote at 60"
+      },
+      {
+        "section": "The Atomics calls",
+        "text": "index 59 = ?"
+      },
+      {
+        "section": "The Atomics calls",
+        "text": "index 60 = ?"
+      },
+      {
+        "section": "The Atomics calls",
+        "text": "index 63 still DEL"
+      },
+      {
+        "section": "The two readings",
+        "text": "B starts one after A"
+      },
+      {
+        "section": "The two readings",
+        "text": "0x3B = `;` (inclusive end)"
+      },
+      {
+        "section": "The two readings",
+        "text": "0x3C = `<` (exclusive start)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-134",
+    "tag": "3Q",
+    "title": "base-36 tag literal taxonomy",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-134.ts",
+      "js/catalog/I-122.ts (roll-up record I-134)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "13538bfa135e55271fcdc41337b638f712398386c68e7201a5684b6766e4e526",
+        "bytes": 6867
+      },
+      "base64": "js/vm/3Q.b64",
+      "base64url": "js/vm/3Q.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The four groups",
+        "text": ":; = 2"
+      },
+      {
+        "section": "The four groups",
+        "text": "<=>? = 4"
+      },
+      {
+        "section": "The four groups",
+        "text": "{|}~ = 4"
+      },
+      {
+        "section": "The four groups",
+        "text": "` = 0x60"
+      },
+      {
+        "section": "The backtick is between _ and a",
+        "text": "_ = 0x5F"
+      },
+      {
+        "section": "The backtick is between _ and a",
+        "text": "` = 0x60"
+      },
+      {
+        "section": "The backtick is between _ and a",
+        "text": "a = 0x61"
+      },
+      {
+        "section": "The backtick is between _ and a",
+        "text": "` = _ + 1"
+      },
+      {
+        "section": "The backtick is between _ and a",
+        "text": "` + 1 = a"
+      },
+      {
+        "section": "Case-flip = 0x20",
+        "text": "${upper} -> ${lower} = 0x20"
+      },
+      {
+        "section": "Case-flip = 0x20",
+        "text": "space = 0x20 = 32"
+      },
+      {
+        "section": "Case-flip = 0x20",
+        "text": "last non-printing = 0x1F"
+      },
+      {
+        "section": "Case-flip = 0x20",
+        "text": "first printing = 0x20"
+      },
+      {
+        "section": "The print boundary",
+        "text": "0x1F non-printing"
+      },
+      {
+        "section": "The print boundary",
+        "text": "0x20 printing (space)"
+      },
+      {
+        "section": "The print boundary",
+        "text": "0x7E printing (~)"
+      },
+      {
+        "section": "The print boundary",
+        "text": "0x7F non-printing (DEL)"
+      },
+      {
+        "section": "ESC and BOM as frame-switch markers",
+        "text": "ESC = 0x1B = 27"
+      },
+      {
+        "section": "ESC and BOM as frame-switch markers",
+        "text": "BOM BE = 0xFEFF"
+      },
+      {
+        "section": "ESC and BOM as frame-switch markers",
+        "text": "BOM LE = 0xFFFE"
+      },
+      {
+        "section": "ESC and BOM as frame-switch markers",
+        "text": "BOM BE and LE are byte swaps (swap16)"
+      },
+      {
+        "section": "ESC and BOM as frame-switch markers",
+        "text": "BOM BE ⊕ LE = 0x0101: each byte flips its low bit"
+      },
+      {
+        "section": "The C0/C1 mirror",
+        "text": "C0 ${c} -> C1 ${c1}"
+      },
+      {
+        "section": "The {|}~ / <=>? mirror",
+        "text": "brace - compare = 0x3F"
+      },
+      {
+        "section": "The {|}~ / <=>? mirror",
+        "text": "~ - ? = 0x3F"
+      },
+      {
+        "section": "The {|}~ / <=>? mirror",
+        "text": "offset = 63 = '?'"
+      },
+      {
+        "section": "The {|}~ / <=>? mirror",
+        "text": "upper mirror of ` = 0x9F"
+      },
+      {
+        "section": "Base-36 subscripts",
+        "text": "36 base-36 digits"
+      },
+      {
+        "section": "Base-36 subscripts",
+        "text": "${g} has ${variants} variants"
+      },
+      {
+        "section": "Tagged template literal",
+        "text": "cooked strings"
+      },
+      {
+        "section": "Tagged template literal",
+        "text": "interpolated values"
+      },
+      {
+        "section": "Tagged template literal",
+        "text": "TemplateLiteralArray"
+      },
+      {
+        "section": "Proxy/Catch (trap) vs Reflect/RegExp (default)",
+        "text": "proxy get -> Reflect.get"
+      },
+      {
+        "section": "Proxy/Catch (trap) vs Reflect/RegExp (default)",
+        "text": "proxy get -> Reflect.get"
+      },
+      {
+        "section": "Proxy/Catch (trap) vs Reflect/RegExp (default)",
+        "text": "catch handles the throw"
+      },
+      {
+        "section": "Proxy/Catch (trap) vs Reflect/RegExp (default)",
+        "text": "RegExp literal matches"
+      },
+      {
+        "section": "Proxy/Catch (trap) vs Reflect/RegExp (default)",
+        "text": "RegExp source"
+      },
+      {
+        "section": "COBS and 0x00",
+        "text": "COBS removes interior zeros"
+      },
+      {
+        "section": "COBS and 0x00",
+        "text": "COBS adds framing bytes"
+      },
+      {
+        "section": "The Extended ASCII proxy boundary at 0x80",
+        "text": "DEL = last of ASCII"
+      },
+      {
+        "section": "The Extended ASCII proxy boundary at 0x80",
+        "text": "first of Extended ASCII / C1"
+      },
+      {
+        "section": "The Extended ASCII proxy boundary at 0x80",
+        "text": "0x80 - ` = 0x20 (print boundary)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-135",
+    "tag": "3R",
+    "title": "Proxy/Reflect/Catch/Template",
+    "category": "catch-at-0",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-135.ts",
+      "js/catalog/I-122.ts (roll-up record I-135)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "b6e205d44b34e12b9a4225e0470e6f0a9b97c1069b469628b1f1d1ac584429bb",
+        "bytes": 5494
+      },
+      "base64": "js/vm/3R.b64",
+      "base64url": "js/vm/3R.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "BOM byte-swap (corrected from I-134)",
+        "text": "BOM BE byte-swapped = LE"
+      },
+      {
+        "section": "BOM byte-swap (corrected from I-134)",
+        "text": "BOM LE byte-swapped = BE"
+      },
+      {
+        "section": "The error taxonomy",
+        "text": "TypeError"
+      },
+      {
+        "section": "The error taxonomy",
+        "text": "RangeError"
+      },
+      {
+        "section": "The error taxonomy",
+        "text": "EvalError"
+      },
+      {
+        "section": "The error taxonomy",
+        "text": "TypeError <: Error"
+      },
+      {
+        "section": "The error taxonomy",
+        "text": "RangeError <: Error"
+      },
+      {
+        "section": "The error taxonomy",
+        "text": "EvalError <: Error"
+      },
+      {
+        "section": "Conditional catch",
+        "text": "TypeError -> space"
+      },
+      {
+        "section": "Conditional catch",
+        "text": "RangeError -> range"
+      },
+      {
+        "section": "Conditional catch",
+        "text": "EvalError -> code"
+      },
+      {
+        "section": "Conditional catch",
+        "text": "Error -> default"
+      },
+      {
+        "section": "Proxy traps and Reflect methods correspond",
+        "text": "Reflect.${trap} exists for Proxy trap"
+      },
+      {
+        "section": "Proxy traps and Reflect methods correspond",
+        "text": "Reflect.has works"
+      },
+      {
+        "section": "Proxy traps and Reflect methods correspond",
+        "text": "Reflect.has false"
+      },
+      {
+        "section": "Proxy forwards to Reflect",
+        "text": "proxy get"
+      },
+      {
+        "section": "Proxy forwards to Reflect",
+        "text": "proxy has"
+      },
+      {
+        "section": "Invariant violation -> TypeError",
+        "text": "invariant violation throws TypeError"
+      },
+      {
+        "section": "Reflect.apply as tag invocation",
+        "text": "cooked"
+      },
+      {
+        "section": "Reflect.apply as tag invocation",
+        "text": "values"
+      },
+      {
+        "section": "Reflect.apply as tag invocation",
+        "text": "strings.length"
+      },
+      {
+        "section": "Reflect.apply as tag invocation",
+        "text": "strings.raw"
+      },
+      {
+        "section": "The full chain",
+        "text": "proxy over tag result"
+      },
+      {
+        "section": "RegExp via Reflect",
+        "text": "Reflect.apply(exec, /ab+/, ...)"
+      },
+      {
+        "section": "Revocable proxy",
+        "text": "before revoke"
+      },
+      {
+        "section": "Revocable proxy",
+        "text": "after revoke -> TypeError"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-136",
+    "tag": "3S",
+    "title": "all catches converge at 0",
+    "category": "catch-at-0",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-136.ts",
+      "js/catalog/I-122.ts (roll-up record I-136)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "a01b4e8d5885e62c5c8428bdafd9fc774189f0be93f51f989515aa9b19de0836",
+        "bytes": 5550
+      },
+      "base64": "js/vm/3S.b64",
+      "base64url": "js/vm/3S.b64url",
+      "vm": "holds",
+      "worker": "fails: stdin = fd 0 (catch)"
+    },
+    "statements": [
+      {
+        "section": "The three error types plus default",
+        "text": "space"
+      },
+      {
+        "section": "The three error types plus default",
+        "text": "range"
+      },
+      {
+        "section": "The three error types plus default",
+        "text": "code"
+      },
+      {
+        "section": "The three error types plus default",
+        "text": "default"
+      },
+      {
+        "section": "All four branch from one catch value",
+        "text": "caught is the error"
+      },
+      {
+        "section": "All four branch from one catch value",
+        "text": "classified as range"
+      },
+      {
+        "section": "All four branch from one catch value",
+        "text": "all four classify"
+      },
+      {
+        "section": "The standard streams are fds 0, 1, 2",
+        "text": "stdin = fd 0 (catch)"
+      },
+      {
+        "section": "The standard streams are fds 0, 1, 2",
+        "text": "stdout = fd 1 (default)"
+      },
+      {
+        "section": "The standard streams are fds 0, 1, 2",
+        "text": "stderr = fd 2 (throw)"
+      },
+      {
+        "section": "The 0, 2, 1 interchange",
+        "text": "step 1: catch (stdin)"
+      },
+      {
+        "section": "The 0, 2, 1 interchange",
+        "text": "step 2: throw (stderr)"
+      },
+      {
+        "section": "The 0, 2, 1 interchange",
+        "text": "step 3: default (stdout)"
+      },
+      {
+        "section": "The 0, 2, 1 interchange",
+        "text": "not natural order"
+      },
+      {
+        "section": "All four layers converge at 0",
+        "text": "JS catch == OS catch point"
+      },
+      {
+        "section": "All four layers converge at 0",
+        "text": "converge at 0"
+      },
+      {
+        "section": "EventTarget is the DOM root",
+        "text": "Element <: EventTarget"
+      },
+      {
+        "section": "EventTarget is the DOM root",
+        "text": "Element <: Node"
+      },
+      {
+        "section": "EventTarget is the DOM root",
+        "text": "event caught at EventTarget"
+      },
+      {
+        "section": "The catch is the same shape at every layer",
+        "text": "${name} has a catch point and a channel"
+      },
+      {
+        "section": "The catch is the same shape at every layer",
+        "text": "4 layers"
+      },
+      {
+        "section": "The error taxonomy from I-110/I-127",
+        "text": "space violation -> TypeError"
+      },
+      {
+        "section": "The error taxonomy from I-110/I-127",
+        "text": "range violation -> RangeError"
+      },
+      {
+        "section": "The error taxonomy from I-110/I-127",
+        "text": "no frame -> NaN"
+      },
+      {
+        "section": "All three channels reach the catch at 0",
+        "text": "read from fd 0"
+      },
+      {
+        "section": "All three channels reach the catch at 0",
+        "text": "write to fd 1"
+      },
+      {
+        "section": "All three channels reach the catch at 0",
+        "text": "error to fd 2"
+      },
+      {
+        "section": "All three channels reach the catch at 0",
+        "text": "catch at 0"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-137",
+    "tag": "3T",
+    "title": "mod_rewrite as two-phase reduction",
+    "category": "catch-at-0",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-137.ts",
+      "js/catalog/I-122.ts (roll-up record I-137)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "c3d13c446b4183f320cc2ea7a09f06c4dc2e2e320c6c90bce5cf25dcfa9c5d21",
+        "bytes": 6558
+      },
+      "base64": "js/vm/3T.b64",
+      "base64url": "js/vm/3T.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Test the ladder",
+        "text": "exact/exact -> tier 1"
+      },
+      {
+        "section": "Test the ladder",
+        "text": "exact/wild -> tier 2"
+      },
+      {
+        "section": "Test the ladder",
+        "text": "wild/port -> tier 3"
+      },
+      {
+        "section": "Test the ladder",
+        "text": "wild/wild -> tier 4"
+      },
+      {
+        "section": "The reduction ladder: 4 -> 3 -> 2 -> 1 -> 0 axes",
+        "text": "tier 1: no wildcards"
+      },
+      {
+        "section": "The reduction ladder: 4 -> 3 -> 2 -> 1 -> 0 axes",
+        "text": "tier 4: both wildcards"
+      },
+      {
+        "section": "The reduction ladder: 4 -> 3 -> 2 -> 1 -> 0 axes",
+        "text": "tier 5: no axes (catch-all)"
+      },
+      {
+        "section": "Phase 2: name match",
+        "text": "phase2: match on Host header"
+      },
+      {
+        "section": "Phase 2: name match",
+        "text": "phase2: fallback to first vhost"
+      },
+      {
+        "section": "The catch-all (main server / _default_)",
+        "text": "no match -> main server (no *:* vhost)"
+      },
+      {
+        "section": "The catch-all (main server / _default_)",
+        "text": "with *:* vhost, wildcard catches all"
+      },
+      {
+        "section": "CIDR as the mod reduction",
+        "text": "/24 network"
+      },
+      {
+        "section": "CIDR as the mod reduction",
+        "text": "192.168.1.5 in 192.168.1.0/24"
+      },
+      {
+        "section": "CIDR as the mod reduction",
+        "text": "/24 has 256 addresses"
+      },
+      {
+        "section": "CIDR as the mod reduction",
+        "text": "/8 has 16M addresses"
+      },
+      {
+        "section": "The three protocol levels",
+        "text": "transport"
+      },
+      {
+        "section": "The three protocol levels",
+        "text": "application"
+      },
+      {
+        "section": "The three protocol levels",
+        "text": "application"
+      },
+      {
+        "section": "The three protocol levels",
+        "text": "HTTP codes"
+      },
+      {
+        "section": "The three protocol levels",
+        "text": "FTP codes"
+      },
+      {
+        "section": "The mapping to the vault",
+        "text": "7 mappings"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-138",
+    "tag": "3U",
+    "title": "HTTP/1.1 headers as the three-reference index",
+    "category": "head-value-tail",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-138.ts",
+      "js/catalog/I-122.ts (roll-up record I-138)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "2150216fd6e7f3b7e32aec3cfb58b754bfe0eeb6740cf3b6075b7d71e097e4ce",
+        "bytes": 6549
+      },
+      "base64": "js/vm/3U.b64",
+      "base64url": "js/vm/3U.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The three references",
+        "text": "Location = forward ref"
+      },
+      {
+        "section": "The three references",
+        "text": "Content-Location = back ref"
+      },
+      {
+        "section": "The three references",
+        "text": "ETag = content address"
+      },
+      {
+        "section": "The three references",
+        "text": "three refs in one response"
+      },
+      {
+        "section": "ETag forms",
+        "text": "ETag ${et} is well-formed"
+      },
+      {
+        "section": "ETag forms",
+        "text": "W/ marks weak ETag"
+      },
+      {
+        "section": "ETag forms",
+        "text": "strong ETag has no prefix"
+      },
+      {
+        "section": "Conditional headers as guards",
+        "text": "5 conditionals"
+      },
+      {
+        "section": "Conditional headers as guards",
+        "text": "If-Match: * exists"
+      },
+      {
+        "section": "Conditional headers as guards",
+        "text": "If-None-Match: * exists"
+      },
+      {
+        "section": "Conditional headers as guards",
+        "text": "If-Match:* and exists"
+      },
+      {
+        "section": "Conditional headers as guards",
+        "text": "If-Match:* and no entity"
+      },
+      {
+        "section": "Conditional headers as guards",
+        "text": "If-None-Match:* and exists"
+      },
+      {
+        "section": "Conditional headers as guards",
+        "text": "If-None-Match:* and no entity"
+      },
+      {
+        "section": "Content-Range as mod reduction",
+        "text": "Content-Range parses"
+      },
+      {
+        "section": "Content-Range as mod reduction",
+        "text": "first-byte-pos"
+      },
+      {
+        "section": "Content-Range as mod reduction",
+        "text": "last-byte-pos"
+      },
+      {
+        "section": "Content-Range as mod reduction",
+        "text": "instance-length"
+      },
+      {
+        "section": "Content-Range as mod reduction",
+        "text": "last >= first (valid range)"
+      },
+      {
+        "section": "Content-Range as mod reduction",
+        "text": "range within length"
+      },
+      {
+        "section": "Content-Range as mod reduction",
+        "text": "${ex.range} first"
+      },
+      {
+        "section": "Content-Range as mod reduction",
+        "text": "${ex.range} last"
+      },
+      {
+        "section": "Content-Range as mod reduction",
+        "text": "${ex.range} len"
+      },
+      {
+        "section": "The three-level error taxonomy",
+        "text": "space"
+      },
+      {
+        "section": "The three-level error taxonomy",
+        "text": "frame"
+      },
+      {
+        "section": "The three-level error taxonomy",
+        "text": "range"
+      },
+      {
+        "section": "The three-level error taxonomy",
+        "text": "code"
+      },
+      {
+        "section": "Date / Last-Modified / Expires as temporal frames",
+        "text": "three temporal frames"
+      },
+      {
+        "section": "Date / Last-Modified / Expires as temporal frames",
+        "text": "modified after cache"
+      },
+      {
+        "section": "Date / Last-Modified / Expires as temporal frames",
+        "text": "not modified before cache"
+      },
+      {
+        "section": "The three references map to the vault's (head, tail, value)",
+        "text": "3 mappings"
+      },
+      {
+        "section": "The wildcard condition",
+        "text": "no entity -> perform"
+      },
+      {
+        "section": "The wildcard condition",
+        "text": "entity exists -> skip"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-139",
+    "tag": "3V",
+    "title": "Host header, window frame, uppercase-as-header",
+    "category": "head-value-tail",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-139.ts",
+      "js/catalog/I-122.ts (roll-up record I-139)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "f64cea0e68c7b0ff3082a94ca1d0053971eb53b43f54cdbc5644650399f6b669",
+        "bytes": 5986
+      },
+      "base64": "js/vm/3V.b64",
+      "base64url": "js/vm/3V.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Host header is mandatory (RFC §14.23)",
+        "text": "no Host -> 400"
+      },
+      {
+        "section": "Host header is mandatory (RFC §14.23)",
+        "text": "Host present -> 200"
+      },
+      {
+        "section": "Every HTTP/1.1 browser connects to the global node",
+        "text": "exactly one mandatory header"
+      },
+      {
+        "section": "Every HTTP/1.1 browser connects to the global node",
+        "text": "Host is the mandatory header"
+      },
+      {
+        "section": "window inherits from EventTarget",
+        "text": "window <: EventTarget"
+      },
+      {
+        "section": "window as a nested frame: window[4][4][19]",
+        "text": "address (4, 4, 19)"
+      },
+      {
+        "section": "window as a nested frame: window[4][4][19]",
+        "text": "4th frame"
+      },
+      {
+        "section": "window as a nested frame: window[4][4][19]",
+        "text": "4th subframe"
+      },
+      {
+        "section": "window as a nested frame: window[4][4][19]",
+        "text": "cell 19"
+      },
+      {
+        "section": "The number at (4, 4, 19)",
+        "text": "base-36 index 19 = J"
+      },
+      {
+        "section": "The number at (4, 4, 19)",
+        "text": "ASCII 0x13 = 19"
+      },
+      {
+        "section": "The number at (4, 4, 19)",
+        "text": "0x13 = 0x10 | 0x03 (DC3)"
+      },
+      {
+        "section": "Uppercase letters are headers to path indices",
+        "text": "A1"
+      },
+      {
+        "section": "Uppercase letters are headers to path indices",
+        "text": "B2"
+      },
+      {
+        "section": "Uppercase letters are headers to path indices",
+        "text": "Z9"
+      },
+      {
+        "section": "Uppercase and lowercase converge in base-36",
+        "text": "A -> a = 0x20"
+      },
+      {
+        "section": "Uppercase and lowercase converge in base-36",
+        "text": "Z -> z = 0x20"
+      },
+      {
+        "section": "Uppercase and lowercase converge in base-36",
+        "text": "base-36 A = 10"
+      },
+      {
+        "section": "Uppercase and lowercase converge in base-36",
+        "text": "base-36 a = 10"
+      },
+      {
+        "section": "Uppercase and lowercase converge in base-36",
+        "text": "base-36 Z = 35"
+      },
+      {
+        "section": "Uppercase and lowercase converge in base-36",
+        "text": "base-36 z = 35"
+      },
+      {
+        "section": "All reduction converges to 0",
+        "text": "base-36 index ${i} stays"
+      },
+      {
+        "section": "All reduction converges to 0",
+        "text": "36 wraps to 0"
+      },
+      {
+        "section": "All reduction converges to 0",
+        "text": "block char ${c} -> ${v}"
+      },
+      {
+        "section": "The uppercase letters as headers count 26",
+        "text": "26 uppercase headers"
+      },
+      {
+        "section": "The uppercase letters as headers count 26",
+        "text": "A = 10"
+      },
+      {
+        "section": "The uppercase letters as headers count 26",
+        "text": "Z = 35"
+      },
+      {
+        "section": "The 4th index of the 4th index, cell 19",
+        "text": "linearized (4,4,19) = 5347"
+      },
+      {
+        "section": "The 4th index of the 4th index, cell 19",
+        "text": "5347 mod 36 = 19"
+      },
+      {
+        "section": "The 4th index of the 4th index, cell 19",
+        "text": "5347 / 36 = 148"
+      },
+      {
+        "section": "The 4th index of the 4th index, cell 19",
+        "text": "148 mod 36 = 4 (subframe)"
+      },
+      {
+        "section": "The 4th index of the 4th index, cell 19",
+        "text": "148 / 36 = 4 (frame)"
+      },
+      {
+        "section": "The 4th index of the 4th index, cell 19",
+        "text": "5347 in base-36 = 44J"
+      }
+    ],
+    "corrections": [],
+    "witnesses": [
+      "Host header mandatory"
+    ]
+  },
+  {
+    "id": "I-140",
+    "tag": "3W",
+    "title": "Web Workers as 65536-space background processors",
+    "category": "catch-at-0",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-140.ts",
+      "js/catalog/I-122.ts (roll-up record I-140)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "4a648cd44ef5ecec75905cb0dd75331e73e9bda1b2a5024eec39f30f4319f9ea",
+        "bytes": 6778
+      },
+      "base64": "js/vm/3W.b64",
+      "base64url": "js/vm/3W.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The global scope hierarchy (model)",
+        "text": "window <: EventTarget"
+      },
+      {
+        "section": "The global scope hierarchy (model)",
+        "text": "dedicated <: WorkerGlobalScope"
+      },
+      {
+        "section": "The global scope hierarchy (model)",
+        "text": "dedicated <: EventTarget"
+      },
+      {
+        "section": "The global scope hierarchy (model)",
+        "text": "shared <: EventTarget"
+      },
+      {
+        "section": "The global scope hierarchy (model)",
+        "text": "service <: EventTarget"
+      },
+      {
+        "section": "window errors inside a worker",
+        "text": "window in main"
+      },
+      {
+        "section": "window errors inside a worker",
+        "text": "window errors in worker"
+      },
+      {
+        "section": "All scopes converge on EventTarget",
+        "text": "every scope <: EventTarget"
+      },
+      {
+        "section": "The 65536-space",
+        "text": "2^16 = 65536"
+      },
+      {
+        "section": "The 65536-space",
+        "text": "0..65535"
+      },
+      {
+        "section": "Split into 4 slices of 2^14",
+        "text": "4 workers"
+      },
+      {
+        "section": "Split into 4 slices of 2^14",
+        "text": "slice = 2^14 = 16384"
+      },
+      {
+        "section": "Split into 4 slices of 2^14",
+        "text": "4 * 16384 = 65536"
+      },
+      {
+        "section": "Each worker gets its slice",
+        "text": "4 slices"
+      },
+      {
+        "section": "Each worker gets its slice",
+        "text": "slice 0"
+      },
+      {
+        "section": "Each worker gets its slice",
+        "text": "slice 1"
+      },
+      {
+        "section": "Each worker gets its slice",
+        "text": "slice 2"
+      },
+      {
+        "section": "Each worker gets its slice",
+        "text": "slice 3"
+      },
+      {
+        "section": "Each worker gets its slice",
+        "text": "slice ${i} contiguous"
+      },
+      {
+        "section": "The 4-fold split = the nibble structure",
+        "text": "4 nibbles x 4 bits = 16"
+      },
+      {
+        "section": "The 4-fold split = the nibble structure",
+        "text": "nibble = 16 values"
+      },
+      {
+        "section": "The 4-fold split = the nibble structure",
+        "text": "4 workers = 4 nibbles"
+      },
+      {
+        "section": "postMessage is the request/response",
+        "text": "message posted"
+      },
+      {
+        "section": "postMessage is the request/response",
+        "text": "message shape"
+      },
+      {
+        "section": "Structured clone — copied, not shared",
+        "text": "clone is a new object"
+      },
+      {
+        "section": "Structured clone — copied, not shared",
+        "text": "clone has same data"
+      },
+      {
+        "section": "Structured clone — copied, not shared",
+        "text": "original unchanged by clone"
+      },
+      {
+        "section": "Structured clone — copied, not shared",
+        "text": "clone changed independently"
+      },
+      {
+        "section": "The delimiting: workers can't touch DOM/window",
+        "text": "allowed: ${name}"
+      },
+      {
+        "section": "The delimiting: workers can't touch DOM/window",
+        "text": "forbidden: ${name}"
+      },
+      {
+        "section": "The delimiting: workers can't touch DOM/window",
+        "text": "3 forbidden globals"
+      },
+      {
+        "section": "The convergence chain",
+        "text": "4 worker starts"
+      },
+      {
+        "section": "The convergence chain",
+        "text": "sum of starts = 98304"
+      },
+      {
+        "section": "The 4th exponential is the worker space",
+        "text": "2^4, 2^5, 2^6, 2^16"
+      },
+      {
+        "section": "The 4th exponential is the worker space",
+        "text": "4th exponential = 65536"
+      }
+    ],
+    "corrections": [],
+    "witnesses": [
+      "window errors inside a worker"
+    ]
+  },
+  {
+    "id": "I-141",
+    "tag": "3X",
+    "title": "the shared zero is derived, not axiomatic",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-141.ts",
+      "js/catalog/I-122.ts (roll-up record I-141)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "cd8dcb48d76d1adb656081e3056e3ecffb8274f958a3b867eaf1ccf48ea650db",
+        "bytes": 6611
+      },
+      "base64": "js/vm/3X.b64",
+      "base64url": "js/vm/3X.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The mod of indices 8, 9, 10, 11",
+        "text": "top frames mod 8 = 0,1,2,3"
+      },
+      {
+        "section": "The mod of indices 8, 9, 10, 11",
+        "text": "XOR of {0,1,2,3} = 0"
+      },
+      {
+        "section": "The XOR of 1..7",
+        "text": "XOR of 1..7 = 0"
+      },
+      {
+        "section": "The factorial-8 mod of 7, 6, 5, 4, 3, 2, 1",
+        "text": "8! factorization"
+      },
+      {
+        "section": "The factorial-8 mod of 7, 6, 5, 4, 3, 2, 1",
+        "text": "8! mod ${k} = 0"
+      },
+      {
+        "section": "The factorial-8 mod of 7, 6, 5, 4, 3, 2, 1",
+        "text": "8! mod {7..1} = all 0"
+      },
+      {
+        "section": "The factorial-8 mod of 7, 6, 5, 4, 3, 2, 1",
+        "text": "XOR of the factorial mods = 0"
+      },
+      {
+        "section": "The three zeros agree",
+        "text": "zero1 = zero2"
+      },
+      {
+        "section": "The three zeros agree",
+        "text": "zero2 = zero3"
+      },
+      {
+        "section": "The three zeros agree",
+        "text": "all three are 0"
+      },
+      {
+        "section": "The XOR closure of {0..2^n − 1}",
+        "text": "XOR of 0..${hi} = 0"
+      },
+      {
+        "section": "The XOR closure of {0..2^n − 1}",
+        "text": "XOR of 0..1 = 1"
+      },
+      {
+        "section": "The XOR closure of {0..2^n − 1}",
+        "text": "XNOR of 0,1 = 0"
+      },
+      {
+        "section": "The convergence point",
+        "text": "0 % 0 = NaN"
+      },
+      {
+        "section": "The convergence point",
+        "text": "NaN coerces to index 0"
+      },
+      {
+        "section": "The initial frame 0x2",
+        "text": "initial frame = 0x2 = 2"
+      },
+      {
+        "section": "The initial frame 0x2",
+        "text": "vertex low = 0x0"
+      },
+      {
+        "section": "The initial frame 0x2",
+        "text": "vertex high = 0x1"
+      },
+      {
+        "section": "The initial frame 0x2",
+        "text": "edge high = 0x7"
+      },
+      {
+        "section": "The initial frame 0x2",
+        "text": "0x2 is in the edge range"
+      },
+      {
+        "section": "The interchange order 0, 2, 1",
+        "text": "0,2,1"
+      },
+      {
+        "section": "The interchange order 0, 2, 1",
+        "text": "0,2,1 is a permutation of 0,1,2"
+      },
+      {
+        "section": "The whole chain closes at 0",
+        "text": "chain closes at 0"
+      },
+      {
+        "section": "The whole chain closes at 0",
+        "text": "all four are 0"
+      },
+      {
+        "section": "The shared zero is the intersection",
+        "text": "${name} = 0"
+      },
+      {
+        "section": "The shared zero is the intersection",
+        "text": "all three values are the same"
+      },
+      {
+        "section": "The shared zero is the intersection",
+        "text": "and it is 0"
+      },
+      {
+        "section": "The Atomics compare at 59, 127, 63",
+        "text": "read 127 at 59"
+      },
+      {
+        "section": "The Atomics compare at 59, 127, 63",
+        "text": "wrote 63 at 59"
+      },
+      {
+        "section": "The Atomics compare at 59, 127, 63",
+        "text": "read 63 at 127"
+      },
+      {
+        "section": "The Atomics compare at 59, 127, 63",
+        "text": "wrote 59 at 127"
+      },
+      {
+        "section": "The Atomics compare at 59, 127, 63",
+        "text": "read 59 at 63"
+      },
+      {
+        "section": "The Atomics compare at 59, 127, 63",
+        "text": "wrote 127 at 63"
+      },
+      {
+        "section": "The Atomics compare at 59, 127, 63",
+        "text": "final 59"
+      },
+      {
+        "section": "The Atomics compare at 59, 127, 63",
+        "text": "final 63"
+      },
+      {
+        "section": "The Atomics compare at 59, 127, 63",
+        "text": "final 127"
+      },
+      {
+        "section": "The derivation is now complete",
+        "text": "step 1 = step 2"
+      },
+      {
+        "section": "The derivation is now complete",
+        "text": "step 2 = step 3"
+      },
+      {
+        "section": "The derivation is now complete",
+        "text": "step 3 = step 4"
+      }
+    ],
+    "corrections": [
+      "XOR/XNOR threshold at n = 2"
+    ],
+    "witnesses": [
+      "XOR/XNOR threshold at n = 2"
+    ]
+  },
+  {
+    "id": "I-142",
+    "tag": "3Y",
+    "title": "Unicode lift 0x8 → 0xFFFFFFFF, end-to-end",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-142.ts",
+      "js/catalog/I-122.ts (roll-up record I-142)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "90a49253c2ce616ca3b6513385406a143804f89f268378e37fe8c1b2d7506f94",
+        "bytes": 9298
+      },
+      "base64": "js/vm/3Y.b64",
+      "base64url": "js/vm/3Y.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The three even bases and their walls (I-131)",
+        "text": "6 -> 6-column"
+      },
+      {
+        "section": "The three even bases and their walls (I-131)",
+        "text": "8 -> 4-column"
+      },
+      {
+        "section": "The three even bases and their walls (I-131)",
+        "text": "10 -> 5-column"
+      },
+      {
+        "section": "The three even bases and their walls (I-131)",
+        "text": "9 -> 5-column - ε"
+      },
+      {
+        "section": "The three walls: 4, 5, 6",
+        "text": "walls ascending"
+      },
+      {
+        "section": "The three walls: 4, 5, 6",
+        "text": "wall 4"
+      },
+      {
+        "section": "The three walls: 4, 5, 6",
+        "text": "wall 5"
+      },
+      {
+        "section": "The three walls: 4, 5, 6",
+        "text": "wall 6"
+      },
+      {
+        "section": "The alignment rule (I-132)",
+        "text": "16^${n} = 2^${4*n}"
+      },
+      {
+        "section": "The alignment rule (I-132)",
+        "text": "2^16 = 16^4"
+      },
+      {
+        "section": "The alignment rule (I-132)",
+        "text": "16^10 = 2^40"
+      },
+      {
+        "section": "The surrogate band 0x8000–0xFFFF",
+        "text": "surrogate = 32768"
+      },
+      {
+        "section": "The surrogate band 0x8000–0xFFFF",
+        "text": "high nibble of 0x8000 = 8"
+      },
+      {
+        "section": "The surrogate band 0x8000–0xFFFF",
+        "text": "0x8 is the surrogate signature"
+      },
+      {
+        "section": "The four worker slices (I-140)",
+        "text": "slice = 2^14 = 16384"
+      },
+      {
+        "section": "The four worker slices (I-140)",
+        "text": "slice 0"
+      },
+      {
+        "section": "The four worker slices (I-140)",
+        "text": "slice 3"
+      },
+      {
+        "section": "The gap delineation (I-133b)",
+        "text": ":; size 2"
+      },
+      {
+        "section": "The gap delineation (I-133b)",
+        "text": "<=>? size 4"
+      },
+      {
+        "section": "The gap delineation (I-133b)",
+        "text": "{|}~ size 4"
+      },
+      {
+        "section": "The gap delineation (I-133b)",
+        "text": "2 + 4 = 6"
+      },
+      {
+        "section": "The XOR closure with threshold (I-141)",
+        "text": "XOR 0..2^${n}-1 = 0"
+      },
+      {
+        "section": "The XOR closure with threshold (I-141)",
+        "text": "XOR 0..1 = 1 (n=1 case)"
+      },
+      {
+        "section": "The end-to-end lift: 0x8 → 0xFFFFFFFF",
+        "text": "0xFFFFFFFF = 4294967295"
+      },
+      {
+        "section": "The end-to-end lift: 0x8 → 0xFFFFFFFF",
+        "text": "0xFFFFFFFF + 1 = 2^32"
+      },
+      {
+        "section": "The end-to-end lift: 0x8 → 0xFFFFFFFF",
+        "text": "high bit = 2^31"
+      },
+      {
+        "section": "The end-to-end lift: 0x8 → 0xFFFFFFFF",
+        "text": "upper half = 0x7FFFFFFF"
+      },
+      {
+        "section": "The three walls partition the upper space",
+        "text": "wall5 - wall4 = 2^28"
+      },
+      {
+        "section": "The three walls partition the upper space",
+        "text": "wall6 - wall5 = 2^28"
+      },
+      {
+        "section": "The three walls partition the upper space",
+        "text": "wall6 - wall4 = 2^29"
+      },
+      {
+        "section": "The 5-column exception: 0x4FFFFFFF",
+        "text": "odd top = wall5 - 1"
+      },
+      {
+        "section": "The 5-column exception: 0x4FFFFFFF",
+        "text": "odd top above wall4"
+      },
+      {
+        "section": "The 5-column exception: 0x4FFFFFFF",
+        "text": "odd top below wall5"
+      },
+      {
+        "section": "The full lift: two rates covering the space",
+        "text": "4 segments"
+      },
+      {
+        "section": "The full lift: two rates covering the space",
+        "text": "3 even"
+      },
+      {
+        "section": "The full lift: two rates covering the space",
+        "text": "1 odd"
+      },
+      {
+        "section": "The full lift: two rates covering the space",
+        "text": "odd above even low"
+      },
+      {
+        "section": "The full lift: two rates covering the space",
+        "text": "odd reaches up to wall5"
+      },
+      {
+        "section": "The surrogate band sits inside the 16-bit plane",
+        "text": "surrogate high = 0xFFFF"
+      },
+      {
+        "section": "The surrogate band sits inside the 16-bit plane",
+        "text": "surrogate covers to 0xFFFF"
+      },
+      {
+        "section": "The surrogate band sits inside the 16-bit plane",
+        "text": "low half ends at 0x7FFF; surrogate starts at 0x8000"
+      },
+      {
+        "section": "The lift terminates: no value ≥ 0x80000000 in any list",
+        "text": "value 0x${v.toString(16)} < high bit"
+      },
+      {
+        "section": "The lift terminates: no value ≥ 0x80000000 in any list",
+        "text": "${name}: top doubles past high bit"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-143",
+    "tag": "3Z",
+    "title": "prompt sigils as the two privilege frames",
+    "category": "head-value-tail",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-143.ts",
+      "js/catalog/I-122.ts (roll-up record I-143)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "86fb9ab64fbe0d08dea06e12682fc50120a7a526e2d508ac555251480511bdcf",
+        "bytes": 5230
+      },
+      "base64": "js/vm/3Z.b64",
+      "base64url": "js/vm/3Z.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The node space 65536 = 2^16",
+        "text": "node = 2^16"
+      },
+      {
+        "section": "The node space 65536 = 2^16",
+        "text": "node = 16^4"
+      },
+      {
+        "section": "The global space 65536^4 = 2^64",
+        "text": "global = 2^64"
+      },
+      {
+        "section": "The global space 65536^4 = 2^64",
+        "text": "global = 16^16"
+      },
+      {
+        "section": "The three prompt exponents",
+        "text": "16^19 = 2^76"
+      },
+      {
+        "section": "The three prompt exponents",
+        "text": "16^20 = 2^80"
+      },
+      {
+        "section": "The three prompt exponents",
+        "text": "16^21 = 2^84"
+      },
+      {
+        "section": "The three prompt exponents",
+        "text": "16^20 / 16^19 = 16"
+      },
+      {
+        "section": "The three prompt exponents",
+        "text": "16^21 / 16^20 = 16"
+      },
+      {
+        "section": "The three prompt exponents",
+        "text": "16^21 / 16^19 = 256 = 16^2"
+      },
+      {
+        "section": "The Unicode codepoint max is 21 bits",
+        "text": "0x10FFFF is 21 bits"
+      },
+      {
+        "section": "The Unicode codepoint max is 21 bits",
+        "text": "0x10FFFF = 1114111"
+      },
+      {
+        "section": "The Unicode codepoint max is 21 bits",
+        "text": "Unicode max = user exponent"
+      },
+      {
+        "section": "The fold 10^k -> 16^k = 2^(4k)",
+        "text": "16^${k} = 2^${4*k}"
+      },
+      {
+        "section": "The fold 10^k -> 16^k = 2^(4k)",
+        "text": "16^20 = 2^80"
+      },
+      {
+        "section": "Root is closer to 0",
+        "text": "root < mid < user"
+      },
+      {
+        "section": "Root is closer to 0",
+        "text": "catch is below root"
+      },
+      {
+        "section": "Root is closer to 0",
+        "text": "outer = root = 2^76"
+      },
+      {
+        "section": "Root is closer to 0",
+        "text": "inner = user = 2^84"
+      },
+      {
+        "section": "The # and $ prompt semantics",
+        "text": "root"
+      },
+      {
+        "section": "The # and $ prompt semantics",
+        "text": "user"
+      },
+      {
+        "section": "The # and $ prompt semantics",
+        "text": "`assert.strictEqual(prompts[\"#\"].bits, 76n);`"
+      },
+      {
+        "section": "The # and $ prompt semantics",
+        "text": "`assert.strictEqual(prompts[\"$\"].bits, 84n);`"
+      },
+      {
+        "section": "The # and $ prompt semantics",
+        "text": "offset = 8 bits"
+      },
+      {
+        "section": "The 65536^4 space and its relation to the prompt space",
+        "text": "global = 16^16"
+      },
+      {
+        "section": "The 65536^4 space and its relation to the prompt space",
+        "text": "root exp > 16 (global exp)"
+      },
+      {
+        "section": "The 65536^4 space and its relation to the prompt space",
+        "text": "user exp > 16"
+      },
+      {
+        "section": "The 65536^4 space and its relation to the prompt space",
+        "text": "root is 3 exponents above global"
+      },
+      {
+        "section": "The 10-folds-16 in each",
+        "text": "20 folds"
+      },
+      {
+        "section": "The 10-folds-16 in each",
+        "text": "20 folds -> 2^80"
+      },
+      {
+        "section": "The superuser/user asymmetry",
+        "text": "root is closer to 0 than user"
+      },
+      {
+        "section": "The superuser/user asymmetry",
+        "text": "user is 256x further from the catch"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-144",
+    "tag": "40",
+    "title": "base-36 sub-context ignores the standards and syntax literals",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-144.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "2cbf727052298521d997df3042d315110a7a8bf63c0cd74e7448999325d44765",
+        "bytes": 5719
+      },
+      "base64": "js/vm/40.b64",
+      "base64url": "js/vm/40.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Base 36 is the largest case-insensitive alphanumeric radix",
+        "text": "36 symbols"
+      },
+      {
+        "section": "Base 36 is the largest case-insensitive alphanumeric radix",
+        "text": "exactly 36 in the 36-block"
+      },
+      {
+        "section": "Every standard radix is a sub-plane of base 36",
+        "text": "${name} value ${v} in base 36"
+      },
+      {
+        "section": "The standard prefix syntax is a parser hint (the cover)",
+        "text": "${src} = 31"
+      },
+      {
+        "section": "The standard prefix syntax is a parser hint (the cover)",
+        "text": "0x1F = 0b11111"
+      },
+      {
+        "section": "The standard prefix syntax is a parser hint (the cover)",
+        "text": "0b11111 = 0o37"
+      },
+      {
+        "section": "The standard prefix syntax is a parser hint (the cover)",
+        "text": "0o37 = 31"
+      },
+      {
+        "section": "The base-36 sub-context ignores the prefix",
+        "text": "31 in base 36 = v"
+      },
+      {
+        "section": "The base-36 sub-context ignores the prefix",
+        "text": "uppercase V"
+      },
+      {
+        "section": "The base-36 sub-context ignores the prefix",
+        "text": "V is at position 31"
+      },
+      {
+        "section": "The base-36 sub-context ignores the prefix",
+        "text": "V in base 36 = 31"
+      },
+      {
+        "section": "The base-36 block contains all of 0-9 and A-F",
+        "text": "hex digit ${c} is in base 36"
+      },
+      {
+        "section": "The base-36 block contains all of 0-9 and A-F",
+        "text": "decimal digit ${c} is in base 36"
+      },
+      {
+        "section": "The base-36 sub-context covers the entire alphanumeric plane",
+        "text": "36 values"
+      },
+      {
+        "section": "The base-36 sub-context covers the entire alphanumeric plane",
+        "text": "0 -> 0"
+      },
+      {
+        "section": "The base-36 sub-context covers the entire alphanumeric plane",
+        "text": "9 -> 9"
+      },
+      {
+        "section": "The base-36 sub-context covers the entire alphanumeric plane",
+        "text": "A -> 10"
+      },
+      {
+        "section": "The base-36 sub-context covers the entire alphanumeric plane",
+        "text": "Z -> 35"
+      },
+      {
+        "section": "The uncovered structure",
+        "text": "uncovered: ${claim}"
+      },
+      {
+        "section": "The base-36 case-insensitivity",
+        "text": "${upper}/${lower} same value in base 36"
+      },
+      {
+        "section": "The prefix is unnecessary in base 36",
+        "text": "${literal} -> \"${b36}\""
+      },
+      {
+        "section": "The prefix is unnecessary in base 36",
+        "text": "\"${b36}\" -> ${literal}"
+      },
+      {
+        "section": "The base-36 sub-context as an \"uncovering\"",
+        "text": "36 = the block size"
+      },
+      {
+        "section": "The base-36 sub-context as an \"uncovering\"",
+        "text": "A = 10"
+      },
+      {
+        "section": "The base-36 sub-context as an \"uncovering\"",
+        "text": "Z = 35"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-144b",
+    "tag": "40B",
+    "title": "base-36 as a literal /A-Z0-9/ block",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-144b.ts",
+      "js/catalog/I-122.ts (roll-up record I-144b)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "8b9df175a4f8ec9d49138a8bdfa0ea9ead1abeb7d2d041e98c32e6b40d47e57c",
+        "bytes": 6440
+      },
+      "base64": "js/vm/40B.b64",
+      "base64url": "js/vm/40B.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The literal block: uppercase only",
+        "text": "36 symbols"
+      },
+      {
+        "section": "The literal block: uppercase only",
+        "text": "'${c}' is in /A-Z0-9/"
+      },
+      {
+        "section": "The literal block: uppercase only",
+        "text": "'${c}' is not lowercase"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "0 -> '0'"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "9 -> '9'"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "10 -> 'A'"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "19 -> 'J'"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "23 -> 'N'"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "24 -> 'O'"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "27 -> 'R'"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "31 -> 'V'"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "35 -> 'Z'"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "'0' -> 0"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "'9' -> 9"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "'A' -> 10"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "'J' -> 19"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "'V' -> 31"
+      },
+      {
+        "section": "Direct indexing (no conversion functions)",
+        "text": "'Z' -> 35"
+      },
+      {
+        "section": "The block IS the base-36 alphabet",
+        "text": "0"
+      },
+      {
+        "section": "The block IS the base-36 alphabet",
+        "text": "9"
+      },
+      {
+        "section": "The block IS the base-36 alphabet",
+        "text": "10 -> A"
+      },
+      {
+        "section": "The block IS the base-36 alphabet",
+        "text": "31 -> V"
+      },
+      {
+        "section": "The block IS the base-36 alphabet",
+        "text": "35 -> Z"
+      },
+      {
+        "section": "The block IS the base-36 alphabet",
+        "text": "36 -> 10"
+      },
+      {
+        "section": "The block IS the base-36 alphabet",
+        "text": "255 -> 73"
+      },
+      {
+        "section": "The block IS the base-36 alphabet",
+        "text": "round-trip ${v}"
+      },
+      {
+        "section": "The block contains the 36-block of ASCII",
+        "text": "0x${c.toString(16)} in block"
+      },
+      {
+        "section": "The block contains the 36-block of ASCII",
+        "text": "0x${c.toString(16)} in block"
+      },
+      {
+        "section": "The block contains the 36-block of ASCII",
+        "text": "10 digits + 26 letters = 36"
+      },
+      {
+        "section": "The gap in ASCII between digits and letters",
+        "text": "digit gap starts at 0x3A"
+      },
+      {
+        "section": "The gap in ASCII between digits and letters",
+        "text": "letter gap ends at 0x41"
+      },
+      {
+        "section": "The gap in ASCII between digits and letters",
+        "text": "7-character gap"
+      },
+      {
+        "section": "The gap in ASCII between digits and letters",
+        "text": "gap = :;<=>?@"
+      },
+      {
+        "section": "The base-36 sub-context ignores prefix syntax",
+        "text": "${src} (${val}) -> \"V\""
+      },
+      {
+        "section": "The base-36 block as a self-delineating alphabet",
+        "text": "'${c}' (0x${code.toString(16)}) in /A-Z0-9/"
+      },
+      {
+        "section": "The contrast: what the pre-encoded version gets wrong",
+        "text": "toString(36) gives lowercase 'v'"
+      },
+      {
+        "section": "The contrast: what the pre-encoded version gets wrong",
+        "text": "the literal block gives uppercase 'V'"
+      },
+      {
+        "section": "The contrast: what the pre-encoded version gets wrong",
+        "text": "toString(36) ≠ the literal block (case difference)"
+      },
+      {
+        "section": "The contrast: what the pre-encoded version gets wrong",
+        "text": "uppercased toString(36) = the block"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-145",
+    "tag": "41",
+    "title": "0x20 as the Hamming prefix; Fano projection",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-145.ts",
+      "js/catalog/I-122.ts (roll-up record I-145)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "eadfdc3a7f7719d2a1efd35c28cc3732b5de313b22b32c1b38723c3f5cf883d2",
+        "bytes": 8360
+      },
+      "base64": "js/vm/41.b64",
+      "base64url": "js/vm/41.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "0x20 = Hamming weight 1",
+        "text": "0x20 has Hamming weight 1"
+      },
+      {
+        "section": "0x20 = Hamming weight 1",
+        "text": "0x20 = 0b100000"
+      },
+      {
+        "section": "0x20 = Hamming weight 1",
+        "text": "0x20 = 32"
+      },
+      {
+        "section": "0x20 = Hamming weight 1",
+        "text": "0x20 = 2^5 (bit 5)"
+      },
+      {
+        "section": "0x20 is the case-flip difference",
+        "text": "A -> a = 0x20"
+      },
+      {
+        "section": "0x20 is the case-flip difference",
+        "text": "Z -> z = 0x20"
+      },
+      {
+        "section": "0x20 is the print/control boundary",
+        "text": "0x1F not printable"
+      },
+      {
+        "section": "0x20 is the print/control boundary",
+        "text": "0x20 printable (space)"
+      },
+      {
+        "section": "0x20 is the print/control boundary",
+        "text": "0x7E printable"
+      },
+      {
+        "section": "The gap :;<=>?@ is 7 characters",
+        "text": "gap = 7 characters"
+      },
+      {
+        "section": "The gap :;<=>?@ is 7 characters",
+        "text": "gap chars"
+      },
+      {
+        "section": "The 7 gap characters as Hamming (7,4) positions",
+        "text": "1,2,4 parity; 3,5,6,7 data"
+      },
+      {
+        "section": "The 7 gap characters as Hamming (7,4) positions",
+        "text": "parity positions"
+      },
+      {
+        "section": "The Fano plane structure",
+        "text": "7 Fano points"
+      },
+      {
+        "section": "The Fano plane structure",
+        "text": "7 Fano lines"
+      },
+      {
+        "section": "The Fano plane structure",
+        "text": "3 points per line"
+      },
+      {
+        "section": "The Fano plane structure",
+        "text": "7 lines"
+      },
+      {
+        "section": "The Fano plane structure",
+        "text": "line ${line} has 3 points"
+      },
+      {
+        "section": "The Fano plane structure",
+        "text": "point ${p} in 3 lines"
+      },
+      {
+        "section": "The Fano plane structure",
+        "text": "points ${a},${b} share 1 line"
+      },
+      {
+        "section": "The Hamming (7,4) code as the Fano plane",
+        "text": "${name} covers 4 positions"
+      },
+      {
+        "section": "The Hamming (7,4) code as the Fano plane",
+        "text": "${name} includes position 7"
+      },
+      {
+        "section": "Hamming distance and the Fano projection",
+        "text": "A vs a: 1 bit apart"
+      },
+      {
+        "section": "Hamming distance and the Fano projection",
+        "text": "space vs NUL: 1 bit apart"
+      },
+      {
+        "section": "Hamming distance and the Fano projection",
+        "text": "NUL vs 0x1F: 5 bits"
+      },
+      {
+        "section": "The Fano projection of any buffer",
+        "text": "projection gives 1-7"
+      },
+      {
+        "section": "The Hamming prefix: bit 5 for 0x20-0x3F, bit 6 for 0x40-0x5F",
+        "text": "0x${c.toString(16)} has bit 5 set"
+      },
+      {
+        "section": "The Hamming prefix: bit 5 for 0x20-0x3F, bit 6 for 0x40-0x5F",
+        "text": "0x${c.toString(16)} has bit 6 clear"
+      },
+      {
+        "section": "The Hamming prefix: bit 5 for 0x20-0x3F, bit 6 for 0x40-0x5F",
+        "text": "0x${c.toString(16)} has bit 6 set"
+      },
+      {
+        "section": "The Hamming prefix: bit 5 for 0x20-0x3F, bit 6 for 0x40-0x5F",
+        "text": "0x${c.toString(16)} has bit 5 clear"
+      },
+      {
+        "section": "The Hamming prefix: bit 5 for 0x20-0x3F, bit 6 for 0x40-0x5F",
+        "text": "0x${c.toString(16)} has bit 5 set"
+      },
+      {
+        "section": "The Hamming prefix: bit 5 for 0x20-0x3F, bit 6 for 0x40-0x5F",
+        "text": "0x${c.toString(16)} has bit 6 set"
+      },
+      {
+        "section": "10b. The gap straddles the 0x20/0x40 boundary",
+        "text": "6 chars in the bit-5 region"
+      },
+      {
+        "section": "10b. The gap straddles the 0x20/0x40 boundary",
+        "text": "1 char in the bit-6 region"
+      },
+      {
+        "section": "10b. The gap straddles the 0x20/0x40 boundary",
+        "text": "6 + 1 = 7"
+      },
+      {
+        "section": "10b. The gap straddles the 0x20/0x40 boundary",
+        "text": "position 7 = @"
+      },
+      {
+        "section": "Every buffer (gapped or not) has the 7-structure",
+        "text": "22 windows of 7 bytes in 28"
+      },
+      {
+        "section": "Every buffer (gapped or not) has the 7-structure",
+        "text": "window projects to ${w} in 1-7"
+      },
+      {
+        "section": "The Hamming prefix on the base-36 block",
+        "text": "digit ${c}: bit6=0, bit5=1"
+      },
+      {
+        "section": "The Hamming prefix on the base-36 block",
+        "text": "letter ${c}: bit6=1, bit5=0"
+      }
+    ],
+    "corrections": [
+      "bit 5 / bit 6 boundary (<= 0x5F → <= 0x3F)"
+    ],
+    "witnesses": [
+      "bit 5 / bit 6 boundary (<= 0x5F → <= 0x3F)"
+    ]
+  },
+  {
+    "id": "I-146b",
+    "tag": "42B",
+    "title": "every 7-slot cycle closes with a BEL-equivalent reset",
+    "category": "catch-at-0",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-146b.ts",
+      "js/catalog/I-122.ts (roll-up record I-146b)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "50386cad895bd9b1da4d950dcece9a439e3acdb36ae3bd93cb216e223509ad95",
+        "bytes": 5684
+      },
+      "base64": "js/vm/42B.b64",
+      "base64url": "js/vm/42B.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "BEL = 0x07 = 7 = 0b111",
+        "text": "BEL = 7"
+      },
+      {
+        "section": "BEL = 0x07 = 7 = 0b111",
+        "text": "BEL = 0b111"
+      },
+      {
+        "section": "The gap XOR is 'A', not BEL",
+        "text": "gap XOR = 0x41 = 'A'"
+      },
+      {
+        "section": "The gap XOR is 'A', not BEL",
+        "text": "gap XOR = 'A'"
+      },
+      {
+        "section": "The gap XOR is 'A', not BEL",
+        "text": "gap XOR is NOT BEL"
+      },
+      {
+        "section": "The reset is STRUCTURAL: any 7-slot window closes",
+        "text": "22 cycle closes in 28 bytes"
+      },
+      {
+        "section": "The reset fires regardless of the literal content",
+        "text": "XOR values vary by window"
+      },
+      {
+        "section": "The reset fires regardless of the literal content",
+        "text": "some windows close"
+      },
+      {
+        "section": "The reset is the power-on signal",
+        "text": "7 slots + 28 bytes memory = powered on"
+      },
+      {
+        "section": "The reset is the power-on signal",
+        "text": "6 slots = not powered on"
+      },
+      {
+        "section": "The reset is the power-on signal",
+        "text": "7 slots + 4 bytes memory = not enough"
+      },
+      {
+        "section": "The sub-cyclical reset",
+        "text": "4 cycles in 28 bytes"
+      },
+      {
+        "section": "The sub-cyclical reset",
+        "text": "4 BEL emissions"
+      },
+      {
+        "section": "The specific literal gap is ONE instance",
+        "text": "gap = 7 slots"
+      },
+      {
+        "section": "The specific literal gap is ONE instance",
+        "text": "gap closes a cycle"
+      },
+      {
+        "section": "The specific literal gap is ONE instance",
+        "text": "gap XOR = 0x41"
+      },
+      {
+        "section": "The reset as the power-on POST beep",
+        "text": "circuit + memory = beep"
+      },
+      {
+        "section": "The reset as the power-on POST beep",
+        "text": "circuit only = no beep"
+      },
+      {
+        "section": "The reset as the power-on POST beep",
+        "text": "memory only = no beep"
+      },
+      {
+        "section": "The reset as the power-on POST beep",
+        "text": "neither = no beep"
+      },
+      {
+        "section": "The structure of the reset",
+        "text": "reset fires at position 6 (0-indexed 7th slot)"
+      },
+      {
+        "section": "The structure of the reset",
+        "text": "no reset before the 7th slot"
+      },
+      {
+        "section": "The power-on is sub-cyclical",
+        "text": "reset at position ${p}"
+      },
+      {
+        "section": "The power-on is sub-cyclical",
+        "text": "4 resets in 28 bytes"
+      }
+    ],
+    "corrections": [
+      "gap XOR = 'A' (0x41), not BEL"
+    ],
+    "witnesses": [
+      "gap XOR = 'A' (0x41), not BEL"
+    ]
+  },
+  {
+    "id": "I-147",
+    "tag": "43",
+    "title": "the gap as constant tag; beep content-specific for base-36",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-147.ts",
+      "js/catalog/I-122.ts (roll-up record I-147)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "61aa6e954e0a34f039b3f22dec95a3f2a19c2fa087e7020c6238a8cfd05e53a3",
+        "bytes": 6104
+      },
+      "base64": "js/vm/43.b64",
+      "base64url": "js/vm/43.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The structural reset: any 7-slot window",
+        "text": "window 0-6 closes"
+      },
+      {
+        "section": "The structural reset: any 7-slot window",
+        "text": "window 1-7 closes"
+      },
+      {
+        "section": "The structural reset: any 7-slot window",
+        "text": "window 4-10 does not close (only 6 left)"
+      },
+      {
+        "section": "The content-specific beep: base-36 literals",
+        "text": "gap char 0x${c.toString(16)} is NOT base-36"
+      },
+      {
+        "section": "The content-specific beep: base-36 literals",
+        "text": "digit ${c} is base-36"
+      },
+      {
+        "section": "The content-specific beep: base-36 literals",
+        "text": "letter ${c} is base-36"
+      },
+      {
+        "section": "The gap is the constant tag literal point",
+        "text": "gap starts right after digits"
+      },
+      {
+        "section": "The gap is the constant tag literal point",
+        "text": "gap ends right before letters"
+      },
+      {
+        "section": "The gap is the constant tag literal point",
+        "text": "gap = letterStart - digitEnd - 1"
+      },
+      {
+        "section": "The gap is the constant tag literal point",
+        "text": "gap = 7 chars"
+      },
+      {
+        "section": "The tag is DOF-invariant",
+        "text": "gap same for ${dof} DOF"
+      },
+      {
+        "section": "The 6 DOF of the base-36 block",
+        "text": "6 DOF"
+      },
+      {
+        "section": "6 DOF + 1 tag = 7",
+        "text": "@ = 0x40"
+      },
+      {
+        "section": "6 DOF + 1 tag = 7",
+        "text": "gap length = DOF + 1"
+      },
+      {
+        "section": "6 DOF + 1 tag = 7",
+        "text": "6 + 1 = 7"
+      },
+      {
+        "section": "The beep fires for base-36 sequences, not for the gap",
+        "text": "base-36 sequence beeps"
+      },
+      {
+        "section": "The beep fires for base-36 sequences, not for the gap",
+        "text": "gap does NOT beep"
+      },
+      {
+        "section": "The beep fires for base-36 sequences, not for the gap",
+        "text": "mixed does not beep"
+      },
+      {
+        "section": "The beep fires for base-36 sequences, not for the gap",
+        "text": "all letters beeps"
+      },
+      {
+        "section": "For other DOF counts, the tag remains",
+        "text": "6 DOF base-36 beeps"
+      },
+      {
+        "section": "For other DOF counts, the tag remains",
+        "text": "4 DOF base-36 does not beep (different condition)"
+      },
+      {
+        "section": "The constant across ASCII and Unicode",
+        "text": "position ${i}: ASCII 0x${asciiGap[i].toString(16)} = Unicode 0x${unicodeBmpGap[i].toString(16)}"
+      },
+      {
+        "section": "The tag as the fixed point",
+        "text": "gap starts after digit block"
+      },
+      {
+        "section": "The tag as the fixed point",
+        "text": "gap ends before letter block"
+      },
+      {
+        "section": "The tag as the fixed point",
+        "text": "gap width = 7"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-148",
+    "tag": "44",
+    "title": "PINEboxed SPO + swap axes anchored at 0n, 0u",
+    "category": "head-value-tail",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-148.ts",
+      "js/catalog/I-122.ts (roll-up record I-148)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "000d3f37fae262f7a5dfcd7e8baed6248d4acf0aa435d0c30995e5fdeb559ece",
+        "bytes": 7673
+      },
+      "base64": "js/vm/44.b64",
+      "base64url": "js/vm/44.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The HTTP/1.1 SPO triple",
+        "text": "subject = Content-Location"
+      },
+      {
+        "section": "The HTTP/1.1 SPO triple",
+        "text": "predicate = Location"
+      },
+      {
+        "section": "The HTTP/1.1 SPO triple",
+        "text": "object = ETag"
+      },
+      {
+        "section": "PINEboxed / boxedPINE as the two directions",
+        "text": "PINEboxed has the subject"
+      },
+      {
+        "section": "PINEboxed / boxedPINE as the two directions",
+        "text": "boxedPINE has the modal box"
+      },
+      {
+        "section": "The 3 swap axes (Rubik's cube rotation axes)",
+        "text": "swap16 involution"
+      },
+      {
+        "section": "The 3 swap axes (Rubik's cube rotation axes)",
+        "text": "swap32 involution"
+      },
+      {
+        "section": "The 3 swap axes (Rubik's cube rotation axes)",
+        "text": "swap64 involution"
+      },
+      {
+        "section": "The 3 axes × 2 directions = 6 DOF",
+        "text": "3 axes x 2 directions = 6"
+      },
+      {
+        "section": "The 3 axes × 2 directions = 6 DOF",
+        "text": "3 forward"
+      },
+      {
+        "section": "The 3 axes × 2 directions = 6 DOF",
+        "text": "3 inverse"
+      },
+      {
+        "section": "The Rubik's cube mapping",
+        "text": "3 axes"
+      },
+      {
+        "section": "The Rubik's cube mapping",
+        "text": "6 faces"
+      },
+      {
+        "section": "The Rubik's cube mapping",
+        "text": "8 corners + 12 edges + 6 centers = 26"
+      },
+      {
+        "section": "The anchors: 0n, 0u, 0x",
+        "text": "0n is BigInt"
+      },
+      {
+        "section": "The anchors: 0n, 0u, 0x",
+        "text": "0n = 0"
+      },
+      {
+        "section": "The anchors: 0n, 0u, 0x",
+        "text": "0u references U+0000"
+      },
+      {
+        "section": "The anchors: 0n, 0u, 0x",
+        "text": "U+0000 = 0"
+      },
+      {
+        "section": "The anchors: 0n, 0u, 0x",
+        "text": "0x0 = 0"
+      },
+      {
+        "section": "The anchors: 0n, 0u, 0x",
+        "text": "vertex -> 0"
+      },
+      {
+        "section": "The anchors: 0n, 0u, 0x",
+        "text": "reference -> 0"
+      },
+      {
+        "section": "The anchors: 0n, 0u, 0x",
+        "text": "center -> 0"
+      },
+      {
+        "section": "The 6 DOF map to the 6 faces",
+        "text": "6 faces"
+      },
+      {
+        "section": "The 6 DOF map to the 6 faces",
+        "text": "3 pairs = 3 axes"
+      },
+      {
+        "section": "The 6 DOF map to the 6 faces",
+        "text": "${a} is a face"
+      },
+      {
+        "section": "The 6 DOF map to the 6 faces",
+        "text": "${b} is a face"
+      },
+      {
+        "section": "The interpretation is the only change",
+        "text": "has subject"
+      },
+      {
+        "section": "The interpretation is the only change",
+        "text": "has predicate"
+      },
+      {
+        "section": "The interpretation is the only change",
+        "text": "has object"
+      },
+      {
+        "section": "The interpretation is the only change",
+        "text": "has valid anchor"
+      },
+      {
+        "section": "The rotation of interpretation",
+        "text": "rotation ${i} has 3 elements"
+      },
+      {
+        "section": "The rotation of interpretation",
+        "text": "3 rotations of the anchor triple"
+      },
+      {
+        "section": "The interpretation is the same structure read differently",
+        "text": "interpretation: ASCII"
+      },
+      {
+        "section": "The interpretation is the same structure read differently",
+        "text": "interpretation: hex"
+      },
+      {
+        "section": "PINEboxed / boxedPINE as the two directions of the SPO",
+        "text": "forward has subject"
+      },
+      {
+        "section": "PINEboxed / boxedPINE as the two directions of the SPO",
+        "text": "backward has subject"
+      },
+      {
+        "section": "PINEboxed / boxedPINE as the two directions of the SPO",
+        "text": "forward has object"
+      },
+      {
+        "section": "PINEboxed / boxedPINE as the two directions of the SPO",
+        "text": "backward has object"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-149",
+    "tag": "45",
+    "title": "DOMMatrix over IPv4; WebXR observer; MIDI channel",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-149.ts",
+      "js/catalog/I-122.ts (roll-up record I-149)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "8b45b8f0aa549b876ca2e1b93f6ecc06fde00d0942b8da09bb94e53e66e46d2c",
+        "bytes": 9774
+      },
+      "base64": "js/vm/45.b64",
+      "base64url": "js/vm/45.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The DOMMatrix 4x4 structure",
+        "text": "16 elements"
+      },
+      {
+        "section": "The 2D subset is 6 elements",
+        "text": "2D subset = 6 elements = 6 DOF"
+      },
+      {
+        "section": "The 2D subset is 6 elements",
+        "text": "6 aliases"
+      },
+      {
+        "section": "The 2D subset is 6 elements",
+        "text": "${alias} -> ${target}"
+      },
+      {
+        "section": "The 6 DOF mapping",
+        "text": "3 axes"
+      },
+      {
+        "section": "The 6 DOF mapping",
+        "text": "${a.name} scale"
+      },
+      {
+        "section": "The 6 DOF mapping",
+        "text": "${a.name} translate"
+      },
+      {
+        "section": "The 2D matrix stringification",
+        "text": "identity 2D string"
+      },
+      {
+        "section": "The 3D matrix stringification",
+        "text": "3D starts with matrix3d"
+      },
+      {
+        "section": "The 3D matrix stringification",
+        "text": "3D ends with close paren"
+      },
+      {
+        "section": "The 3D matrix stringification",
+        "text": "identity 3D string"
+      },
+      {
+        "section": "The matrix as a 4x4 grid",
+        "text": "4 rows"
+      },
+      {
+        "section": "The matrix as a 4x4 grid",
+        "text": "4 cols"
+      },
+      {
+        "section": "The matrix as a 4x4 grid",
+        "text": "16 cells"
+      },
+      {
+        "section": "IPv4 as a 4-tuple",
+        "text": "IPv4 is a 4-tuple"
+      },
+      {
+        "section": "The DOMMatrix transforms the IPv4 vector",
+        "text": "identity preserves vector"
+      },
+      {
+        "section": "The DOMMatrix transforms the IPv4 vector",
+        "text": "scale doubles x,y"
+      },
+      {
+        "section": "XRRigidTransform.matrix is a Float32Array of 16",
+        "text": "pose matrix has 16 elements"
+      },
+      {
+        "section": "XRRigidTransform.matrix is a Float32Array of 16",
+        "text": "m41 = 1 (x translation)"
+      },
+      {
+        "section": "XRRigidTransform.matrix is a Float32Array of 16",
+        "text": "m42 = 2 (y translation)"
+      },
+      {
+        "section": "XRRigidTransform.matrix is a Float32Array of 16",
+        "text": "m43 = 3 (z translation)"
+      },
+      {
+        "section": "XRRigidTransform.matrix is a Float32Array of 16",
+        "text": "m44 = 1"
+      },
+      {
+        "section": "The WebXR reference space is the origin frame",
+        "text": "4 reference spaces"
+      },
+      {
+        "section": "The WebXR reference space is the origin frame",
+        "text": "identity grid"
+      },
+      {
+        "section": "Web MIDI: byte stream with timestamp",
+        "text": "MIDI message is 3 bytes"
+      },
+      {
+        "section": "Web MIDI: byte stream with timestamp",
+        "text": "status byte = Note On (0x90)"
+      },
+      {
+        "section": "Web MIDI: byte stream with timestamp",
+        "text": "note = C4 (0x3C)"
+      },
+      {
+        "section": "Web MIDI: byte stream with timestamp",
+        "text": "velocity = 127 (0x7F)"
+      },
+      {
+        "section": "The 7-slot Fano structure applies to MIDI",
+        "text": "MIDI window projects to Fano point"
+      },
+      {
+        "section": "The full pipeline",
+        "text": "transformed IP"
+      },
+      {
+        "section": "The full pipeline",
+        "text": "16 matrix cells"
+      },
+      {
+        "section": "The full pipeline",
+        "text": "3 MIDI bytes"
+      },
+      {
+        "section": "The full pipeline",
+        "text": "valid space"
+      },
+      {
+        "section": "The 6 DOF and the 4x4 = 16",
+        "text": "2D = 6"
+      },
+      {
+        "section": "The 6 DOF and the 4x4 = 16",
+        "text": "3D = 16"
+      },
+      {
+        "section": "The 6 DOF and the 4x4 = 16",
+        "text": "4x4 = 16"
+      },
+      {
+        "section": "The 6 DOF and the 4x4 = 16",
+        "text": "2^4 = 16"
+      },
+      {
+        "section": "The 6 DOF and the 4x4 = 16",
+        "text": "IPv4 = 4 octets"
+      },
+      {
+        "section": "The 6 DOF and the 4x4 = 16",
+        "text": "matrix = 4 rows"
+      }
+    ],
+    "corrections": [],
+    "witnesses": [
+      "XRRigidTransform.matrix = Float32Array(16)"
+    ]
+  },
+  {
+    "id": "I-150",
+    "tag": "46",
+    "title": "144 web workers, HSV of codepoints",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-150.ts",
+      "js/catalog/I-122.ts (roll-up record I-150)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "e631b3c2334b90c9c91f3777d54b9fc060246fe1a3bb68b37b49ff7c74ea8242",
+        "bytes": 9081
+      },
+      "base64": "js/vm/46.b64",
+      "base64url": "js/vm/46.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The 4 global scopes",
+        "text": "4 global scopes"
+      },
+      {
+        "section": "The 4 global scopes",
+        "text": "Window first"
+      },
+      {
+        "section": "The 4 global scopes",
+        "text": "Dedicated"
+      },
+      {
+        "section": "The 4 global scopes",
+        "text": "Shared"
+      },
+      {
+        "section": "The 4 global scopes",
+        "text": "Service"
+      },
+      {
+        "section": "The 36 base-36 symbols",
+        "text": "36 base-36 symbols"
+      },
+      {
+        "section": "144 = 4 × 36 = 12 × 12",
+        "text": "4 x 36 = 144"
+      },
+      {
+        "section": "144 = 4 × 36 = 12 × 12",
+        "text": "12 x 12 = 144"
+      },
+      {
+        "section": "144 = 4 × 36 = 12 × 12",
+        "text": "mod-12 ring"
+      },
+      {
+        "section": "144 = 4 × 36 = 12 × 12",
+        "text": "12 x 12 grid = 144"
+      },
+      {
+        "section": "RGBA = 256^4 = 2^32",
+        "text": "256^4 = 4,294,967,296"
+      },
+      {
+        "section": "RGBA = 256^4 = 2^32",
+        "text": "2^32"
+      },
+      {
+        "section": "RGBA = 256^4 = 2^32",
+        "text": "max RGBA = 0xFFFFFFFF"
+      },
+      {
+        "section": "The RGBA channels",
+        "text": "4 channels"
+      },
+      {
+        "section": "The RGBA channels",
+        "text": "channel ${ch} is 1 char"
+      },
+      {
+        "section": "The RGBA channels",
+        "text": "256 = 2^8"
+      },
+      {
+        "section": "HSV of a codepoint",
+        "text": "red hue = 0"
+      },
+      {
+        "section": "HSV of a codepoint",
+        "text": "red saturation = 1"
+      },
+      {
+        "section": "HSV of a codepoint",
+        "text": "red value = 1"
+      },
+      {
+        "section": "The worker as HSV of a codepoint",
+        "text": "literal A1"
+      },
+      {
+        "section": "The worker as HSV of a codepoint",
+        "text": "A1 codepoint = 361"
+      },
+      {
+        "section": "The worker as HSV of a codepoint",
+        "text": "hue in 0-360"
+      },
+      {
+        "section": "The worker as HSV of a codepoint",
+        "text": "sat in 0-1"
+      },
+      {
+        "section": "The worker as HSV of a codepoint",
+        "text": "val in 0-1"
+      },
+      {
+        "section": "The 144 workers",
+        "text": "144 workers"
+      },
+      {
+        "section": "The 144 workers",
+        "text": "36 distinct literals (×4 scopes)"
+      },
+      {
+        "section": "The 6 axes of freedom per worker",
+        "text": "6 DOF"
+      },
+      {
+        "section": "The 6 axes of freedom per worker",
+        "text": "144 x 6 = 864"
+      },
+      {
+        "section": "The WindowOrWorkerGlobalScope mixin",
+        "text": "13 shared mixin members"
+      },
+      {
+        "section": "The WindowOrWorkerGlobalScope mixin",
+        "text": "mixin: ${m}"
+      },
+      {
+        "section": "The 4 global scopes × 36 symbols = 144",
+        "text": "4 scopes"
+      },
+      {
+        "section": "The 4 global scopes × 36 symbols = 144",
+        "text": "${s.name} has 36 workers"
+      },
+      {
+        "section": "The 4 global scopes × 36 symbols = 144",
+        "text": "4 × 36 = 144"
+      },
+      {
+        "section": "The sub-window workers",
+        "text": "4 global"
+      },
+      {
+        "section": "The sub-window workers",
+        "text": "36 sub per global"
+      },
+      {
+        "section": "The sub-window workers",
+        "text": "4 sub-sub per sub (RGBA)"
+      },
+      {
+        "section": "The sub-window workers",
+        "text": "4 × 36 = 144"
+      },
+      {
+        "section": "The RGBA projection of a worker",
+        "text": "RGBA in 32-bit range"
+      },
+      {
+        "section": "The HSV cone (the color space)",
+        "text": "hue range"
+      },
+      {
+        "section": "The HSV cone (the color space)",
+        "text": "6 primary hues (RGB, CMY)"
+      },
+      {
+        "section": "The HSV cone (the color space)",
+        "text": "6 primary/secondary hues"
+      },
+      {
+        "section": "The color space as a 256^4 address",
+        "text": "workers map to color addresses"
+      },
+      {
+        "section": "The color space as a 256^4 address",
+        "text": "144 workers still"
+      }
+    ],
+    "corrections": [],
+    "witnesses": [
+      "WindowOrWorkerGlobalScope mixin"
+    ]
+  },
+  {
+    "id": "I-151",
+    "tag": "47",
+    "title": "edge-n-tokenizer → TemplateLiteralArray → RegExp → Proxy/Reflect",
+    "category": "point-line-duality",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-151.ts",
+      "js/catalog/I-122.ts (roll-up record I-151)"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "47fcc31c1f816a4b39592842f3bdd26bc0ad7131433b016fd7b78bbb87826159",
+        "bytes": 8526
+      },
+      "base64": "js/vm/47.b64",
+      "base64url": "js/vm/47.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The edge range (I-113)",
+        "text": "2 vertex values"
+      },
+      {
+        "section": "The edge range (I-113)",
+        "text": "6 edge values"
+      },
+      {
+        "section": "The edge range (I-113)",
+        "text": "V + E = octet"
+      },
+      {
+        "section": "The edge-n-tokenizer",
+        "text": "tokenizer produces tokens"
+      },
+      {
+        "section": "The edge-n-tokenizer",
+        "text": "3 edge tokens"
+      },
+      {
+        "section": "TemplateLiteralArray generator",
+        "text": "`assert.deepStrictEqual(captured.cooked, [\"hello \", \" and \", \"\"]);`"
+      },
+      {
+        "section": "TemplateLiteralArray generator",
+        "text": "`assert.deepStrictEqual(captured.values, [\"world\", 3]);`"
+      },
+      {
+        "section": "TemplateLiteralArray generator",
+        "text": "`assert.strictEqual(captured.length, 3);`"
+      },
+      {
+        "section": "RegExp template literal function",
+        "text": "re returns RegExp"
+      },
+      {
+        "section": "RegExp template literal function",
+        "text": "regex source built from template"
+      },
+      {
+        "section": "RegExp template literal function",
+        "text": "regex matches"
+      },
+      {
+        "section": "RegExp template literal function",
+        "text": "regex rejects"
+      },
+      {
+        "section": "Self-contained Proxy/Reflect",
+        "text": "proxy get a"
+      },
+      {
+        "section": "Self-contained Proxy/Reflect",
+        "text": "proxy get b"
+      },
+      {
+        "section": "Self-contained Proxy/Reflect",
+        "text": "proxy set c"
+      },
+      {
+        "section": "Self-contained Proxy/Reflect",
+        "text": "proxy has c"
+      },
+      {
+        "section": "Self-contained Proxy/Reflect",
+        "text": "proxy delete c"
+      },
+      {
+        "section": "The full pipeline",
+        "text": "pipeline returns RegExp"
+      },
+      {
+        "section": "Wrap the regex in a self-contained Proxy",
+        "text": "wrapped source"
+      },
+      {
+        "section": "Wrap the regex in a self-contained Proxy",
+        "text": "wrapped test"
+      },
+      {
+        "section": "Wrap the regex in a self-contained Proxy",
+        "text": "wrapped test false"
+      },
+      {
+        "section": "The edge-n parameter as the 6 DOF",
+        "text": "n=${n} produces tokens"
+      },
+      {
+        "section": "The edge-n parameter as the 6 DOF",
+        "text": "6 edge values = 6 DOF"
+      },
+      {
+        "section": "Self-contained: no external dependencies",
+        "text": "Proxy is a built-in"
+      },
+      {
+        "section": "Self-contained: no external dependencies",
+        "text": "Reflect is a built-in"
+      },
+      {
+        "section": "Self-contained: no external dependencies",
+        "text": "RegExp is a built-in"
+      },
+      {
+        "section": "The whole thing as one object",
+        "text": "function"
+      },
+      {
+        "section": "The whole thing as one object",
+        "text": "function"
+      },
+      {
+        "section": "The whole thing as one object",
+        "text": "function"
+      },
+      {
+        "section": "The whole thing as one object",
+        "text": "self-contained buildRegex works"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-152",
+    "tag": "48",
+    "title": "the mnemonic protocol",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-152.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "13a929e8961bbaf75e421372539cbe9151caaa49536e36c7dc7b00c862f39685",
+        "bytes": 7774
+      },
+      "base64": "js/vm/48.b64",
+      "base64url": "js/vm/48.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Background agents (the 144 workers)",
+        "text": "4 global scopes"
+      },
+      {
+        "section": "Background agents (the 144 workers)",
+        "text": "36 base-36 symbols"
+      },
+      {
+        "section": "Background agents (the 144 workers)",
+        "text": "144 agents"
+      },
+      {
+        "section": "Local or remote: the agent can be in either scope",
+        "text": "144 agents × 2 locations = 288"
+      },
+      {
+        "section": "Synchronization channel",
+        "text": "message delivered"
+      },
+      {
+        "section": "Synchronization channel",
+        "text": "payload intact"
+      },
+      {
+        "section": "Without time: the sync is event-driven",
+        "text": "FIFO ordering, no clock"
+      },
+      {
+        "section": "Atomic kernel invariant of time",
+        "text": "first exchange sees 10"
+      },
+      {
+        "section": "Atomic kernel invariant of time",
+        "text": "value is now 20"
+      },
+      {
+        "section": "Atomic kernel invariant of time",
+        "text": "second exchange sees 20, not 10"
+      },
+      {
+        "section": "Atomic kernel invariant of time",
+        "text": "value unchanged (compare failed)"
+      },
+      {
+        "section": "The invariant is logical (happens-before), not physical",
+        "text": "logical order: read 1, write 2, read 2"
+      },
+      {
+        "section": "Index 60 as the anchor",
+        "text": "anchor at index 60 unchanged"
+      },
+      {
+        "section": "The 7-slot reset",
+        "text": "1 cycle in 7"
+      },
+      {
+        "section": "The 7-slot reset",
+        "text": "2 cycles in 14"
+      },
+      {
+        "section": "The 7-slot reset",
+        "text": "4 cycles in 28"
+      },
+      {
+        "section": "Tagged natural language as the mnemonic",
+        "text": "tag name is mnemonic"
+      },
+      {
+        "section": "Tagged natural language as the mnemonic",
+        "text": "values captured"
+      },
+      {
+        "section": "The mnemonic is in the base-36 block",
+        "text": "AGENTA is a valid mnemonic"
+      },
+      {
+        "section": "The mnemonic is in the base-36 block",
+        "text": "A1B2C3 is a valid mnemonic"
+      },
+      {
+        "section": "The mnemonic is in the base-36 block",
+        "text": "lowercase is not a mnemonic"
+      },
+      {
+        "section": "The mnemonic is in the base-36 block",
+        "text": "hyphen is not in the block"
+      },
+      {
+        "section": "The full pipeline: mnemonic → agent → sync",
+        "text": "first char = A"
+      },
+      {
+        "section": "The full pipeline: mnemonic → agent → sync",
+        "text": "scope from base-36 index"
+      },
+      {
+        "section": "Every computer can sync without agreeing on a clock",
+        "text": "protocol requires: ${r}"
+      },
+      {
+        "section": "Every computer can sync without agreeing on a clock",
+        "text": "4 protocol requirements"
+      },
+      {
+        "section": "The invariant of time is built into the kernel",
+        "text": "logical order"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-153",
+    "tag": "49",
+    "title": "every deviation is a measurable boot difference",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-153.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "c7faf94d80ca612ba013531d396a4a15e79146eda4d38a408e4b9ff418ce7082",
+        "bytes": 8727
+      },
+      "base64": "js/vm/49.b64",
+      "base64url": "js/vm/49.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "No deviation = no difference",
+        "text": "identical boots: no difference"
+      },
+      {
+        "section": "Every deviation produces at least one measurable difference",
+        "text": "\"${d.name}\" produces a measurable difference"
+      },
+      {
+        "section": "Every deviation produces at least one measurable difference",
+        "text": "\"${d.name}\" differs on ${expected}"
+      },
+      {
+        "section": "Every deviation produces at least one measurable difference",
+        "text": "8 deviations tested"
+      },
+      {
+        "section": "The falsification condition",
+        "text": "\"${d.name}\" is falsifiable"
+      },
+      {
+        "section": "The deviation is measurable FROM boot",
+        "text": "boot time differs between boot and later"
+      },
+      {
+        "section": "Every boot trace is reproducible",
+        "text": "two identical boots produce identical traces"
+      },
+      {
+        "section": "The POST beep is the first measurable signal",
+        "text": "POST first"
+      },
+      {
+        "section": "The POST beep is the first measurable signal",
+        "text": "BEEP is the first measurable signal"
+      },
+      {
+        "section": "The POST beep is the first measurable signal",
+        "text": "USER_CODE last"
+      },
+      {
+        "section": "The anchor at index 60 is boot-stable",
+        "text": "anchor stable across writes"
+      },
+      {
+        "section": "The measurable quantities map to the vault",
+        "text": "8 quantities mapped"
+      },
+      {
+        "section": "If a deviation is unmeasurable, the claim is invalid",
+        "text": "\"${d.name}\" IS measurable"
+      },
+      {
+        "section": "The protocol is falsifiable",
+        "text": "the null deviation produces no diff"
+      },
+      {
+        "section": "The protocol is falsifiable",
+        "text": "real deviation \"${d.name}\" produces diff"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-154",
+    "tag": "4A",
+    "title": "x86 boot at 0x7C00; 0x007C is the byte-swap",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-154.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "88fe59c8db15e11ec50edf88d7b3d037f8d81194fdd957734e8342daa9b64e0a",
+        "bytes": 7902
+      },
+      "base64": "js/vm/4A.b64",
+      "base64url": "js/vm/4A.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The x86 boot address",
+        "text": "0x7C00 = 31744"
+      },
+      {
+        "section": "The x86 boot address",
+        "text": "0x7C00 in hex"
+      },
+      {
+        "section": "The reset vector",
+        "text": "reset vector"
+      },
+      {
+        "section": "The reset vector",
+        "text": "2^32 - 16"
+      },
+      {
+        "section": "The BIOS memory map",
+        "text": "IVT = 1024 bytes"
+      },
+      {
+        "section": "The BIOS memory map",
+        "text": "BDA = 256 bytes"
+      },
+      {
+        "section": "The BIOS memory map",
+        "text": "MBR = 512 bytes"
+      },
+      {
+        "section": "The boot sector signature",
+        "text": "signature at 0x7DFE"
+      },
+      {
+        "section": "The boot sector signature",
+        "text": "signature byte 0"
+      },
+      {
+        "section": "The boot sector signature",
+        "text": "signature byte 1"
+      },
+      {
+        "section": "The boot sector signature",
+        "text": "signature = 0x55 + 0xAA = 0xFF"
+      },
+      {
+        "section": "The byte-swap: 0x7C00 -> 0x007C",
+        "text": "swap16(0x7C00) = 0x007C"
+      },
+      {
+        "section": "The byte-swap: 0x7C00 -> 0x007C",
+        "text": "swap16(0x007C) = 0x7C00"
+      },
+      {
+        "section": "The byte-swap: 0x7C00 -> 0x007C",
+        "text": "swap is involution"
+      },
+      {
+        "section": "The segment form",
+        "text": "segment = 0x7C0"
+      },
+      {
+        "section": "The segment form",
+        "text": "segment * 16 = 0x7C00"
+      },
+      {
+        "section": "Little-endian byte layout",
+        "text": "little-endian bytes = 0x00, 0x7C"
+      },
+      {
+        "section": "Little-endian byte layout",
+        "text": "little-endian round-trip"
+      },
+      {
+        "section": "The nibble structure of 0x7C00",
+        "text": "0x7C00 in binary"
+      },
+      {
+        "section": "The nibble structure of 0x7C00",
+        "text": "nibbles = 7, C, 0, 0"
+      },
+      {
+        "section": "The nibble structure of 0x7C00",
+        "text": "4 nibbles"
+      },
+      {
+        "section": "The kernel seed point",
+        "text": "6 boot steps"
+      },
+      {
+        "section": "The kernel seed point",
+        "text": "first: POST"
+      },
+      {
+        "section": "The kernel seed point",
+        "text": "last: KERNEL_SEED"
+      },
+      {
+        "section": "The kernel seed point",
+        "text": "JUMP to 0x7C00"
+      },
+      {
+        "section": "The seed moment: 0x7C00 in the vault's frame",
+        "text": "address form"
+      },
+      {
+        "section": "The seed moment: 0x7C00 in the vault's frame",
+        "text": "segment form"
+      },
+      {
+        "section": "The seed moment: 0x7C00 in the vault's frame",
+        "text": "swap form"
+      },
+      {
+        "section": "The seed moment: 0x7C00 in the vault's frame",
+        "text": "nibbles form"
+      },
+      {
+        "section": "The boot beep and the seed",
+        "text": "BEEP before KERNEL_SEED"
+      },
+      {
+        "section": "The boot beep and the seed",
+        "text": "4 events at 0x7C00"
+      },
+      {
+        "section": "Every x86 and i386 conforms to this",
+        "text": "6 x86 generations"
+      },
+      {
+        "section": "Every x86 and i386 conforms to this",
+        "text": "boot address is 0x7C00"
+      },
+      {
+        "section": "Every x86 and i386 conforms to this",
+        "text": "i386 = 80386"
+      },
+      {
+        "section": "Every x86 and i386 conforms to this",
+        "text": "universal across x86"
+      },
+      {
+        "section": "The measurable difference (I-153)",
+        "text": "different boot addresses are measurable"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-155",
+    "tag": "4B",
+    "title": "the 4GB shared logical memory pool",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-155.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "19183a22270a63082be1b42ba5e7addd246c04602ea8cde9a74d01726cb51be1",
+        "bytes": 8832
+      },
+      "base64": "js/vm/4B.b64",
+      "base64url": "js/vm/4B.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The reset vector at the top",
+        "text": "reset vector = 2^32 - 16"
+      },
+      {
+        "section": "The reset vector at the top",
+        "text": "= 2^32 - 16"
+      },
+      {
+        "section": "The reset vector at the top",
+        "text": "reset + 16 = 2^32"
+      },
+      {
+        "section": "The top of the 4GB space",
+        "text": "top of 4GB"
+      },
+      {
+        "section": "The top of the 4GB space",
+        "text": "= 4294967295"
+      },
+      {
+        "section": "The top of the 4GB space",
+        "text": "top + 1 = 2^32"
+      },
+      {
+        "section": "The top of the 4GB space",
+        "text": "16 bytes of reset vector"
+      },
+      {
+        "section": "The standard memory layout",
+        "text": "layout has regions"
+      },
+      {
+        "section": "The IVT and BDA sizes",
+        "text": "IVT = 1024 bytes"
+      },
+      {
+        "section": "The IVT and BDA sizes",
+        "text": "IVT spans 1024 bytes"
+      },
+      {
+        "section": "The IVT and BDA sizes",
+        "text": "BDA = 256 bytes"
+      },
+      {
+        "section": "The MBR",
+        "text": "MBR at 0x7C00"
+      },
+      {
+        "section": "The MBR",
+        "text": "MBR = 512 bytes"
+      },
+      {
+        "section": "The MBR",
+        "text": "MBR ends at 0x7DFF"
+      },
+      {
+        "section": "The MBR",
+        "text": "signature at 0x7DFE"
+      },
+      {
+        "section": "The reset vector",
+        "text": "reset at 0xFFFFFFF0"
+      },
+      {
+        "section": "The reset vector",
+        "text": "reset = 16 bytes"
+      },
+      {
+        "section": "The 4GB base pool",
+        "text": "4GB = 2^32"
+      },
+      {
+        "section": "The 4GB base pool",
+        "text": "4 GiB"
+      },
+      {
+        "section": "Above 4GB: additional memory",
+        "text": "64GB"
+      },
+      {
+        "section": "Above 4GB: additional memory",
+        "text": "above 4GB is more"
+      },
+      {
+        "section": "Above 4GB: additional memory",
+        "text": "the base pool is still 2^32"
+      },
+      {
+        "section": "The layout is shared across machines",
+        "text": "same layout on both machines"
+      },
+      {
+        "section": "Logical vs physical",
+        "text": "different RAM"
+      },
+      {
+        "section": "Logical vs physical",
+        "text": "same layout"
+      },
+      {
+        "section": "Logical vs physical",
+        "text": "identical layouts"
+      },
+      {
+        "section": "The pool as a protocol anchor",
+        "text": "6 anchors"
+      },
+      {
+        "section": "The pool as a protocol anchor",
+        "text": "${name} in 4GB range"
+      },
+      {
+        "section": "SharedArrayBuffer vs the 4GB pool",
+        "text": "3 share mechanisms"
+      },
+      {
+        "section": "SharedArrayBuffer vs the 4GB pool",
+        "text": "${s.name} has an anchor"
+      },
+      {
+        "section": "The reset-to-boot span",
+        "text": "reset to boot = 0xFFFF83F0"
+      },
+      {
+        "section": "The reset-to-boot span",
+        "text": "= 4294935536"
+      },
+      {
+        "section": "The reset-to-boot span",
+        "text": "positive span"
+      },
+      {
+        "section": "The shared pool as a fractal",
+        "text": "${s.name} is a power of 2"
+      },
+      {
+        "section": "The shared pool as a fractal",
+        "text": "${s.name} is 2^n"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-156",
+    "tag": "4C",
+    "title": "QEMU virtual is a global worker",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-156.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "c16f8f79fc80903c85a5bfd1c3a281442cd348b510a7234c061d3c09199c9e07",
+        "bytes": 7874
+      },
+      "base64": "js/vm/4C.b64",
+      "base64url": "js/vm/4C.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The x86 standard layout",
+        "text": "reset = 2^32 - 16"
+      },
+      {
+        "section": "The x86 standard layout",
+        "text": "boot = 0x7C00"
+      },
+      {
+        "section": "The x86 standard layout",
+        "text": "top = 2^32 - 1"
+      },
+      {
+        "section": "The guest VM has the same layout",
+        "text": "guest has the same layout as host"
+      },
+      {
+        "section": "The guest is a worker",
+        "text": "web worker has 2 channels"
+      },
+      {
+        "section": "The guest is a worker",
+        "text": "qemu VM has 4 channels"
+      },
+      {
+        "section": "The guest is a worker",
+        "text": "VM anchored at reset"
+      },
+      {
+        "section": "The guest is a worker",
+        "text": "VM anchored at boot"
+      },
+      {
+        "section": "The correspondence",
+        "text": "5 correspondences"
+      },
+      {
+        "section": "The correspondence",
+        "text": "web worker side: ${c.webWorker}"
+      },
+      {
+        "section": "The correspondence",
+        "text": "qemu VM side: ${c.qemuVM}"
+      },
+      {
+        "section": "The GED is the event channel",
+        "text": "GED register 0x910"
+      },
+      {
+        "section": "The GED is the event channel",
+        "text": "GED event byte 0x01"
+      },
+      {
+        "section": "The GED is the event channel",
+        "text": "GED has destination"
+      },
+      {
+        "section": "The GED is the event channel",
+        "text": "postMessage has destination"
+      },
+      {
+        "section": "The VM as a global scope",
+        "text": "host view"
+      },
+      {
+        "section": "The VM as a global scope",
+        "text": "guest view"
+      },
+      {
+        "section": "The VM as a global scope",
+        "text": "two views, one object"
+      },
+      {
+        "section": "The reset vector survives the emulation",
+        "text": "guest reset vector"
+      },
+      {
+        "section": "The reset vector survives the emulation",
+        "text": "guest boot vector"
+      },
+      {
+        "section": "Nesting: VMs inside VMs are workers inside workers",
+        "text": "host has no parent"
+      },
+      {
+        "section": "Nesting: VMs inside VMs are workers inside workers",
+        "text": "layer ${i} parent"
+      },
+      {
+        "section": "Nesting: VMs inside VMs are workers inside workers",
+        "text": "4 layers"
+      },
+      {
+        "section": "QEMU's GED as the sync channel",
+        "text": "2 GED events queued"
+      },
+      {
+        "section": "QEMU's GED as the sync channel",
+        "text": "first event byte"
+      },
+      {
+        "section": "QEMU's GED as the sync channel",
+        "text": "second event byte"
+      },
+      {
+        "section": "The whole picture",
+        "text": "4 worker identities"
+      },
+      {
+        "section": "The whole picture",
+        "text": "${id.layer} shares layout"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  }
+]
