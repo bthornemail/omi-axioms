@@ -8349,5 +8349,70 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-184",
+    "tag": "54",
+    "title": "the closure is the difference between reading and writing an index",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-184.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "cdbb03faff961f9482ddd46591772105756e07401193754ca98f83abf5ac4303",
+        "bytes": 3838
+      },
+      "base64": "js/vm/54.b64",
+      "base64url": "js/vm/54.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Every index, every width to 16 bits",
+        "text": "read ^ write = the closure"
+      },
+      {
+        "section": "Every index, every width to 16 bits",
+        "text": "read + write = the closure: no carries, since they share no bit"
+      },
+      {
+        "section": "Every index, every width to 16 bits",
+        "text": "the closure - read = write: no borrows"
+      },
+      {
+        "section": "Every index, every width to 16 bits",
+        "text": "writing the written index reads it back"
+      },
+      {
+        "section": "Every index, every width to 16 bits",
+        "text": "an index and its written view are never the same"
+      },
+      {
+        "section": "1963: 19 read, 44 written, 63 between",
+        "text": "19 = 010011, written in six bits: 101100 = 44"
+      },
+      {
+        "section": "1963: 19 read, 44 written, 63 between",
+        "text": "19 ^ 44 = 63 = 2^6 - 1"
+      },
+      {
+        "section": "1963: 19 read, 44 written, 63 between",
+        "text": "63 - 19 = 19 ^ 63 = 44: the subtraction is the XOR"
+      },
+      {
+        "section": "Arithmetic reads, boolean writes: they agree at the closure only",
+        "text": "in ${n} bits, y - x = y ^ x for every x only at y = 2^${n} - 1"
+      },
+      {
+        "section": "Arithmetic reads, boolean writes: they agree at the closure only",
+        "text": "19 agrees only on its own 2^3 bit-subsets: it is not a closure of this kind"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
