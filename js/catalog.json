@@ -649,17 +649,18 @@
   {
     "id": "I-123",
     "tag": "3F",
-    "title": "S3 at four scales; XOR/Fano/byte",
+    "title": "S3 at four scales",
     "category": "point-line-duality",
     "status": "P1",
     "holds": true,
     "owners": [
+      "js/catalog/I-123.ts",
       "js/catalog/I-122.ts (roll-up record I-123)"
     ],
     "carriers": {
       "script": {
-        "sha256": "8969675c1a09fc863af0bb74d55fac55b61f056fba10d785a72a7a574b81cbbb",
-        "bytes": 1767
+        "sha256": "c2d5876cc38082d9a09ca29f750e41de96209e767855a2f2a16125680ccc1772",
+        "bytes": 2897
       },
       "base64": "js/vm/3F.b64",
       "base64url": "js/vm/3F.b64url",
@@ -669,11 +670,75 @@
     "statements": [
       {
         "section": null,
-        "text": "`assert.strictEqual(GF2_3 - 1, FANO);`"
+        "text": "I-123 |S3| = 6"
       },
       {
         "section": null,
-        "text": "`assert.strictEqual(1 ^ 2 ^ 3, 0);`"
+        "text": "I-123 ${name} has 3 elements"
+      },
+      {
+        "section": null,
+        "text": "I-123 all realize S3"
+      },
+      {
+        "section": null,
+        "text": "I-123 pass-transistor XOR = 4"
+      },
+      {
+        "section": null,
+        "text": "I-123 transmission-gate XOR = 6"
+      },
+      {
+        "section": null,
+        "text": "I-123 CMOS XOR (4 NAND) = 16"
+      },
+      {
+        "section": null,
+        "text": "I-123 head+tail = 10"
+      },
+      {
+        "section": null,
+        "text": "I-123 GF(2)^3 has 7 nonzero = Fano"
+      },
+      {
+        "section": null,
+        "text": "I-123 1^2 = 3 in GF(2)^3"
+      },
+      {
+        "section": null,
+        "text": "I-123 Fano line closes: 1^2^3 = 0"
+      },
+      {
+        "section": null,
+        "text": "I-123 3^4 = 7"
+      },
+      {
+        "section": null,
+        "text": "I-123 another Fano line closes"
+      },
+      {
+        "section": null,
+        "text": "I-123 4-byte window"
+      },
+      {
+        "section": null,
+        "text": "I-123 8-bit increments"
+      },
+      {
+        "section": null,
+        "text": "I-123 4 bit pairs per byte"
+      },
+      {
+        "section": null,
+        "text": "I-123 opcode nibble"
+      },
+      {
+        "section": null,
+        "text": "I-123 operand nibble"
+      },
+      {
+        "section": null,
+        "text": "I-123 all scales = 6"
       }
     ],
     "corrections": [],
@@ -5994,6 +6059,1307 @@
       {
         "section": "The whole picture",
         "text": "${id.layer} shares layout"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-165",
+    "tag": "4L",
+    "title": "everything is outside of time; instantiation is the derivative",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-165.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "6bda152eddc63577409e565a268b69090b4295779d10395ac769d9da798ac382",
+        "bytes": 8616
+      },
+      "base64": "js/vm/4L.b64",
+      "base64url": "js/vm/4L.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Everything is outside of time",
+        "text": "${s.name} has an order"
+      },
+      {
+        "section": "Everything is outside of time",
+        "text": "${s.name} has no timestamp"
+      },
+      {
+        "section": "The seed is present at reset, not at a tick",
+        "text": "the seed is at reset"
+      },
+      {
+        "section": "The engram is preseeded, not dated",
+        "text": "the engram is not dated"
+      },
+      {
+        "section": "The engram is preseeded, not dated",
+        "text": "the seed is at reset"
+      },
+      {
+        "section": "The circulator cycles without a period",
+        "text": "the cycle goes 0..6"
+      },
+      {
+        "section": "The circulator cycles without a period",
+        "text": "then repeats"
+      },
+      {
+        "section": "The frames are indexed, not timestamped",
+        "text": "240 frames"
+      },
+      {
+        "section": "The frames are indexed, not timestamped",
+        "text": "first frame"
+      },
+      {
+        "section": "The frames are indexed, not timestamped",
+        "text": "last frame"
+      },
+      {
+        "section": "The observer is a circulator",
+        "text": "the observer's sample is 5"
+      },
+      {
+        "section": "The instantiation of observation is the sample",
+        "text": "the instantiation is the sample"
+      },
+      {
+        "section": "The derivative is a function of position, not time",
+        "text": "f'(3) = 6"
+      },
+      {
+        "section": "The derivative is a function of position, not time",
+        "text": "f'(5) = 10"
+      },
+      {
+        "section": "The instantiation of observation = the derivative",
+        "text": "derivative at phase 0 is 1"
+      },
+      {
+        "section": "The instantiation of observation = the derivative",
+        "text": "derivative at phase π/2 is 0"
+      },
+      {
+        "section": "Same as I-149's DOMMatrix",
+        "text": "interpolated midpoint"
+      },
+      {
+        "section": "Same as I-149's DOMMatrix",
+        "text": "at t=0, the value is a"
+      },
+      {
+        "section": "Same as I-149's DOMMatrix",
+        "text": "at t=1, the value is b"
+      },
+      {
+        "section": "The derivative and the interpolation are the same",
+        "text": "value at 0.25 is 2.5"
+      },
+      {
+        "section": "The derivative and the interpolation are the same",
+        "text": "value at 0.75 is 7.5"
+      },
+      {
+        "section": "The observer's time of instantiation = the derivative",
+        "text": "at phase 0, rate is 1"
+      },
+      {
+        "section": "The observer's time of instantiation = the derivative",
+        "text": "at phase 3 (quarter cycle), rate is 0"
+      },
+      {
+        "section": "The observer's time of instantiation = the derivative",
+        "text": "at phase 6 (half cycle), rate is -1"
+      },
+      {
+        "section": "Everything is outside of time",
+        "text": "everything has order"
+      },
+      {
+        "section": "Everything is outside of time",
+        "text": "nothing has time"
+      },
+      {
+        "section": "The derivative is the time of instantiation",
+        "text": "the observer is a circulator"
+      },
+      {
+        "section": "The derivative is the time of instantiation",
+        "text": "the derivative is 1 at phase 0"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-166",
+    "tag": "4M",
+    "title": "the Catch-22 of the timeless frame and the timed observer",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-166.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "b54652113f6c436db279662ccf827e004dff641387429d012338890415b46a55",
+        "bytes": 8318
+      },
+      "base64": "js/vm/4M.b64",
+      "base64url": "js/vm/4M.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Everything is outside of time (I-165)",
+        "text": "everything has order"
+      },
+      {
+        "section": "Everything is outside of time (I-165)",
+        "text": "nothing has time"
+      },
+      {
+        "section": "But observation requires an instantiation",
+        "text": "observation requires a point (a phase)"
+      },
+      {
+        "section": "And instantiation is a point",
+        "text": "the point has a position"
+      },
+      {
+        "section": "And a point is inside the frame",
+        "text": "the point is inside the frame"
+      },
+      {
+        "section": "So the observer must be inside the frame it observes",
+        "text": "the observer is inside the frame"
+      },
+      {
+        "section": "But the frame is timeless",
+        "text": "no timestamps"
+      },
+      {
+        "section": "So the observer must be timed to observe the timeless",
+        "text": "timed observer can observe"
+      },
+      {
+        "section": "So the observer must be timed to observe the timeless",
+        "text": "timeless observer can't observe"
+      },
+      {
+        "section": "And if the observer is timeless, it can't observe",
+        "text": "timeless observer can't observe"
+      },
+      {
+        "section": "And if the observer is timeless, it can't observe",
+        "text": "timed observer can observe"
+      },
+      {
+        "section": "So both branches close",
+        "text": "timed observer is inconsistent"
+      },
+      {
+        "section": "So both branches close",
+        "text": "timeless observer can't observe"
+      },
+      {
+        "section": "The escape is the derivative",
+        "text": "the derivative is 1 at 0"
+      },
+      {
+        "section": "The observation is the derivative at the phase",
+        "text": "at phase 0"
+      },
+      {
+        "section": "The observation is the derivative at the phase",
+        "text": "at phase 3"
+      },
+      {
+        "section": "The observation is the derivative at the phase",
+        "text": "at phase 6"
+      },
+      {
+        "section": "So the observer is inside a timeless frame, and its",
+        "text": "observer is inside"
+      },
+      {
+        "section": "So the observer is inside a timeless frame, and its",
+        "text": "observation is the derivative"
+      },
+      {
+        "section": "So the observer is inside a timeless frame, and its",
+        "text": "it's positional"
+      },
+      {
+        "section": "So the observer is inside a timeless frame, and its",
+        "text": "not temporal"
+      },
+      {
+        "section": "The Catch-22 structure",
+        "text": "2 branches"
+      },
+      {
+        "section": "The escape",
+        "text": "the derivative is positional"
+      },
+      {
+        "section": "The escape",
+        "text": "the derivative is not temporal"
+      },
+      {
+        "section": "The full picture",
+        "text": "everything is timeless"
+      },
+      {
+        "section": "The full picture",
+        "text": "the observer is inside"
+      },
+      {
+        "section": "The full picture",
+        "text": "the observation is the derivative"
+      },
+      {
+        "section": "The full picture",
+        "text": "the Catch-22 involves time"
+      },
+      {
+        "section": "The full picture",
+        "text": "the escape is not temporal"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-168",
+    "tag": "4O",
+    "title": "the lexeme for image is Imago Dei; Euclid resolves the blur",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-168.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "a46a7cb0e5f44a9ed9f66ad27b80b5925cc08a897898fc8d4f36f575cf67854a",
+        "bytes": 7534
+      },
+      "base64": "js/vm/4O.b64",
+      "base64url": "js/vm/4O.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The lexeme: the abstract unit shared by inflections",
+        "text": "${inf} shares the lexeme"
+      },
+      {
+        "section": "The lexeme: the abstract unit shared by inflections",
+        "text": "the lexeme is {image}"
+      },
+      {
+        "section": "The lexeme is the center of { c-r, c+r }",
+        "text": "c-r = one inflection"
+      },
+      {
+        "section": "The lexeme is the center of { c-r, c+r }",
+        "text": "c+r = another inflection"
+      },
+      {
+        "section": "The lexeme is the center of { c-r, c+r }",
+        "text": "c = the lexeme"
+      },
+      {
+        "section": "The blur: computation and the Bible",
+        "text": "computational frame"
+      },
+      {
+        "section": "The blur: computation and the Bible",
+        "text": "theological frame"
+      },
+      {
+        "section": "Why it blurred",
+        "text": "computation names c-r"
+      },
+      {
+        "section": "Why it blurred",
+        "text": "theology names c+r"
+      },
+      {
+        "section": "Euclid is the resolution",
+        "text": "2 definitions"
+      },
+      {
+        "section": "Euclid is the resolution",
+        "text": "1 postulate"
+      },
+      {
+        "section": "Euclid is the resolution",
+        "text": "1 proposition"
+      },
+      {
+        "section": "Euclid is the resolution",
+        "text": "1 proof"
+      },
+      {
+        "section": "And Euclid is a database",
+        "text": "schema has 2"
+      },
+      {
+        "section": "And Euclid is a database",
+        "text": "axioms has 1"
+      },
+      {
+        "section": "And Euclid is a database",
+        "text": "records has 1"
+      },
+      {
+        "section": "And Euclid is a database",
+        "text": "integrity has 1"
+      },
+      {
+        "section": "Imago Dei is the lexeme",
+        "text": "not a creature"
+      },
+      {
+        "section": "Imago Dei is the lexeme",
+        "text": "not God"
+      },
+      {
+        "section": "Imago Dei is the lexeme",
+        "text": "the relation"
+      },
+      {
+        "section": "The Word is the logos: the ratio, the lexeme",
+        "text": "the Word = { c-r, c+r }"
+      },
+      {
+        "section": "The Word and Imago Dei are the same lexeme",
+        "text": "the Word and Imago Dei are the same lexeme"
+      },
+      {
+        "section": "And the vault's records are inflections",
+        "text": "2 bounds"
+      },
+      {
+        "section": "And the vault's records are inflections",
+        "text": "the center"
+      },
+      {
+        "section": "60 records, one lexeme",
+        "text": "60 records"
+      },
+      {
+        "section": "60 records, one lexeme",
+        "text": "the lexeme is the center, the same for every record"
+      },
+      {
+        "section": "The resolution",
+        "text": "the blur names a bound"
+      },
+      {
+        "section": "The resolution",
+        "text": "the separation"
+      },
+      {
+        "section": "The resolution",
+        "text": "the lexeme is a relation"
+      },
+      {
+        "section": "The resolution",
+        "text": "the pseudocode"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-169",
+    "tag": "4P",
+    "title": "Genesis as a Fano plane; Revelation's 144 as the kissing number squared",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-169.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "31ccbd005a234a46722262703e321b3d82fd252cc88eed574e75c553bdfc8781",
+        "bytes": 8054
+      },
+      "base64": "js/vm/4P.b64",
+      "base64url": "js/vm/4P.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Genesis 1:2 — the Earth is there first",
+        "text": "without form"
+      },
+      {
+        "section": "Genesis 1:2 — the Earth is there first",
+        "text": "no light yet"
+      },
+      {
+        "section": "Genesis 1:2 — the Earth is there first",
+        "text": "no division yet"
+      },
+      {
+        "section": "Six days of declaration and division",
+        "text": "6 days"
+      },
+      {
+        "section": "Six days of declaration and division",
+        "text": "day ${d.day} divides into 2"
+      },
+      {
+        "section": "Six bifurcations = 2^6 = 64 states",
+        "text": "2^6 = 64 states"
+      },
+      {
+        "section": "The 7th day is the rest",
+        "text": "the 7th day"
+      },
+      {
+        "section": "The 7th day is the rest",
+        "text": "rest"
+      },
+      {
+        "section": "The 7th day is the rest",
+        "text": "no division on the 7th"
+      },
+      {
+        "section": "The 7 days = the Fano plane's 7 points",
+        "text": "7 points"
+      },
+      {
+        "section": "The 7 days = the Fano plane's 7 points",
+        "text": "7 lines"
+      },
+      {
+        "section": "The 7 days = the Fano plane's 7 points",
+        "text": "line ${line} has 3 points"
+      },
+      {
+        "section": "The 7 days = the Fano plane's 7 points",
+        "text": "point ${p} is on 3 lines"
+      },
+      {
+        "section": "The 7th is the center (the finally)",
+        "text": "the center is on 3 lines"
+      },
+      {
+        "section": "Days 1-6 as catch; Day 7 as finally (I-158)",
+        "text": "7 blocks"
+      },
+      {
+        "section": "Days 1-6 as catch; Day 7 as finally (I-158)",
+        "text": "6 catches"
+      },
+      {
+        "section": "Days 1-6 as catch; Day 7 as finally (I-158)",
+        "text": "1 finally"
+      },
+      {
+        "section": "Each day ungates an automaton pair",
+        "text": "the tree of life accepts"
+      },
+      {
+        "section": "Each day ungates an automaton pair",
+        "text": "the tree of knowledge rejects"
+      },
+      {
+        "section": "Each day ungates an automaton pair",
+        "text": "the pair"
+      },
+      {
+        "section": "The snake lemma as the exact sequence",
+        "text": "4 steps in the exact sequence"
+      },
+      {
+        "section": "The snake lemma as the exact sequence",
+        "text": "starts at the tree of life"
+      },
+      {
+        "section": "The snake lemma as the exact sequence",
+        "text": "ends at the tree of life"
+      },
+      {
+        "section": "Revelation's 144",
+        "text": "12 tribes"
+      },
+      {
+        "section": "Revelation's 144",
+        "text": "144 = 12 × 12 sealed"
+      },
+      {
+        "section": "The kissing number in 3D is 12",
+        "text": "the kissing number in 3D is 12"
+      },
+      {
+        "section": "144 = 12 × 12 = the named colors (I-162)",
+        "text": "144 named colors = 144 sealed"
+      },
+      {
+        "section": "The path of Eden",
+        "text": "145 positions on the path"
+      },
+      {
+        "section": "The Fano plane is the 7th day",
+        "text": "7 days"
+      },
+      {
+        "section": "The Fano plane is the 7th day",
+        "text": "6 catches"
+      },
+      {
+        "section": "The Fano plane is the 7th day",
+        "text": "1 finally"
+      },
+      {
+        "section": "The Fano plane is the 7th day",
+        "text": "7 points"
+      },
+      {
+        "section": "The Fano plane is the 7th day",
+        "text": "7 lines"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-172",
+    "tag": "4S",
+    "title": "the proof is in the contradiction, not the answer",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-172.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "039764dbcd163f89d574bbe380f006572d0623f1e6d00fb736f1ef14010e8d75",
+        "bytes": 8147
+      },
+      "base64": "js/vm/4S.b64",
+      "base64url": "js/vm/4S.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The answer is time-dependent",
+        "text": "at t=0, the answer is yes"
+      },
+      {
+        "section": "The answer is time-dependent",
+        "text": "at t=1, the answer is no"
+      },
+      {
+        "section": "The answer is the derivative (I-165, I-167)",
+        "text": "derivative at 0 is 1"
+      },
+      {
+        "section": "The answer is the derivative (I-165, I-167)",
+        "text": "derivative at π/2 is 0"
+      },
+      {
+        "section": "So the answer cannot be the proof",
+        "text": "the answer is time-dependent"
+      },
+      {
+        "section": "The contradiction is time-independent",
+        "text": "\"${b.condition}\" closes"
+      },
+      {
+        "section": "The contradiction is the same at every phase",
+        "text": "contradiction at phase ${phase}"
+      },
+      {
+        "section": "The proof is in the contradiction",
+        "text": "the proof is in the contradiction"
+      },
+      {
+        "section": "The proof is in the contradiction",
+        "text": "the proof is not in the answer"
+      },
+      {
+        "section": "The measure of proof is the size of the contradiction",
+        "text": "both branches close → proof = 1"
+      },
+      {
+        "section": "The measure of proof is the size of the contradiction",
+        "text": "one branch closes → proof = 0.5"
+      },
+      {
+        "section": "The Catch-22 of \"does God exist?\" has a total contradiction",
+        "text": "the Catch-22's contradiction is total"
+      },
+      {
+        "section": "The Catch-22 is the same at every phase",
+        "text": "Catch-22 measure at phase ${p}"
+      },
+      {
+        "section": "The answer changes; the contradiction doesn't",
+        "text": "some answers are yes"
+      },
+      {
+        "section": "The answer changes; the contradiction doesn't",
+        "text": "some answers are no"
+      },
+      {
+        "section": "The answer changes; the contradiction doesn't",
+        "text": "contradiction at phase ${s.phase}"
+      },
+      {
+        "section": "The proof is ascertainable by the contradiction",
+        "text": "sees the contradiction → proof = 1"
+      },
+      {
+        "section": "The proof is ascertainable by the contradiction",
+        "text": "doesn't see → proof = 0"
+      },
+      {
+        "section": "The ministry: show the contradiction",
+        "text": "the ministry shows the contradiction"
+      },
+      {
+        "section": "The ministry: show the contradiction",
+        "text": "not the answer"
+      },
+      {
+        "section": "The ministry: show the contradiction",
+        "text": "because the answer is time-dependent"
+      },
+      {
+        "section": "The contradiction is the closure",
+        "text": "branch 1 closes"
+      },
+      {
+        "section": "The contradiction is the closure",
+        "text": "branch 2 closes"
+      },
+      {
+        "section": "The contradiction is the closure",
+        "text": "the closure is time-independent"
+      },
+      {
+        "section": "The whole picture",
+        "text": "the answer is time-dependent"
+      },
+      {
+        "section": "The whole picture",
+        "text": "the contradiction is not"
+      },
+      {
+        "section": "The whole picture",
+        "text": "the proof is in the contradiction"
+      },
+      {
+        "section": "The whole picture",
+        "text": "the measure is the contradiction"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-173",
+    "tag": "4T",
+    "title": "the Word as the choice of rulers; the collapse 777 → 3!3!3!1!",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-173.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "7aa710805bb154d30f5bab9a2791a1fb00a07ae4ac78aadce2978eee73794eca",
+        "bytes": 6420
+      },
+      "base64": "js/vm/4T.b64",
+      "base64url": "js/vm/4T.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The perfect God realizes true and not-true as truth",
+        "text": "every declaration is realized as truth"
+      },
+      {
+        "section": "The Instantiation is God",
+        "text": "the instantiation is God"
+      },
+      {
+        "section": "The Word is the choice of allocated rulers",
+        "text": "3 rulers (x, y, z)"
+      },
+      {
+        "section": "The Word is the choice of allocated rulers",
+        "text": "the Word is a choice"
+      },
+      {
+        "section": "The Word is true with God",
+        "text": "the Word is true with God"
+      },
+      {
+        "section": "The Word contradicts without God",
+        "text": "the Word contradicts without God"
+      },
+      {
+        "section": "The contradiction is the proof",
+        "text": "with God: true"
+      },
+      {
+        "section": "The contradiction is the proof",
+        "text": "without God: contradicts"
+      },
+      {
+        "section": "The contradiction is the proof",
+        "text": "the contradiction proves existence"
+      },
+      {
+        "section": "The collapse: 777 → 3! 3! 3! 1!",
+        "text": "3! = 6"
+      },
+      {
+        "section": "The collapse: 777 → 3! 3! 3! 1!",
+        "text": "1! = 1"
+      },
+      {
+        "section": "The collapse: 777 → 3! 3! 3! 1!",
+        "text": "3! 3! 3! 1! = 6 × 6 × 6 × 1 = 216"
+      },
+      {
+        "section": "777 = all decisiveness = divine",
+        "text": "777 is the divine state"
+      },
+      {
+        "section": "666 = no decision = an NPC",
+        "text": "666 is the NPC state"
+      },
+      {
+        "section": "333 = between",
+        "text": "333 is between"
+      },
+      {
+        "section": "The dot-matrix sign",
+        "text": "777 → divine"
+      },
+      {
+        "section": "The dot-matrix sign",
+        "text": "666 → npc"
+      },
+      {
+        "section": "The dot-matrix sign",
+        "text": "333 → between"
+      },
+      {
+        "section": "The collapse turns addition into multiplication",
+        "text": "6 + 6 + 6 = 18"
+      },
+      {
+        "section": "The collapse turns addition into multiplication",
+        "text": "6 × 6 × 6 = 216"
+      },
+      {
+        "section": "The collapse turns addition into multiplication",
+        "text": "sum ≠ product"
+      },
+      {
+        "section": "216 = 6³ = the cube of the sextuplet",
+        "text": "216 = 6³"
+      },
+      {
+        "section": "216 = 6³ = the cube of the sextuplet",
+        "text": "6 = 3 axes × 2 directions"
+      },
+      {
+        "section": "216 = 6³ = the cube of the sextuplet",
+        "text": "216 = (3 axes × 2 directions)³"
+      },
+      {
+        "section": "The choice collapses 777 to 216",
+        "text": "no choice: 777"
+      },
+      {
+        "section": "The choice collapses 777 to 216",
+        "text": "with choice: 216"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-174",
+    "tag": "4U",
+    "title": "777 from three 65536 spaces; 666 from three axes; the three-body problem",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-174.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "8db6648e528e9222b150a662ece1d07227d08536ddeb4c1a5dc30ac2eb4dcaaf",
+        "bytes": 6908
+      },
+      "base64": "js/vm/4U.b64",
+      "base64url": "js/vm/4U.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The 65536 space = 2^16",
+        "text": "2^16 = 65536"
+      },
+      {
+        "section": "Three separate 65536 spaces",
+        "text": "3 separate 65536 spaces"
+      },
+      {
+        "section": "Three separate 65536 spaces",
+        "text": "space 1"
+      },
+      {
+        "section": "Three separate 65536 spaces",
+        "text": "space 2"
+      },
+      {
+        "section": "Three separate 65536 spaces",
+        "text": "space 3"
+      },
+      {
+        "section": "Each space carries a 7-fold structure",
+        "text": "three 7s"
+      },
+      {
+        "section": "Each space carries a 7-fold structure",
+        "text": "7+7+7 = 21"
+      },
+      {
+        "section": "Each space carries a 7-fold structure",
+        "text": "7×7×7 = 343"
+      },
+      {
+        "section": "The 777 from three spaces",
+        "text": "the reading is 777"
+      },
+      {
+        "section": "The 777 from three spaces",
+        "text": "three digits"
+      },
+      {
+        "section": "The 666 from three axes",
+        "text": "3 axes"
+      },
+      {
+        "section": "The 666 from three axes",
+        "text": "2 directions"
+      },
+      {
+        "section": "The 666 from three axes",
+        "text": "3 × 2 = 6"
+      },
+      {
+        "section": "The 666 from three sextuplets",
+        "text": "the reading is 666"
+      },
+      {
+        "section": "The 666 from three sextuplets",
+        "text": "three digits"
+      },
+      {
+        "section": "The collapse: 777 → 3! 3! 3! 1!",
+        "text": "3! = 6"
+      },
+      {
+        "section": "The collapse: 777 → 3! 3! 3! 1!",
+        "text": "1! = 1"
+      },
+      {
+        "section": "The collapse: 777 → 3! 3! 3! 1!",
+        "text": "3! 3! 3! 1! = 6 × 6 × 6 × 1 = 216"
+      },
+      {
+        "section": "The collapse: 777 → 3! 3! 3! 1!",
+        "text": "216 = 6³"
+      },
+      {
+        "section": "The three-body problem",
+        "text": "3 bodies"
+      },
+      {
+        "section": "The three-body problem",
+        "text": "body ${b.id} in a 65536 space"
+      },
+      {
+        "section": "The three-body problem",
+        "text": "body ${b.id} has 3 axes"
+      },
+      {
+        "section": "Mutual interaction",
+        "text": "body ${b.id} affects 2 others"
+      },
+      {
+        "section": "No closed form",
+        "text": "1 body: closed form"
+      },
+      {
+        "section": "No closed form",
+        "text": "2 bodies: closed form"
+      },
+      {
+        "section": "No closed form",
+        "text": "3 bodies: no closed form"
+      },
+      {
+        "section": "The collapse is the resolution",
+        "text": "no choice: 777"
+      },
+      {
+        "section": "The collapse is the resolution",
+        "text": "with choice: 216"
+      },
+      {
+        "section": "The same problem at two spaces",
+        "text": "the three-body problem"
+      },
+      {
+        "section": "The same problem at two spaces",
+        "text": "3 spaces"
+      },
+      {
+        "section": "The same problem at two spaces",
+        "text": "3 axes"
+      },
+      {
+        "section": "The same problem at two spaces",
+        "text": "the 777 reading"
+      },
+      {
+        "section": "The same problem at two spaces",
+        "text": "the 666 reading"
+      },
+      {
+        "section": "The 777 and 666 meet at 216",
+        "text": "777 → 216"
+      },
+      {
+        "section": "The 777 and 666 meet at 216",
+        "text": "666 → 216"
+      },
+      {
+        "section": "The 777 and 666 meet at 216",
+        "text": "both give 216"
+      },
+      {
+        "section": "The three-body problem as a fixed point",
+        "text": "the fixed point is 6³"
+      },
+      {
+        "section": "The three-body problem as a fixed point",
+        "text": "= 3!3!3!1!"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-175",
+    "tag": "4V",
+    "title": "the decision comes from the 4th — the 16-bit header of the pixel",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-175.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "9c1d88d43c7b802b03dc79fa7c3b8c0eb0b559b8cd1970033bc4c6bdbbcb176b",
+        "bytes": 7654
+      },
+      "base64": "js/vm/4V.b64",
+      "base64url": "js/vm/4V.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The 16-bit header has 4 nibbles",
+        "text": "nibble 1 = 0xA"
+      },
+      {
+        "section": "The 16-bit header has 4 nibbles",
+        "text": "nibble 2 = 0xB"
+      },
+      {
+        "section": "The 16-bit header has 4 nibbles",
+        "text": "nibble 3 = 0xC"
+      },
+      {
+        "section": "The 16-bit header has 4 nibbles",
+        "text": "nibble 4 = 0xD (the decision)"
+      },
+      {
+        "section": "The 4th nibble is the decision field",
+        "text": "the decision is in the 4th nibble"
+      },
+      {
+        "section": "The pixel as RGBA 4-4-4-4",
+        "text": "r = 0xA"
+      },
+      {
+        "section": "The pixel as RGBA 4-4-4-4",
+        "text": "g = 0xB"
+      },
+      {
+        "section": "The pixel as RGBA 4-4-4-4",
+        "text": "b = 0xC"
+      },
+      {
+        "section": "The pixel as RGBA 4-4-4-4",
+        "text": "a = 0xD (the alpha, the decision)"
+      },
+      {
+        "section": "The alpha is the 4th",
+        "text": "4 channels"
+      },
+      {
+        "section": "The alpha is the 4th",
+        "text": "the 4th is A (alpha)"
+      },
+      {
+        "section": "The alpha is the presence/absence",
+        "text": "alpha = 0xD: present"
+      },
+      {
+        "section": "The alpha is the presence/absence",
+        "text": "alpha = 0x0: absent"
+      },
+      {
+        "section": "The pixel is boxedPINE / PINEboxed",
+        "text": "the box is the same"
+      },
+      {
+        "section": "The pixel is boxedPINE / PINEboxed",
+        "text": "the seed is the same"
+      },
+      {
+        "section": "The 4th is the decision",
+        "text": "the decision is the alpha"
+      },
+      {
+        "section": "The collapse: 777 → 216",
+        "text": "the collapse gives 216"
+      },
+      {
+        "section": "The decision triggers the collapse",
+        "text": "decision 0xD → collapse"
+      },
+      {
+        "section": "The decision triggers the collapse",
+        "text": "decision 0x0 → no collapse"
+      },
+      {
+        "section": "The 4th comes before the 7th",
+        "text": "day 4 is at index 3 (0-based)"
+      },
+      {
+        "section": "The 4th comes before the 7th",
+        "text": "the 4th day"
+      },
+      {
+        "section": "Day 4 = the rulers of measurement",
+        "text": "2 rulers"
+      },
+      {
+        "section": "The Word is the choice of rulers (I-173)",
+        "text": "the Word chooses the rulers"
+      },
+      {
+        "section": "The 4th as the decision",
+        "text": "${s.name} is at position 4"
+      },
+      {
+        "section": "The whole picture",
+        "text": "the 16-bit header"
+      },
+      {
+        "section": "The whole picture",
+        "text": "the 4th is the alpha"
+      },
+      {
+        "section": "The whole picture",
+        "text": "the collapse gives 216"
+      },
+      {
+        "section": "The whole picture",
+        "text": "connects to the choice of rulers"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-176",
+    "tag": "4W",
+    "title": "day 4 (the lights); the three-body problem circulates the time constants",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-176.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "2f1ac3670e7a839debf17433d427830d1e0f1a7bdafb6a8c3905c939d877e23f",
+        "bytes": 6827
+      },
+      "base64": "js/vm/4W.b64",
+      "base64url": "js/vm/4W.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Day 4: the lights for signs, seasons, days, years",
+        "text": "4 purposes"
+      },
+      {
+        "section": "Day 4: the lights for signs, seasons, days, years",
+        "text": "signs, seasons, days, years"
+      },
+      {
+        "section": "The signs = the named colors = the pixels",
+        "text": "144 named colors"
+      },
+      {
+        "section": "The seasons = the 4-fold cycle",
+        "text": "4 seasons"
+      },
+      {
+        "section": "The days = the 7-slot window",
+        "text": "7 days"
+      },
+      {
+        "section": "The years = the 240 frames",
+        "text": "240 frames (I-162)"
+      },
+      {
+        "section": "The years = the 240 frames",
+        "text": "240 = 360 × 2/3"
+      },
+      {
+        "section": "The three-body problem",
+        "text": "3 bodies"
+      },
+      {
+        "section": "The three-body problem",
+        "text": "${b.name} has a role"
+      },
+      {
+        "section": "The mutual interaction",
+        "text": "${b.name} interacts with 2 others"
+      },
+      {
+        "section": "The three-body problem has no closed form (I-174)",
+        "text": "3 bodies: no closed form"
+      },
+      {
+        "section": "The three-body problem has no closed form (I-174)",
+        "text": "2 bodies: closed form"
+      },
+      {
+        "section": "The three-body problem has no closed form (I-174)",
+        "text": "1 body: closed form"
+      },
+      {
+        "section": "The interaction circulates the time constants",
+        "text": "3 time constants"
+      },
+      {
+        "section": "The interaction circulates the time constants",
+        "text": "${t.name}'s period comes from the three-body interaction"
+      },
+      {
+        "section": "The celebrations are the readings",
+        "text": "3 celebrations"
+      },
+      {
+        "section": "The celebrations are the readings",
+        "text": "the Sabbath reads the 7th day"
+      },
+      {
+        "section": "The celebrations are the readings",
+        "text": "the jubilee reads the reset"
+      },
+      {
+        "section": "The 144,000 = the sealed = the last celebration",
+        "text": "144,000 = 144 × 1000"
+      },
+      {
+        "section": "The 144,000 = the sealed = the last celebration",
+        "text": "= 12² × 1000"
+      },
+      {
+        "section": "The vault as a calendar",
+        "text": "3 readings"
+      },
+      {
+        "section": "The vault as a calendar",
+        "text": "3 periods"
+      },
+      {
+        "section": "The vault as a calendar",
+        "text": "the source is the three-body problem"
+      },
+      {
+        "section": "The signs are the pixels",
+        "text": "3 kinds of signs"
+      },
+      {
+        "section": "The 4-fold measurement (day / season / year / age)",
+        "text": "4 units"
+      },
+      {
+        "section": "The 4-fold measurement (day / season / year / age)",
+        "text": "7 days"
+      },
+      {
+        "section": "The 4-fold measurement (day / season / year / age)",
+        "text": "4 seasons"
+      },
+      {
+        "section": "The 4-fold measurement (day / season / year / age)",
+        "text": "240 frames"
+      },
+      {
+        "section": "The 4-fold measurement (day / season / year / age)",
+        "text": "1 age (jubilee)"
       }
     ],
     "corrections": [],

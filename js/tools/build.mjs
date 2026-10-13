@@ -78,6 +78,8 @@ for (const line of rollupRun.stdout.split('\n')) {
 }
 
 const files = readdirSync(catalogDir).filter((f) => /^I-\d+[a-z]?\.ts$/.test(f));
+let ORIGINS = {};
+try { ORIGINS = JSON.parse(readFileSync(new URL('ORIGINS.json', catalogDir), 'utf8')); } catch {}
 const records = new Map();
 for (const file of files) {
   const id = file.replace(/\.ts$/, '');
@@ -158,7 +160,7 @@ for (const r of all) {
     `| Status | P1, for consideration: a finite, computable check (PROOF_CANONIZATION.md); not in the Coq registry |`,
     `| Holds | ${r.holds ? 'yes, when this document was built' : '**no**, when this document was built'} |`,
     `| Checked by | ${r.owners.map((o) => `\`${o}\``).join(', ')} |`,
-    `| Origin | boxedPINE, the I-series session of 2026-10-12, from the author's statements |`,
+    `| Origin | ${ORIGINS[r.id] ?? "boxedPINE, the I-series session of 2026-10-12, from the author's statements"} |`,
     '',
     '## Abstract',
     '',

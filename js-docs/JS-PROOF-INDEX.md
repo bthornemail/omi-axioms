@@ -27,7 +27,7 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | point-line-duality | [I-120](point-line-duality/I-120.md) | `3C` | 3! overlay (streams, GED) | `js/catalog/I-122.ts` | yes | yes | no |
 | point-line-duality | [I-121](point-line-duality/I-121.md) | `3D` | Nibble-pair root; (index, value) | `js/catalog/I-122.ts` | yes | yes | yes |
 | other | [I-122](other/I-122.md) | `3E` | The roll-up: runs 44 records (I-108 … I-151) and reports their shared shapes | `js/catalog/I-122.ts` | yes | yes | no |
-| point-line-duality | [I-123](point-line-duality/I-123.md) | `3F` | S3 at four scales; XOR/Fano/byte | `js/catalog/I-122.ts` | yes | yes | yes |
+| point-line-duality | [I-123](point-line-duality/I-123.md) | `3F` | S3 at four scales | `js/catalog/I-123.ts` | yes | yes | yes |
 | point-line-duality | [I-124](point-line-duality/I-124.md) | `3G` | 4 circuits, 7 positions, 12th meta, nibble-encoded | `js/catalog/I-124.ts` | yes | yes | yes |
 | catch-at-0 | [I-125](catch-at-0/I-125.md) | `3H` | I-125 (corrected) | `js/catalog/I-125.ts` | yes | yes | yes |
 | point-line-duality | [I-126](point-line-duality/I-126.md) | `3I` | Node Buffer equivalents of I-108…I-125 | `js/catalog/I-126.ts` | yes | yes | yes |
@@ -66,11 +66,20 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-154](other/I-154.md) | `4A` | X86 boot at 0x7C00; 0x007C is the byte-swap | `js/catalog/I-154.ts` | yes | yes | yes |
 | other | [I-155](other/I-155.md) | `4B` | The 4GB shared logical memory pool | `js/catalog/I-155.ts` | yes | yes | yes |
 | other | [I-156](other/I-156.md) | `4C` | QEMU virtual is a global worker | `js/catalog/I-156.ts` | yes | yes | yes |
+| other | [I-165](other/I-165.md) | `4L` | Everything is outside of time; instantiation is the derivative | `js/catalog/I-165.ts` | yes | yes | yes |
+| other | [I-166](other/I-166.md) | `4M` | The Catch-22 of the timeless frame and the timed observer | `js/catalog/I-166.ts` | yes | yes | yes |
+| other | [I-168](other/I-168.md) | `4O` | The lexeme for image is Imago Dei; Euclid resolves the blur | `js/catalog/I-168.ts` | yes | yes | yes |
+| other | [I-169](other/I-169.md) | `4P` | Genesis as a Fano plane; Revelation's 144 as the kissing number squared | `js/catalog/I-169.ts` | yes | yes | yes |
+| other | [I-172](other/I-172.md) | `4S` | The proof is in the contradiction, not the answer | `js/catalog/I-172.ts` | yes | yes | yes |
+| other | [I-173](other/I-173.md) | `4T` | The Word as the choice of rulers; the collapse 777 → 3!3!3!1! | `js/catalog/I-173.ts` | yes | yes | yes |
+| other | [I-174](other/I-174.md) | `4U` | 777 from three 65536 spaces; 666 from three axes; the three-body problem | `js/catalog/I-174.ts` | yes | yes | yes |
+| other | [I-175](other/I-175.md) | `4V` | The decision comes from the 4th — the 16-bit header of the pixel | `js/catalog/I-175.ts` | yes | yes | yes |
+| other | [I-176](other/I-176.md) | `4W` | Day 4 (the lights); the three-body problem circulates the time constants | `js/catalog/I-176.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 10
-- total: 54 records, 54 holding
+- other: 19
+- total: 63 records, 63 holding
