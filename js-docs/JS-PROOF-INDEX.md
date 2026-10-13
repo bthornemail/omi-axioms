@@ -79,6 +79,7 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-175](other/I-175.md) | `4V` | The decision comes from the 4th — the 16-bit header of the pixel | `js/catalog/I-175.ts` | yes | yes | yes |
 | other | [I-176](other/I-176.md) | `4W` | Day 4 (the lights); the three-body problem circulates the time constants | `js/catalog/I-176.ts` | yes | yes | yes |
 | other | [I-177](other/I-177.md) | `4X` | The three pending scripts are the transition function; 59/63/127 the input | `js/catalog/I-177.ts` | yes | yes | yes |
+| other | [I-178](other/I-178.md) | `4Y` | The frame is held by position; the agents XOR the routed values into the units | `js/catalog/I-178.ts` | yes | yes | yes |
 | other | [I-179](other/I-179.md) | `4Z` | The 4 GB meta-memory is virtual | `js/catalog/I-179.ts` | yes | yes | yes |
 | other | [I-180](other/I-180.md) | `50` | X86 initializes a virtual 4 GB; 64 MB real holds it, and its tables are 8 MB | `js/catalog/I-180.ts` | yes | yes | yes |
 
@@ -87,5 +88,5 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 25
-- total: 69 records, 69 holding
+- other: 26
+- total: 70 records, 70 holding

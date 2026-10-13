@@ -7986,6 +7986,63 @@
     "witnesses": []
   },
   {
+    "id": "I-178",
+    "tag": "4Y",
+    "title": "the frame is held by position; the agents XOR the routed values into the units",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-178.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "01a829dfc5233632042b2b3ee239322a22143bda44081c2c71f76336aa22d233",
+        "bytes": 6345
+      },
+      "base64": "js/vm/4Y.b64",
+      "base64url": "js/vm/4Y.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Every routed value passes as data, and the frame holds",
+        "text": "routing ${u}: all change is outside the system, in the units"
+      },
+      {
+        "section": "Every routed value passes as data, and the frame holds",
+        "text": "routing ${u} keeps the frame in view"
+      },
+      {
+        "section": "Every routed value passes as data, and the frame holds",
+        "text": "read by value, exactly the routed values 0x1C-0x1F break this frame"
+      },
+      {
+        "section": "Read by value instead, exactly the four separator bytes break it",
+        "text": "4 in each of the 64 frames; read by place, none"
+      },
+      {
+        "section": "A step at a held position breaks the frame",
+        "text": "a step of ${u} at the held position ${p} breaks the frame"
+      },
+      {
+        "section": "A step at a held position breaks the frame",
+        "text": "an agent carrying 0 there leaves it held"
+      },
+      {
+        "section": "The agents' order does not change the units; the same agent walked back restores them",
+        "text": "the same agent walked back restores the document"
+      },
+      {
+        "section": "A stale exchange does not land",
+        "text": "a stale exchange returns what is there, and does not land"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
     "id": "I-179",
     "tag": "4Z",
     "title": "the 4 GB meta-memory is virtual",
