@@ -2,7 +2,11 @@
 
 Checks wait here when, run as written, they fail, and what they were meant to
 assert is the author's to say. The catalogue (`../catalog/`) holds only checks
-that hold. Nothing is waiting at present.
+that hold.
+
+| Record | Source | Why it waits |
+|--------|--------|--------------|
+| I-178 | the author, 2026-10-12: "the connecting rule is the allocated raw buffer, because entropy degradation is a signal" (as written up in the session) | It holds as written, but several assertions cannot fail: no `Atomics` call is made (the "atomic" step is an ordinary read and write), §12 asserts `finalEntropy !== h0 \|\| true`, the signals are only checked to be finite, the buffers are filled by hand rather than allocated raw, and I-171's agreement is unused. Two choices are the author's: the replacement (the byte moved by ±1, or XORed) and the signal (each step's entropy change, or the total). Measured: with ±1 at 59, 63, 127 the entropy falls 0.0078 at each index's first step and then stays put. |
 
 ## Resolved
 

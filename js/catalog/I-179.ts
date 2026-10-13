@@ -1,0 +1,48 @@
+// i179.ts — I-179: the 4 GB meta-memory is virtual
+//
+// The author, 2026-10-12: "the 4gb is virtual". The whole 2^32-byte space
+// (SPEC-07 I-155) is allocated as address space, not filled: the operating
+// system maps zero pages and commits memory only for the pages touched. So the
+// layout addresses (I-154 the boot sector 0x7C00, I-155 the reset vector
+// 0xFFFFFFF0) are real addresses in it, untouched memory reads 0 (a known fresh
+// state, so any non-zero byte is something written), and resident memory grows
+// only by the touched pages. wasm32's address space is the same 2^32 bytes.
+import assert from "node:assert";
+
+const SPACE = 2 ** 32;
+const residentMB = () => process.memoryUsage().rss / 2 ** 20;
+
+// ── 1. The whole 4 GB as one buffer ─────────────────────────
+const before = residentMB();
+const memory = new Uint8Array(SPACE);
+assert.strictEqual(memory.length, SPACE, "the buffer spans 2^32 bytes");
+
+// ── 2. The layout addresses are addresses in it ─────────────
+const BOOT = 0x7C00, RESET = 0xFFFFFFF0;
+memory[BOOT] = 0x55; memory[BOOT + 1] = 0xAA; // the boot signature, as a sector carries it
+memory[RESET] = 0xEA;                          // a far jump, as the reset vector carries it
+assert.strictEqual(memory[BOOT], 0x55, "the boot sector address holds what was written");
+assert.strictEqual(memory[BOOT + 1], 0xAA, "and the next byte");
+assert.strictEqual(memory[RESET], 0xEA, "the reset vector address holds what was written");
+assert.strictEqual(RESET + 16, SPACE, "the reset vector is 16 bytes below the top of the space");
+
+// ── 3. Untouched memory is the known fresh state: zero ──────
+let seen = 0;
+for (let a = 0; a < SPACE; a += 2 ** 24) if (a !== 0) seen |= memory[a]!;
+assert.strictEqual(seen, 0, "untouched pages read 0, sampled every 16 MB across the space");
+
+// ── 4. Only the touched pages are resident ──────────────────
+const grew = residentMB() - before;
+assert.ok(grew < 64, `resident memory grew by ${grew.toFixed(1)} MB for a 4096 MB space`);
+
+// ── 5. wasm32 is the same space ──────────────────────────────
+const wasm = new WebAssembly.Memory({ initial: 1, maximum: 65536 });
+wasm.grow(65535);
+assert.strictEqual(wasm.buffer.byteLength, SPACE, "wasm32 memory at its maximum is 2^32 bytes");
+const w = new Uint8Array(wasm.buffer);
+w[RESET] = 0xEA;
+assert.strictEqual(w[RESET], 0xEA, "the reset vector is addressable in wasm32 memory");
+
+console.log("I-179: the 4 GB meta-memory is virtual — passed");
+console.log(`  2^32 bytes allocated; resident memory grew by ${grew.toFixed(1)} MB`);
+console.log(`  0x7C00 and 0xFFFFFFF0 are addresses in it; untouched memory reads 0`);
