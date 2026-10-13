@@ -8296,5 +8296,58 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-183",
+    "tag": "53",
+    "title": "19 closes the first sexy set after the exceptional one, on 5², before the 210 ladder",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-183.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "e40bd98565eadd06b97e409203a962a1bfbd78ffc1376c3f270fb7faff08bd40",
+        "bytes": 3298
+      },
+      "base64": "js/vm/53.b64",
+      "base64url": "js/vm/53.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The exceptional set, and why it is the only one",
+        "text": "the exceptional set: five primes, steps of 6, from 5"
+      },
+      {
+        "section": "The first other set: (7, 13, 19), closed by 5²",
+        "text": "after the exceptional set, the next sexy set of three or more starts at 7"
+      },
+      {
+        "section": "The first other set: (7, 13, 19), closed by 5²",
+        "text": "(7, 13, 19)"
+      },
+      {
+        "section": "The first other set: (7, 13, 19), closed by 5²",
+        "text": "it stops at 19 because 19 + 6 = 25 = 5 x 5"
+      },
+      {
+        "section": "19 is in the sextuplet before the 210 ladder",
+        "text": "the prime sextuplets start at 7, then 97, …"
+      },
+      {
+        "section": "19 is in the sextuplet before the 210 ladder",
+        "text": "the first is {7, 11, 13, 17, 19, 23}, with 19 in it"
+      },
+      {
+        "section": "19 is in the sextuplet before the 210 ladder",
+        "text": "the first is before the ladder"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
