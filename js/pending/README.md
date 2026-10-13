@@ -6,8 +6,7 @@ that hold.
 
 | Record | Source | Why it waits |
 |--------|--------|--------------|
-| I-178 | the author, 2026-10-12: "the connecting rule is the allocated raw buffer, because entropy degradation is a signal" (as written up in the session) | It holds as written, but several assertions cannot fail: no `Atomics` call is made (the "atomic" step is an ordinary read and write), §12 asserts `finalEntropy !== h0 \|\| true`, the signals are only checked to be finite, the buffers are filled by hand rather than allocated raw, and I-171's agreement is unused. Two choices are the author's: the replacement (the byte moved by ±1, or XORed) and the signal (each step's entropy change, or the total). Measured: with ±1 at 59, 63, 127 the entropy falls 0.0078 at each index's first step and then stays put. |
-| I-180 | the other assistant's write-up, 2026-10-12, of the author's "64MB has 4GB worth of virtual memory", "16 bits has 8MB" and "seconds, minutes, or hours of precision?"; the author has not stated the claim in their own words | It holds as written, but it holds as arithmetic on numbers it chose, not as a reading of this machine. Its page-table ratio of 64 (512-byte pages, 8-byte entries) is not this machine's: the page here is 4096 bytes (`getconf PAGESIZE`), so 4 GB is 2^20 pages, 8-byte entries are 8 MB of page tables, and the ratio is 512. Its "2 MB measured" was not measured: I-179 measures 0.3 MB of resident growth. §§6–8, 11 and 13 assert constants or strings they set themselves. §12 sets the 8 KB proof Blob's 2^16 bits equal to the count of 64 KB pages in 4 GB: the two numbers match, but nothing ties the Blob to those pages. The times in §§9–10 assume 1 GB/s. One reading lines up with this machine: 4 GB in 4 KB pages takes 8 MB of page tables, which could be the "8MB" in "16 bits has 8MB". Whether that is the author's meaning is the author's to say. |
+| I-178 | the author, 2026-10-12: "the connecting rule is the allocated raw buffer, because entropy degradation is a signal"; and "it should be xored by user agent" | Rewritten on 2026-10-12 with the author's replacement: a step is `Atomics.compareExchange(state, i, b, b ^ u)` by an agent carrying the byte u, on the raw buffer as allocated (zeros). It checks the stale exchange, that the order of agents does not change the bytes, and that the same agent walked back restores the buffer. One choice is the author's: whether the signal is each step's change in entropy or the total from start to end. Measured, A, B, A over 59, 63, 127: each step 0.0369 0.0290 0.0261 0.0108 0 -0.0108 0.0108 0 -0.0108; the total 0.0920. |
 
 ## Resolved
 
@@ -18,3 +17,8 @@ that hold.
 - I-177 asserted 60 ⊕ 68 = 128; 60 ⊕ 68 is 120. Corrected on 2026-10-12 to name
   the span (127 - 59 = 68), its XOR with 60 (120) and the pole (60 ⊕ 128 = 188);
   it holds in the catalogue, and its document says which of its claims are checked.
+- I-180, as first written up, set its own numbers (a 512-byte page, a
+  64-to-1 ratio, a "2 MB measured" nobody measured). The author stated the
+  claim on 2026-10-12, "x86 initializes a virtual 4gb", and that the 8 MB is
+  the tables; rewritten to measure the tables (8212 kB for the 4 GB) and to run
+  under a 64 MB cap, it holds in the catalogue.

@@ -28,6 +28,7 @@ export function classicScript(source) {
     .replace(/^import assert from ["']node:assert["'];?\s*$/m, '// assert: supplied by the host')
     .replace(/^import \* as os from ["']node:os["'];?\s*$/m, '// os: supplied by the host')
     .replace(/^import \{([^}]+)\} from ["']node:process["'];?\s*$/m, (_, names) => `const {${names}} = process; // process: supplied by the host`)
+    .replace(/^import \{([^}]+)\} from ["'](node:[a-z_/]+)["'];?\s*$/gm, (_, names, mod) => `const {${names}} = process.getBuiltinModule('${mod}');`)
     .replace(/\bimport\(["']node:process["']\)/g, 'Promise.resolve(process)');
 }
 

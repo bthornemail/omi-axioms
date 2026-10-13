@@ -1,218 +1,87 @@
-// i178.ts — I-178: the connecting rule is the raw buffer; entropy degradation is the signal
+// i178.ts — I-178: the connecting rule is the allocated raw buffer; entropy degradation is a signal
+//
+// The author, 2026-10-12: "the connecting rule is the allocated raw buffer,
+// because entropy degradation is a signal"; asked what replaces the byte at a
+// step, "it should be xored by user agent". So a step at index i, by an agent
+// carrying the byte u, is Atomics.compareExchange(state, i, b, b ^ u): the
+// byte is XORed by the agent, and the exchange lands only if the byte is still
+// the b the agent read. The state is the raw buffer as allocated (I-179: it
+// reads 0, so any non-zero byte is something an agent wrote).
+//
+// Rewritten 2026-10-12 from the session's version, which moved the byte by ±1
+// with an ordinary read and write. Still waiting: whether the signal is each
+// step's change in entropy or the total from start to end. Both are measured
+// below; neither is asserted to be the signal.
 import assert from "node:assert";
 
-// ── 1. The raw buffer ────────────────────────────────────────
 const SIZE = 256;
-const buf = new Uint8Array(SIZE);
-for (let i = 0; i < SIZE; i++) buf[i] = i & 0xFF;
-// the state is the raw bytes
-assert.strictEqual(buf.length, SIZE, "the buffer is 256 bytes");
-assert.strictEqual(buf[59], 59, "the byte at 59 is 59");
-assert.strictEqual(buf[63], 63, "the byte at 63 is 63");
-assert.strictEqual(buf[127], 127, "the byte at 127 is 127");
+const INDICES = [59, 63, 127];
 
-// ── 2. Entropy of the buffer ─────────────────────────────────
-// Shannon entropy over the byte values.
 function entropy(bytes: Uint8Array): number {
   const counts = new Map<number, number>();
   for (const b of bytes) counts.set(b, (counts.get(b) ?? 0) + 1);
-  const n = bytes.length;
   let h = 0;
-  for (const c of counts.values()) {
-    const p = c / n;
-    h -= p * Math.log2(p);
-  }
+  for (const c of counts.values()) h -= (c / bytes.length) * Math.log2(c / bytes.length);
   return h;
 }
-const h0 = entropy(buf);
-assert.ok(h0 > 0, "the buffer has entropy");
-// for a uniform 0..255 sequence, the entropy is 8 bits/byte
-assert.ok(Math.abs(h0 - 8) < 1e-6, "entropy of a uniform byte sequence is 8");
 
-// ── 3. The fresh buffer has known entropy ────────────────────
-const fresh = new Uint8Array(SIZE);
-const hFresh = entropy(fresh);
-assert.strictEqual(hFresh, 0, "a zeroed buffer has entropy 0");
-
-// ── 4. The entropy degrades as the buffer is written ─────────
-// After many writes, the entropy changes.
-function shuffleWrite(bytes: Uint8Array, n: number): void {
-  for (let i = 0; i < n; i++) {
-    const idx = i % bytes.length;
-    bytes[idx] = (bytes[idx]! * 31 + i) & 0xFF;
-  }
+/** One step: the agent reads the byte, then exchanges it for byte ^ agent if it is still what it read. */
+function step(state: Uint8Array, index: number, agent: number): { landed: boolean; actual: number } {
+  const expected = Atomics.load(state, index);
+  const actual = Atomics.compareExchange(state, index, expected, expected ^ agent);
+  return { landed: actual === expected, actual };
 }
-const used = new Uint8Array(buf);
-const h1 = entropy(used);
-shuffleWrite(used, 1000);
-const h2 = entropy(used);
-// the entropy changed after the writes
-assert.notStrictEqual(h2, h1, "the entropy changed after the writes");
-// and it degraded (fewer distinct values, or a different distribution)
-assert.ok(h2 >= 0, "the entropy is non-negative");
 
-// ── 5. The compare-exchange reads and writes the raw buffer ──
-const shared = new Int32Array(SIZE / 4);
-for (let i = 0; i < shared.length; i++) shared[i] = i;
-// a step at index 59 (byte 59 = word 14 in Int32Array)
-const wordIdx = Math.floor(59 / 4);
-const wordOff = 59 % 4;
-// read the byte via the word
-function readByte(word: number, off: number): number {
-  return (word >> (off * 8)) & 0xFF;
+// ── 1. The allocated raw buffer ──────────────────────────────
+const state = new Uint8Array(new SharedArrayBuffer(SIZE));
+assert.ok(state.every((b) => b === 0), "the raw buffer reads 0 as allocated");
+assert.strictEqual(entropy(state), 0, "and its entropy is 0");
+
+// ── 2. A step XORs the byte by the agent ─────────────────────
+const A = 0x55, B = 0xAA;
+for (const i of INDICES) assert.ok(step(state, i, A).landed, `agent A's step at ${i} lands`);
+for (const i of INDICES) assert.strictEqual(state[i], A, `the byte at ${i} is 0 ^ A`);
+
+// ── 3. A stale exchange does not land, and says what is there ─
+// A reads the byte at 59; B steps there first; A's exchange finds B's write.
+const read = Atomics.load(state, 59);
+step(state, 59, B);
+const stale = Atomics.compareExchange(state, 59, read, read ^ A);
+assert.strictEqual(stale, A ^ B, "A's stale exchange returns what B left");
+assert.strictEqual(state[59], A ^ B, "and leaves it in place");
+assert.ok(step(state, 59, A).landed, "A, reading again, lands");
+assert.strictEqual(state[59], B, "the byte is 0 ^ A ^ B ^ A: A's two steps cancel");
+
+// ── 4. The order of the agents does not change the bytes ─────
+const orders = [[A, B, 0x1D], [0x1D, A, B], [B, 0x1D, A]];
+const finals = orders.map((order) => {
+  const s = new Uint8Array(new SharedArrayBuffer(SIZE));
+  for (const u of order) for (const i of INDICES) step(s, i, u);
+  return Array.from(INDICES, (i) => s[i]);
+});
+for (const f of finals) assert.deepStrictEqual(f, [A ^ B ^ 0x1D, A ^ B ^ 0x1D, A ^ B ^ 0x1D], "each byte is 0 ^ A ^ B ^ 0x1D, in any order");
+
+// ── 5. The same agent again is the reverse ──────────────────
+const s = new Uint8Array(new SharedArrayBuffer(SIZE));
+for (const i of INDICES) step(s, i, A);
+for (const i of [...INDICES].reverse()) step(s, i, A);
+assert.ok(s.every((b) => b === 0), "A's steps, walked back, return the buffer to as allocated");
+
+// ── 6. The entropy, measured both ways ──────────────────────
+// A walks the three indices, B walks them, A walks them again.
+const run = new Uint8Array(new SharedArrayBuffer(SIZE));
+const perStep: number[] = [];
+for (const u of [A, B, A]) for (const i of INDICES) {
+  const before = entropy(run);
+  step(run, i, u);
+  perStep.push(entropy(run) - before);
 }
-function writeByte(word: number, off: number, byte: number): number {
-  const shift = off * 8;
-  const mask = ~(0xFF << shift);
-  return ((word & mask) | (byte << shift)) >>> 0;
-}
-const before = shared[wordIdx]!;
-const byteBefore = readByte(before, wordOff);
-// the step: expected = the current byte, replacement = the byte + 1
-const newByte = (byteBefore + 1) & 0xFF;
-const after = writeByte(before, wordOff, newByte);
-shared[wordIdx] = after;
-const byteAfter = readByte(shared[wordIdx]!, wordOff);
-assert.strictEqual(byteAfter, newByte, "the write changed the byte");
+const total = entropy(run) - 0;
+assert.ok(perStep[0]! > 0, "the first write into the raw buffer raises the entropy from 0");
+const quiet = new Uint8Array(run);
+step(run, 59, 0);
+assert.deepStrictEqual(run, quiet, "an agent carrying 0 lands and changes nothing: no change, no signal");
 
-// ── 6. The signal is the entropy delta ──────────────────────
-// Before the step: the buffer has entropy h.
-// After the step: the buffer has entropy h'.
-// The signal is the delta.
-const bufferBefore = new Uint8Array(SIZE);
-for (let i = 0; i < SIZE; i++) bufferBefore[i] = i & 0xFF;
-const hBefore = entropy(bufferBefore);
-const bufferAfter = new Uint8Array(bufferBefore);
-bufferAfter[59] = (bufferAfter[59]! + 1) & 0xFF;
-const hAfter = entropy(bufferAfter);
-const delta = hAfter - hBefore;
-// the delta is the signal
-assert.ok(Number.isFinite(delta), `the entropy delta is ${delta}`);
-
-// ── 7. The signal is observable ─────────────────────────────
-// The observer reads the signal by measuring the entropy.
-function readSignal(before: Uint8Array, after: Uint8Array): number {
-  return entropy(after) - entropy(before);
-}
-const signal = readSignal(bufferBefore, bufferAfter);
-assert.ok(Number.isFinite(signal), "the signal is observable");
-
-// ── 8. The signal is time-independent ───────────────────────
-// The entropy is a state property, not a time property.
-// The same buffer measured at different times gives the same entropy.
-const b1 = new Uint8Array([1, 2, 3, 4, 5]);
-const b2 = new Uint8Array([1, 2, 3, 4, 5]);
-assert.strictEqual(entropy(b1), entropy(b2), "the same state has the same entropy");
-// so the signal doesn't depend on when you measure
-
-// ── 9. The three scripts as the transition source ───────────
-// I-167: the derivative (the rate)
-// I-170: the direction (forward or reverse)
-// I-171: the agreement (both branches)
-function stepRule(
-  state: Uint8Array,
-  index: number,
-  rate: number,
-  direction: 1 | -1,
-): { expected: number; replacement: number } {
-  const expected = state[index]!;
-  // the replacement is the old value moved by the rate's sign and the direction
-  const move = rate > 0 ? 1 : rate < 0 ? -1 : 0;
-  const replacement = (expected + move * direction) & 0xFF;
-  return { expected, replacement };
-}
-const r = stepRule(bufferBefore, 59, 1, 1);
-assert.strictEqual(r.expected, 59, "the expected is the raw byte");
-assert.strictEqual(r.replacement, 60, "the replacement is the byte moved by +1");
-const r2 = stepRule(bufferBefore, 59, -1, 1);
-assert.strictEqual(r2.replacement, 58, "the replacement is the byte moved by -1");
-
-// ── 10. I-170's direction picks forward or reverse ──────────
-const indices = [59, 63, 127];
-function walk(indices: number[], direction: 1 | -1): number[] {
-  return direction === 1 ? indices : [...indices].reverse();
-}
-assert.deepStrictEqual(walk(indices, 1),  [59, 63, 127], "forward");
-assert.deepStrictEqual(walk(indices, -1), [127, 63, 59], "reverse");
-
-// ── 11. The full automaton cycle ────────────────────────────
-// The three scripts drive the steps.
-type Step = { index: number; expected: number; replacement: number; signal: number };
-function runAutomaton(
-  state: Uint8Array,
-  indices: number[],
-  direction: 1 | -1,
-  rate: number,
-  steps: number,
-): Step[] {
-  const out: Step[] = [];
-  const order = walk(indices, direction);
-  for (let s = 0; s < steps; s++) {
-    const index = order[s % order.length]!;
-    const hBefore = entropy(state);
-    const { expected, replacement } = stepRule(state, index, rate, direction);
-    // atomic compare-exchange
-    const wordIdx = Math.floor(index / 4);
-    const wordOff = index % 4;
-    const word = new Int32Array(state.buffer)[wordIdx]!;
-    const actual = readByte(word, wordOff);
-    if (actual === expected) {
-      const newWord = writeByte(word, wordOff, replacement);
-      new Int32Array(state.buffer)[wordIdx] = newWord;
-    }
-    const hAfter = entropy(state);
-    out.push({ index, expected, replacement, signal: hAfter - hBefore });
-  }
-  return out;
-}
-// turn the buffer into a shared buffer for atomics
-const sharedBuf = new SharedArrayBuffer(SIZE);
-const state = new Uint8Array(sharedBuf);
-for (let i = 0; i < SIZE; i++) state[i] = i & 0xFF;
-const steps = runAutomaton(state, indices, 1, 1, 9);
-assert.strictEqual(steps.length, 9, "9 steps");
-for (const step of steps) {
-  assert.ok(Number.isFinite(step.signal), `step ${step.index} has a signal`);
-}
-// the buffer changed
-assert.notStrictEqual(state[59], 59, "the byte at 59 changed");
-
-// ── 12. Entropy degradation across the whole cycle ──────────
-// The entropy of the buffer after the cycle is different from before.
-const finalEntropy = entropy(state);
-assert.ok(finalEntropy !== h0 || true, "the entropy changed across the cycle");
-// the signal is the total entropy delta
-
-// ── 13. The state is the raw buffer ─────────────────────────
-// Not a logical value — the raw bytes.
-const raw = new Uint8Array([1, 2, 3]);
-assert.strictEqual(raw[0], 1, "the raw byte is 1");
-assert.strictEqual(raw.byteLength, 3, "the raw buffer is 3 bytes");
-// the automaton operates on the raw buffer
-
-// ── 14. The whole picture ───────────────────────────────────
-type Picture = {
-  state: string;
-  transition: string;
-  signal: string;
-  rule: string;
-};
-const picture: Picture = {
-  state: "the allocated raw buffer",
-  transition: "Atomics.compareExchange at indices 59, 63, 127",
-  signal: "the entropy degradation",
-  rule: "I-167 (rate), I-170 (direction), I-171 (agreement)",
-};
-assert.ok(picture.state.includes("raw buffer"), "the state is the raw buffer");
-assert.ok(picture.signal.includes("entropy"), "the signal is entropy");
-assert.ok(picture.rule.includes("I-167"), "the rule includes I-167");
-
-// ── 15. The punchline ───────────────────────────────────────
-// The connecting rule is the allocated raw buffer.
-// Entropy degradation is the signal.
-console.log("I-178: the connecting rule is the raw buffer; entropy degradation is the signal — passed");
-console.log(`  the state is the allocated raw buffer`);
-console.log(`  the transition is Atomics.compareExchange at 59, 63, 127`);
-console.log(`  the signal is the entropy degradation`);
-console.log(`  I-167 (rate), I-170 (direction), I-171 (agreement) drive the steps`);
-console.log(`  the signal is time-independent (a state property)`);
+console.log("I-178 (pending): the raw buffer, XORed by agent at 59, 63, 127 — passed");
+console.log(`  each step's change: ${perStep.map((d) => d.toFixed(4)).join(" ")}`);
+console.log(`  the total, start to end: ${total.toFixed(4)}`);
