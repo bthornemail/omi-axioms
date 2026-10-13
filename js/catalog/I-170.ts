@@ -60,7 +60,11 @@ assert.strictEqual(chain[0]!.from, "void (John)", "the chain starts at the void"
 assert.strictEqual(chain[chain.length - 1]!.to, "reset (0xFFFFFFF0)", "and ends at the reset");
 
 // ── 6. The reverse chain ────────────────────────────────────
-const reverseChain = [...chain].reverse();
+// The threshold, stated by the author (2026-10-12): reversing the order is not
+// enough; the reverse chain also swaps each link's ends (from <-> to).
+const orderOnly = [...chain].reverse();
+assert.notStrictEqual(orderOnly[0]!.from, "reset (0xFFFFFFF0)", "reversing the order alone keeps each link's direction");
+const reverseChain = [...chain].reverse().map((l) => ({ ...l, from: l.to, to: l.from }));
 assert.strictEqual(reverseChain[0]!.from, "reset (0xFFFFFFF0)", "the reverse starts at reset");
 assert.strictEqual(reverseChain[reverseChain.length - 1]!.to, "void (John)", "and ends at the void");
 // both directions are the same chain

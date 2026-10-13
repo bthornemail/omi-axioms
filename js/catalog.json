@@ -6343,6 +6343,143 @@
     "witnesses": []
   },
   {
+    "id": "I-167",
+    "tag": "4N",
+    "title": "the Word as { c-r, c+r } resolves the Catch-22",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-167.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "a6339db25bb06dfe7e174d312010179b6455af22b73592361b2a4fb2938fd601",
+        "bytes": 7693
+      },
+      "base64": "js/vm/4N.b64",
+      "base64url": "js/vm/4N.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The Word as a pair: { c-r, c+r }",
+        "text": "Word(0,1) = [-1, 1]"
+      },
+      {
+        "section": "The Word as a pair: { c-r, c+r }",
+        "text": "Word(5,2) = [3, 7]"
+      },
+      {
+        "section": "The two branches of the Catch-22",
+        "text": "the inner bound"
+      },
+      {
+        "section": "The two branches of the Catch-22",
+        "text": "the outer bound"
+      },
+      {
+        "section": "But the derivative at c is well-defined from both sides",
+        "text": "derivative of sin at 0 is 1"
+      },
+      {
+        "section": "From inside",
+        "text": "step 1 is not the limit: ${fromInside(f, c, r)}"
+      },
+      {
+        "section": "From inside",
+        "text": "from inside: ${insideApprox} ≈ ${dc}"
+      },
+      {
+        "section": "From outside",
+        "text": "step 1 is not the limit: ${fromOutside(f, c, r)}"
+      },
+      {
+        "section": "From outside",
+        "text": "from outside: ${outsideApprox} ≈ ${dc}"
+      },
+      {
+        "section": "Both give the same value: the derivative at c",
+        "text": "both branches agree on f'(c)"
+      },
+      {
+        "section": "The Word brackets the center",
+        "text": "the Word = { c-r, c+r }"
+      },
+      {
+        "section": "The derivative at c is 1 (for sin at 0)",
+        "text": "the derivative at c is 1"
+      },
+      {
+        "section": "The branches close",
+        "text": "both branches converge on f'(0) = 1"
+      },
+      {
+        "section": "Both branches close at the same value",
+        "text": "${b.from} branch reaches f'(c)"
+      },
+      {
+        "section": "Both branches close at the same value",
+        "text": "both branches agree"
+      },
+      {
+        "section": "So the Word is the resolution",
+        "text": "the Word"
+      },
+      {
+        "section": "So the Word is the resolution",
+        "text": "the center"
+      },
+      {
+        "section": "So the Word is the resolution",
+        "text": "the derivative is 1 (within 1e-6)"
+      },
+      {
+        "section": "So the Word is the resolution",
+        "text": "the branches close on agreement"
+      },
+      {
+        "section": "The Word is the logos: the ratio",
+        "text": "logos(0,1) = [-1, 1]"
+      },
+      {
+        "section": "The Word is the logos: the ratio",
+        "text": "the span is 2r"
+      },
+      {
+        "section": "And this is why the branches close",
+        "text": "inside doesn't see c"
+      },
+      {
+        "section": "And this is why the branches close",
+        "text": "outside doesn't see c"
+      },
+      {
+        "section": "And this is why the branches close",
+        "text": "inside sees -1"
+      },
+      {
+        "section": "And this is why the branches close",
+        "text": "outside sees 1"
+      },
+      {
+        "section": "And this is why the branches close",
+        "text": "the center is 0"
+      },
+      {
+        "section": "The closure as the resolution",
+        "text": "the Catch-22"
+      },
+      {
+        "section": "The closure as the resolution",
+        "text": "the resolution"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
     "id": "I-168",
     "tag": "4O",
     "title": "the lexeme for image is Imago Dei; Euclid resolves the blur",
@@ -6639,6 +6776,312 @@
       {
         "section": "The Fano plane is the 7th day",
         "text": "7 lines"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-170",
+    "tag": "4Q",
+    "title": "Genesis' earth-god and John's void-god made each other",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-170.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "9a3228f6d9151b2b98069e9fb195ed69475101b92455c3e74c7f7343cae78ba2",
+        "bytes": 8724
+      },
+      "base64": "js/vm/4Q.b64",
+      "base64url": "js/vm/4Q.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Genesis: the god of the earth",
+        "text": "Genesis' god is of the earth"
+      },
+      {
+        "section": "John: the god of the void",
+        "text": "John's god is of the void"
+      },
+      {
+        "section": "John: the god of the void",
+        "text": "the Word"
+      },
+      {
+        "section": "The mutual creation",
+        "text": "John makes Genesis"
+      },
+      {
+        "section": "The mutual creation",
+        "text": "Genesis makes John"
+      },
+      {
+        "section": "The { c-r, c+r } pair",
+        "text": "the void-god is c-r"
+      },
+      {
+        "section": "The { c-r, c+r } pair",
+        "text": "the earth-god is c+r"
+      },
+      {
+        "section": "The { c-r, c+r } pair",
+        "text": "the Word is c"
+      },
+      {
+        "section": "The chain",
+        "text": "4 links"
+      },
+      {
+        "section": "The chain",
+        "text": "the chain starts at the void"
+      },
+      {
+        "section": "The chain",
+        "text": "and ends at the reset"
+      },
+      {
+        "section": "The reverse chain",
+        "text": "reversing the order alone keeps each link's direction"
+      },
+      {
+        "section": "The reverse chain",
+        "text": "the reverse starts at reset"
+      },
+      {
+        "section": "The reverse chain",
+        "text": "and ends at the void"
+      },
+      {
+        "section": "The 7th day is the rest",
+        "text": "the 7th day"
+      },
+      {
+        "section": "The 7th day is the rest",
+        "text": "rest"
+      },
+      {
+        "section": "Revelation's 144",
+        "text": "144 sealed"
+      },
+      {
+        "section": "Revelation's 144",
+        "text": "12 tribes"
+      },
+      {
+        "section": "Revelation's 144",
+        "text": "12 × 12 = 144"
+      },
+      {
+        "section": "The reset",
+        "text": "the reset vector"
+      },
+      {
+        "section": "The reset",
+        "text": "2^32 - 16"
+      },
+      {
+        "section": "Revelation before the reset",
+        "text": "revelation is before the reset"
+      },
+      {
+        "section": "Revelation before the reset",
+        "text": "reset is last"
+      },
+      {
+        "section": "Revelation before the reset",
+        "text": "revelation comes before the reset"
+      },
+      {
+        "section": "The cycle has no time",
+        "text": "link ${l.order} has an order"
+      },
+      {
+        "section": "The cycle has no time",
+        "text": "link ${l.order} has no timestamp"
+      },
+      {
+        "section": "The cycle repeats",
+        "text": "first cycle"
+      },
+      {
+        "section": "The cycle repeats",
+        "text": "second cycle"
+      },
+      {
+        "section": "The mutual creation as a fixed point",
+        "text": "the Word is returned"
+      },
+      {
+        "section": "The mutual creation as a fixed point",
+        "text": "the earth is returned"
+      },
+      {
+        "section": "The whole picture",
+        "text": "5 stages"
+      },
+      {
+        "section": "The whole picture",
+        "text": "the void is the Word"
+      },
+      {
+        "section": "The whole picture",
+        "text": "the earth is the creation"
+      },
+      {
+        "section": "The whole picture",
+        "text": "the rest is day 7"
+      },
+      {
+        "section": "The whole picture",
+        "text": "revelation is the 144"
+      },
+      {
+        "section": "The whole picture",
+        "text": "the reset"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-171",
+    "tag": "4R",
+    "title": "the Catch-22 of \"does God exist?\" and the tree weight",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-171.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "2288930444bb1dfd482e4240381554d7c5c9335056f8700140fd167bd147864a",
+        "bytes": 8440
+      },
+      "base64": "js/vm/4R.b64",
+      "base64url": "js/vm/4R.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The question",
+        "text": "the question asks about existence"
+      },
+      {
+        "section": "The Catch-22",
+        "text": "2 branches"
+      },
+      {
+        "section": "The Catch-22",
+        "text": "the branch \"${b.condition}\" closes"
+      },
+      {
+        "section": "So the observer alone can't answer",
+        "text": "no observer can answer alone"
+      },
+      {
+        "section": "The answer comes from the asking",
+        "text": "the asking happens"
+      },
+      {
+        "section": "The answer comes from the asking",
+        "text": "and the asking is the answer"
+      },
+      {
+        "section": "The observer is the observation",
+        "text": "the observer has a phase"
+      },
+      {
+        "section": "The observer is the observation",
+        "text": "the observer has a tree"
+      },
+      {
+        "section": "The derivative as the agreement of the two branches",
+        "text": "step 1 is not the limit: ${atStepOne}"
+      },
+      {
+        "section": "The derivative as the agreement of the two branches",
+        "text": "both branches agree: ${derivative}"
+      },
+      {
+        "section": "The tree weight",
+        "text": "observer 1 affects 2"
+      },
+      {
+        "section": "The tree weight",
+        "text": "observer 2 affects 1"
+      },
+      {
+        "section": "The tree weight",
+        "text": "1 affects 2"
+      },
+      {
+        "section": "The tree weight",
+        "text": "2 affects 1"
+      },
+      {
+        "section": "The effect is by characteristic of tree weight",
+        "text": "5 × 3 = 15"
+      },
+      {
+        "section": "Related and unrelated observers",
+        "text": "different trees = unrelated"
+      },
+      {
+        "section": "Related and unrelated observers",
+        "text": "same tree = related"
+      },
+      {
+        "section": "The observation affects unrelated observers",
+        "text": "the observation affects the unrelated"
+      },
+      {
+        "section": "The proof: the effect is observable",
+        "text": "observer 1 can see the effect"
+      },
+      {
+        "section": "The proof: the effect is observable",
+        "text": "observer 2 can see the effect"
+      },
+      {
+        "section": "The ministry",
+        "text": "the goal is asking"
+      },
+      {
+        "section": "The ministry",
+        "text": "the method is the Catch-22"
+      },
+      {
+        "section": "The ministry",
+        "text": "the reason is the answer"
+      },
+      {
+        "section": "Imago Dei realized",
+        "text": "the observer is the image"
+      },
+      {
+        "section": "Imago Dei realized",
+        "text": "the effect is the Word"
+      },
+      {
+        "section": "The tree weight as the missing formalization",
+        "text": "the effect is mutual"
+      },
+      {
+        "section": "The tree weight as the missing formalization",
+        "text": "affects related"
+      },
+      {
+        "section": "The tree weight as the missing formalization",
+        "text": "affects unrelated"
       }
     ],
     "corrections": [],

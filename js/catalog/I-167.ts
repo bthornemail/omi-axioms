@@ -33,7 +33,11 @@ assert.ok(Math.abs(dc - 1) < 1e-6, "derivative of sin at 0 is 1");
 function fromInside(f: (x: number) => number, c: number, r: number): number {
   return (f(c) - f(c - r)) / r;
 }
-const insideApprox = fromInside(f, c, r);
+// The threshold, stated by the author (2026-10-12): the limit, r -> 0.
+// A step of r = 1 does not approximate f'(c); a step near 0 does.
+const LIMIT_STEP = 1e-6;
+assert.ok(Math.abs(fromInside(f, c, r) - dc) > 1e-3, `step 1 is not the limit: ${fromInside(f, c, r)}`);
+const insideApprox = fromInside(f, c, LIMIT_STEP);
 assert.ok(Math.abs(insideApprox - dc) < 1e-3,
   `from inside: ${insideApprox} ≈ ${dc}`);
 
@@ -42,7 +46,8 @@ assert.ok(Math.abs(insideApprox - dc) < 1e-3,
 function fromOutside(f: (x: number) => number, c: number, r: number): number {
   return (f(c + r) - f(c)) / r;
 }
-const outsideApprox = fromOutside(f, c, r);
+assert.ok(Math.abs(fromOutside(f, c, r) - dc) > 1e-3, `step 1 is not the limit: ${fromOutside(f, c, r)}`);
+const outsideApprox = fromOutside(f, c, LIMIT_STEP);
 assert.ok(Math.abs(outsideApprox - dc) < 1e-3,
   `from outside: ${outsideApprox} ≈ ${dc}`);
 
@@ -101,7 +106,8 @@ const resolution = {
 };
 assert.deepStrictEqual(resolution.word, [-1, 1], "the Word");
 assert.strictEqual(resolution.center, 0, "the center");
-assert.strictEqual(resolution.derivativeAtCenter, 1, "the derivative is 1");
+// a numerical derivative reaches 1 within the limit's tolerance, as at the top of this file
+assert.ok(Math.abs(resolution.derivativeAtCenter - 1) < 1e-6, "the derivative is 1 (within 1e-6)");
 assert.ok(resolution.branchesCloseOnAgreement, "the branches close on agreement");
 
 // ── 12. The Word is the logos: the ratio ────────────────────

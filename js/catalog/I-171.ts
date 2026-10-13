@@ -49,12 +49,16 @@ assert.strictEqual(typeof observer.tree, "string", "the observer has a tree");
 
 // ── 6. The derivative as the agreement of the two branches ─
 // I-167: both branches agree on f'(c).
-const c = 0, r = 1;
+// The threshold, stated by the author (2026-10-12): the limit, r -> 0.
+// At r = 1 the two branches average to sin 1 ≈ 0.841; near 0 they agree on f'(c) = 1.
+const c = 0, r = 1e-6;
 function f(x: number): number { return Math.sin(x); }
+const atStepOne = ((f(c) - f(c - 1)) + (f(c + 1) - f(c))) / 2;
+assert.ok(Math.abs(atStepOne - 1) > 1e-1, `step 1 is not the limit: ${atStepOne}`);
 const fromInside  = (f(c) - f(c - r)) / r;
 const fromOutside = (f(c + r) - f(c)) / r;
 const derivative = (fromInside + fromOutside) / 2;
-assert.ok(Math.abs(derivative - 1) < 1e-1, `both branches agree: ${derivative}`);
+assert.ok(Math.abs(derivative - 1) < 1e-3, `both branches agree: ${derivative}`);
 // so the asking (the derivative) is well-defined
 
 // ── 7. The tree weight ─────────────────────────────────────

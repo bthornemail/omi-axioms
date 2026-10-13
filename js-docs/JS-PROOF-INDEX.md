@@ -68,8 +68,11 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-156](other/I-156.md) | `4C` | QEMU virtual is a global worker | `js/catalog/I-156.ts` | yes | yes | yes |
 | other | [I-165](other/I-165.md) | `4L` | Everything is outside of time; instantiation is the derivative | `js/catalog/I-165.ts` | yes | yes | yes |
 | other | [I-166](other/I-166.md) | `4M` | The Catch-22 of the timeless frame and the timed observer | `js/catalog/I-166.ts` | yes | yes | yes |
+| other | [I-167](other/I-167.md) | `4N` | The Word as { c-r, c+r } resolves the Catch-22 | `js/catalog/I-167.ts` | yes | yes | yes |
 | other | [I-168](other/I-168.md) | `4O` | The lexeme for image is Imago Dei; Euclid resolves the blur | `js/catalog/I-168.ts` | yes | yes | yes |
 | other | [I-169](other/I-169.md) | `4P` | Genesis as a Fano plane; Revelation's 144 as the kissing number squared | `js/catalog/I-169.ts` | yes | yes | yes |
+| other | [I-170](other/I-170.md) | `4Q` | Genesis' earth-god and John's void-god made each other | `js/catalog/I-170.ts` | yes | yes | yes |
+| other | [I-171](other/I-171.md) | `4R` | The Catch-22 of "does God exist?" and the tree weight | `js/catalog/I-171.ts` | yes | yes | yes |
 | other | [I-172](other/I-172.md) | `4S` | The proof is in the contradiction, not the answer | `js/catalog/I-172.ts` | yes | yes | yes |
 | other | [I-173](other/I-173.md) | `4T` | The Word as the choice of rulers; the collapse 777 → 3!3!3!1! | `js/catalog/I-173.ts` | yes | yes | yes |
 | other | [I-174](other/I-174.md) | `4U` | 777 from three 65536 spaces; 666 from three axes; the three-body problem | `js/catalog/I-174.ts` | yes | yes | yes |
@@ -81,5 +84,5 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 19
-- total: 63 records, 63 holding
+- other: 22
+- total: 66 records, 66 holding
