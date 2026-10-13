@@ -82,11 +82,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-178](other/I-178.md) | `4Y` | The frame is held by position; the agents XOR the routed values into the units | `js/catalog/I-178.ts` | yes | yes | yes |
 | other | [I-179](other/I-179.md) | `4Z` | The 4 GB meta-memory is virtual | `js/catalog/I-179.ts` | yes | yes | yes |
 | other | [I-180](other/I-180.md) | `50` | X86 initializes a virtual 4 GB; 64 MB real holds it, and its tables are 8 MB | `js/catalog/I-180.ts` | yes | yes | yes |
+| other | [I-182](other/I-182.md) | `52` | The atlas, 7! = 5040, and where its rules break: the values are right, two indices are not | `js/catalog/I-182.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 26
-- total: 70 records, 70 holding
+- other: 27
+- total: 71 records, 71 holding

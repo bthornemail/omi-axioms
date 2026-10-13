@@ -8167,5 +8167,134 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-182",
+    "tag": "52",
+    "title": "the atlas, 7! = 5040, and where its rules break: the values are right, two indices are not",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-182.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "e04acdef219b7a8e630ad890ce993fc80f176ac34be144103d3b05ad07d8a761",
+        "bytes": 8518
+      },
+      "base64": "js/vm/52.b64",
+      "base64url": "js/vm/52.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "7! = 5040: the Fano plane, relabelled every way",
+        "text": "7 lines"
+      },
+      {
+        "section": "7! = 5040: the Fano plane, relabelled every way",
+        "text": "7! = 5040 relabellings"
+      },
+      {
+        "section": "7! = 5040: the Fano plane, relabelled every way",
+        "text": "168 of them give the same plane back"
+      },
+      {
+        "section": "7! = 5040: the Fano plane, relabelled every way",
+        "text": "the rest give 30 distinct Fano planes"
+      },
+      {
+        "section": "7! = 5040: the Fano plane, relabelled every way",
+        "text": "5040 = 168 x 30: every plane with its symmetries"
+      },
+      {
+        "section": "7! = 5040: the Fano plane, relabelled every way",
+        "text": "720 = 7!/7 = 6!, the orderings that keep one point (GF(2)^3 has 7 non-zero vectors, not 6)"
+      },
+      {
+        "section": "The atlas slot: f*720 + t*180 + p covers 5040 once",
+        "text": "7 x 4 x 180 tuples, 5040 slots, each once"
+      },
+      {
+        "section": "The atlas slot: f*720 + t*180 + p covers 5040 once",
+        "text": "the last slot is 5039"
+      },
+      {
+        "section": "The atlas slot: f*720 + t*180 + p covers 5040 once",
+        "text": "4320 starts the fano = 6 block"
+      },
+      {
+        "section": "The atlas slot: f*720 + t*180 + p covers 5040 once",
+        "text": "the first form, t*240 with four t's, overlaps itself"
+      },
+      {
+        "section": "The row 5040/7m: 120 sits at 42, not 28",
+        "text": "5040/28 = 180 = 12*5*3 (the note has 120 = 12*5*2)"
+      },
+      {
+        "section": "The row 5040/7m: 120 sits at 42, not 28",
+        "text": "120 is the value at 42: the note's row 12, 6, 4, 2 is 12/m for m = 1, 2, 3, 6"
+      },
+      {
+        "section": "The row 5040/7m: 120 sits at 42, not 28",
+        "text": "35 (m = 5) is the gap: 144 = 12 x 12, no factor 5 left"
+      },
+      {
+        "section": "The row 5040/7m: 120 sits at 42, not 28",
+        "text": "and the row runs on past it, to 60 at 84"
+      },
+      {
+        "section": "37 and every prime above 7",
+        "text": "5040 mod 37 = 8"
+      },
+      {
+        "section": "37 and every prime above 7",
+        "text": "8/37 = 216/999, so 5040/37 = 136.216216…"
+      },
+      {
+        "section": "Q mod 240 is not the phase: the 240 needs a second index",
+        "text": "c = ${c}: one fixed point, one orbit of 65535"
+      },
+      {
+        "section": "Q mod 240 is not the phase: the 240 needs a second index",
+        "text": "a 240-phase is off by 15 after each full orbit"
+      },
+      {
+        "section": "Q mod 240 is not the phase: the 240 needs a second index",
+        "text": "Δ carries the 15 of 240 = 15 x 16"
+      },
+      {
+        "section": "Q mod 240 is not the phase: the 240 needs a second index",
+        "text": "and not the 16: 2^16 - 1 is odd"
+      },
+      {
+        "section": "Q mod 240 is not the phase: the 240 needs a second index",
+        "text": "Δ keeps Q mod 240 in half the states for c = 0, 0x3c, 0xff and in 1 of 30 for c = 1, 0x1d: Q is not invariant (the bqfObserver says it is)"
+      },
+      {
+        "section": "Q mod 240 is not the phase: the 240 needs a second index",
+        "text": "Q = 4 x (15x² + 4xc + c²): Q mod 240 lands only on multiples of 4"
+      },
+      {
+        "section": "Q mod 240 is not the phase: the 240 needs a second index",
+        "text": "45 of the 60 multiples of 4: a 60-place index scaled by 4, not a 240-place one"
+      },
+      {
+        "section": "Where the algebra stops: 16",
+        "text": "dimension 16: |ab| = |a||b| fails"
+      },
+      {
+        "section": "Where the algebra stops: 16",
+        "text": "(e1 + e10)(e4 - e15) = 0: the sedenions have zero divisors"
+      },
+      {
+        "section": "Where the algebra stops: 16",
+        "text": "the quaternions do not commute"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
