@@ -8496,5 +8496,50 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-187",
+    "tag": "57",
+    "title": "the tripods of the 2^n-ions: e_a e_b = ±e_(a ^ b), and the triples are the lines of PG(n-1, 2)",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-187.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "f72859e261e2eb44714d569e958f182e8caa51ecc11f2cba859c05d3cf66978c",
+        "bytes": 5655
+      },
+      "base64": "js/vm/57.b64",
+      "base64url": "js/vm/57.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "A product of units is ± the unit at the XOR of their indices",
+        "text": "dimension ${n}: e${a} e${b} = ±e${a ^ b}"
+      },
+      {
+        "section": "So the tripods are the lines of PG(n-1, 2): (2^n - 1)(2^n - 2)/6",
+        "text": "octonions 7, sedenions 35, trigintaduonions 155, 64-ions 651"
+      },
+      {
+        "section": "So the tripods are the lines of PG(n-1, 2): (2^n - 1)(2^n - 2)/6",
+        "text": "the 64-ions have 63 imaginary units: the 6-bit closure"
+      },
+      {
+        "section": "Wikipedia's 155, as listed",
+        "text": "the listed 155 are exactly the lines of PG(4, 2)"
+      },
+      {
+        "section": "Wikipedia's 155, as listed",
+        "text": "e${a} e${b} = ±e${c} in the trigintaduonions"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

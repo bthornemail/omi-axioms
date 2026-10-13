@@ -87,11 +87,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-184](other/I-184.md) | `54` | The closure is the difference between reading and writing an index | `js/catalog/I-184.ts` | yes | yes | yes |
 | other | [I-185](other/I-185.md) | `55` | The tetrahedron of infinite geometries, {3,…,3} and {4,3,…,3}:{3,…,3,4} | `js/catalog/I-185.ts` | yes | yes | yes |
 | other | [I-186](other/I-186.md) | `56` | The ASCII indices pass through UTF-8 as themselves | `js/catalog/I-186.ts` | yes | yes | yes |
+| other | [I-187](other/I-187.md) | `57` | The tripods of the 2^n-ions: e_a e_b = ±e_(a ^ b), and the triples are the lines of PG(n-1, 2) | `js/catalog/I-187.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 31
-- total: 75 records, 75 holding
+- other: 32
+- total: 76 records, 76 holding
