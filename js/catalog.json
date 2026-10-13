@@ -8541,5 +8541,94 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-188",
+    "tag": "58",
+    "title": "19.4.4 → 44J → 5347 → (5, 3, 4, 7) → 19, and the exchange at 19 of 64",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-188.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "095586a5db86b2fdb8dee9f58269855d36a53293a189d5afb473bc561e257f44",
+        "bytes": 3382
+      },
+      "base64": "js/vm/58.b64",
+      "base64url": "js/vm/58.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "19.4.4 as (frame, sub-frame, index)",
+        "text": "section 19.4.4: frame 4, sub-frame 4, index 19"
+      },
+      {
+        "section": "19.4.4 as (frame, sub-frame, index)",
+        "text": "19 is one of the 64 bytes 0..63"
+      },
+      {
+        "section": "In base 36, the address is 44J",
+        "text": "4, 4, J: J is the base-36 digit 19"
+      },
+      {
+        "section": "44J is 5347: the coordinate 5, 3, 4, 7, summing to 19",
+        "text": "44J = 4 x 36^2 + 4 x 36 + 19"
+      },
+      {
+        "section": "44J is 5347: the coordinate 5, 3, 4, 7, summing to 19",
+        "text": "= 5347"
+      },
+      {
+        "section": "44J is 5347: the coordinate 5, 3, 4, 7, summing to 19",
+        "text": "its decimal digits are the coordinate 5, 3, 4, 7"
+      },
+      {
+        "section": "44J is 5347: the coordinate 5, 3, 4, 7, summing to 19",
+        "text": "and they sum to 19: the chain closes on the index"
+      },
+      {
+        "section": "44J is 5347: the coordinate 5, 3, 4, 7, summing to 19",
+        "text": "5347 mod 36 = 19, the last base-36 digit"
+      },
+      {
+        "section": "44J is 5347: the coordinate 5, 3, 4, 7, summing to 19",
+        "text": "but not mod 64 or 256: 35 and 227"
+      },
+      {
+        "section": "44J is 5347: the coordinate 5, 3, 4, 7, summing to 19",
+        "text": "5 x 3 x 4 x 7 = 420 = 4 x 0x69, the organ's parity byte (3 x 5 x 7, I-102)"
+      },
+      {
+        "section": "The exchange at 19 of the 64 bytes: 128 for 63",
+        "text": "the exchange at 19 finds 128"
+      },
+      {
+        "section": "The exchange at 19 of the 64 bytes: 128 for 63",
+        "text": "and leaves 63"
+      },
+      {
+        "section": "The exchange at 19 of the 64 bytes: 128 for 63",
+        "text": "a second exchange finds 63, not 128, and does nothing"
+      },
+      {
+        "section": "The exchange at 19 of the 64 bytes: 128 for 63",
+        "text": "63 stays"
+      },
+      {
+        "section": "The exchange at 19 of the 64 bytes: 128 for 63",
+        "text": "128 (2^7, the 7-bit completion) and 63 (2^6 - 1, the 6-bit closure) share no bit"
+      },
+      {
+        "section": "In the vault's own tags, 44 is I-148",
+        "text": "the record tag 44 is I-148 (and 44J would read as I-148j)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
