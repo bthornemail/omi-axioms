@@ -18,11 +18,13 @@ const memory = new Uint8Array(SPACE);
 assert.strictEqual(memory.length, SPACE, "the buffer spans 2^32 bytes");
 
 // ── 2. The layout addresses are addresses in it ─────────────
-const BOOT = 0x7C00, RESET = 0xFFFFFFF0;
-memory[BOOT] = 0x55; memory[BOOT + 1] = 0xAA; // the boot signature, as a sector carries it
-memory[RESET] = 0xEA;                          // a far jump, as the reset vector carries it
-assert.strictEqual(memory[BOOT], 0x55, "the boot sector address holds what was written");
-assert.strictEqual(memory[BOOT + 1], 0xAA, "and the next byte");
+const BOOT = 0x7C00, SIGNATURE = BOOT + 0x1FE, RESET = 0xFFFFFFF0;
+memory[SIGNATURE] = 0x55; memory[SIGNATURE + 1] = 0xAA; // the boot signature, in the sector's last two bytes (I-154: 0x7DFE)
+memory[RESET] = 0xEA;                                    // a far jump, as the reset vector carries it
+assert.strictEqual(SIGNATURE, 0x7DFE, "the signature's address is 0x7DFE");
+assert.strictEqual(memory[SIGNATURE], 0x55, "the signature address holds what was written");
+assert.strictEqual(memory[SIGNATURE + 1], 0xAA, "and the next byte");
+assert.strictEqual(memory[SIGNATURE] | (memory[SIGNATURE + 1]! << 8), 0xAA55, "read as a little-endian word, 0xAA55");
 assert.strictEqual(memory[RESET], 0xEA, "the reset vector address holds what was written");
 assert.strictEqual(RESET + 16, SPACE, "the reset vector is 16 bytes below the top of the space");
 
@@ -45,4 +47,4 @@ assert.strictEqual(w[RESET], 0xEA, "the reset vector is addressable in wasm32 me
 
 console.log("I-179: the 4 GB meta-memory is virtual — passed");
 console.log(`  2^32 bytes allocated; resident memory grew by ${grew.toFixed(1)} MB`);
-console.log(`  0x7C00 and 0xFFFFFFF0 are addresses in it; untouched memory reads 0`);
+console.log(`  0x7DFE and 0xFFFFFFF0 are addresses in it; untouched memory reads 0`);

@@ -7997,8 +7997,8 @@
     ],
     "carriers": {
       "script": {
-        "sha256": "54ddbf8b20b2738c1362d5e245d1b999e6d17706350b646e8bf7c58d33a0d47c",
-        "bytes": 2833
+        "sha256": "f38be0bdaa9cdff18d7fe89a48b30fc77c1844e9a2d737a2798d4a2698b969e2",
+        "bytes": 3106
       },
       "base64": "js/vm/4Z.b64",
       "base64url": "js/vm/4Z.b64url",
@@ -8012,11 +8012,19 @@
       },
       {
         "section": "The layout addresses are addresses in it",
-        "text": "the boot sector address holds what was written"
+        "text": "the signature's address is 0x7DFE"
+      },
+      {
+        "section": "The layout addresses are addresses in it",
+        "text": "the signature address holds what was written"
       },
       {
         "section": "The layout addresses are addresses in it",
         "text": "and the next byte"
+      },
+      {
+        "section": "The layout addresses are addresses in it",
+        "text": "read as a little-endian word, 0xAA55"
       },
       {
         "section": "The layout addresses are addresses in it",
