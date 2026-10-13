@@ -90,11 +90,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-187](other/I-187.md) | `57` | The tripods of the 2^n-ions: e_a e_b = ±e_(a ^ b), and the triples are the lines of PG(n-1, 2) | `js/catalog/I-187.ts` | yes | yes | yes |
 | other | [I-188](other/I-188.md) | `58` | 19.4.4 → 44J → 5347 → (5, 3, 4, 7) → 19, and the exchange at 19 of 64 | `js/catalog/I-188.ts` | yes | yes | yes |
 | other | [I-189](other/I-189.md) | `59` | 1729 = 7 x 13 x 19, the first sexy set after the exceptional one, and its cubes split it | `js/catalog/I-189.ts` | yes | yes | yes |
+| other | [I-191](other/I-191.md) | `5B` | The Fano lottery: 14 tickets, and two of any three rebuild the third | `js/catalog/I-191.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 34
-- total: 78 records, 78 holding
+- other: 35
+- total: 79 records, 79 holding

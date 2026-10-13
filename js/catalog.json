@@ -8641,5 +8641,57 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-191",
+    "tag": "5B",
+    "title": "the Fano lottery: 14 tickets, and two of any three rebuild the third",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-191.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3105
+      },
+      "base64": "js/vm/5B.b64",
+      "base64url": "js/vm/5B.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Every draw of three from 1-14 meets a ticket in two, and the two rebuild the ticket",
+        "text": "${numbers} numbers"
+      },
+      {
+        "section": "Every draw of three from 1-14 meets a ticket in two, and the two rebuild the ticket",
+        "text": "${tickets} tickets: the lines of two PG(${k - 1}, 2)"
+      },
+      {
+        "section": "Every draw of three from 1-14 meets a ticket in two, and the two rebuild the ticket",
+        "text": "draw {${draw}} meets a ticket in two numbers"
+      },
+      {
+        "section": "Every draw of three from 1-14 meets a ticket in two, and the two rebuild the ticket",
+        "text": "{${draw}}: ${p} and ${q} rebuild ${third} by XOR"
+      },
+      {
+        "section": "Every draw of three from 1-14 meets a ticket in two, and the two rebuild the ticket",
+        "text": "all ${draws} draws"
+      },
+      {
+        "section": "Why: two of any three share a plane; any two points share exactly one line",
+        "text": "${a}, ${b}: ${same ? \"one line\" : \"no line\"}"
+      },
+      {
+        "section": "Why: two of any three share a plane; any two points share exactly one line",
+        "text": "14 tickets: the 7 lines of each plane"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
