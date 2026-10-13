@@ -27,6 +27,29 @@ Each file's marked dots are located in page coordinates (each circle's own trans
 
 Every line's three points XOR to 0, and the seven files are exactly the seven lines {a, b, a ^ b}.
 
+### The 16-index
+
+The vault's sixteen Fano constants (`core/src/verified/fano.ts`) are these sixteen masks; `svg/fano/masks.json` is written for that check (`src/testbed/core.test.ts`). Index i reads the icon below. The author, 2026-10-13: "the 16 are the 16-index and the exponent is the index read": 16^4 reads index 4, point 4; 16^10 reads index 10, line 2-7-5; and 4 ^ 10 = 4 + 10 = 14 reads line 2-6-4, the line through point 4.
+
+| Index | Icon | Mask |
+|-------|------|------|
+| 0 | Fano_empty | 0x00 |
+| 1 | Fano_point_1 | 0x01 |
+| 2 | Fano_point_2 | 0x02 |
+| 3 | Fano_point_3 | 0x04 |
+| 4 | Fano_point_4 | 0x08 |
+| 5 | Fano_point_5 | 0x10 |
+| 6 | Fano_point_6 | 0x20 |
+| 7 | Fano_point_7 | 0x40 |
+| 8 | Fano_line_3_5_6 | 0x34 |
+| 9 | Fano_line_1_7_6 | 0x61 |
+| 10 | Fano_line_2_7_5 | 0x52 |
+| 11 | Fano_line_1_3_2 | 0x07 |
+| 12 | Fano_line_4_7_3 | 0x4c |
+| 13 | Fano_line_1_5_4 | 0x19 |
+| 14 | Fano_line_2_6_4 | 0x2a |
+| 15 | Fano_full | 0x7f |
+
 ## The rules as the icons
 
 A two-input rule is its truth table t, bit a·2 + b = f(a, b) (the order the organ uses, `breadboard/esp32`). The constants are the empty and the full plane. The other fourteen, paired with their complements (t and t ^ 15), are the seven points: point p is the pair p / p ^ 15. On every line, two rules from two of its points XOR to a rule of the third.
