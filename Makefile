@@ -181,7 +181,7 @@ clean:
 	rm -f $(COQDIR)/.lia.cache $(COQDIR)/.nia.cache $(COQDIR)/.nra.cache
 	find $(ARTIFACTDIR) -mindepth 1 ! -name '.gitkeep' -delete
 
-.PHONY: proof proof-strict proof-registry-lock proof-status foundations-proof closure-proof \
+.PHONY: svg proof proof-strict proof-registry-lock proof-status foundations-proof closure-proof \
 	incidence-proof projection-proof execution-proof polyharmonic-proof \
 	proof-book-check prepare-artifacts clean
 
@@ -198,3 +198,6 @@ js:
 	for f in js/catalog/I-*.ts; do node "$$f" > /dev/null || exit 1; done
 js-docs:
 	node js/tools/build.mjs
+
+svg:
+	node svg/tools/build.mjs

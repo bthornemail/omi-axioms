@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+<title>The Fano plane's subspaces, the icons as nodes</title>
+<style>
+  text { font: 13px ui-monospace, monospace; fill: #222; }
+  .small { font-size: 11px; fill: #555; }
+  .edge { stroke: #bbb; stroke-width: 1.2; }
+  .ring { fill: none; stroke: #c0392b; stroke-width: 4; }
+  .ring2 { fill: none; stroke: #2a5db0; stroke-width: 4; }
+  @media (prefers-color-scheme: dark) { text { fill: #eee; } .small { fill: #aaa; } .edge { stroke: #555; } }
+</style>
+<line class="edge" x1="600" y1="487.97210035" x2="346.64316959999996" y2="420.02789965"/>
+<line class="edge" x1="600" y1="487.97210035" x2="431.0954464" y2="420.02789965"/>
+<line class="edge" x1="600" y1="487.97210035" x2="515.5477232" y2="420.02789965"/>
+<line class="edge" x1="600" y1="487.97210035" x2="600" y2="420.02789965"/>
+<line class="edge" x1="600" y1="487.97210035" x2="684.4522768" y2="420.02789965"/>
+<line class="edge" x1="600" y1="487.97210035" x2="768.9045536" y2="420.02789965"/>
+<line class="edge" x1="600" y1="487.97210035" x2="853.3568304" y2="420.02789965"/>
+<line class="edge" x1="346.64316959999996" y1="337.97210035" x2="346.64316959999996" y2="270.02789965"/>
+<line class="edge" x1="431.0954464" y1="337.97210035" x2="346.64316959999996" y2="270.02789965"/>
+<line class="edge" x1="515.5477232" y1="337.97210035" x2="346.64316959999996" y2="270.02789965"/>
+<line class="edge" x1="346.64316959999996" y1="337.97210035" x2="431.0954464" y2="270.02789965"/>
+<line class="edge" x1="600" y1="337.97210035" x2="431.0954464" y2="270.02789965"/>
+<line class="edge" x1="684.4522768" y1="337.97210035" x2="431.0954464" y2="270.02789965"/>
+<line class="edge" x1="346.64316959999996" y1="337.97210035" x2="515.5477232" y2="270.02789965"/>
+<line class="edge" x1="768.9045536" y1="337.97210035" x2="515.5477232" y2="270.02789965"/>
+<line class="edge" x1="853.3568304" y1="337.97210035" x2="515.5477232" y2="270.02789965"/>
+<line class="edge" x1="431.0954464" y1="337.97210035" x2="600" y2="270.02789965"/>
+<line class="edge" x1="600" y1="337.97210035" x2="600" y2="270.02789965"/>
+<line class="edge" x1="768.9045536" y1="337.97210035" x2="600" y2="270.02789965"/>
+<line class="edge" x1="431.0954464" y1="337.97210035" x2="684.4522768" y2="270.02789965"/>
+<line class="edge" x1="684.4522768" y1="337.97210035" x2="684.4522768" y2="270.02789965"/>
+<line class="edge" x1="853.3568304" y1="337.97210035" x2="684.4522768" y2="270.02789965"/>
+<line class="edge" x1="515.5477232" y1="337.97210035" x2="768.9045536" y2="270.02789965"/>
+<line class="edge" x1="684.4522768" y1="337.97210035" x2="768.9045536" y2="270.02789965"/>
+<line class="edge" x1="768.9045536" y1="337.97210035" x2="768.9045536" y2="270.02789965"/>
+<line class="edge" x1="515.5477232" y1="337.97210035" x2="853.3568304" y2="270.02789965"/>
+<line class="edge" x1="600" y1="337.97210035" x2="853.3568304" y2="270.02789965"/>
+<line class="edge" x1="853.3568304" y1="337.97210035" x2="853.3568304" y2="270.02789965"/>
+<line class="edge" x1="346.64316959999996" y1="187.97210035" x2="600" y2="120.02789965"/>
+<line class="edge" x1="431.0954464" y1="187.97210035" x2="600" y2="120.02789965"/>
+<line class="edge" x1="515.5477232" y1="187.97210035" x2="600" y2="120.02789965"/>
+<line class="edge" x1="600" y1="187.97210035" x2="600" y2="120.02789965"/>
+<line class="edge" x1="684.4522768" y1="187.97210035" x2="600" y2="120.02789965"/>
+<line class="edge" x1="768.9045536" y1="187.97210035" x2="600" y2="120.02789965"/>
+<line class="edge" x1="853.3568304" y1="187.97210035" x2="600" y2="120.02789965"/>
+<image href="../fano/Fano_empty.svg" x="566.7738616" y="489.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="600" y="564.02789965" text-anchor="middle">0x00</text>
+<image href="../fano/Fano_point_1.svg" x="313.41703119999994" y="339.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="346.64316959999996" y="414.02789965" text-anchor="middle">0x01</text>
+<image href="../fano/Fano_point_2.svg" x="397.869308" y="339.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="431.0954464" y="414.02789965" text-anchor="middle">0x02</text>
+<image href="../fano/Fano_point_3.svg" x="482.3215847999999" y="339.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="515.5477232" y="414.02789965" text-anchor="middle">0x04</text>
+<image href="../fano/Fano_point_4.svg" x="566.7738616" y="339.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="600" y="414.02789965" text-anchor="middle">0x08</text>
+<image href="../fano/Fano_point_5.svg" x="651.2261384000001" y="339.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="684.4522768" y="414.02789965" text-anchor="middle">0x10</text>
+<image href="../fano/Fano_point_6.svg" x="735.6784152" y="339.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="768.9045536" y="414.02789965" text-anchor="middle">0x20</text>
+<image href="../fano/Fano_point_7.svg" x="820.1306920000001" y="339.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="853.3568304" y="414.02789965" text-anchor="middle">0x40</text>
+<image href="../fano/Fano_line_1_3_2.svg" x="313.41703119999994" y="189.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="346.64316959999996" y="264.02789965" text-anchor="middle">0x07</text>
+<image href="../fano/Fano_line_1_5_4.svg" x="397.869308" y="189.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="431.0954464" y="264.02789965" text-anchor="middle">0x19</text>
+<image href="../fano/Fano_line_1_7_6.svg" x="482.3215847999999" y="189.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="515.5477232" y="264.02789965" text-anchor="middle">0x61</text>
+<image href="../fano/Fano_line_2_6_4.svg" x="566.7738616" y="189.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="600" y="264.02789965" text-anchor="middle">0x2a</text>
+<image href="../fano/Fano_line_2_7_5.svg" x="651.2261384000001" y="189.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="684.4522768" y="264.02789965" text-anchor="middle">0x52</text>
+<image href="../fano/Fano_line_3_5_6.svg" x="735.6784152" y="189.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="768.9045536" y="264.02789965" text-anchor="middle">0x34</text>
+<image href="../fano/Fano_line_4_7_3.svg" x="820.1306920000001" y="189.97210035" width="66.4522768" height="60.0557993"/>
+<text class="small" x="853.3568304" y="264.02789965" text-anchor="middle">0x4c</text>
+<image href="../fano/Fano_full.svg" x="566.7738616" y="39.972100350000005" width="66.4522768" height="60.0557993"/>
+<text class="small" x="600" y="114.02789965" text-anchor="middle">0x7f</text>
+</svg>
