@@ -223,11 +223,23 @@ const marginCells = (side, byte) => [...Array(8).keys()].filter((i) => (byte >> 
 }).join('');
 const withMargin = (text, bytes) => text.replace(/<\/svg>\s*$/, `<g id="margin">${bytes.map((b, s) => marginCells(s, b)).join('')}</g></svg>\n`);
 const readMargin = (text) => { const r = [0, 0, 0, 0]; for (const [, s, i] of text.matchAll(/data-side="(\d)" data-bit="(\d)"/g)) r[s] |= 1 << i; return r; };
-// the drawing's extent: the dots' outer edges, against the canvas
-{
-  const xs = Object.values(label).map((p) => p.x), ys = Object.values(label).map((p) => p.y), r = 20 * 0.271791;
-  const left = Math.min(...xs) - r, right = W - (Math.max(...xs) + r), top = Math.min(...ys) - r, bottom = H - (Math.max(...ys) + r);
-  for (const m of [left, right, top, bottom]) assert.ok(m > 7.9 && m < 8.2, `the drawing sits about 8 units in from each edge (${m.toFixed(3)})`);
+// the drawing's extent: the dots' outer edges, as four edge indices
+const dotR = 20 * 0.271791;
+const edge = {
+  left: Math.min(...Object.values(label).map((p) => p.x)) - dotR, right: Math.max(...Object.values(label).map((p) => p.x)) + dotR,
+  top: Math.min(...Object.values(label).map((p) => p.y)) - dotR, bottom: Math.max(...Object.values(label).map((p) => p.y)) + dotR,
+};
+for (const m of [edge.left, W - edge.right, edge.top, H - edge.bottom]) assert.ok(m > 7.9 && m < 8.2, `the drawing sits about 8 units in from each edge (${m.toFixed(3)})`);
+// Every cell, for every side and bit (0xff on all four sides): in the margin is
+// the OR of four comparisons against the edge indices; on the drawing is the
+// overlap of the cell with the drawing's box. Their XNOR is 0: never both, never neither.
+for (const [, side, bit, x, y] of withMargin('</svg>', [0xff, 0xff, 0xff, 0xff]).matchAll(/data-side="(\d)" data-bit="(\d)" x="([\d.]+)" y="([\d.]+)"/g)) {
+  const cx = Number(x), cy = Number(y);
+  const inMargin = +(cx + 1 <= edge.left || cx >= edge.right || cy + 1 <= edge.top || cy >= edge.bottom);
+  const onDrawing = +(cx + 1 > edge.left && cx < edge.right && cy + 1 > edge.top && cy < edge.bottom);
+  assert.strictEqual(+!(inMargin ^ onDrawing), 0, `side ${side} bit ${bit}: in the margin XNOR on the drawing is 0`);
+  assert.strictEqual(inMargin, 1, `side ${side} bit ${bit}: the cell is in the margin`);
+  assert.ok(cx >= 0 && cy >= 0 && cx + 1 <= W && cy + 1 <= H, `side ${side} bit ${bit}: the cell is on the canvas`);
 }
 const CODES = [0x13, 0x3f, 0x1c, 0x1f]; // DC3, ?, FS, US
 const KEY = 0xff;
