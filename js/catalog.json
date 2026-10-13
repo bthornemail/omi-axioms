@@ -8414,5 +8414,87 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-185",
+    "tag": "55",
+    "title": "the tetrahedron of infinite geometries, {3,…,3} and {4,3,…,3}:{3,…,3,4}",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-185.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "4cd5a48f3c40272358ed4ee87bafc9be3af69485ea98a59d4283ccc9dd154910",
+        "bytes": 3728
+      },
+      "base64": "js/vm/55.b64",
+      "base64url": "js/vm/55.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "3D and 4D have their exceptional ones",
+        "text": "3D: the five Platonic solids"
+      },
+      {
+        "section": "3D and 4D have their exceptional ones",
+        "text": "4D: six"
+      },
+      {
+        "section": "From 5D on, three: the simplex, the cube and its dual",
+        "text": "${d}D: {3,…,3}, {3,…,3,4}, {4,3,…,3}"
+      },
+      {
+        "section": "The cube's corners are the indices; read and write are opposite",
+        "text": "${n}-cube: index ${x} and its written view are opposite corners, ${n} edges apart"
+      },
+      {
+        "section": "The cube's corners are the indices; read and write are opposite",
+        "text": "3D: the tetrahedron 4, the cube 8, the octahedron 6"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-186",
+    "tag": "56",
+    "title": "the ASCII indices pass through UTF-8 as themselves",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-186.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "2369674b1c83d691d1fd4987829048f7816c5ece291b43882ea852a4d261ba69",
+        "bytes": 1608
+      },
+      "base64": "js/vm/56.b64",
+      "base64url": "js/vm/56.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "every Unicode scalar value"
+      },
+      {
+        "section": null,
+        "text": "19 and 63 are themselves"
+      },
+      {
+        "section": null,
+        "text": "and read back as themselves"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

@@ -85,11 +85,13 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-182](other/I-182.md) | `52` | The atlas, 7! = 5040, and where its rules break: the values are right, two indices are not | `js/catalog/I-182.ts` | yes | yes | yes |
 | other | [I-183](other/I-183.md) | `53` | 19 closes the first sexy set after the exceptional one, on 5², before the 210 ladder | `js/catalog/I-183.ts` | yes | yes | yes |
 | other | [I-184](other/I-184.md) | `54` | The closure is the difference between reading and writing an index | `js/catalog/I-184.ts` | yes | yes | yes |
+| other | [I-185](other/I-185.md) | `55` | The tetrahedron of infinite geometries, {3,…,3} and {4,3,…,3}:{3,…,3,4} | `js/catalog/I-185.ts` | yes | yes | yes |
+| other | [I-186](other/I-186.md) | `56` | The ASCII indices pass through UTF-8 as themselves | `js/catalog/I-186.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 29
-- total: 73 records, 73 holding
+- other: 31
+- total: 75 records, 75 holding
