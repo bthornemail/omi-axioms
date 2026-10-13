@@ -78,11 +78,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-174](other/I-174.md) | `4U` | 777 from three 65536 spaces; 666 from three axes; the three-body problem | `js/catalog/I-174.ts` | yes | yes | yes |
 | other | [I-175](other/I-175.md) | `4V` | The decision comes from the 4th — the 16-bit header of the pixel | `js/catalog/I-175.ts` | yes | yes | yes |
 | other | [I-176](other/I-176.md) | `4W` | Day 4 (the lights); the three-body problem circulates the time constants | `js/catalog/I-176.ts` | yes | yes | yes |
+| other | [I-177](other/I-177.md) | `4X` | The three pending scripts are the transition function; 59/63/127 the input | `js/catalog/I-177.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 22
-- total: 66 records, 66 holding
+- other: 23
+- total: 67 records, 67 holding

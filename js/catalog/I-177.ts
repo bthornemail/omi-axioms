@@ -13,9 +13,13 @@ assert.strictEqual(B - A, 4, "63 - 59 = 4 (the nibble)");
 assert.strictEqual(C - B, 64, "127 - 63 = 64 (the 64-block)");
 assert.strictEqual(C - A, 68, "127 - 59 = 68 (the pole)");
 
-// ── 3. The 68 is the pole ──────────────────────────────────
-// 60 ⊕ 68 = 128 (I-159)
-assert.strictEqual(60 ^ 68, 128, "60 ⊕ 68 = 128 (the pole)");
+// ── 3. The span, its XOR with 60, and the pole ─────────────
+// Corrected 2026-10-12: 60 ⊕ 68 is 120, not 128. The span and the pole are
+// different relations; the pole of 60 is the one the vault holds (SPEC-07 I-18).
+assert.strictEqual(127 - 59, 68, "127 - 59 = 68 (the span)");
+assert.strictEqual(60 ^ 68, 120, "60 ⊕ 68 = 120 (the XOR of 60 with the span)");
+assert.strictEqual(60 ^ 128, 188, "60 ⊕ 128 = 188 (the pole, I-18)");
+assert.strictEqual(60 ^ 188, 128, "60 ⊕ 188 = 128 (the pole, other side)");
 
 // ── 4. I-167: the derivative from both branches ─────────────
 function f(x: number): number { return Math.sin(x); }

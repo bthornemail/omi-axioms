@@ -7807,5 +7807,182 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-177",
+    "tag": "4X",
+    "title": "the three pending scripts are the transition function; 59/63/127 the input",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-177.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "e40d2b45dae7b777728039987550389ff4224d45e381f31d1d984e538b458e4f",
+        "bytes": 8202
+      },
+      "base64": "js/vm/4X.b64",
+      "base64url": "js/vm/4X.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The three indices",
+        "text": "59 = 0x3B (;)"
+      },
+      {
+        "section": "The three indices",
+        "text": "63 = 0x3F (?)"
+      },
+      {
+        "section": "The three indices",
+        "text": "127 = 0x7F (DEL)"
+      },
+      {
+        "section": "The gaps between them",
+        "text": "63 - 59 = 4 (the nibble)"
+      },
+      {
+        "section": "The gaps between them",
+        "text": "127 - 63 = 64 (the 64-block)"
+      },
+      {
+        "section": "The gaps between them",
+        "text": "127 - 59 = 68 (the pole)"
+      },
+      {
+        "section": "The span, its XOR with 60, and the pole",
+        "text": "127 - 59 = 68 (the span)"
+      },
+      {
+        "section": "The span, its XOR with 60, and the pole",
+        "text": "60 ⊕ 68 = 120 (the XOR of 60 with the span)"
+      },
+      {
+        "section": "The span, its XOR with 60, and the pole",
+        "text": "60 ⊕ 128 = 188 (the pole, I-18)"
+      },
+      {
+        "section": "The span, its XOR with 60, and the pole",
+        "text": "60 ⊕ 188 = 128 (the pole, other side)"
+      },
+      {
+        "section": "I-167: the derivative from both branches",
+        "text": "r=1 fails: ${fromInside_bad}"
+      },
+      {
+        "section": "I-167: the derivative from both branches",
+        "text": "r=1e-6 holds: ${fromInside_good}"
+      },
+      {
+        "section": "I-170: the reverse chain needs the direction swapped",
+        "text": "reversed list starts at earth"
+      },
+      {
+        "section": "I-170: the reverse chain needs the direction swapped",
+        "text": "not the reverse direction"
+      },
+      {
+        "section": "I-170: the reverse chain needs the direction swapped",
+        "text": "reversed direction starts at rest"
+      },
+      {
+        "section": "I-170: the reverse chain needs the direction swapped",
+        "text": "and ends at void"
+      },
+      {
+        "section": "I-171: both branches agree",
+        "text": "both branches agree: ${derivative_good}"
+      },
+      {
+        "section": "Atomics.compareExchange is the transition",
+        "text": "transition at 59 read 10"
+      },
+      {
+        "section": "Atomics.compareExchange is the transition",
+        "text": "transition at 59 wrote 11"
+      },
+      {
+        "section": "Atomics.compareExchange is the transition",
+        "text": "transition at 63 read 20"
+      },
+      {
+        "section": "Atomics.compareExchange is the transition",
+        "text": "transition at 63 wrote 21"
+      },
+      {
+        "section": "Atomics.compareExchange is the transition",
+        "text": "transition at 127 read 30"
+      },
+      {
+        "section": "Atomics.compareExchange is the transition",
+        "text": "transition at 127 wrote 31"
+      },
+      {
+        "section": "The automaton: state + transition + input",
+        "text": "3 inputs"
+      },
+      {
+        "section": "The automaton: state + transition + input",
+        "text": "input 1 = 59"
+      },
+      {
+        "section": "The automaton: state + transition + input",
+        "text": "input 2 = 63"
+      },
+      {
+        "section": "The automaton: state + transition + input",
+        "text": "input 3 = 127"
+      },
+      {
+        "section": "The transition function",
+        "text": "the transition returns the previous value"
+      },
+      {
+        "section": "The transition function",
+        "text": "and stores the new value"
+      },
+      {
+        "section": "The rate: the derivative",
+        "text": "the rate at 59 is ${rateAt59}"
+      },
+      {
+        "section": "The direction: forward or reverse",
+        "text": "forward starts at void"
+      },
+      {
+        "section": "The direction: forward or reverse",
+        "text": "reverse starts at rest"
+      },
+      {
+        "section": "The three scripts as the transition function",
+        "text": "3 transitions"
+      },
+      {
+        "section": "The three scripts as the transition function",
+        "text": "${t.id} has a threshold"
+      },
+      {
+        "section": "The automaton's state is the 65536 space",
+        "text": "the state is the 65536 space"
+      },
+      {
+        "section": "The whole picture",
+        "text": "3 transitions"
+      },
+      {
+        "section": "The whole picture",
+        "text": "3 input indices"
+      },
+      {
+        "section": "The whole picture",
+        "text": "the rate is the derivative"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

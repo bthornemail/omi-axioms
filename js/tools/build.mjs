@@ -103,6 +103,7 @@ const all = [...records.values()].sort((a, b) => order(a.id, b.id));
 const NOTES = {
   'I-120': ['Its three stream checks (stdin, stdout, stderr are fds 0, 1, 2) run asynchronously. In the roll-up they finish after the record is already marked passed, so there they do not gate it; only the 3! ordering count does. The vm carrier waits for them, so there they count.', 'Those stream checks hold on a main thread; in a Worker the streams are not fds 0, 1, 2, so its Worker carrier fails on them.'],
   'I-122': ['In a Worker it fails through I-120: there stdin is not fd 0, because a Worker\'s standard streams are piped through the main thread.'],
+  'I-177': ['What it checks: the three indices 59, 63, 127 and their spans; one atomic compare-exchange step at each index on a shared buffer; the step-1 and limit cases of the derivative; the forward and reverse chains.', 'What it states but does not check: that I-167, I-170 and I-171 drive those steps as the automaton\'s transition function (nothing connects them to the steps), and that the rate is the derivative (its rate function only checks that sin(59) is finite).', 'Section 3 corrected on 2026-10-12: it asserted 60 ⊕ 68 = 128; 60 ⊕ 68 is 120, and the pole relation is 60 ⊕ 128 = 188.'],
   'I-136': ['In a Worker it fails on "stdin = fd 0 (catch)": a Worker\'s standard streams are not file descriptors 0, 1, 2. The claim holds on a main thread.'],
 };
 for (const r of records.values()) r.notes = NOTES[r.id] ?? [];
