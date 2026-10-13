@@ -8630,5 +8630,82 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-189",
+    "tag": "59",
+    "title": "1729 = 7 x 13 x 19, the first sexy set after the exceptional one, and its cubes split it",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-189.ts"
+    ],
+    "carriers": {
+      "script": {
+        "sha256": "3cd0c6b5f03fc0c5c90c27eccd0f10cedbc644f217e6c839c6e857430b19a7c7",
+        "bytes": 3244
+      },
+      "base64": "js/vm/59.b64",
+      "base64url": "js/vm/59.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "1729 and 91 are the first numbers with two cube sums",
+        "text": "Ta(2) = 1729: the first sum of two positive cubes in two ways"
+      },
+      {
+        "section": "1729 and 91 are the first numbers with two cube sums",
+        "text": "Cabtaxi(2) = 91: the first with negatives or zero allowed"
+      },
+      {
+        "section": "1729 and 91 are the first numbers with two cube sums",
+        "text": "1729 = 1^3 + 12^3 = 9^3 + 10^3"
+      },
+      {
+        "section": "1729 and 91 are the first numbers with two cube sums",
+        "text": "91 = 6^3 - 5^3 = 3^3 + 4^3"
+      },
+      {
+        "section": "1729 is the triplet's product",
+        "text": "1729 = 7 x 13 x 19, the sexy set (7, 13, 19) of I-183"
+      },
+      {
+        "section": "1729 is the triplet's product",
+        "text": "91 = 7 x 13"
+      },
+      {
+        "section": "1729 is the triplet's product",
+        "text": "19 x 91 = 1729"
+      },
+      {
+        "section": "1729 is the triplet's product",
+        "text": "1729's digits sum to 19"
+      },
+      {
+        "section": "1729 is the triplet's product",
+        "text": "19 reversed is 91"
+      },
+      {
+        "section": "The cube sums split it into the triplet",
+        "text": "1^3 + 12^3 = 13 x 133 (133 = 7 x 19)"
+      },
+      {
+        "section": "The cube sums split it into the triplet",
+        "text": "9^3 + 10^3 = 19 x 91 (91 = 7 x 13)"
+      },
+      {
+        "section": "The cube sums split it into the triplet",
+        "text": "3^3 + 4^3 = 7 x 13"
+      },
+      {
+        "section": "And as a difference of squares",
+        "text": "19 x 91 = 55^2 - 36^2"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
