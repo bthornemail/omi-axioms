@@ -49,4 +49,10 @@ A two-input rule is its truth table t, bit a·2 + b = f(a, b) (the order the org
 - `pair-0.svg` … `pair-7.svg`: each rule pair as a Hasse diagram pair, the rules on the left and the subspaces on the right, both marked.
 - [lines.svg](../svg/hasse/lines.svg): the seven lines in turn (SMIL, 2 s each), each with its three points and its six rules.
 
+## The margins
+
+Each icon's drawing sits about 8 units in from every edge. The author: "the 8 units on each side are for non-printing control coded image filtering; if we xor those we can change the interpretation without changing the image". [margin/Fano_point_1.codes.svg](../svg/margin/Fano_point_1.codes.svg) carries the bytes 0x13 0x3f 0x1c 0x1f (DC3, ?, FS, US), one per side, as invisible one-unit cells; [margin/Fano_point_1.codes-xor-ff.svg](../svg/margin/Fano_point_1.codes-xor-ff.svg) carries them XORed with 0xff. The build checks, for all seven points, that the bytes read back, that the two margins differ by the key, and that the drawing still reads as the same point.
+
+Measured once, 2026-10-13: rendered at ten times their size in Chrome (headless), the original Fano_point_1.svg and both copies give byte-identical pixels (SHA-256 7c1dbb9a71293b66…), while the three files differ as text. The build does not render, so it does not repeat that measurement.
+
 Open the SVGs from `svg/hasse` itself: they draw the icons by relative path (`../fano/…`).
