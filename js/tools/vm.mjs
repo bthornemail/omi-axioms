@@ -6,7 +6,6 @@ import vm from 'node:vm';
 import { Worker } from 'node:worker_threads';
 import { stripTypeScriptTypes } from 'node:module';
 process.removeAllListeners('warning'); // stripTypeScriptTypes is marked experimental; the build checks its output itself
-import { createHash } from 'node:crypto';
 import assert from 'node:assert';
 import os from 'node:os';
 
@@ -34,7 +33,6 @@ export function classicScript(source) {
 
 export const base64 = (text) => Buffer.from(text, 'utf8').toString('base64');
 export const base64url = (text) => Buffer.from(text, 'utf8').toString('base64url');
-export const sha256 = (text) => createHash('sha256').update(text, 'utf8').digest('hex');
 
 /**
  * Decode one dialect and run it as a vm.Script: null if it holds, else the error.

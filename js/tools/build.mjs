@@ -11,7 +11,7 @@
 // Run: node proofs/js/tools/build.mjs   (or: make js-docs)
 import { readFileSync, readdirSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
-import { tag, classicScript, base64, base64url, sha256, runInVm, runInWorker } from './vm.mjs';
+import { tag, classicScript, base64, base64url, runInVm, runInWorker } from './vm.mjs';
 
 const root = new URL('../../', import.meta.url);
 const catalogDir = new URL('js/catalog/', root);
@@ -141,7 +141,7 @@ for (const r of all) {
   const vmError = await runInVm(b64, 'base64');
   const workerError = await runInWorker(b64url, 'base64url');
   r.carriers = {
-    script: { sha256: sha256(script), bytes: Buffer.byteLength(script) },
+    script: { bytes: Buffer.byteLength(script) },
     base64: `js/vm/${r.tag}.b64`,
     base64url: `js/vm/${r.tag}.b64url`,
     vm: vmError === null ? 'holds' : `fails: ${vmError}`,
@@ -190,7 +190,7 @@ for (const r of all) {
   lines.push('', '## Carriers', '',
     'The check as one classic script (types stripped; the host supplies `assert`, and `os` or `process` where used), in two base64 dialects that decode to the same bytes:', '',
     '| | |', '|-|-|',
-    `| Script | ${r.carriers.script.bytes} bytes, sha256 \`${r.carriers.script.sha256.slice(0, 16)}…\` |`,
+    `| Script | ${r.carriers.script.bytes} bytes |`,
     `| base64 | \`${r.carriers.base64}\` |`,
     `| base64url | \`${r.carriers.base64url}\` |`,
     `| As a vm.Script | ${r.carriers.vm} |`,
