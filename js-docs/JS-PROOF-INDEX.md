@@ -93,11 +93,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-191](other/I-191.md) | `5B` | The Fano lottery: 14 tickets, and two of any three rebuild the third | `js/catalog/I-191.ts` | yes | yes | yes |
 | other | [I-193](other/I-193.md) | `5D` | The Fano lines are the Hamming code, and it tiles the ASCII table | `js/catalog/I-193.ts` | yes | yes | yes |
 | other | [I-194](other/I-194.md) | `5E` | The exceptional Lie algebras, named by /A-Z0-9/ tags, built from their simple roots | `js/catalog/I-194.ts` | yes | yes | yes |
+| other | [I-195](other/I-195.md) | `5F` | The gnomon, the animation of the logical clock | `js/catalog/I-195.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 37
-- total: 81 records, 81 holding
+- other: 38
+- total: 82 records, 82 holding
