@@ -94,11 +94,13 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-193](other/I-193.md) | `5D` | The Fano lines are the Hamming code, and it tiles the ASCII table | `js/catalog/I-193.ts` | yes | yes | yes |
 | other | [I-194](other/I-194.md) | `5E` | The exceptional Lie algebras, named by /A-Z0-9/ tags, built from their simple roots | `js/catalog/I-194.ts` | yes | yes | yes |
 | other | [I-195](other/I-195.md) | `5F` | The gnomon, the animation of the logical clock | `js/catalog/I-195.ts` | yes | yes | yes |
+| other | [I-196](other/I-196.md) | `5G` | The decades: braille's dots, EBCDIC's zones, ASCII's columns | `js/catalog/I-196.ts` | yes | yes | yes |
+| other | [I-197](other/I-197.md) | `5H` | Polytron is a polynomial automaton | `js/catalog/I-197.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 38
-- total: 82 records, 82 holding
+- other: 40
+- total: 84 records, 84 holding

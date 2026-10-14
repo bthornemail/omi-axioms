@@ -8857,5 +8857,101 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-196",
+    "tag": "5G",
+    "title": "the decades: braille's dots, EBCDIC's zones, ASCII's columns",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-196.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3832
+      },
+      "base64": "js/vm/5G.b64",
+      "base64url": "js/vm/5G.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Braille: four decades on one base of ten",
+        "text": "a-j use only the upper four dots (1, 2, 4, 5: bits 0, 1, 3, 4)"
+      },
+      {
+        "section": "Braille: four decades on one base of ten",
+        "text": "each decade adds one fixed pattern: dot 3 (0x04), dots 3 and 6 (0x24), dot 6 (0x20)"
+      },
+      {
+        "section": "Braille: four decades on one base of ten",
+        "text": "adding, not changing: every decade keeps the base's dots"
+      },
+      {
+        "section": "Dot 6 is ASCII's case bit",
+        "text": "dot 6 alone is 0x20"
+      },
+      {
+        "section": "Octal precision: 8 columns of 32",
+        "text": "the top three bits are one octal digit"
+      },
+      {
+        "section": "Octal precision: 8 columns of 32",
+        "text": "ASCII: BEL in control, '0' in punctuation and digits, 'A' in capitals, 'a' in lowercase"
+      },
+      {
+        "section": "Octal precision: 8 columns of 32",
+        "text": "in octal 'A' is 101: column 1 of 64, place 01 (the octal digits are 2, 3, 3 bits)"
+      },
+      {
+        "section": "EBCDIC's zones: three decades of letters",
+        "text": "zones C, D, E: three decades"
+      },
+      {
+        "section": "EBCDIC's zones: three decades of letters",
+        "text": "A-I and J-R nine each, S-Z eight (starting at 2)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-197",
+    "tag": "5H",
+    "title": "polytron is a polynomial automaton",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-197.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 2430
+      },
+      "base64": "js/vm/5H.b64",
+      "base64url": "js/vm/5H.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "A^8 = 1, and no smaller power",
+        "text": "A^8 = 1"
+      },
+      {
+        "section": "A^8 = 1, and no smaller power",
+        "text": "A^1 .. A^7 are not 1"
+      },
+      {
+        "section": "Eight steps return every word, for every constant",
+        "text": "1 + A + ... + A^7 = 0, so K^8(p) = A^8 p + (1 + ... + A^7) C = p"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
