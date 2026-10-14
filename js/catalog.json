@@ -9073,5 +9073,93 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-200",
+    "tag": "5K",
+    "title": "index 777, where all 8 units meet: E7 + 1 = E8, and the lattices around them",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-200.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3987
+      },
+      "base64": "js/vm/5K.b64",
+      "base64url": "js/vm/5K.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Index 777",
+        "text": "777 in the 8 units is 511"
+      },
+      {
+        "section": "Index 777",
+        "text": "nine bits, all set"
+      },
+      {
+        "section": "Index 777",
+        "text": "three full 7s: 0b111, the full plane, three times"
+      },
+      {
+        "section": "Index 777",
+        "text": "E7's tag (I-194)"
+      },
+      {
+        "section": "Index 777",
+        "text": "one more, and every digit carries at once"
+      },
+      {
+        "section": "Index 777",
+        "text": "0o1000 = 512, E8's tag"
+      },
+      {
+        "section": "Index 777",
+        "text": "and E6 is 0o776, one short in the last place"
+      },
+      {
+        "section": "E8: even and unimodular",
+        "text": "every generator has norm 2: even"
+      },
+      {
+        "section": "E8: even and unimodular",
+        "text": "integral"
+      },
+      {
+        "section": "E8: even and unimodular",
+        "text": "determinant 1: unimodular"
+      },
+      {
+        "section": "E8: even and unimodular",
+        "text": "eight generators: the 8 units"
+      },
+      {
+        "section": "II(25,1) and the Leech lattice: the cannonball",
+        "text": "0^2 + ... + 24^2 = 4900"
+      },
+      {
+        "section": "II(25,1) and the Leech lattice: the cannonball",
+        "text": "w = (0..24 | 70) is lightlike in II(25,1): w.w = 0"
+      },
+      {
+        "section": "II(25,1) and the Leech lattice: the cannonball",
+        "text": "the only n up to 100000 with a square sum of squares: 1 and 24"
+      },
+      {
+        "section": "II(25,1) and the Leech lattice: the cannonball",
+        "text": "II(25,1): 25 + 1 = 26 dimensions; the Leech lattice is w-perp / w, 24"
+      },
+      {
+        "section": "II(25,1) and the Leech lattice: the cannonball",
+        "text": "24 = 3 x 8: three times the 8 units"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
