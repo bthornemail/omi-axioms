@@ -202,3 +202,4 @@ js-docs:
 svg:
 	node svg/tools/build.mjs
 	node svg/tools/e8.mjs
+	node svg/tools/lie.mjs

@@ -78,6 +78,6 @@ Each icon's drawing sits about 8 units in from every edge. The author: "the 8 un
 
 Measured once, 2026-10-13: rendered at ten times their size in Chrome (headless), the original Fano_point_1.svg and both copies give byte-identical pixels (SHA-256 7c1dbb9a71293b66…), while the three files differ as text. The build does not render, so it does not repeat that measurement.
 
-E8 on its Coxeter plane, in both frames (the 240 roots, 8 rings of 30, the two parity halves of the byte): [E8.md](E8.md).
+E8 on its Coxeter plane, in both frames (the 240 roots, 8 rings of 30, the two parity halves of the byte): [E8.md](E8.md). All five exceptional Lie algebras, G2, F4, E6, E7, E8, on their Coxeter planes: [LIE.md](LIE.md).
 
 Open the SVGs from `svg/hasse` itself: they draw the icons by relative path (`../fano/…`).
