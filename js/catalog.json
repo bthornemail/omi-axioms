@@ -8997,5 +8997,81 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-199",
+    "tag": "5J",
+    "title": "color is 144 synsets, twelve by twelve",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-199.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 8540
+      },
+      "base64": "js/vm/5J.b64",
+      "base64url": "js/vm/5J.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "One tree of 144, rooted at entity",
+        "text": "144 synsets"
+      },
+      {
+        "section": "One tree of 144, rooted at entity",
+        "text": "each once"
+      },
+      {
+        "section": "One tree of 144, rooted at entity",
+        "text": "one root, entity"
+      },
+      {
+        "section": "color: 138 below, itself, 5 above",
+        "text": "color's route to entity"
+      },
+      {
+        "section": "color: 138 below, itself, 5 above",
+        "text": "138 synsets below color"
+      },
+      {
+        "section": "color: 138 below, itself, 5 above",
+        "text": "138 + color + 5 above = 144"
+      },
+      {
+        "section": "color: 138 below, itself, 5 above",
+        "text": "and with globalThis, 145"
+      },
+      {
+        "section": "color: 138 below, itself, 5 above",
+        "text": "red: eight synsets, seven steps"
+      },
+      {
+        "section": "Twelve by twelve",
+        "text": "a, b, c: the first 12"
+      },
+      {
+        "section": "Twelve by twelve",
+        "text": "the space at index 6"
+      },
+      {
+        "section": "Twelve by twelve",
+        "text": "the 11th index is the last"
+      },
+      {
+        "section": "Twelve by twelve",
+        "text": "12 x 12 = 144"
+      },
+      {
+        "section": "Twelve by twelve",
+        "text": "360 hues: 12 sectors of 30"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

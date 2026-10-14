@@ -97,11 +97,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-196](other/I-196.md) | `5G` | The decades: braille's dots, EBCDIC's zones, ASCII's columns | `js/catalog/I-196.ts` | yes | yes | yes |
 | other | [I-197](other/I-197.md) | `5H` | Polytron is a polynomial automaton | `js/catalog/I-197.ts` | yes | yes | yes |
 | other | [I-198](other/I-198.md) | `5I` | The Steiner triples are the knowledge triples: S ⊕ P ⊕ O = 0 | `js/catalog/I-198.ts` | yes | yes | yes |
+| other | [I-199](other/I-199.md) | `5J` | Color is 144 synsets, twelve by twelve | `js/catalog/I-199.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 41
-- total: 85 records, 85 holding
+- other: 42
+- total: 86 records, 86 holding
