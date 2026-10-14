@@ -96,11 +96,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-195](other/I-195.md) | `5F` | The gnomon, the animation of the logical clock | `js/catalog/I-195.ts` | yes | yes | yes |
 | other | [I-196](other/I-196.md) | `5G` | The decades: braille's dots, EBCDIC's zones, ASCII's columns | `js/catalog/I-196.ts` | yes | yes | yes |
 | other | [I-197](other/I-197.md) | `5H` | Polytron is a polynomial automaton | `js/catalog/I-197.ts` | yes | yes | yes |
+| other | [I-198](other/I-198.md) | `5I` | The Steiner triples are the knowledge triples: S ⊕ P ⊕ O = 0 | `js/catalog/I-198.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 40
-- total: 84 records, 84 holding
+- other: 41
+- total: 85 records, 85 holding
