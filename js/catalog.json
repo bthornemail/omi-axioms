@@ -11573,5 +11573,73 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-221",
+    "tag": "65",
+    "title": "the filed test — the held-out bits of 13 hashes against DEADBEEF: the null holds",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-221.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 4413
+      },
+      "base64": "js/vm/65.b64",
+      "base64url": "js/vm/65.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The lead, found by looking: the first 32 bits",
+        "text": "the literal is the commit's (I-220)"
+      },
+      {
+        "section": "The lead, found by looking: the first 32 bits",
+        "text": "`assert.deepEqual(fromDeadbeef(0), [13, 12, 13, 10, 17, 12, 8, 15, 12, 11, 17, 17, 13]);`"
+      },
+      {
+        "section": "The lead, found by looking: the first 32 bits",
+        "text": "170 = 0xAA bits of 416 from DEADBEEF, where chance gives 208 ± 10"
+      },
+      {
+        "section": "The lead, found by looking: the first 32 bits",
+        "text": "the alternating bit pair, the author's reading"
+      },
+      {
+        "section": "The filed test: the held-out 32 bits",
+        "text": "`assert.deepEqual(fromDeadbeef(4), [14, 20, 18, 18, 16, 18, 17, 18, 20, 17, 18, 13, 17]);`"
+      },
+      {
+        "section": "The filed test: the held-out 32 bits",
+        "text": "the held-out bits: 224, farther from DEADBEEF than chance's 208"
+      },
+      {
+        "section": "The filed test: the held-out 32 bits",
+        "text": "A does not hold: the closeness is not in the literal"
+      },
+      {
+        "section": "The filed test: the held-out 32 bits",
+        "text": "B does not hold: 0xAA does not come again"
+      },
+      {
+        "section": "The filed test: the held-out 32 bits",
+        "text": "the null holds: within two spreads of chance"
+      },
+      {
+        "section": "The chances, as filed",
+        "text": "exactly 170: 1 in 27,072"
+      },
+      {
+        "section": "The chances, as filed",
+        "text": "at most 190: 4.3 in 100"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
