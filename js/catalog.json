@@ -11389,5 +11389,125 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-219",
+    "tag": "63",
+    "title": "DEADBEEF — the commit that carried the tags, read against the base",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-219.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 5006
+      },
+      "base64": "js/vm/63.b64",
+      "base64url": "js/vm/63.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The difference and the agreement",
+        "text": "DEADBEEF is a tag: eight letters, all of them hex"
+      },
+      {
+        "section": "The difference and the agreement",
+        "text": "de88bc2d XOR deadbeef = 00 25 02 c2: the first byte cancels"
+      },
+      {
+        "section": "The difference and the agreement",
+        "text": "XNOR, the complement: ff da fd 3d"
+      },
+      {
+        "section": "00 25 02 c2: the letters at their indices",
+        "text": "00 25 02, read in base 10 as indices: A, Z, C"
+      },
+      {
+        "section": "00 25 02 c2: the letters at their indices",
+        "text": "and c2: c is at index 2, the 02 just before it (C the 3rd letter, index 2)"
+      },
+      {
+        "section": "00 25 02 c2: the letters at their indices",
+        "text": "read in base 16 the 25 is 37, past Z: the letters read the digits in base 10"
+      },
+      {
+        "section": "The c is the difference of the base",
+        "text": "between 0 and 25 the difference is 25, not c"
+      },
+      {
+        "section": "The c is the difference of the base",
+        "text": "between 25 in base 16 (37) and 25 in base 10 it is 12 = c"
+      },
+      {
+        "section": "The c is the difference of the base",
+        "text": "the 2 of 25 times the 6 between the bases"
+      },
+      {
+        "section": "The 25 is the base: 5 x 5 over the .5",
+        "text": "the base 10 is two primes, 2 x 5"
+      },
+      {
+        "section": "The 25 is the base: 5 x 5 over the .5",
+        "text": "0.5 squared is 0.25, exact in floating point (2^-2)"
+      },
+      {
+        "section": "The 25 is the base: 5 x 5 over the .5",
+        "text": "a fifth part has no end in base 2: only the 2 of 2 x 5 is exact"
+      },
+      {
+        "section": "The 25 as I-205's square and I-200's lattice",
+        "text": "I-205: the tap code's 5 x 5 square"
+      },
+      {
+        "section": "The 25 as I-205's square and I-200's lattice",
+        "text": "the tap code leaves K out (sent as C)"
+      },
+      {
+        "section": "The 25 as I-205's square and I-200's lattice",
+        "text": "the Latin Polybius square leaves J out (it shares I)"
+      },
+      {
+        "section": "The 25 as I-205's square and I-200's lattice",
+        "text": "two orthogonal Latin squares of order 5 address every cell once: 25, not 26"
+      },
+      {
+        "section": "The 25 as I-205's square and I-200's lattice",
+        "text": "I-200: 0^2 + ... + 24^2 = 70^2, Conway's vector lightlike in II(25,1)"
+      },
+      {
+        "section": "The 25 as I-205's square and I-200's lattice",
+        "text": "the letter left out is the +1: II(25,1) has 26 coordinates, A to Z at 00 to 25"
+      },
+      {
+        "section": "The 25 as I-205's square and I-200's lattice",
+        "text": "and the Leech lattice, w-perp / w, has 24"
+      },
+      {
+        "section": "ff da fd 3d: d before a, forward to d",
+        "text": "ff as a signed byte is -1: the start before 0"
+      },
+      {
+        "section": "ff da fd 3d: d before a, forward to d",
+        "text": "d is the nibble just before a: 4 bits before it"
+      },
+      {
+        "section": "ff da fd 3d: d before a, forward to d",
+        "text": "d (1101) shifted one bit in its nibble is a (1010)"
+      },
+      {
+        "section": "ff da fd 3d: d before a, forward to d",
+        "text": "fd is ff with the 02 cleared: forward from f to d is the XOR's 02"
+      },
+      {
+        "section": "ff da fd 3d: d before a, forward to d",
+        "text": "d three times, in da, fd, 3d; the field ends on d"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
