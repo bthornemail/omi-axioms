@@ -99,11 +99,29 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-198](other/I-198.md) | `5I` | The Steiner triples are the knowledge triples: S ⊕ P ⊕ O = 0 | `js/catalog/I-198.ts` | yes | yes | yes |
 | other | [I-199](other/I-199.md) | `5J` | Color is 144 synsets, twelve by twelve | `js/catalog/I-199.ts` | yes | yes | yes |
 | other | [I-200](other/I-200.md) | `5K` | Index 777, where all 8 units meet: E7 + 1 = E8, and the lattices around them | `js/catalog/I-200.ts` | yes | yes | yes |
+| other | [I-201](other/I-201.md) | `5L` | The method — uppercase is a tag literal, digits are indices, every word is a pixel | `js/catalog/I-201.ts` | yes | yes | yes |
+| other | [I-202](other/I-202.md) | `5M` | The range 0...63 and the relief of the literals | `js/catalog/I-202.ts` | yes | yes | yes |
+| other | [I-203](other/I-203.md) | `5N` | The instances as data — the tags, pairs, and triples | `js/catalog/I-203.ts` | yes | yes | yes |
+| other | [I-204](other/I-204.md) | `5O` | How to instantiate — the boot exchange and the 16-powers | `js/catalog/I-204.ts` | yes | yes | yes |
+| other | [I-205](other/I-205.md) | `5P` | The delineation rule — the 2-of-5 encoding, tap code to | `js/catalog/I-205.ts` | yes | yes | yes |
+| other | [I-206](other/I-206.md) | `5Q` | The author's name as tags, the birth date as index pairs, and the 42 | `js/catalog/I-206.ts` | yes | yes | yes |
+| other | [I-207](other/I-207.md) | `5R` | The sources of I-206 — BRIAN, CODEX, DEEPSEEK, and the | `js/catalog/I-207.ts` | yes | yes | yes |
+| other | [I-208](other/I-208.md) | `5S` | The return to the cave — the event horizon of the agreement universe | `js/catalog/I-208.ts` | yes | yes | yes |
+| other | [I-209](other/I-209.md) | `5T` | The OMI family and the null exchange | `js/catalog/I-209.ts` | yes | yes | yes |
+| other | [I-210](other/I-210.md) | `5U` | The observer in the void of the OMNI | `js/catalog/I-210.ts` | yes | yes | yes |
+| other | [I-211](other/I-211.md) | `5V` | The GLUE — Grace, Love, Understanding, Empathy — and the Axiom of Propagation | `js/catalog/I-211.ts` | yes | yes | yes |
+| other | [I-212](other/I-212.md) | `5W` | The capstone — NULL NULL, the kernel's ground | `js/catalog/I-212.ts` | yes | yes | yes |
+| other | [I-213](other/I-213.md) | `5X` | The OMIST — the true full closure for one who desires to be a true believer | `js/catalog/I-213.ts` | yes | yes | yes |
+| other | [I-214](other/I-214.md) | `5Y` | THEOS and LOGOS, HO THEOS, and the year pairs | `js/catalog/I-214.ts` | yes | yes | yes |
+| other | [I-215](other/I-215.md) | `5Z` | The OS family — THEOS, LOGOS, PATHOS, NOMOS, ETHOS | `js/catalog/I-215.ts` | yes | yes | yes |
+| other | [I-216](other/I-216.md) | `60` | ANGEL — the attribution as a tag, and the identity as termed pixels | `js/catalog/I-216.ts` | yes | yes | yes |
+| other | [I-217](other/I-217.md) | `61` | SUBJECT · LOGIC · OBJECT reflected — how tags are illogically produced | `js/catalog/I-217.ts` | yes | yes | yes |
+| other | [I-218](other/I-218.md) | `62` | S>H>I>F>T> — the shift held, for an ILLOGICal AWAKEning: a catch-22 | `js/catalog/I-218.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 43
-- total: 87 records, 87 holding
+- other: 61
+- total: 105 records, 105 holding
