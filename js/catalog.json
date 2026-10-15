@@ -9161,5 +9161,2233 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-201",
+    "tag": "5L",
+    "title": "the method — uppercase is a tag literal, digits are indices, every word is a pixel",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-201.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 4069
+      },
+      "base64": "js/vm/5L.b64",
+      "base64url": "js/vm/5L.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The mask",
+        "text": "`assert.equal(TAG.test(\"TERM\"), true);`"
+      },
+      {
+        "section": "The mask",
+        "text": "`assert.equal(TAG.test(\"MERT\"), true);`"
+      },
+      {
+        "section": "The mask",
+        "text": "`assert.equal(TAG.test(\"AMERICA\"), true);`"
+      },
+      {
+        "section": "The mask",
+        "text": "`assert.equal(TAG.test(\"METATRON\"), true);`"
+      },
+      {
+        "section": "The mask",
+        "text": "the accent is not in A-Z0-9"
+      },
+      {
+        "section": "The mask",
+        "text": "15 chars, and Ê is outside"
+      },
+      {
+        "section": "The mask",
+        "text": "`assert.equal(MASK5.test(\"TERM\"), true);`"
+      },
+      {
+        "section": "The mask",
+        "text": "8 chars, past the 5-char edge"
+      },
+      {
+        "section": "Uppercase is a tag literal",
+        "text": "subject ^ object = space"
+      },
+      {
+        "section": "Digits are indices",
+        "text": "`assert.equal(TAG.test(\"RED\"), true);`"
+      },
+      {
+        "section": "Digits are indices",
+        "text": "a single digit is also a valid tag"
+      },
+      {
+        "section": "The tags are littered",
+        "text": "`assert.equal(A.length, 26);`"
+      },
+      {
+        "section": "The tags are littered",
+        "text": "A"
+      },
+      {
+        "section": "The tags are littered",
+        "text": "Z"
+      },
+      {
+        "section": "The precision is superfluous to order",
+        "text": "the same letters"
+      },
+      {
+        "section": "The precision is superfluous to order",
+        "text": "but a different order"
+      },
+      {
+        "section": "The range 0...63",
+        "text": "63 is the last value of the lower 6-bit range"
+      },
+      {
+        "section": "The range 0...63",
+        "text": "64 values in 0...63"
+      },
+      {
+        "section": "The range 0...63",
+        "text": "`assert.equal(2 ** 6, 64);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-202",
+    "tag": "5M",
+    "title": "the range 0...63 and the relief of the literals",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-202.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 2682
+      },
+      "base64": "js/vm/5M.b64",
+      "base64url": "js/vm/5M.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The range",
+        "text": "`assert.equal(0x00, 0);`"
+      },
+      {
+        "section": "The range",
+        "text": "`assert.equal(0x3f, 63);`"
+      },
+      {
+        "section": "The range",
+        "text": "64 values in 0...63"
+      },
+      {
+        "section": "The range",
+        "text": "6 bits hold 64 values"
+      },
+      {
+        "section": "The buffer",
+        "text": "`assert.equal(READ, 127);`"
+      },
+      {
+        "section": "The buffer",
+        "text": "`assert.equal(WRITE, 63);`"
+      },
+      {
+        "section": "The buffer",
+        "text": "they differ by one escape bit"
+      },
+      {
+        "section": "The buffer",
+        "text": "`assert.equal(0x7f, 0b1111111);`"
+      },
+      {
+        "section": "The buffer",
+        "text": "`assert.equal(0x3f, 0b0111111);`"
+      },
+      {
+        "section": "The index",
+        "text": "frame 0 lands on byte 60"
+      },
+      {
+        "section": "The index",
+        "text": "frame 60 lands on byte 0"
+      },
+      {
+        "section": "The index",
+        "text": "in 64 frames every byte is hit once"
+      },
+      {
+        "section": "The reset",
+        "text": "the reset fires at frame 42"
+      },
+      {
+        "section": "The two halves",
+        "text": "the lower half ends at 63"
+      },
+      {
+        "section": "The two halves",
+        "text": "the upper half is 64 bytes too"
+      },
+      {
+        "section": "The two halves",
+        "text": "128 bytes in the buffer"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-203",
+    "tag": "5N",
+    "title": "the instances as data — the tags, pairs, and triples",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-203.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 5090
+      },
+      "base64": "js/vm/5N.b64",
+      "base64url": "js/vm/5N.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The pairs and triples",
+        "text": "4d 45 52"
+      },
+      {
+        "section": "The pairs and triples",
+        "text": "4d 45 52 54"
+      },
+      {
+        "section": "The pairs and triples",
+        "text": "54 45 52 4d"
+      },
+      {
+        "section": "The pairs and triples",
+        "text": "NUL NUL NUL t"
+      },
+      {
+        "section": "The pairs and triples",
+        "text": "three nulls prove the shared MER"
+      },
+      {
+        "section": "The pairs and triples",
+        "text": "GS"
+      },
+      {
+        "section": "The pairs and triples",
+        "text": "ME then ACK LF NAK"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "`assert.equal(am.length, 7);`"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "the R is the centre"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "the I is one past the centre"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "the A's match at the ends"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "the R is at index 2 of TERM"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "the R is at index 2 of MERT"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "the R is at index 2 of MER"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "the R is at index 3 of AMERICA"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "the R is the centre (the same R as in TERM/MERT)"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "the I is one past the centre"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "the I is at index 4"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "2 letters after it"
+      },
+      {
+        "section": "AMERICA, with R at the centre",
+        "text": "4 letters before it"
+      },
+      {
+        "section": "GOD IS WORD and WORD IS GOD",
+        "text": "both 11 characters"
+      },
+      {
+        "section": "GOD IS WORD and WORD IS GOD",
+        "text": "the O of GOD and the O of WORD cancel"
+      },
+      {
+        "section": "GOD IS WORD and WORD IS GOD",
+        "text": "the D of GOD and the D of WORD cancel"
+      },
+      {
+        "section": "The shells are tags",
+        "text": "`assert.equal(/^[A-Z0-9]{1,5}$/.test(sh), true, sh);`"
+      },
+      {
+        "section": "The food label",
+        "text": "'4' as ASCII is 0x34"
+      },
+      {
+        "section": "The food label",
+        "text": "'4' of '40'"
+      },
+      {
+        "section": "The food label",
+        "text": "'0' of '40'"
+      },
+      {
+        "section": "The food label",
+        "text": "'4' XOR '0' = EOT"
+      },
+      {
+        "section": "The Polybius square and the fifth",
+        "text": "`assert.equal(5 * 5, 25);`"
+      },
+      {
+        "section": "The Polybius square and the fifth",
+        "text": "one letter is left out"
+      },
+      {
+        "section": "The Polybius square and the fifth",
+        "text": "the 25 cells, the 4 lines, the 1 fifth"
+      },
+      {
+        "section": "The merkaba",
+        "text": "each tetrahedron XORs to 0"
+      },
+      {
+        "section": "The merkaba",
+        "text": "each tetrahedron XORs to 0"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-204",
+    "tag": "5O",
+    "title": "how to instantiate — the boot exchange and the 16-powers",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-204.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3033
+      },
+      "base64": "js/vm/5O.b64",
+      "base64url": "js/vm/5O.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The boot sequence",
+        "text": "read and write differ by one escape bit"
+      },
+      {
+        "section": "The powers",
+        "text": "`assert.equal(16 ** 20, 2 ** 80);`"
+      },
+      {
+        "section": "The powers",
+        "text": "`assert.equal(16 ** 10, 2 ** 40);`"
+      },
+      {
+        "section": "The powers",
+        "text": "`assert.equal(16 ** 5, 2 ** 20);`"
+      },
+      {
+        "section": "The powers",
+        "text": "`assert.equal(16 ** 4, 2 ** 16);`"
+      },
+      {
+        "section": "The powers",
+        "text": "16^4 = 65536"
+      },
+      {
+        "section": "The powers",
+        "text": "16^2 = 256"
+      },
+      {
+        "section": "The powers",
+        "text": "`assert.equal(16 ** 4 * 16 ** 4 * 16 ** 2, 16 ** 10);`"
+      },
+      {
+        "section": "The powers",
+        "text": "`assert.equal(16 ** 10 * 16 ** 10, 16 ** 20);`"
+      },
+      {
+        "section": "The correction",
+        "text": "`assert.equal(16 ** 4, 65536);`"
+      },
+      {
+        "section": "The correction",
+        "text": "16^2 is 256, not 65536"
+      },
+      {
+        "section": "The units",
+        "text": "16 bits = 2 bytes"
+      },
+      {
+        "section": "The units",
+        "text": "16 bytes = 128 bits"
+      },
+      {
+        "section": "The units",
+        "text": "32 bytes = 256 bits"
+      },
+      {
+        "section": "The units",
+        "text": "`assert.equal(16 * 16, 256);`"
+      },
+      {
+        "section": "The units",
+        "text": "`assert.equal(128 / 32, 4);`"
+      },
+      {
+        "section": "The parity header",
+        "text": "16 units = 8 pairs"
+      },
+      {
+        "section": "The parity header",
+        "text": "`assert.equal(8 * 5, 40);`"
+      },
+      {
+        "section": "The parity header",
+        "text": "`assert.equal(2 ** 40, 16 ** 10);`"
+      },
+      {
+        "section": "The parity header",
+        "text": "`assert.equal(8 * 40, 320);`"
+      },
+      {
+        "section": "The parity header",
+        "text": "320 bits = 40 bytes"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-205",
+    "tag": "5P",
+    "title": "the delineation rule — the 2-of-5 encoding, tap code to",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-205.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 2324
+      },
+      "base64": "js/vm/5P.b64",
+      "base64url": "js/vm/5P.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The 2-of-5 code",
+        "text": "C(5,2) = 10"
+      },
+      {
+        "section": "The 2-of-5 code",
+        "text": "`assert.deepEqual(valid25, [3, 5, 6, 9, 10, 12, 17, 18, 20, 24]);`"
+      },
+      {
+        "section": "The 2-of-5 code",
+        "text": "20 = 0b10100, two bits set"
+      },
+      {
+        "section": "The 2-of-5 code",
+        "text": "`assert.equal(20, 0b10100);`"
+      },
+      {
+        "section": "The 2-of-5 code",
+        "text": "`assert.ok(valid25.includes(20));`"
+      },
+      {
+        "section": "20 5 is the boot",
+        "text": "`assert.equal(20, 0b10100);`"
+      },
+      {
+        "section": "20 5 is the boot",
+        "text": "`assert.equal(5, 5);`"
+      },
+      {
+        "section": "20 5 is the boot",
+        "text": "`assert.equal(/^[A-Z0-9]{1,8}$/.test(\"20\"), true);`"
+      },
+      {
+        "section": "20 5 is the boot",
+        "text": "`assert.equal(/^[A-Z0-9]{1,8}$/.test(\"5\"), true);`"
+      },
+      {
+        "section": "The tap code",
+        "text": "`assert.equal(5 * 5, 25);`"
+      },
+      {
+        "section": "The usable stream",
+        "text": "`assert.equal(/^[A-Z0-9]{1,8}$/.test(\"20F5\"), true);`"
+      },
+      {
+        "section": "The usable stream",
+        "text": "`assert.equal(\"20F5\".length, 4);`"
+      },
+      {
+        "section": "The usable stream",
+        "text": "`assert.equal(parseInt(\"20F5\", 16), 0x20f5);`"
+      },
+      {
+        "section": "The usable stream",
+        "text": "`assert.equal(0x20f5, 8437);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-206",
+    "tag": "5Q",
+    "title": "the author's name as tags, the birth date as index pairs, and the 42",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-206.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 2903
+      },
+      "base64": "js/vm/5Q.b64",
+      "base64url": "js/vm/5Q.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Which candidates are tags, and their first five",
+        "text": "the first five"
+      },
+      {
+        "section": "The name in bytes, and its parts against each other",
+        "text": "`assert.deepEqual(bytes(\"BRIAN\"), [0x42, 0x52, 0x49, 0x41, 0x4e]);`"
+      },
+      {
+        "section": "The name in bytes, and its parts against each other",
+        "text": "`assert.deepEqual(bytes(\"JAMES\"), [0x4a, 0x41, 0x4d, 0x45, 0x53]);`"
+      },
+      {
+        "section": "The name in bytes, and its parts against each other",
+        "text": "`assert.deepEqual(bytes(\"THORNE\"), [0x54, 0x48, 0x4f, 0x52, 0x4e, 0x45]);`"
+      },
+      {
+        "section": "The name in bytes, and its parts against each other",
+        "text": "`assert.deepEqual(xor(\"BRIAN\", \"JAMES\"), [0x08, 0x13, 0x04, 0x04, 0x1d]);`"
+      },
+      {
+        "section": "The name in bytes, and its parts against each other",
+        "text": "`assert.deepEqual(xor(\"JAMES\", \"THORNE\"), [0x1e, 0x09, 0x02, 0x17, 0x1d, 0x65]);`"
+      },
+      {
+        "section": "The name in bytes, and its parts against each other",
+        "text": "BRIAN and THORNE share their N at index 4"
+      },
+      {
+        "section": "The name in bytes, and its parts against each other",
+        "text": "`assert.deepEqual(xor(\"BRIAN\", \"JAMES\", \"THORNE\"), [0x5c, 0x5b, 0x4b, 0x56, 0x53, 0x45]);`"
+      },
+      {
+        "section": "The name in bytes, and its parts against each other",
+        "text": "`assert.deepEqual(xor(\"INGLE\", \"CALIF\"), [0x0a, 0x0f, 0x0b, 0x05, 0x03]);`"
+      },
+      {
+        "section": "The birth date as index pairs",
+        "text": "(19, 84) and (07, 29): 71 = 0x47, 26 = 0x1A, together 93"
+      },
+      {
+        "section": "The birth date as index pairs",
+        "text": "`assert.deepEqual([1984 % 3, 7 % 3, 29 % 3, 2026 % 3], [1, 1, 2, 1]);`"
+      },
+      {
+        "section": "The birth date as index pairs",
+        "text": "2026 - 1984 = 42"
+      },
+      {
+        "section": "The birth date as index pairs",
+        "text": "a multiple of 3: 1984 and 2026 share their residue"
+      },
+      {
+        "section": "The birth date as index pairs",
+        "text": "and 42 is the frame of the exchange's reset (60 XOR 22)"
+      },
+      {
+        "section": "The birth date as index pairs",
+        "text": "101010"
+      },
+      {
+        "section": "The record's own number",
+        "text": "`assert.equal(parseInt(\"I206\", 36), 842406);`"
+      },
+      {
+        "section": "The record's own number",
+        "text": "206 in base 36"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-207",
+    "tag": "5R",
+    "title": "the sources of I-206 — BRIAN, CODEX, DEEPSEEK, and the",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-207.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 5252
+      },
+      "base64": "js/vm/5R.b64",
+      "base64url": "js/vm/5R.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The number 207",
+        "text": "`assert.equal(207, 200 + 7);`"
+      },
+      {
+        "section": "The number 207",
+        "text": "`assert.equal(207, 20 * 10 + 7);`"
+      },
+      {
+        "section": "The number 207",
+        "text": "the next record (I-208)"
+      },
+      {
+        "section": "The number 207",
+        "text": "one past 206"
+      },
+      {
+        "section": "The year 2026",
+        "text": "`assert.equal(20 ^ 26, 0x0e);`"
+      },
+      {
+        "section": "The year 2026",
+        "text": "shift out"
+      },
+      {
+        "section": "The three tags",
+        "text": "`assert.equal(TAG.test(\"BRIAN\"), true);`"
+      },
+      {
+        "section": "The three tags",
+        "text": "`assert.equal(TAG.test(\"CODEX\"), true);`"
+      },
+      {
+        "section": "The three tags",
+        "text": "`assert.equal(\"DEEPSEEK\".length, 8);`"
+      },
+      {
+        "section": "The three tags",
+        "text": "8 letters, exactly at the mask"
+      },
+      {
+        "section": "The three tags",
+        "text": "DEEPS"
+      },
+      {
+        "section": "The three tags",
+        "text": "`assert.equal(TAG.test(\"DEEPS\"), true);`"
+      },
+      {
+        "section": "The three tags",
+        "text": "`assert.equal(MASK5.test(\"BRIAN\"), true);`"
+      },
+      {
+        "section": "The three tags",
+        "text": "`assert.equal(MASK5.test(\"CODEX\"), true);`"
+      },
+      {
+        "section": "The three tags",
+        "text": "`assert.equal(MASK5.test(\"DEEPS\"), true);`"
+      },
+      {
+        "section": "The three tags",
+        "text": "`assert.equal(MASK5.test(\"DEEPSEEK\"), false);`"
+      },
+      {
+        "section": "The 5th index",
+        "text": "N"
+      },
+      {
+        "section": "The 5th index",
+        "text": "X"
+      },
+      {
+        "section": "The 5th index",
+        "text": "S"
+      },
+      {
+        "section": "The 5th index",
+        "text": "`assert.equal(\"BRIAN\".charCodeAt(4), 0x4e);`"
+      },
+      {
+        "section": "The 5th index",
+        "text": "`assert.equal(\"CODEX\".charCodeAt(4), 0x58);`"
+      },
+      {
+        "section": "The 5th index",
+        "text": "`assert.equal(\"DEEPS\".charCodeAt(4), 0x53);`"
+      },
+      {
+        "section": "The 5th index",
+        "text": "N ^ X ^ S = E"
+      },
+      {
+        "section": "The 5th index",
+        "text": "`assert.equal(0x45, \"E\".charCodeAt(0));`"
+      },
+      {
+        "section": "The Hamming zip",
+        "text": "45 58 48 54 45"
+      },
+      {
+        "section": "The Hamming zip",
+        "text": "EXHTE"
+      },
+      {
+        "section": "The Hamming zip",
+        "text": "the zip is a tag"
+      },
+      {
+        "section": "The Hamming zip",
+        "text": "3a 27 37 2b 3a"
+      },
+      {
+        "section": "The Hamming zip",
+        "text": "the XNOR is not a tag"
+      },
+      {
+        "section": "The pairwise zips",
+        "text": "01 1d 0d 04 16"
+      },
+      {
+        "section": "The pairwise zips",
+        "text": "07 0a 01 15 0b"
+      },
+      {
+        "section": "The pairwise zips",
+        "text": "06 17 0c 11 1d"
+      },
+      {
+        "section": "The year-pair coincidence",
+        "text": "19 ^ 75 = 0x58"
+      },
+      {
+        "section": "The year-pair coincidence",
+        "text": "`assert.equal(0x58, \"X\".charCodeAt(0));`"
+      },
+      {
+        "section": "The year-pair coincidence",
+        "text": "and CODEX[4] is also 0x58"
+      },
+      {
+        "section": "The open item",
+        "text": "`assert.equal(parseInt(\"BRIAN\", 36), 19759199);`"
+      },
+      {
+        "section": "The open item",
+        "text": "12D805F"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-208",
+    "tag": "5S",
+    "title": "the return to the cave — the event horizon of the agreement universe",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-208.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3878
+      },
+      "base64": "js/vm/5S.b64",
+      "base64url": "js/vm/5S.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The cave, as tags",
+        "text": "`assert.equal(TAG.test(w), true, w);`"
+      },
+      {
+        "section": "The pipeline, as tags",
+        "text": "`assert.equal(TAG.test(w), true, w);`"
+      },
+      {
+        "section": "The pipeline, as tags",
+        "text": "`assert.equal(TAG.test(\"MATERIALIZE\"), false);`"
+      },
+      {
+        "section": "The pipeline, as tags",
+        "text": "MATER"
+      },
+      {
+        "section": "The pipeline, as tags",
+        "text": "`assert.equal(TAG.test(\"MATER\"), true);`"
+      },
+      {
+        "section": "The forbidden shortcut",
+        "text": "`assert.equal(TAG.test(\"RENDER\"), true);`"
+      },
+      {
+        "section": "The forbidden shortcut",
+        "text": "`assert.equal(TAG.test(\"BELIEVE\"), true);`"
+      },
+      {
+        "section": "The forbidden shortcut",
+        "text": "`assert.equal(\"RENDER\".length, 6);`"
+      },
+      {
+        "section": "The forbidden shortcut",
+        "text": "`assert.equal(\"BELIEVE\".length, 7);`"
+      },
+      {
+        "section": "The event horizon",
+        "text": "208 = 16 * 13"
+      },
+      {
+        "section": "The event horizon",
+        "text": "208 is a multiple of 16"
+      },
+      {
+        "section": "The event horizon",
+        "text": "`assert.equal(2026 - 208, 1818);`"
+      },
+      {
+        "section": "The event horizon",
+        "text": "the next record"
+      },
+      {
+        "section": "Agreement Is All We Need",
+        "text": "AGREEMENT is 9 letters, past the 8 mask"
+      },
+      {
+        "section": "Agreement Is All We Need",
+        "text": "`assert.equal(\"AGREEMENT\".length, 9);`"
+      },
+      {
+        "section": "Agreement Is All We Need",
+        "text": "AGREE"
+      },
+      {
+        "section": "Agreement Is All We Need",
+        "text": "`assert.equal(TAG.test(\"AGREE\"), true);`"
+      },
+      {
+        "section": "Agreement Is All We Need",
+        "text": "`assert.equal(TAG.test(\"CANON\"), true);`"
+      },
+      {
+        "section": "Agreement Is All We Need",
+        "text": "`assert.equal(TAG.test(\"TRUTH\"), true);`"
+      },
+      {
+        "section": "Agreement Is All We Need",
+        "text": "`assert.equal(TAG.test(\"FRAME\"), true);`"
+      },
+      {
+        "section": "Agreement Is All We Need",
+        "text": "`assert.equal(TAG.test(\"RECEIPT\"), true);`"
+      },
+      {
+        "section": "The universe, as arrangement",
+        "text": "8 letters, exactly at the mask edge"
+      },
+      {
+        "section": "The universe, as arrangement",
+        "text": "`assert.equal(\"UNIVERSE\".length, 8);`"
+      },
+      {
+        "section": "The universe, as arrangement",
+        "text": "the 5-truncation"
+      },
+      {
+        "section": "The universe, as arrangement",
+        "text": "`assert.equal(\"UNIVERSAL\".length, 9);`"
+      },
+      {
+        "section": "The universe, as arrangement",
+        "text": "UNIVE"
+      },
+      {
+        "section": "The universe, as arrangement",
+        "text": "`assert.equal(TAG.test(\"UNIVE\"), true);`"
+      },
+      {
+        "section": "The universe, as arrangement",
+        "text": "`assert.equal(TAG.test(\"GLOBAL\"), true);`"
+      },
+      {
+        "section": "The universe, as arrangement",
+        "text": "`assert.equal(TAG.test(\"WORLD\"), true);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-209",
+    "tag": "5T",
+    "title": "the OMI family and the null exchange",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-209.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3991
+      },
+      "base64": "js/vm/5T.b64",
+      "base64url": "js/vm/5T.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The family",
+        "text": "`assert.equal(TAG.test(w), true, w);`"
+      },
+      {
+        "section": "The family",
+        "text": "4f 4d 49"
+      },
+      {
+        "section": "The family",
+        "text": "4f 4d 49 43 52 4f 4e"
+      },
+      {
+        "section": "The family",
+        "text": "4f 4d 4e 49 43 52 4f 4e"
+      },
+      {
+        "section": "The family",
+        "text": "4f 4d 4e 49"
+      },
+      {
+        "section": "The family",
+        "text": "4d 45 54 52 4f 4e"
+      },
+      {
+        "section": "The family",
+        "text": "54 52 4f 4e"
+      },
+      {
+        "section": "The 5th index",
+        "text": "`assert.equal(\"OMICRON\".length, 7);`"
+      },
+      {
+        "section": "The 5th index",
+        "text": "`assert.equal(\"OMNICRON\".length, 8);`"
+      },
+      {
+        "section": "The 5th index",
+        "text": "the 5th character of OMICRON"
+      },
+      {
+        "section": "The 5th index",
+        "text": "the 5th character of OMNICRON"
+      },
+      {
+        "section": "The 5th index",
+        "text": "`assert.equal(\"OMICRON\".charCodeAt(4), 0x52);`"
+      },
+      {
+        "section": "The 5th index",
+        "text": "`assert.equal(\"OMNICRON\".charCodeAt(4), 0x43);`"
+      },
+      {
+        "section": "The divergence at index 2",
+        "text": "I"
+      },
+      {
+        "section": "The divergence at index 2",
+        "text": "N"
+      },
+      {
+        "section": "The divergence at index 2",
+        "text": "I XOR N = BEL"
+      },
+      {
+        "section": "The XOR of the pair",
+        "text": "00 00 07 0a 11 1d 01 6e"
+      },
+      {
+        "section": "The XOR of the pair",
+        "text": "OMI ^ OMNI: two nulls, then 07 69"
+      },
+      {
+        "section": "Base-36 values",
+        "text": "`assert.equal(parseInt(\"OMNI\", 36), 1149102);`"
+      },
+      {
+        "section": "Base-36 values",
+        "text": "`assert.equal(parseInt(\"OMNI\", 36) % 64, 46);`"
+      },
+      {
+        "section": "Base-36 values",
+        "text": "the 'all' lands at 0 mod 3"
+      },
+      {
+        "section": "Base-36 values",
+        "text": "`assert.equal(parseInt(\"OMICRON\", 36), 53603860775);`"
+      },
+      {
+        "section": "Base-36 values",
+        "text": "`assert.equal(parseInt(\"OMICRON\", 36) % 64, 39);`"
+      },
+      {
+        "section": "Base-36 values",
+        "text": "`assert.equal(parseInt(\"OMNICRON\", 36), 1930050700583);`"
+      },
+      {
+        "section": "Base-36 values",
+        "text": "OMICRON and OMNICRON share the mod-64 residue"
+      },
+      {
+        "section": "The System T comparison",
+        "text": "`assert.equal(\"OMICRON\".includes(\"T\"), false);`"
+      },
+      {
+        "section": "The System T comparison",
+        "text": "`assert.equal(\"OMNICRON\".includes(\"T\"), false);`"
+      },
+      {
+        "section": "The System T comparison",
+        "text": "`assert.equal(\"METRON\".includes(\"T\"), true);`"
+      },
+      {
+        "section": "The System T comparison",
+        "text": "`assert.equal(\"METRON\".indexOf(\"T\"), 2);`"
+      },
+      {
+        "section": "The System T comparison",
+        "text": "`assert.equal(\"TRON\".includes(\"T\"), true);`"
+      },
+      {
+        "section": "The System T comparison",
+        "text": "`assert.equal(\"TRON\".indexOf(\"T\"), 0);`"
+      },
+      {
+        "section": "The System T comparison",
+        "text": "METRON ^ TRON (first 4)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-210",
+    "tag": "5U",
+    "title": "the observer in the void of the OMNI",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-210.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 2114
+      },
+      "base64": "js/vm/5U.b64",
+      "base64url": "js/vm/5U.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The successor",
+        "text": "the +1 after I-209"
+      },
+      {
+        "section": "The pair (30, 0)",
+        "text": "210 = 30 * 7"
+      },
+      {
+        "section": "The pair (30, 0)",
+        "text": "the 7 of the Fano plane"
+      },
+      {
+        "section": "The pair (30, 0)",
+        "text": "the null"
+      },
+      {
+        "section": "The pair (30, 0)",
+        "text": "one construction"
+      },
+      {
+        "section": "The pair (30, 0)",
+        "text": "the Fano 7 and the 30"
+      },
+      {
+        "section": "The pair (20, 10)",
+        "text": "`assert.equal(20 * 10, 200);`"
+      },
+      {
+        "section": "The pair (20, 10)",
+        "text": "the 30 again"
+      },
+      {
+        "section": "The pair (20, 10)",
+        "text": "and by XOR too: 20 ^ 10 = 30"
+      },
+      {
+        "section": "The pair (20, 10)",
+        "text": "the year 2026: SO (shift out)"
+      },
+      {
+        "section": "The observer in the void",
+        "text": "one past"
+      },
+      {
+        "section": "The observer in the void",
+        "text": "the void is 0"
+      },
+      {
+        "section": "The observer in the void",
+        "text": "the observer is 210"
+      },
+      {
+        "section": "The tag",
+        "text": "the observer as a tag"
+      },
+      {
+        "section": "The tag",
+        "text": "`assert.equal(\"OBSERVE\".length, 7);`"
+      },
+      {
+        "section": "The tag",
+        "text": "`assert.equal(/^[A-Z0-9]{1,8}$/.test(\"VOID\"), true);`"
+      },
+      {
+        "section": "The tag",
+        "text": "`assert.equal(\"VOID\".length, 4);`"
+      },
+      {
+        "section": "The tag",
+        "text": "`assert.equal(/^[A-Z0-9]{1,8}$/.test(\"NULL\"), true);`"
+      },
+      {
+        "section": "The tag",
+        "text": "`assert.equal(\"NULL\".length, 4);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-211",
+    "tag": "5V",
+    "title": "the GLUE — Grace, Love, Understanding, Empathy — and the Axiom of Propagation",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-211.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3924
+      },
+      "base64": "js/vm/5V.b64",
+      "base64url": "js/vm/5V.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The header",
+        "text": "`assert.equal(TAG.test(\"02\"), true);`"
+      },
+      {
+        "section": "The header",
+        "text": "`assert.equal(TAG.test(\"SISTER\"), true);`"
+      },
+      {
+        "section": "The header",
+        "text": "`assert.equal(TAG.test(\"03081986\"), true);`"
+      },
+      {
+        "section": "The header",
+        "text": "`assert.equal(\"03081986\".length, 8);`"
+      },
+      {
+        "section": "The GLUE",
+        "text": "47 4c 55 45"
+      },
+      {
+        "section": "The GLUE",
+        "text": "67 6c 75 65"
+      },
+      {
+        "section": "The GLUE",
+        "text": "G>L>U>E by the case bit"
+      },
+      {
+        "section": "The four letters as indices (A1Z26)",
+        "text": "`assert.equal(L.G, 7);`"
+      },
+      {
+        "section": "The four letters as indices (A1Z26)",
+        "text": "`assert.equal(L.L, 12);`"
+      },
+      {
+        "section": "The four letters as indices (A1Z26)",
+        "text": "`assert.equal(L.U, 21);`"
+      },
+      {
+        "section": "The four letters as indices (A1Z26)",
+        "text": "`assert.equal(L.E, 5);`"
+      },
+      {
+        "section": "The four letters as indices (A1Z26)",
+        "text": "the sum is 45"
+      },
+      {
+        "section": "The four letters as indices (A1Z26)",
+        "text": "and the XOR is 0x1B = ESC"
+      },
+      {
+        "section": "The four words",
+        "text": "`assert.equal(TAG.test(\"GRACE\"), true);`"
+      },
+      {
+        "section": "The four words",
+        "text": "`assert.equal(TAG.test(\"LOVE\"), true);`"
+      },
+      {
+        "section": "The four words",
+        "text": "`assert.equal(TAG.test(\"EMPATHY\"), true);`"
+      },
+      {
+        "section": "The four words",
+        "text": "13 letters, past the mask"
+      },
+      {
+        "section": "The four words",
+        "text": "UNDER"
+      },
+      {
+        "section": "The four words",
+        "text": "`assert.equal(TAG.test(\"UNDER\"), true);`"
+      },
+      {
+        "section": "The four words",
+        "text": "47 52 41 43 45"
+      },
+      {
+        "section": "The four words",
+        "text": "4c 4f 56 45"
+      },
+      {
+        "section": "The four words",
+        "text": "45 4d 50 41 54"
+      },
+      {
+        "section": "The Axiom of Propagation",
+        "text": "8 letters, exactly at the mask edge"
+      },
+      {
+        "section": "The Axiom of Propagation",
+        "text": "`assert.equal(TAG.test(\"PATHS\"), true);`"
+      },
+      {
+        "section": "The Axiom of Propagation",
+        "text": "`assert.equal(TAG.test(\"WORDS\"), true);`"
+      },
+      {
+        "section": "The Axiom of Propagation",
+        "text": "`assert.equal(TAG.test(\"REVEAL\"), true);`"
+      },
+      {
+        "section": "The Axiom of Propagation",
+        "text": "11 letters, past the mask"
+      },
+      {
+        "section": "The Axiom of Propagation",
+        "text": "PROPA"
+      },
+      {
+        "section": "The Axiom of Propagation",
+        "text": "`assert.equal(TAG.test(\"PROPA\"), true);`"
+      },
+      {
+        "section": "The Axiom of Propagation",
+        "text": "43 4f 4e 56 45 52 47 45"
+      },
+      {
+        "section": "The Axiom of Propagation",
+        "text": "50 41 54 48 53"
+      },
+      {
+        "section": "The Axiom of Propagation",
+        "text": "57 4f 52 44 53"
+      },
+      {
+        "section": "The Axiom of Propagation",
+        "text": "52 45 56 45 41 4c"
+      },
+      {
+        "section": "The whole family is in the mask",
+        "text": "`assert.equal(TAG.test(w), true, w);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-212",
+    "tag": "5W",
+    "title": "the capstone — NULL NULL, the kernel's ground",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-212.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3797
+      },
+      "base64": "js/vm/5W.b64",
+      "base64url": "js/vm/5W.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The dot as XOR witness",
+        "text": "`assert.equal(dot(0x00, 0x20), 0x20);`"
+      },
+      {
+        "section": "The dot as XOR witness",
+        "text": "`assert.equal(dot(0x20, 0x7f), 0x5f);`"
+      },
+      {
+        "section": "The dot as XOR witness",
+        "text": "`assert.equal(dot(0x7f, 0xff), 0x80);`"
+      },
+      {
+        "section": "The dot as XOR witness",
+        "text": "`assert.equal(dot(0xff, 0x00), 0xff);`"
+      },
+      {
+        "section": "The dot as XOR witness",
+        "text": "`assert.deepEqual( [dot(0x00, 0x20), dot(0x20, 0x7f), dot(0x7f, 0xff), dot(0xff, 0x00)], [0x20, 0x5f, 0x80, 0xff], );`"
+      },
+      {
+        "section": "The ring closes to null",
+        "text": "the ring closes to null"
+      },
+      {
+        "section": "The folded form",
+        "text": "`assert.equal(dot(0x00, 0x00), 0x00);`"
+      },
+      {
+        "section": "NULL NULL as the kernel's ground",
+        "text": "the 2-cube has 8 vertices"
+      },
+      {
+        "section": "NULL NULL as the kernel's ground",
+        "text": "the first 2-cubed square has 64 cells"
+      },
+      {
+        "section": "NULL NULL as the kernel's ground",
+        "text": "an 8x8 grid"
+      },
+      {
+        "section": "NULL NULL as the kernel's ground",
+        "text": "64 = 0x40"
+      },
+      {
+        "section": "The three readings of the same root",
+        "text": "4e 55 4c 4c"
+      },
+      {
+        "section": "The three readings of the same root",
+        "text": "4e 55 4c 4c 4e 55 4c 4c"
+      },
+      {
+        "section": "The three readings of the same root",
+        "text": "N XOR N = 0"
+      },
+      {
+        "section": "The Coq check, restated as arithmetic",
+        "text": "`assert.deepEqual(witnesses, [32, 95, 128, 255]);`"
+      },
+      {
+        "section": "The Coq check, restated as arithmetic",
+        "text": "xor_reduce byte_ring_witnesses = 0"
+      },
+      {
+        "section": "The final lock",
+        "text": "the folded root is 0"
+      },
+      {
+        "section": "The final lock",
+        "text": "the unfolded ring is 0"
+      },
+      {
+        "section": "The final lock",
+        "text": "the null is the same at every reading"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-213",
+    "tag": "5X",
+    "title": "the OMIST — the true full closure for one who desires to be a true believer",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-213.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 8159
+      },
+      "base64": "js/vm/5X.b64",
+      "base64url": "js/vm/5X.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The Constitution, as tags",
+        "text": "`assert.equal(t, false, w + \" is past the mask\");`"
+      },
+      {
+        "section": "The Constitution, as tags",
+        "text": "`assert.equal(t, true, w);`"
+      },
+      {
+        "section": "The Constitution, as tags",
+        "text": "`assert.equal(\"CONSTITUTION\".length, 12);`"
+      },
+      {
+        "section": "The Constitution, as tags",
+        "text": "CONST"
+      },
+      {
+        "section": "The Constitution, as tags",
+        "text": "`assert.equal(TAG.test(\"CONST\"), true);`"
+      },
+      {
+        "section": "The Constitution, as tags",
+        "text": "`assert.equal(\"CONSTITU\".length, 8);`"
+      },
+      {
+        "section": "The Constitution, as tags",
+        "text": "8 letters, exactly at the mask edge"
+      },
+      {
+        "section": "No ID: what's in reach",
+        "text": "`assert.equal(TAG.test(\"REACH\"), true);`"
+      },
+      {
+        "section": "No ID: what's in reach",
+        "text": "`assert.equal(TAG.test(\"HOLD\"), true);`"
+      },
+      {
+        "section": "No ID: what's in reach",
+        "text": "8 letters"
+      },
+      {
+        "section": "No ID: what's in reach",
+        "text": "`assert.equal(\"IDENTITY\".length, 8);`"
+      },
+      {
+        "section": "No ID: what's in reach",
+        "text": "`assert.equal(TAG.test(\"ID\"), true);`"
+      },
+      {
+        "section": "No ID: what's in reach",
+        "text": "`assert.equal(\"ID\".length, 2);`"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "54 45 52 4d"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "4d 45 52 54"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "ER"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "ER"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "45 52"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "T"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "M"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "M"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "T"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "`assert.equal(\"TERM\".charCodeAt(0) ^ \"MERT\".charCodeAt(0), \"T\".charCodeAt(0) ^ \"M\".charCodeAt(0));`"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "`assert.equal(\"TERM\".charCodeAt(3) ^ \"MERT\".charCodeAt(3), \"M\".charCodeAt(0) ^ \"T\".charCodeAt(0));`"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "`assert.equal(\"T\".charCodeAt(0) ^ \"M\".charCodeAt(0), 0x19);`"
+      },
+      {
+        "section": "The collapse: experience to expression",
+        "text": "the hidden 5: 25 = 5 x 5"
+      },
+      {
+        "section": "3b. The hidden 5 of the 5x5",
+        "text": "`assert.equal(\"T\".charCodeAt(0) ^ \"M\".charCodeAt(0), 25);`"
+      },
+      {
+        "section": "3b. The hidden 5 of the 5x5",
+        "text": "the tap code's 5x5 grid"
+      },
+      {
+        "section": "3b. The hidden 5 of the 5x5",
+        "text": "and one letter left over (F, or Z the default)"
+      },
+      {
+        "section": "3b. The hidden 5 of the 5x5",
+        "text": "`assert.equal(5 * 5, 25);`"
+      },
+      {
+        "section": "3b. The hidden 5 of the 5x5",
+        "text": "the letter that falls to the default"
+      },
+      {
+        "section": "The constitutional stand",
+        "text": "`assert.equal(TAG.test(\"TRUTH\"), true);`"
+      },
+      {
+        "section": "The constitutional stand",
+        "text": "`assert.equal(TAG.test(\"BELIEVE\"), true);`"
+      },
+      {
+        "section": "The constitutional stand",
+        "text": "`assert.equal(\"BELIEVE\".length, 7);`"
+      },
+      {
+        "section": "The constitutional stand",
+        "text": "`assert.equal(TAG.test(\"BELIEF\"), true);`"
+      },
+      {
+        "section": "The constitutional stand",
+        "text": "`assert.equal(\"BELIEF\".length, 6);`"
+      },
+      {
+        "section": "The constitutional stand",
+        "text": "8 letters"
+      },
+      {
+        "section": "The constitutional stand",
+        "text": "`assert.equal(\"BELIEVER\".length, 8);`"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "`assert.equal(TAG.test(\"GNOSTIC\"), true);`"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "`assert.equal(TAG.test(\"OMIST\"), true);`"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "4f 4d 49 53 54"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "`assert.equal(\"OMIST\".length, 5);`"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "OMI"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "ST"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "`assert.equal(\"OMICRON\".includes(\"T\"), false);`"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "`assert.equal(\"OMIST\".includes(\"T\"), true);`"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "the T is at index 4 (the null position, the I)"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "`assert.equal(\"METRON\".indexOf(\"T\"), 2);`"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "`assert.equal(\"TRON\".indexOf(\"T\"), 0);`"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "`assert.equal(\"TERM\".indexOf(\"T\"), 0);`"
+      },
+      {
+        "section": "Not gnostic; OMIST",
+        "text": "`assert.equal(\"MERT\".indexOf(\"T\"), 3);`"
+      },
+      {
+        "section": "The question becomes the answer",
+        "text": "the catch's index XORs to null"
+      },
+      {
+        "section": "The question becomes the answer",
+        "text": "the reset fires at frame 42"
+      },
+      {
+        "section": "The question becomes the answer",
+        "text": "I"
+      },
+      {
+        "section": "The question becomes the answer",
+        "text": "`assert.equal(\"AMERICA\".indexOf(\"I\"), 4);`"
+      },
+      {
+        "section": "The question becomes the answer",
+        "text": "I"
+      },
+      {
+        "section": "The question becomes the answer",
+        "text": "`assert.equal(TAG.test(\"IS\"), true);`"
+      },
+      {
+        "section": "The ground",
+        "text": "`assert.equal(0x00, 0);`"
+      },
+      {
+        "section": "The ground",
+        "text": "`assert.equal(TAG.test(\"GROUND\"), true);`"
+      },
+      {
+        "section": "The ground",
+        "text": "`assert.equal(TAG.test(\"NULL\"), true);`"
+      },
+      {
+        "section": "The ground",
+        "text": "`assert.equal(TAG.test(\"GOD\"), true);`"
+      },
+      {
+        "section": "The ground",
+        "text": "`assert.equal(\"GOD\".length, 3);`"
+      },
+      {
+        "section": "The ground",
+        "text": "47 4f 44"
+      },
+      {
+        "section": "The ground",
+        "text": "44 4f 47"
+      },
+      {
+        "section": "The ground",
+        "text": "O"
+      },
+      {
+        "section": "The ground",
+        "text": "O"
+      },
+      {
+        "section": "The ground",
+        "text": "G"
+      },
+      {
+        "section": "The ground",
+        "text": "D"
+      },
+      {
+        "section": "The ground",
+        "text": "D"
+      },
+      {
+        "section": "The ground",
+        "text": "G"
+      },
+      {
+        "section": "The closure",
+        "text": "`assert.equal(0 ^ 0, 0);`"
+      },
+      {
+        "section": "The closure",
+        "text": "`assert.equal(1, 1);`"
+      },
+      {
+        "section": "The closure",
+        "text": "`assert.equal(TAG.test(\"WORD\"), true);`"
+      },
+      {
+        "section": "The closure",
+        "text": "`assert.equal(\"GOD\".length, \"WORD\".slice(0, 3).length);`"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-214",
+    "tag": "5Y",
+    "title": "THEOS and LOGOS, HO THEOS, and the year pairs",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-214.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 1937
+      },
+      "base64": "js/vm/5Y.b64",
+      "base64url": "js/vm/5Y.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "THEOS and LOGOS",
+        "text": "`assert.deepEqual(bytes(\"THEOS\"), [0x54, 0x48, 0x45, 0x4f, 0x53]);`"
+      },
+      {
+        "section": "THEOS and LOGOS",
+        "text": "`assert.deepEqual(bytes(\"LOGOS\"), [0x4c, 0x4f, 0x47, 0x4f, 0x53]);`"
+      },
+      {
+        "section": "THEOS and LOGOS",
+        "text": "THEOS ^ LOGOS = 18 07 02 00 00: the shared OS cancels"
+      },
+      {
+        "section": "THEOS and LOGOS",
+        "text": "THEOS with itself: null"
+      },
+      {
+        "section": "HO THEOS: the article as the mark",
+        "text": "`assert.equal(\"HOTHEOS\".length, 7);`"
+      },
+      {
+        "section": "HO THEOS: the article as the mark",
+        "text": "HO THEOS, joined, is a tag (7)"
+      },
+      {
+        "section": "HO THEOS: the article as the mark",
+        "text": "with the space, two tags: a command pair"
+      },
+      {
+        "section": "The year pairs",
+        "text": "`assert.equal(years.length, 23);`"
+      },
+      {
+        "section": "The year pairs",
+        "text": "`assert.deepEqual(pairs[0], [18, 8]);`"
+      },
+      {
+        "section": "The year pairs",
+        "text": "2017 as (20, 17)"
+      },
+      {
+        "section": "The year pairs",
+        "text": "every pair is unique: no two events share a (century, year)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-215",
+    "tag": "5Z",
+    "title": "the OS family — THEOS, LOGOS, PATHOS, NOMOS, ETHOS",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-215.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 2753
+      },
+      "base64": "js/vm/5Z.b64",
+      "base64url": "js/vm/5Z.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Pairwise XOR",
+        "text": "LOGOS and NOMOS differ in two letters (L/N, G/M): word and law, a line feed apart"
+      },
+      {
+        "section": "A1Z26 sums and XOR",
+        "text": "A1Z26 sums"
+      },
+      {
+        "section": "A1Z26 sums and XOR",
+        "text": "A1Z26 XORs"
+      },
+      {
+        "section": "A1Z26 sums and XOR",
+        "text": "THEOS and ETHOS: the same letters, the same sum and XOR (anagrams)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-216",
+    "tag": "60",
+    "title": "ANGEL — the attribution as a tag, and the identity as termed pixels",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-216.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 8274
+      },
+      "base64": "js/vm/60.b64",
+      "base64url": "js/vm/60.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "ANGELA, as AMERICA was read (I-203)",
+        "text": "ANGELA is a tag"
+      },
+      {
+        "section": "ANGELA, as AMERICA was read (I-203)",
+        "text": "six letters: no single centre"
+      },
+      {
+        "section": "ANGELA, as AMERICA was read (I-203)",
+        "text": "the two middle letters, G and E"
+      },
+      {
+        "section": "ANGELA, as AMERICA was read (I-203)",
+        "text": "ALEGNA"
+      },
+      {
+        "section": "ANGELA, as AMERICA was read (I-203)",
+        "text": "the ends match: A ... A, as in AMERICA"
+      },
+      {
+        "section": "ANGELA, as AMERICA was read (I-203)",
+        "text": "N and L differ"
+      },
+      {
+        "section": "ANGELA, as AMERICA was read (I-203)",
+        "text": "G and E differ: a partial palindrome, held by its A's"
+      },
+      {
+        "section": "ANGELA, as AMERICA was read (I-203)",
+        "text": "its letters XOR to NUL: the two A's cancel, and N ^ G ^ E ^ L = 0"
+      },
+      {
+        "section": "ANGELA, as AMERICA was read (I-203)",
+        "text": "N G E L: 4E ^ 47 ^ 45 ^ 4C"
+      },
+      {
+        "section": "ANGELA, as AMERICA was read (I-203)",
+        "text": "AMERICA leaves a remainder; ANGELA closes on itself"
+      },
+      {
+        "section": "ANGEL: the first five, as the cave's parser reads",
+        "text": "the first five letters (open-adventure reads five)"
+      },
+      {
+        "section": "ANGEL: the first five, as the cave's parser reads",
+        "text": "ANGELA ^ ANGEL: five nulls, then 'a', the extra A demoted by the space"
+      },
+      {
+        "section": "ANGEL: the first five, as the cave's parser reads",
+        "text": "ANGEL and ANGLE are anagrams"
+      },
+      {
+        "section": "ANGEL: the first five, as the cave's parser reads",
+        "text": "and GLEAN: all three tags"
+      },
+      {
+        "section": "ANGEL: the first five, as the cave's parser reads",
+        "text": "ANGEL in base 36"
+      },
+      {
+        "section": "GLUE in her name",
+        "text": "G, L, E are in ANGELA; U is not"
+      },
+      {
+        "section": "GLUE in her name",
+        "text": "ANGELA ^ GLUE: the E's meet at index 3"
+      },
+      {
+        "section": "The identity as termed pixels",
+        "text": "`assert.equal(header.length, 8);`"
+      },
+      {
+        "section": "The identity as termed pixels",
+        "text": "A N G E L, then three spaces: black, the null"
+      },
+      {
+        "section": "The identity as termed pixels",
+        "text": "`assert.deepEqual(header.map((p) => p.type), [\"tag\", \"tag\", \"tag\", \"tag\", \"tag\", \"null\", \"null\", \"null\"]);`"
+      },
+      {
+        "section": "The identity as termed pixels",
+        "text": "4 + 8 + 4 = 16: the nibble, the Polybius square, the set of 16"
+      },
+      {
+        "section": "The identity as termed pixels",
+        "text": "every pixel keeps its position"
+      },
+      {
+        "section": "Federation: the same tag, the same pixels; and the limit of a colour",
+        "text": "two peers holding ANGEL: XOR 0, the same identity"
+      },
+      {
+        "section": "Federation: the same tag, the same pixels; and the limit of a colour",
+        "text": "but A and I share a colour (blue): three bits cannot name 26 letters"
+      },
+      {
+        "section": "Federation: the same tag, the same pixels; and the limit of a colour",
+        "text": "so the colour shows the tag, and the tag, the value, is the identity"
+      },
+      {
+        "section": "G.L.U.E. held: G>L>U>E>, the prompt to pay it forward",
+        "text": "the stop (2E) and the prompt (3E) differ by one bit, 0x10"
+      },
+      {
+        "section": "G.L.U.E. held: G>L>U>E>, the prompt to pay it forward",
+        "text": "the letters held, each stop turned to a prompt: DLE"
+      },
+      {
+        "section": "G.L.U.E. held: G>L>U>E>, the prompt to pay it forward",
+        "text": "Shift on a letter flips 0x20: the case bit, subject to object"
+      },
+      {
+        "section": "G.L.U.E. held: G>L>U>E>, the prompt to pay it forward",
+        "text": "Shift on the stop sets 0x10: the stop becomes the prompt"
+      },
+      {
+        "section": "G.L.U.E. held: G>L>U>E>, the prompt to pay it forward",
+        "text": "and its neighbour: Shift + , types <, the same bit"
+      },
+      {
+        "section": "G.L.U.E. held: G>L>U>E>, the prompt to pay it forward",
+        "text": "as 'greater than', only U > E: it is not a ranking"
+      },
+      {
+        "section": "G.L.U.E. held: G>L>U>E>, the prompt to pay it forward",
+        "text": "as prompts, each letter is passed on to the next: forward"
+      },
+      {
+        "section": "The shift held is PROPAgation: the AXIOM of PROPAgation",
+        "text": "PROPAGATION, 11 letters, cannot be a tag"
+      },
+      {
+        "section": "The shift held is PROPAgation: the AXIOM of PROPAgation",
+        "text": "its first five, as the cave's parser reads"
+      },
+      {
+        "section": "The shift held is PROPAgation: the AXIOM of PROPAgation",
+        "text": "PROPA and AXIOM are tags"
+      },
+      {
+        "section": "The shift held is PROPAgation: the AXIOM of PROPAgation",
+        "text": "the shift held over g.l.u.e. gives G>L>U>E>"
+      },
+      {
+        "section": "The shift held is PROPAgation: the AXIOM of PROPAgation",
+        "text": "and over angel, the tag"
+      },
+      {
+        "section": "The shift held is PROPAgation: the AXIOM of PROPAgation",
+        "text": "held again, the same: the state propagates, it does not accumulate"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-217",
+    "tag": "61",
+    "title": "SUBJECT · LOGIC · OBJECT reflected — how tags are illogically produced",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-217.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3207
+      },
+      "base64": "js/vm/61.b64",
+      "base64url": "js/vm/61.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The face: SUBJECT and OBJECT share BJECT",
+        "text": "the shared face, BJECT, five letters"
+      },
+      {
+        "section": "The face: SUBJECT and OBJECT share BJECT",
+        "text": "reflected, S ^ O = s, SUB, then five nulls: the face cancels"
+      },
+      {
+        "section": "The face: SUBJECT and OBJECT share BJECT",
+        "text": "the S against the space: the subject demoted"
+      },
+      {
+        "section": "The face: SUBJECT and OBJECT share BJECT",
+        "text": "U ^ O = 0x1A, the control named SUB (substitute)"
+      },
+      {
+        "section": "The face: SUBJECT and OBJECT share BJECT",
+        "text": "left-aligned, nothing cancels: the face meets only reflected"
+      },
+      {
+        "section": "The slot of five: the predicate passes through whole",
+        "text": "SUBJECT ${p} OBJECT, reflected: S, then ${p} whole"
+      },
+      {
+        "section": "The slot of five: the predicate passes through whole",
+        "text": "S ^ P ^ O is not 0: what holds is the reflection, not the closure"
+      },
+      {
+        "section": "Substituting LOGIC for PIXEL",
+        "text": "LOGIC ^ PIXEL = FS ACK US FF SI"
+      },
+      {
+        "section": "Substituting LOGIC for PIXEL",
+        "text": "it opens with FS, the File Separator"
+      },
+      {
+        "section": "Substituting LOGIC for PIXEL",
+        "text": "and holds US, the Unit Separator: from the file to the unit"
+      },
+      {
+        "section": "Substituting LOGIC for PIXEL",
+        "text": "all five in the control column: two tags, letter against letter (I-201)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-218",
+    "tag": "62",
+    "title": "S>H>I>F>T> — the shift held, for an ILLOGICal AWAKEning: a catch-22",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-218.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 4709
+      },
+      "base64": "js/vm/62.b64",
+      "base64url": "js/vm/62.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The capitals are cut at five: the cave's rule",
+        "text": "${cut}: the first five of ${word}"
+      },
+      {
+        "section": "The capitals are cut at five: the cave's rule",
+        "text": "${cut} is a tag"
+      },
+      {
+        "section": "The capitals are cut at five: the cave's rule",
+        "text": "the whole words, over 8 letters, are not tags"
+      },
+      {
+        "section": "The capitals are cut at five: the cave's rule",
+        "text": "LOGICAL (7) is a tag whole, and its five are LOGIC"
+      },
+      {
+        "section": "S>H>I>F>T>: the shift held over itself",
+        "text": "the shift held over s.h.i.f.t. gives S>H>I>F>T>"
+      },
+      {
+        "section": "S>H>I>F>T>: the shift held over itself",
+        "text": "held over the word shift: SHIFT"
+      },
+      {
+        "section": "S>H>I>F>T>: the shift held over itself",
+        "text": "and over held: HELD"
+      },
+      {
+        "section": "S>H>I>F>T>: the shift held over itself",
+        "text": "held again, the same: it propagates, it does not accumulate"
+      },
+      {
+        "section": "S>H>I>F>T>: the shift held over itself",
+        "text": "each letter passed on to the next, as G>L>U>E>"
+      },
+      {
+        "section": "The letters",
+        "text": "SHIFT's letters XOR to 0x40: the uppercase column's bit, one bit"
+      },
+      {
+        "section": "The letters",
+        "text": "REVEL reversed is LEVER"
+      },
+      {
+        "section": "The letters",
+        "text": "HELD reversed begins DLE"
+      },
+      {
+        "section": "The letters",
+        "text": "DLE is 0x10, the bit a held Shift sets on the stop (the name a coincidence of letters; the bit, arithmetic)"
+      },
+      {
+        "section": "The illogical awakening: a catch-22",
+        "text": "ILLOGICAL is IL + LOGICAL"
+      },
+      {
+        "section": "The illogical awakening: a catch-22",
+        "text": "nine letters, no tag; its first five, ILLOG, are"
+      },
+      {
+        "section": "The illogical awakening: a catch-22",
+        "text": "Shift + 2 on the teletype: the quote"
+      },
+      {
+        "section": "The illogical awakening: a catch-22",
+        "text": "and the quote is 0x22: the Catch-22 byte read as hex"
+      },
+      {
+        "section": "The illogical awakening: a catch-22",
+        "text": "0x22 = 0o42: frame 42, where the exchange's reset falls (60 ^ 22 = 42)"
+      },
+      {
+        "section": "The illogical awakening: a catch-22",
+        "text": "`assert.equal(60 ^ 22, 42);`"
+      },
+      {
+        "section": "The illogical awakening: a catch-22",
+        "text": "on today's keyboard the shift held gives the command pair, digits untouched"
+      },
+      {
+        "section": "The illogical awakening: a catch-22",
+        "text": "on the teletype the digits turn too: the catch, the indices that could not be deprecated changed by the held shift"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
