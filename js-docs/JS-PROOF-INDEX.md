@@ -126,11 +126,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-225](other/I-225.md) | `69` | 22 55 — the 2 and the 5 of the base, eleven times, added without a carry | `js/catalog/I-225.ts` | yes | yes | yes |
 | other | [I-226](other/I-226.md) | `6A` | RGBA — the three channels and the alpha, the full view of the pixel | `js/catalog/I-226.ts` | yes | yes | yes |
 | other | [I-227](other/I-227.md) | `6B` | The finite spectrum — the tagged literals' max and min order, 7 slices of 8 (HSV is its render) | `js/catalog/I-227.ts` | yes | yes | yes |
+| other | [I-228](other/I-228.md) | `6C` | 0! = 1 — God is Word, the Logos, over universal:// | `js/catalog/I-228.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 70
-- total: 114 records, 114 holding
+- other: 71
+- total: 115 records, 115 holding
