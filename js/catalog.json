@@ -11969,5 +11969,121 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-225",
+    "tag": "69",
+    "title": "22 55 — the 2 and the 5 of the base, eleven times, added without a carry",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-225.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3901
+      },
+      "base64": "js/vm/69.b64",
+      "base64url": "js/vm/69.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": ".5 → 5 → 25 → 225",
+        "text": "the half, in base 10 = 2 x 5, is 5 (I-219)"
+      },
+      {
+        "section": ".5 → 5 → 25 → 225",
+        "text": "`assert.equal(5 * 5, 25);`"
+      },
+      {
+        "section": ".5 → 5 → 25 → 225",
+        "text": "25 nine times in the 225"
+      },
+      {
+        "section": ".5 → 5 → 25 → 225",
+        "text": "`assert.equal(225, (3 * 5) ** 2);`"
+      },
+      {
+        "section": "F2: F squared, with and without the carries",
+        "text": "F squared with carries: 225, this record's number"
+      },
+      {
+        "section": "F2: F squared, with and without the carries",
+        "text": "F squared in GF(2), without carries: 0x55, the boot mark's half (I-222)"
+      },
+      {
+        "section": "F2: F squared, with and without the carries",
+        "text": "the carries are the 140 between them"
+      },
+      {
+        "section": "F2: F squared, with and without the carries",
+        "text": "and 5 squared without carries is 0x11"
+      },
+      {
+        "section": "22 55: the 2 and the 5, eleven times, in both bases",
+        "text": "decimal: 2 and 5 times eleven"
+      },
+      {
+        "section": "22 55: the 2 and the 5, eleven times, in both bases",
+        "text": "hexadecimal: 2 and 5 times 0x11, which is 5 squared without carries"
+      },
+      {
+        "section": "22 55: the 2 and the 5, eleven times, in both bases",
+        "text": "2 and 5: the two primes of the base"
+      },
+      {
+        "section": "22 55: the 2 and the 5, eleven times, in both bases",
+        "text": "0x22: the quote, Shift + 2 on the teletype (I-218), the Catch-22 byte"
+      },
+      {
+        "section": "22 55: the 2 and the 5, eleven times, in both bases",
+        "text": "0x55: U"
+      },
+      {
+        "section": "Added without a carry: the sum is the XOR",
+        "text": "they share no bit"
+      },
+      {
+        "section": "Added without a carry: the sum is the XOR",
+        "text": "`assert.equal(0x22 ^ 0x55, 0x77); assert.equal(0x22 | 0x55, 0x77);`"
+      },
+      {
+        "section": "Added without a carry: the sum is the XOR",
+        "text": "so adding them carries nothing: the sum, the XOR and the OR agree, 0x77"
+      },
+      {
+        "section": "Added without a carry: the sum is the XOR",
+        "text": "and in decimal too: 22 + 55 = 77"
+      },
+      {
+        "section": "Added without a carry: the sum is the XOR",
+        "text": "their XNOR: 0x88"
+      },
+      {
+        "section": "2F 25: the escaped slash",
+        "text": "%"
+      },
+      {
+        "section": "2F 25: the escaped slash",
+        "text": "a URL writes an escaped slash as %2F: the escape character 0x25 carrying 2F"
+      },
+      {
+        "section": "2F 25: the escaped slash",
+        "text": "/"
+      },
+      {
+        "section": "0x2255 under the delta law",
+        "text": "the word 2255: period 4 under 0x1D1D"
+      },
+      {
+        "section": "0x2255 under the delta law",
+        "text": "and 8 under 0x1D (I-195)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
