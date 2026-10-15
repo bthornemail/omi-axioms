@@ -12113,5 +12113,81 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-226",
+    "tag": "6A",
+    "title": "RGBA — the three channels and the alpha, the full view of the pixel",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-226.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3980
+      },
+      "base64": "js/vm/6A.b64",
+      "base64url": "js/vm/6A.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Two of the three make a difference, not a witness",
+        "text": "${a} ^ ${b} lands in the control column: a difference, unreadable"
+      },
+      {
+        "section": "All three close to EXHTE: the witness, the full colour",
+        "text": "the three fold to EXHTE (I-207)"
+      },
+      {
+        "section": "All three close to EXHTE: the witness, the full colour",
+        "text": "EXHTE is a tag: readable, a witness, not a control code"
+      },
+      {
+        "section": "RGB is three channels; the pixel's full state is four, RGBA",
+        "text": "three channels: every colour of the cube (I-224)"
+      },
+      {
+        "section": "RGB is three channels; the pixel's full state is four, RGBA",
+        "text": "RGB plus alpha: four channels, the tetragrammaton's four"
+      },
+      {
+        "section": "RGB is three channels; the pixel's full state is four, RGBA",
+        "text": "RGBA is 32 bits, four bytes"
+      },
+      {
+        "section": "Alpha is not a colour: it is the visibility, the space between",
+        "text": "alpha 0: fully transparent, the void, nothing shown"
+      },
+      {
+        "section": "Alpha is not a colour: it is the visibility, the space between",
+        "text": "alpha 255: fully opaque, all ones, fully present"
+      },
+      {
+        "section": "Alpha is not a colour: it is the visibility, the space between",
+        "text": "each channel is 8 bits: 256 levels — the 222 as 2^8, the depth including alpha"
+      },
+      {
+        "section": "Alpha is not a colour: it is the visibility, the space between",
+        "text": "to be seen a pixel needs alpha > 0: the Yes before the null"
+      },
+      {
+        "section": "The numbers as the author reads them",
+        "text": "223 = 0xDF = ~0x20: the space inverted — the between (the predicate is the space, I-217)"
+      },
+      {
+        "section": "The numbers as the author reads them",
+        "text": "222 = 0xDE; 223 = 0xDF, one bit apart (0x01)"
+      },
+      {
+        "section": "The numbers as the author reads them",
+        "text": "223 is 222 plus the low bit: the gap opens by one"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
