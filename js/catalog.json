@@ -11509,5 +11509,69 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-220",
+    "tag": "64",
+    "title": "the commit predicted and depicted — its name is the hash form of its literal",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-220.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 6427
+      },
+      "base64": "js/vm/64.b64",
+      "base64url": "js/vm/64.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "SHA-1, written out",
+        "text": "SHA-1 of abc, the standard's own example"
+      },
+      {
+        "section": "Predicted from the literal",
+        "text": "the literal is 628 bytes"
+      },
+      {
+        "section": "Predicted from the literal",
+        "text": "the literal gives de88bc2d…: the name is its hash form, reproduced by anyone holding it"
+      },
+      {
+        "section": "Predicted from the literal",
+        "text": "and always the same: no key, no secret, no encryption"
+      },
+      {
+        "section": "Not predicted without it",
+        "text": "one second later, another name"
+      },
+      {
+        "section": "Not predicted without it",
+        "text": "82 of 160 bits differ: about half, as for any two unrelated names"
+      },
+      {
+        "section": "Not predicted without it",
+        "text": "of the 121 seconds a minute either side, only the commit's own gives de: luck (about 121/256 expected), not design"
+      },
+      {
+        "section": "Depicted by search",
+        "text": "a line nonce 28821 added to the message gives a name beginning dead"
+      },
+      {
+        "section": "Depicted by search",
+        "text": "dead7c44"
+      },
+      {
+        "section": "Depicted by search",
+        "text": "a 4-digit prefix takes about 16^4 = 65,536 tries; all 8 of DEADBEEF about 16^8 = 2^32"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

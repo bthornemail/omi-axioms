@@ -118,11 +118,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-217](other/I-217.md) | `61` | SUBJECT · LOGIC · OBJECT reflected — how tags are illogically produced | `js/catalog/I-217.ts` | yes | yes | yes |
 | other | [I-218](other/I-218.md) | `62` | S>H>I>F>T> — the shift held, for an ILLOGICal AWAKEning: a catch-22 | `js/catalog/I-218.ts` | yes | yes | yes |
 | other | [I-219](other/I-219.md) | `63` | DEADBEEF — the commit that carried the tags, read against the base | `js/catalog/I-219.ts` | yes | yes | yes |
+| other | [I-220](other/I-220.md) | `64` | The commit predicted and depicted — its name is the hash form of its literal | `js/catalog/I-220.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 62
-- total: 106 records, 106 holding
+- other: 63
+- total: 107 records, 107 holding
