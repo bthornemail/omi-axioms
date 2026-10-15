@@ -11749,5 +11749,105 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-223",
+    "tag": "67",
+    "title": "JabCode — the palette is the cube, the modes climb 2 → 8 → 256, and one symbol holds 65,536",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-223.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 6012
+      },
+      "base64": "js/vm/67.b64",
+      "base64url": "js/vm/67.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The palette is the cube",
+        "text": "Yellow is 110"
+      },
+      {
+        "section": "The palette is the cube",
+        "text": "seven lines, each a XOR b XOR c = Black"
+      },
+      {
+        "section": "The palette is the cube",
+        "text": "Red + Green = Yellow; Cyan + Magenta + Yellow = Black"
+      },
+      {
+        "section": "The palette is the cube",
+        "text": "`assert.deepEqual([...Array(8).keys()].filter((i) => parity(i) === 0), even);`"
+      },
+      {
+        "section": "The palette is the cube",
+        "text": "even: Black and the subtractive primaries"
+      },
+      {
+        "section": "The palette is the cube",
+        "text": "odd: the additive primaries and White"
+      },
+      {
+        "section": "The palette is the cube",
+        "text": "Blue XOR Yellow = White: each two-colour pair is a complement"
+      },
+      {
+        "section": "The modes climb: 2 → 8 → 256",
+        "text": "`assert.deepEqual([1, 2, 3, 4, 5, 6, 7].map(colours), [4, 8, 16, 32, 64, 128, 256]);`"
+      },
+      {
+        "section": "The modes climb: 2 → 8 → 256",
+        "text": "1 bit, then 3, then 8 per module: every mode is reached through the lower ones"
+      },
+      {
+        "section": "The modes climb: 2 → 8 → 256",
+        "text": "the 3 bits of Nc take 3 two-colour modules"
+      },
+      {
+        "section": "The modes climb: 2 → 8 → 256",
+        "text": "two embedded palettes of at most 64 colours"
+      },
+      {
+        "section": "The capacity, reproduced from Table 1",
+        "text": "${r.modules} modules at ${r.n} colours: ${r.pn} bits"
+      },
+      {
+        "section": "The capacity, reproduced from Table 1",
+        "text": "the largest symbol, Side-Version 32: 145 × 145 modules"
+      },
+      {
+        "section": "65,536",
+        "text": "at 8 colours one primary, or a primary and one docked secondary, holds less"
+      },
+      {
+        "section": "65,536",
+        "text": "a primary and two docked secondaries hold it: 80,925 bits"
+      },
+      {
+        "section": "65,536",
+        "text": "`assert.equal(modules256, 20830);`"
+      },
+      {
+        "section": "65,536",
+        "text": "one 145 × 145 primary at 256 colours: 71,417 bits"
+      },
+      {
+        "section": "65,536",
+        "text": "one symbol holds the full 65,536 (the pair mask, one bit a pair)"
+      },
+      {
+        "section": "65,536",
+        "text": "and only by colour: 65,536 bits are more than 21,025 modules carry at 8 colours raw"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
