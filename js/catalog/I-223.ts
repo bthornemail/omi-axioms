@@ -1,71 +1,114 @@
-// i223.ts — I-223: JabCode — the palette is the cube, the modes climb 2 → 8 → 256, and one symbol holds 65,536
+// i223.ts — I-223: hashing and encryption compared — one way, both ways, and the slide rule inside
 //
-// The author, 2026-10-14: "a code that was missing, which can be only one if we
-// need it, is the JABcode, and really that would be the best single one"; "the
-// JabCode can hold a full 65,536 resolution"; "they are telling us about super
-// user mode, but we have to look for the principle, not the words". From the
-// specification in omi-files/omi-tetragrammatron/dev-docs/archive
-// (BSI TR-03137, JAB Code): Table 3 (the 8-colour palette), Table 5 (the colour
-// modes), §3.4.1.1 (the mode field in two colours, the metadata in eight),
-// §3.4.4 (the reserved modules), Table 1 and §4.4.1 (the capacity). The values
-// below are asserted; the readings are the author's.
+// The author, 2026-10-14: "I want to try other hashing or encryption algorithms
+// so we can compare and contrast"; "omg you can make a slide ruler with the
+// results"; "I have the full barcode specification from the official specs in
+// the docs folder" (the Aztec patent, US 5,591,956). The commit literal of I-220
+// is run through hashes, checksums, the delta law as a fold, and two ciphers:
+// a hash is a fixed function of the literal and gives nothing back; a cipher
+// gives the literal back to whoever holds the key. Both are built of the same
+// word arithmetic, and the error correction of a barcode is a slide rule over a
+// field. The values are measured; the readings are the author's.
 import assert from "node:assert";
+import { createHash, createCipheriv, createDecipheriv } from "node:crypto";
 
-// ── 1. The palette is the cube ───────────────────────────────
-// Table 3: index 0..7 = Black Blue Green Cyan Red Magenta Yellow White, in RGB bit order.
-const PALETTE = ["Black", "Blue", "Green", "Cyan", "Red", "Magenta", "Yellow", "White"];
-const rgb = (i: number) => [(i >> 2) & 1, (i >> 1) & 1, i & 1];
-assert.deepEqual(rgb(4), [1, 0, 0], "Red is 100"); assert.deepEqual(rgb(3), [0, 1, 1], "Cyan is 011"); assert.deepEqual(rgb(6), [1, 1, 0], "Yellow is 110");
-// the seven colour mixes that close to Black are the Fano lines
-const lines: string[][] = [];
-for (let a = 1; a < 8; a++) for (let b = a + 1; b < 8; b++) if ((a ^ b) > b) lines.push([a, b, a ^ b].map((i) => PALETTE[i]!));
-assert.equal(lines.length, 7, "seven lines, each a XOR b XOR c = Black");
-assert.ok(lines.some((l) => l.join() === "Green,Red,Yellow") && lines.some((l) => l.join() === "Cyan,Magenta,Yellow"), "Red + Green = Yellow; Cyan + Magenta + Yellow = Black");
-// the two tetrahedra of the alternation (I-222) are the two colour families
-const even = [0, 3, 5, 6], parity = (i: number) => (i ^ (i >> 1) ^ (i >> 2)) & 1;
-assert.deepEqual([...Array(8).keys()].filter((i) => parity(i) === 0), even);
-assert.deepEqual(even.map((i) => PALETTE[i]), ["Black", "Cyan", "Magenta", "Yellow"], "even: Black and the subtractive primaries");
-assert.deepEqual([1, 2, 4, 7].map((i) => PALETTE[i]), ["Blue", "Green", "Red", "White"], "odd: the additive primaries and White");
-// §3.4.1.1: the mode field is two colours, Black/White (Blue/Yellow in mode 1): complements
-assert.equal(0 ^ 7, 7); assert.equal(1 ^ 6, 7, "Blue XOR Yellow = White: each two-colour pair is a complement");
+const LITERAL = [
+  "tree 0b1bb566ae7a37c4d526bf7054edd27ff83a3f64",
+  "parent 162a7bf3bf66a6c8fa22624749cf2d7321eadcb4",
+  "author Brian Thorne <bthornemail@gmail.com> 1792027040 -0700",
+  "committer Brian Thorne <bthornemail@gmail.com> 1792027040 -0700",
+  "",
+  "Track proofs: the author's records I-201 to I-218 move from src/ into the catalogue",
+  "",
+  "The 18 records leave src/ (their history stays in git) for",
+  "proofs/js/catalog, where npm test runs them and proofs/js-docs lists",
+  "them. i206, i214 and i215 now assert what they printed. The broken",
+  "copies i210.mjs, i210.cjs and the author's angela files are untouched.",
+  "",
+  "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+].join("\n") + "\n";
+/** A commit's name: the hash of "commit", its length, a NUL, and its literal. */
+const BYTES = new TextEncoder().encode(`commit 628\0${LITERAL}`);
+const first4 = (b: Uint8Array) => [...b.subarray(0, 4)].map((x) => x.toString(16).padStart(2, "0")).join("");
+const hash = (a: string, n?: number) => new Uint8Array(createHash(a, n ? { outputLength: n } : undefined).update(BYTES).digest());
 
-// ── 2. The modes climb: 2 → 8 → 256 ──────────────────────────
-// Table 5: Nc, 3 bits; mode m has 2^(m+1) colours, mode 0 reserved.
-const colours = (m: number) => 2 ** (m + 1);
-assert.deepEqual([1, 2, 3, 4, 5, 6, 7].map(colours), [4, 8, 16, 32, 64, 128, 256]);
-const bitsPerModule = (n: number) => Math.log2(n);
-// Nc is read in two colours, the rest of the metadata in the first eight, the data in all of them:
-assert.deepEqual([2, 8, colours(7)].map(bitsPerModule), [1, 3, 8], "1 bit, then 3, then 8 per module: every mode is reached through the lower ones");
-assert.equal(3 * bitsPerModule(2), 3, "the 3 bits of Nc take 3 two-colour modules");
-// §3.4.4: reserved, at most 80 metadata modules (two colours) and 128 for the two palettes, 208 in a primary symbol
-assert.equal(80 + 128, 208); assert.equal(Math.min(64, 256) * 2, 128, "two embedded palettes of at most 64 colours");
+// ── 1. Hashes: one way, a fixed function of the literal ──────
+assert.equal(first4(hash("sha1")), "de88bc2d", "SHA-1, git's name for it (I-220)");
+const HASHES: Record<string, string> = {
+  md5: "cbcd93b6", ripemd160: "eed4b4f3", sha224: "c6df7fc2", sha256: "ff896ce6", sha384: "73b20bea", sha512: "cae82626",
+  "sha512-256": "9a75bef7", "sha3-256": "3af93224", "sha3-512": "ee2c4ac9", blake2s256: "fcbeaa7c", blake2b512: "171846a3", sm3: "50cfcb0c",
+};
+for (const [a, v] of Object.entries(HASHES)) assert.equal(first4(hash(a)), v, `${a}: the same literal, another name`);
+assert.equal(first4(hash("shake256", 32)), "1afee2f7", "SHAKE256");
+assert.equal(first4(hash("sha256")), first4(hash("sha256")), "always the same: no key, no secret");
 
-// ── 3. The capacity, reproduced from Table 1 ─────────────────
-// Default level (wc = 4, wr = 7): K = C·wc/wr check bits, Pn = C − K. The table follows the ceiling;
-// §4.4.1 writes the floor, which puts every row one bit over.
-const net = (modules: number, n: number, round: (x: number) => number) => { const C = modules * bitsPerModule(n); return C - round((C * 4) / 7); };
-const TABLE1 = [ // side 145: data modules and Pn, primary and secondary, at 4 and 8 colours
-  { modules: 20940, n: 4, pn: 17948 }, { modules: 20942, n: 8, pn: 26925 },
-  { modules: 21007, n: 4, pn: 18006 }, { modules: 21000, n: 8, pn: 27000 },
-];
-for (const r of TABLE1) {
-  assert.equal(net(r.modules, r.n, Math.ceil), r.pn, `${r.modules} modules at ${r.n} colours: ${r.pn} bits`);
-  if (net(r.modules, r.n, Math.floor) !== r.pn) assert.equal(net(r.modules, r.n, Math.floor), r.pn + 1, "the floor of §4.4.1 gives one bit more");
+// ── 2. Checksums: the same idea, without the one-way ─────────
+let crc = ~0;
+for (const b of BYTES) { crc ^= b; for (let k = 0; k < 8; k++) crc = (crc >>> 1) ^ (0xedb88320 & -(crc & 1)); }
+assert.equal((~crc >>> 0).toString(16).padStart(8, "0"), "18eb2381", "CRC-32: a remainder over GF(2)");
+let fnv = 0x811c9dc5;
+for (const b of BYTES) { fnv ^= b; fnv = Math.imul(fnv, 0x01000193) >>> 0; }
+assert.equal(fnv.toString(16), "f05ca913", "FNV-1a: XOR, then multiply");
+assert.equal(BYTES.reduce((x, b) => x ^ b, 0), 0x5c, "the XOR fold of all 639 bytes: 0x5C, one byte");
+
+// ── 3. The delta law as a fold ───────────────────────────────
+const rot = (v: number, n: number) => ((v << n) | (v >>> (16 - n))) & 0xffff;
+const L = (p: number) => rot(p, 1) ^ rot(p, 3) ^ rot(p, 14);
+const fold = (seed: number) => { let p = seed; for (let i = 0; i < BYTES.length; i += 2) p = L(p ^ ((BYTES[i]! << 8) | (BYTES[i + 1] ?? 0))) ^ 0x1d1d; return p; };
+assert.equal(BYTES.length, 639); assert.equal(Math.ceil(639 / 2), 320, "320 pairs");
+assert.equal(fold(0), 0xc684); assert.equal(fold(0x4242), 0x84c6, "from 0 and from 0x4242: c684 and 84c6, a byte palindrome");
+const orbit = [0x4242]; for (let d = L(0x4242); d !== 0x4242; d = L(d)) orbit.push(d);
+assert.equal(orbit.length, 4, "the seed difference 0x4242 returns every 4 steps of the linear part");
+assert.equal(fold(0) ^ fold(0x4242), 0x4242, "and 320 is a multiple of 4: the difference comes back whole (structure)");
+assert.equal(0xc6 ^ 0x84, 0x42, "the mirror needed c6 XOR 84 = 0x42 too: 1 in 256 (chance)");
+
+// ── 4. Ciphers: both ways, with the key ──────────────────────
+const aes = (key: Buffer) => { const c = createCipheriv("aes-256-ctr", key, Buffer.alloc(16)); return Buffer.concat([c.update(BYTES), c.final()]); };
+const key0 = Buffer.alloc(32), key1 = Buffer.alloc(32); key1[31] = 1;
+assert.equal(first4(aes(key0)), "bffaad15", "AES-256-CTR, key 0");
+assert.equal(first4(aes(key1)), "0803937b", "one bit of key, another ciphertext");
+const d = createDecipheriv("aes-256-ctr", key0, Buffer.alloc(16));
+assert.deepEqual(new Uint8Array(Buffer.concat([d.update(aes(key0)), d.final()])), BYTES, "decrypted with the key: the literal back");
+const pad = createHash("shake256", { outputLength: BYTES.length }).update("pad").digest();
+const sealed = BYTES.map((b, i) => b ^ pad[i]!);
+assert.equal(first4(sealed), "901f0fba", "the XOR one-time pad");
+assert.deepEqual(sealed.map((b, i) => b ^ pad[i]!), BYTES, "literal XOR pad XOR pad = literal: the doctrine's own operation is the cipher");
+
+// ── 5. The slide rule: multiplying by adding positions ───────
+// GF(256), AES's polynomial 0x11B, generator 3: one circle of 255 ticks.
+const mul8 = (a: number, b: number) => { let p = 0; while (b) { if (b & 1) p ^= a; a = (a << 1) ^ (a & 0x80 ? 0x11b : 0); a &= 0xff; b >>= 1; } return p; };
+const exp8: number[] = [1], log8: number[] = [];
+for (let k = 1; k < 255; k++) exp8[k] = mul8(exp8[k - 1]!, 3);
+exp8.forEach((v, k) => (log8[v] = k));
+assert.equal(new Set(exp8).size, 255, "generator 3 reaches every nonzero byte once");
+assert.equal(log8[0xde], 211); assert.equal(log8[0xad], 118);
+assert.equal(exp8[(211 + 118) % 255], mul8(0xde, 0xad), "de times ad: slide 211 + 118 = 74 (mod 255), read f1");
+assert.equal(exp8[(211 + 118) % 255], 0xf1);
+assert.equal(exp8[(255 - 211) % 255], 0x90); assert.equal(mul8(0xde, 0x90), 1, "the inverse of de, 44 ticks round: 90, AES's S-box begins here");
+
+// ── 6. A barcode's error correction is the slide rule ────────
+// The Aztec patent (US 5,591,956), FIG. 7: "Pi=3.14" in 5- and 4-bit codes, 10-bit blocks,
+// Reed-Solomon over GF(1024) with x^10 + x^3 + 1 and the generator (x - 2^1)...(x - 2^6).
+const parts = [[15, 5], [27, 5], [8, 5], [26, 5], [29, 5], [22, 5], [26, 5], [30, 5], [3, 4], [12, 4], [1, 4], [4, 4]];
+const bits = parts.map(([v, n]) => v!.toString(2).padStart(n!, "0")).join("");
+assert.equal(bits.length, 56, "FIG. 7B: 56 bits");
+const blocks: number[] = [];
+for (let i = 0; i < bits.length; ) {
+  let b = bits.slice(i, i + 10); i += 10;
+  if (b.length < 10) { b = b.padEnd(10, "1"); if (b.startsWith("111111111")) b = b.slice(0, 9) + "0"; }
+  blocks.push(parseInt(b, 2));
 }
-assert.equal(145 * 145, 21025, "the largest symbol, Side-Version 32: 145 × 145 modules");
+assert.deepEqual(blocks, [0x1fb, 0x11a, 0x3b6, 0x35e, 0x0f0, 0x14f], "FIG. 7C: the data blocks");
+const exp10: number[] = [], log10: number[] = [];
+for (let k = 0, x = 1; k < 1023; k++) { exp10[k] = x; log10[x] = k; x <<= 1; if (x & 1024) x ^= 0x409; }
+const mul10 = (a: number, b: number) => (a && b ? exp10[(log10[a]! + log10[b]!) % 1023]! : 0);
+let g = [1];
+for (let j = 1; j <= 6; j++) { const n = Array(g.length + 1).fill(0); g.forEach((c, k) => { n[k] ^= c; n[k + 1] ^= mul10(c, exp10[j]!); }); g = n; }
+const rem = Array(6).fill(0);
+for (const b of blocks) { const f = b ^ rem[0]; rem.shift(); rem.push(0); for (let k = 0; k < 6; k++) rem[k] ^= mul10(f, g[k + 1]); }
+assert.deepEqual(rem, [0x385, 0x3fb, 0x02a, 0x08e, 0x212, 0x19b], "FIG. 7D: the patent's six check blocks, reproduced by the slide rule");
 
-// ── 4. 65,536 ────────────────────────────────────────────────
-const FULL = 2 ** 16;
-assert.ok(26925 < FULL && 26925 + 27000 < FULL, "at 8 colours one primary, or a primary and one docked secondary, holds less");
-assert.ok(26925 + 2 * 27000 >= FULL, "a primary and two docked secondaries hold it: 80,925 bits");
-// at 256 colours the palettes take 128 modules where 8 colours took 16; the metadata stays in eight colours
-const modules256 = 20942 - (128 - 16);
-assert.equal(modules256, 20830);
-assert.equal(net(modules256, 256, Math.ceil), 71417, "one 145 × 145 primary at 256 colours: 71,417 bits");
-assert.ok(net(modules256, 256, Math.ceil) >= FULL, "one symbol holds the full 65,536 (the pair mask, one bit a pair)");
-assert.ok(FULL > 21025 * 3, "and only by colour: 65,536 bits are more than 21,025 modules carry at 8 colours raw");
-
-console.log("I-223: JabCode — the palette is the cube, the modes climb 2 → 8 → 256, and one symbol holds 65,536 — passed");
-console.log("  Table 3: index = RGB bits; the seven mixes closing to Black are the Fano lines; even Black Cyan Magenta Yellow, odd Blue Green Red White");
-console.log("  Nc in 2 colours, metadata in 8, data up to 256: 1, 3, 8 bits a module, each mode through the lower");
-console.log("  Table 1 reproduced (with the ceiling); 65,536 bits: three docked symbols at 8 colours, or one at 256 (71,417)");
+console.log("I-223: hashing and encryption compared — one way, both ways, and the slide rule inside — passed");
+console.log("  13 hashes and SHA-1: fixed names for one literal; CRC-32, FNV-1a, the XOR fold; the delta-law fold c684 84c6");
+console.log("  AES and the XOR pad give the literal back with the key; a hash gives nothing back");
+console.log("  GF(256) by adding positions (de·ad = f1, de⁻¹ = 90); the Aztec patent's Pi=3.14 checks 385 3FB 02A 08E 212 19B reproduced");

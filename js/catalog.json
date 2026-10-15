@@ -11753,7 +11753,7 @@
   {
     "id": "I-223",
     "tag": "67",
-    "title": "JabCode — the palette is the cube, the modes climb 2 → 8 → 256, and one symbol holds 65,536",
+    "title": "hashing and encryption compared — one way, both ways, and the slide rule inside",
     "category": "other",
     "status": "P1",
     "holds": true,
@@ -11762,10 +11762,130 @@
     ],
     "carriers": {
       "script": {
-        "bytes": 6012
+        "bytes": 8480
       },
       "base64": "js/vm/67.b64",
       "base64url": "js/vm/67.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Hashes: one way, a fixed function of the literal",
+        "text": "SHA-1, git's name for it (I-220)"
+      },
+      {
+        "section": "Hashes: one way, a fixed function of the literal",
+        "text": "SHAKE256"
+      },
+      {
+        "section": "Hashes: one way, a fixed function of the literal",
+        "text": "always the same: no key, no secret"
+      },
+      {
+        "section": "Checksums: the same idea, without the one-way",
+        "text": "CRC-32: a remainder over GF(2)"
+      },
+      {
+        "section": "Checksums: the same idea, without the one-way",
+        "text": "FNV-1a: XOR, then multiply"
+      },
+      {
+        "section": "Checksums: the same idea, without the one-way",
+        "text": "the XOR fold of all 639 bytes: 0x5C, one byte"
+      },
+      {
+        "section": "The delta law as a fold",
+        "text": "320 pairs"
+      },
+      {
+        "section": "The delta law as a fold",
+        "text": "from 0 and from 0x4242: c684 and 84c6, a byte palindrome"
+      },
+      {
+        "section": "The delta law as a fold",
+        "text": "the seed difference 0x4242 returns every 4 steps of the linear part"
+      },
+      {
+        "section": "The delta law as a fold",
+        "text": "and 320 is a multiple of 4: the difference comes back whole (structure)"
+      },
+      {
+        "section": "The delta law as a fold",
+        "text": "the mirror needed c6 XOR 84 = 0x42 too: 1 in 256 (chance)"
+      },
+      {
+        "section": "Ciphers: both ways, with the key",
+        "text": "AES-256-CTR, key 0"
+      },
+      {
+        "section": "Ciphers: both ways, with the key",
+        "text": "one bit of key, another ciphertext"
+      },
+      {
+        "section": "Ciphers: both ways, with the key",
+        "text": "decrypted with the key: the literal back"
+      },
+      {
+        "section": "Ciphers: both ways, with the key",
+        "text": "the XOR one-time pad"
+      },
+      {
+        "section": "Ciphers: both ways, with the key",
+        "text": "literal XOR pad XOR pad = literal: the doctrine's own operation is the cipher"
+      },
+      {
+        "section": "The slide rule: multiplying by adding positions",
+        "text": "generator 3 reaches every nonzero byte once"
+      },
+      {
+        "section": "The slide rule: multiplying by adding positions",
+        "text": "`assert.equal(log8[0xde], 211); assert.equal(log8[0xad], 118);`"
+      },
+      {
+        "section": "The slide rule: multiplying by adding positions",
+        "text": "de times ad: slide 211 + 118 = 74 (mod 255), read f1"
+      },
+      {
+        "section": "The slide rule: multiplying by adding positions",
+        "text": "`assert.equal(exp8[(211 + 118) % 255], 0xf1);`"
+      },
+      {
+        "section": "The slide rule: multiplying by adding positions",
+        "text": "the inverse of de, 44 ticks round: 90, AES's S-box begins here"
+      },
+      {
+        "section": "A barcode's error correction is the slide rule",
+        "text": "FIG. 7B: 56 bits"
+      },
+      {
+        "section": "A barcode's error correction is the slide rule",
+        "text": "FIG. 7C: the data blocks"
+      },
+      {
+        "section": "A barcode's error correction is the slide rule",
+        "text": "FIG. 7D: the patent's six check blocks, reproduced by the slide rule"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
+  },
+  {
+    "id": "I-224",
+    "tag": "68",
+    "title": "JabCode — the palette is the cube, the modes climb 2 → 8 → 256, and one symbol holds 65,536",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-224.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 6012
+      },
+      "base64": "js/vm/68.b64",
+      "base64url": "js/vm/68.b64url",
       "vm": "holds",
       "worker": "holds"
     },

@@ -121,12 +121,13 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-220](other/I-220.md) | `64` | The commit predicted and depicted — its name is the hash form of its literal | `js/catalog/I-220.ts` | yes | yes | yes |
 | other | [I-221](other/I-221.md) | `65` | The filed test — the held-out bits of 13 hashes against DEADBEEF: the null holds | `js/catalog/I-221.ts` | yes | yes | yes |
 | other | [I-222](other/I-222.md) | `66` | 0xAA55 — the boot mark, the still points, and NULL NULL squared | `js/catalog/I-222.ts` | yes | yes | yes |
-| other | [I-223](other/I-223.md) | `67` | JabCode — the palette is the cube, the modes climb 2 → 8 → 256, and one symbol holds 65,536 | `js/catalog/I-223.ts` | yes | yes | yes |
+| other | [I-223](other/I-223.md) | `67` | Hashing and encryption compared — one way, both ways, and the slide rule inside | `js/catalog/I-223.ts` | yes | yes | yes |
+| other | [I-224](other/I-224.md) | `68` | JabCode — the palette is the cube, the modes climb 2 → 8 → 256, and one symbol holds 65,536 | `js/catalog/I-224.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 66
-- total: 110 records, 110 holding
+- other: 67
+- total: 111 records, 111 holding
