@@ -11641,5 +11641,113 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-222",
+    "tag": "66",
+    "title": "0xAA55 — the boot mark, the still points, and NULL NULL squared",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-222.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 4699
+      },
+      "base64": "js/vm/66.b64",
+      "base64url": "js/vm/66.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The boot mark",
+        "text": "55 AA at 510 and 511 read as the word 0xAA55"
+      },
+      {
+        "section": "The boot mark",
+        "text": "the mark is the sector's last pair"
+      },
+      {
+        "section": "The alternating pair, both ways round",
+        "text": "`assert.equal(0xaa, 0b10101010); assert.equal(0x55, 0b01010101);`"
+      },
+      {
+        "section": "The alternating pair, both ways round",
+        "text": "AA is the 170 of I-221"
+      },
+      {
+        "section": "The alternating pair, both ways round",
+        "text": "AA XOR 55: every bit differs"
+      },
+      {
+        "section": "The alternating pair, both ways round",
+        "text": "AA XNOR 55: they agree nowhere, NULL"
+      },
+      {
+        "section": "The alternating pair, both ways round",
+        "text": "the word against itself turned: NULL NULL"
+      },
+      {
+        "section": "The still points of the delta law",
+        "text": "the linear part leaves 0x5555 still"
+      },
+      {
+        "section": "The still points of the delta law",
+        "text": "and 0xAAAA"
+      },
+      {
+        "section": "The still points of the delta law",
+        "text": "eight still words, not two: one nibble repeated four times"
+      },
+      {
+        "section": "The still points of the delta law",
+        "text": "each is a nibble of even parity, repeated: the nibble parity of the ports (rosetta portFor)"
+      },
+      {
+        "section": "The still points of the delta law",
+        "text": "0xAA55, half and half, is not still: period 4 under 0x1D1D"
+      },
+      {
+        "section": "The still points of the delta law",
+        "text": "and 8 under 0x1D, as every word (I-195)"
+      },
+      {
+        "section": "NULL NULL squared",
+        "text": "AA squared, carry-less"
+      },
+      {
+        "section": "NULL NULL squared",
+        "text": "55 squared"
+      },
+      {
+        "section": "NULL NULL squared",
+        "text": "squaring in GF(2) is linear: the squares' XOR is the XOR's square"
+      },
+      {
+        "section": "NULL NULL squared",
+        "text": "(AA XOR 55) squared = FF squared = 0x5555: the boot pair's difference, squared, is a still point"
+      },
+      {
+        "section": "NULL NULL squared",
+        "text": "the word squared: AA's square, then 55's"
+      },
+      {
+        "section": "The little tetragrammaton, by the four-bit adder",
+        "text": "Yod He Vav He: 26 (SRC-14)"
+      },
+      {
+        "section": "The little tetragrammaton, by the four-bit adder",
+        "text": "A A 5 5: 30, not 26"
+      },
+      {
+        "section": "The little tetragrammaton, by the four-bit adder",
+        "text": "they share Yod 10 and He 5; AA55 has no Vav 6"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

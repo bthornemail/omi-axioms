@@ -120,11 +120,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-219](other/I-219.md) | `63` | DEADBEEF — the commit that carried the tags, read against the base | `js/catalog/I-219.ts` | yes | yes | yes |
 | other | [I-220](other/I-220.md) | `64` | The commit predicted and depicted — its name is the hash form of its literal | `js/catalog/I-220.ts` | yes | yes | yes |
 | other | [I-221](other/I-221.md) | `65` | The filed test — the held-out bits of 13 hashes against DEADBEEF: the null holds | `js/catalog/I-221.ts` | yes | yes | yes |
+| other | [I-222](other/I-222.md) | `66` | 0xAA55 — the boot mark, the still points, and NULL NULL squared | `js/catalog/I-222.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 64
-- total: 108 records, 108 holding
+- other: 65
+- total: 109 records, 109 holding
