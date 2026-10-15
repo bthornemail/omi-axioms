@@ -4,6 +4,8 @@
 // 225, or maybe even 2F 25"; then "the I-225 needs a 5, that's perfect: I-225 is
 // for 22 55". After I-218 (the shift held over 2 types ", 0x22, the Catch-22
 // byte), I-219 (25 is the base, 10 = 2 x 5) and I-222 (0x55, half the boot mark).
+// Then: "I learned this chasing BCD using UTF": binary-coded decimal, the hex
+// digits read as decimal, is the reading these records keep making.
 // The values below are asserted; the readings are the author's.
 import assert from "node:assert";
 
@@ -48,7 +50,26 @@ const orbit = (s: number, C: number) => { const o = [s]; for (let p = K(s, C); p
 assert.deepEqual(orbit(0x2255, 0x1d1d), [0x2255, 0x038b, 0xc6b1, 0xd45c], "the word 2255: period 4 under 0x1D1D");
 assert.equal(orbit(0x2255, 0x1d).length, 8, "and 8 under 0x1D (I-195)");
 
+// ── 7. BCD: the hex digits read as decimal ───────────────────
+// Binary-coded decimal keeps one decimal digit in each nibble; after a binary add, each nibble
+// that passes 9 (or carries) gets 6 added: the x86 decimal adjust, DAA. The 6 is 16 - 10.
+const daa = (sum: number, a: number, b: number) => {
+  let r = sum;
+  if ((r & 0xf) > 9 || ((a & 0xf) + (b & 0xf)) > 0xf) r += 0x06;
+  if (r > 0x99 || a + b > 0xff) r += 0x60;
+  return r & 0xff;
+};
+const bcdAdd = (a: number, b: number) => daa(a + b, a, b);
+assert.equal(0x25 + 0x25, 0x4a, "0x25 + 0x25 in binary: 4A, not a decimal");
+assert.equal(bcdAdd(0x25, 0x25), 0x50, "with the adjust: 50, as 25 + 25");
+assert.equal(16 - 10, 6, "the adjust is the 6 between the bases");
+assert.equal(0x25 - 25, 2 * 6, "and I-219's c, 0x25 - 25 = 12, is that 6 for the 2 in the tens place");
+assert.equal(bcdAdd(0x22, 0x55), 0x22 + 0x55, "22 + 55 needs no adjust: 0x77 is already the decimal 77");
+assert.ok((0x2 + 0x5) <= 9 && (0x2 + 0x5) <= 9, "each digit pair sums to 7: no nibble passes 9");
+assert.ok(0xf > 9, "F is no BCD digit: F squared, 225 with carries and 0x55 without, lies outside BCD");
+
 console.log("I-225: 22 55 — the 2 and the 5 of the base, eleven times, added without a carry — passed");
 console.log("  .5 -> 5 -> 25 -> 225 = 9 x 25; F squared is 225 with carries and 0x55 without");
 console.log("  22 = 2 x 11, 55 = 5 x 11, and 0x22 = 2 x 0x11, 0x55 = 5 x 0x11; they share no bit: 22 + 55 = 22 XOR 55 = 77");
 console.log("  2F 25: %2F, the escaped slash; 0x2255 cycles in 4 under 0x1D1D");
+console.log("  BCD: the decimal adjust is the 6 between the bases (0x25 - 25 = 2 x 6); 22 + 55 is BCD needing no adjust; F lies outside");

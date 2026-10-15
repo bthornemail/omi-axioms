@@ -11982,7 +11982,7 @@
     ],
     "carriers": {
       "script": {
-        "bytes": 3901
+        "bytes": 5372
       },
       "base64": "js/vm/69.b64",
       "base64url": "js/vm/69.b64url",
@@ -12081,6 +12081,34 @@
       {
         "section": "0x2255 under the delta law",
         "text": "and 8 under 0x1D (I-195)"
+      },
+      {
+        "section": "BCD: the hex digits read as decimal",
+        "text": "0x25 + 0x25 in binary: 4A, not a decimal"
+      },
+      {
+        "section": "BCD: the hex digits read as decimal",
+        "text": "with the adjust: 50, as 25 + 25"
+      },
+      {
+        "section": "BCD: the hex digits read as decimal",
+        "text": "the adjust is the 6 between the bases"
+      },
+      {
+        "section": "BCD: the hex digits read as decimal",
+        "text": "and I-219's c, 0x25 - 25 = 12, is that 6 for the 2 in the tens place"
+      },
+      {
+        "section": "BCD: the hex digits read as decimal",
+        "text": "22 + 55 needs no adjust: 0x77 is already the decimal 77"
+      },
+      {
+        "section": "BCD: the hex digits read as decimal",
+        "text": "each digit pair sums to 7: no nibble passes 9"
+      },
+      {
+        "section": "BCD: the hex digits read as decimal",
+        "text": "F is no BCD digit: F squared, 225 with carries and 0x55 without, lies outside BCD"
       }
     ],
     "corrections": [],
