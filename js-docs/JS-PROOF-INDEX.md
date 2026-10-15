@@ -125,11 +125,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-224](other/I-224.md) | `68` | JabCode — the palette is the cube, the modes climb 2 → 8 → 256, and one symbol holds 65,536 | `js/catalog/I-224.ts` | yes | yes | yes |
 | other | [I-225](other/I-225.md) | `69` | 22 55 — the 2 and the 5 of the base, eleven times, added without a carry | `js/catalog/I-225.ts` | yes | yes | yes |
 | other | [I-226](other/I-226.md) | `6A` | RGBA — the three channels and the alpha, the full view of the pixel | `js/catalog/I-226.ts` | yes | yes | yes |
+| other | [I-227](other/I-227.md) | `6B` | The finite spectrum — the tagged literals' max and min order, 7 slices of 8 (HSV is its render) | `js/catalog/I-227.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 69
-- total: 113 records, 113 holding
+- other: 70
+- total: 114 records, 114 holding
