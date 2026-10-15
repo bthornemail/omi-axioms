@@ -7,9 +7,12 @@
 // unimodular lattice"; "205"; "the 25 is the 5x5 over the .5, two primes squared,
 // floating point: in other words it's the base"; "I think this is the proof that
 // will lead us to the 3D world, because the commit traced the tags".
-// A commit's name is a SHA-1 of its contents, chosen by no one: it is not identity
-// and is asserted here only as the literal it is. The values below are asserted;
-// the readings are the author's.
+// A commit's name is the SHA-1 of its literal contents: the hash form of the
+// literal, as the tag is its literal form (the conversation: "indexed git hashes
+// of sha256 … are path indices"; I-190: "the literals are the hash"). No key and
+// no encryption: the same contents give the same name, but the name does not give
+// the contents back, so the literals are kept. Asserted here only as the literal
+// it is. The values below are asserted; the readings are the author's.
 import assert from "node:assert";
 
 const TAG = /^[A-Z0-9]{1,8}$/;
