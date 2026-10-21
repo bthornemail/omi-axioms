@@ -16,5 +16,6 @@ The BusyBox P1 checks, built from `busybox/catalog/`. Each check calls real
 | `ROT2` | rot13 (tr) is its own inverse | encoding | tr | ✓ |
 | `TETRA` | XOR byte-distance is a metric — the tetrahedron's six edges | distance | od tr grep paste | ✓ |
 | `TRUNC` | redirection truncates the file before the command runs | redirection | cat wc tr | ✓ |
+| `WILSON` | (n-1)! mod n = n-1 exactly when n is prime; CAS on the factorial ladder selects prime vs composite | prime | sh-arithmetic | ✓ |
 
-11 of 11 hold.
+12 of 12 hold.

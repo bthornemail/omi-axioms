@@ -35,6 +35,7 @@ say only what the checks check.
 | `LIST` | an applet's name is the leaf of its install path | frame vs payload |
 | `TETRA` | XOR byte-distance is a metric (the tetrahedron's six edges) | distance from 0, the fail-safe seed |
 | `FANO` | every 7-bit margin state resolves to one of the 16 constants in ≤2 steps | the SVG-margin reader, dual `i⊕15` |
+| `WILSON` | `(n−1)! mod n = n−1` iff `n` prime; CAS selects prime vs composite | the factorial ladder, `n=4` the lone Catch |
 
 ## Tags
 
