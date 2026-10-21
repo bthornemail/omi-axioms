@@ -34,6 +34,7 @@ say only what the checks check.
 | `CATID` | cat is a byte identity | the carrier the switches ride on |
 | `LIST` | an applet's name is the leaf of its install path | frame vs payload |
 | `TETRA` | XOR byte-distance is a metric (the tetrahedron's six edges) | distance from 0, the fail-safe seed |
+| `FANO` | every 7-bit margin state resolves to one of the 16 constants in ≤2 steps | the SVG-margin reader, dual `i⊕15` |
 
 ## Tags
 
