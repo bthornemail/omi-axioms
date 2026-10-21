@@ -1,0 +1,193 @@
+[
+  {
+    "tag": "CATID",
+    "title": "cat is a byte identity",
+    "category": "carrier",
+    "status": "P1",
+    "holds": true,
+    "applets": [
+      "cat",
+      "cmp",
+      "wc",
+      "tr"
+    ],
+    "claim": "cat reproduces its input byte-for-byte (cat < F equals F), and cat F F is exactly twice the bytes of F — cat is the identity carrier the switches ride on.",
+    "statements": [
+      "cat < F equals F, byte for byte",
+      "cat F F is exactly twice the size"
+    ],
+    "owner": "busybox/catalog/B-CATID.sh",
+    "exit": 0
+  },
+  {
+    "tag": "COMMUTE",
+    "title": "the encoding switch and the direction switch commute",
+    "category": "switches",
+    "status": "P1",
+    "holds": true,
+    "applets": [
+      "tr",
+      "rev"
+    ],
+    "claim": "a per-character map (tr) and a reversal (rev) commute — tr then rev equals rev then tr — because a per-character map does not depend on position.",
+    "statements": [
+      "tr|rev == rev|tr for several strings"
+    ],
+    "owner": "busybox/catalog/B-COMMUTE.sh",
+    "exit": 0
+  },
+  {
+    "tag": "FRAME",
+    "title": "svg-switch toggles the payload, never the frame; twice is identity",
+    "category": "literal",
+    "status": "P1",
+    "holds": true,
+    "applets": [
+      "grep",
+      "cmp"
+    ],
+    "claim": "scripts/svg-switch --rev reverses only the content of <text>/<tspan>, leaves tags and attributes byte-identical, and applied twice returns the exact original. Frame vs payload = literal vs reading.",
+    "statements": [
+      "the frame is untouched — the text tag with its attributes survives byte-for-byte",
+      "a non-text element is untouched",
+      "the payload did change — direction toggled",
+      "twice is the identity — byte-identical to the original"
+    ],
+    "owner": "busybox/catalog/B-FRAME.sh",
+    "exit": 0
+  },
+  {
+    "tag": "GROW",
+    "title": "append extends the file; the complement of truncate",
+    "category": "redirection",
+    "status": "P1",
+    "holds": true,
+    "applets": [
+      "cat",
+      "wc",
+      "tr"
+    ],
+    "claim": "`>>` appends — after `printf A > F; printf B >> F`, F is A+B and grew by exactly |B|. `>` replaces, `>>` keeps and extends. (F is not an input to the command — see ../pending.)",
+    "statements": [
+      "the content is A followed by B",
+      "the file grew by exactly |B| = 3",
+      "strictly larger than before"
+    ],
+    "owner": "busybox/catalog/B-GROW.sh",
+    "exit": 0
+  },
+  {
+    "tag": "LIST",
+    "title": "an applet's name is the leaf of its install path",
+    "category": "frame",
+    "status": "P1",
+    "holds": true,
+    "applets": [
+      "tr",
+      "wc",
+      "sed",
+      "cmp"
+    ],
+    "claim": "`busybox --list` equals `busybox --list-full` with each directory stripped, line for line and same count — the install path is the frame, the applet name is its leaf (payload). (The author's --list / --list-full pair.)",
+    "statements": [
+      "the two listings have the same number of lines",
+      "stripping the directory from each path yields the names, line for line"
+    ],
+    "owner": "busybox/catalog/B-LIST.sh",
+    "exit": 0
+  },
+  {
+    "tag": "NOFIX",
+    "title": "the self-append loop has no fixed point",
+    "category": "awareness",
+    "status": "P1",
+    "holds": true,
+    "applets": [
+      "cat",
+      "wc",
+      "tr"
+    ],
+    "claim": "iterating F <- A+F+B (A,B nonempty) increases |F| by the same positive constant each step, so it never reaches a fixed point — the loop halts only by an external limit, never by itself. (The 121 MB file, deterministically, via a snapshot so no byte is read while it is written.)",
+    "statements": [
+      "each step grows by the same positive constant inc = |A|+|B| (no fixed point)",
+      "strictly increasing — the sequence never settles"
+    ],
+    "owner": "busybox/catalog/B-NOFIX.sh",
+    "exit": 0
+  },
+  {
+    "tag": "REV2",
+    "title": "rev is its own inverse",
+    "category": "direction",
+    "status": "P1",
+    "holds": true,
+    "applets": [
+      "rev"
+    ],
+    "claim": "busybox rev reverses the bytes of a line, and rev applied twice is the identity (the direction switch).",
+    "statements": [
+      "rev reverses a line (abc -> cba)",
+      "rev applied twice is the identity, for several byte strings"
+    ],
+    "owner": "busybox/catalog/B-REV2.sh",
+    "exit": 0
+  },
+  {
+    "tag": "ROT2",
+    "title": "rot13 (tr) is its own inverse",
+    "category": "encoding",
+    "status": "P1",
+    "holds": true,
+    "applets": [
+      "tr"
+    ],
+    "claim": "busybox tr 'A-Za-z' 'N-ZA-Mn-za-m' maps letters by rot13, leaves non-letters alone, and twice is the identity (the encoding switch).",
+    "statements": [
+      "rot13 of Hello is Uryyb",
+      "rot13 leaves digits and punctuation unchanged (a1!z -> n1!m)",
+      "rot13 applied twice is the identity"
+    ],
+    "owner": "busybox/catalog/B-ROT2.sh",
+    "exit": 0
+  },
+  {
+    "tag": "TETRA",
+    "title": "XOR byte-distance is a metric — the tetrahedron's six edges",
+    "category": "distance",
+    "status": "P1",
+    "holds": true,
+    "applets": [
+      "od",
+      "tr",
+      "grep",
+      "paste"
+    ],
+    "claim": "over four equal-length vertices (WORD GOD OF of), each of the six unordered pairs has an XOR mask whose popcount is a Hamming distance, and that distance obeys the three metric laws: d(A,A)=0 (identity — distance 0 is only a copy, the mirror), d(A,B)=d(B,A) (symmetry), d(A,C)<=d(A,B)+d(B,C) (triangle). The count of six edges is a consequence of four vertices, not evidence of anything. (The author's tetra-mask, as a check that can say no.)",
+    "statements": [
+      "identity — a vertex against itself is distance 0 (a copy, the mirror)",
+      "symmetry — d(A,B) = d(B,A) over all six unordered pairs",
+      "triangle inequality — d(A,C) <= d(A,B) + d(B,C) for all triples"
+    ],
+    "owner": "busybox/catalog/B-TETRA.sh",
+    "exit": 0
+  },
+  {
+    "tag": "TRUNC",
+    "title": "redirection truncates the file before the command runs",
+    "category": "redirection",
+    "status": "P1",
+    "holds": true,
+    "applets": [
+      "cat",
+      "wc",
+      "tr"
+    ],
+    "claim": "`> F` opens and empties F before the command runs, and `>` replaces F's content wholesale. (The command must not also read F — see ../pending for why `cat A F B > F` loops instead.)",
+    "statements": [
+      "`:` produces no output, so `: > F` leaves F empty — truncation happens before the command",
+      "`>` replaces the content wholesale"
+    ],
+    "owner": "busybox/catalog/B-TRUNC.sh",
+    "exit": 0
+  }
+]

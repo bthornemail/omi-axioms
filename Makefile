@@ -199,6 +199,14 @@ js:
 js-docs:
 	node js/tools/build.mjs
 
+# The BusyBox proofs (P1 candidates, outside coq/): the two switches (rev, tr)
+# and the shell's own laws, each a rerunnable check that can say no.
+.PHONY: busybox busybox-docs
+busybox:
+	for f in busybox/catalog/B-*.sh; do sh "$$f" > /dev/null || exit 1; done
+busybox-docs:
+	node busybox/tools/build.mjs
+
 svg:
 	node svg/tools/build.mjs
 	node svg/tools/e8.mjs
