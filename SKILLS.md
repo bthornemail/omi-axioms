@@ -84,6 +84,13 @@ r0 (r0 x) = x
 When porting older files that used `x mod 65536`, update the proof surface to
 the explicit bitmask form before active promotion.
 
+Both laws are discharged in the active registry, not only stated here:
+`mask16_idempotent` and `r0_involutive` in `coq/02-closure/DiagonalGaugeCloses.v`,
+`mask16_eq_mod` proving the bitmask and modulo forms agree, `r0_mask16_commute`
+showing the involution acts inside the 16-bit space, and the module-local
+`weyl_reflection_mask16_idempotent`, `weyl_reflection_r0_involutive`,
+`weyl_reflection12_mask16_idempotent`, and `weyl_reflection12_r0_involutive`.
+
 ## No Paradigm Drift
 
 Do not add:
@@ -173,7 +180,7 @@ Route stream data strictly through the 70-module `coqchk`-passed registry.
 
 ```text
 Active Sources      == Exactly 70 Independent Modules
-Theorem Anchors     == Exactly 392 Fully Discharged Coordinates
+Theorem Anchors     == Exactly 412 Fully Discharged Coordinates
 Master Proof Target == make proof-strict (assumptions: none)
 ```
 

@@ -121,7 +121,13 @@ Theorem active_byte_surface_is_240 :
   active_byte_surface = 240.
 Proof. reflexivity. Qed.
 
-Definition mask16 (x : N) : N := x mod 65536.
+(* The 16-bit mask and the r0 involution are the canonical pair of the
+   registry (see SKILLS.md).  mask16 keeps the low sixteen bits of a word;
+   r0 flips the alternating low bits.  Every law below is discharged. *)
+
+Definition mask16 (x : N) : N := N.land x 0xFFFF.
+
+Definition r0 (x : N) : N := N.lxor x 0xAAAA.
 
 Definition rotl16 (x k : N) : N :=
   mask16 (N.shiftl (mask16 x) k + N.shiftr (mask16 x) (16 - k)).
@@ -132,12 +138,106 @@ Definition rotr16 (x k : N) : N :=
 Definition delta16 (x c : N) : N :=
   mask16 (N.lxor (N.lxor (N.lxor (rotl16 x 1) (rotl16 x 3)) (rotr16 x 2)) c).
 
+(* the bitmask form and the modulo form are the same function *)
+Theorem mask16_eq_mod : forall x : N, mask16 x = x mod 65536.
+Proof.
+  intro x.
+  pose proof (N.land_ones x 16) as H.
+  replace (N.ones 16) with 0xFFFF in H by (vm_compute; reflexivity).
+  replace (2 ^ 16)%N with 65536 in H by (vm_compute; reflexivity).
+  exact H.
+Qed.
+
 Theorem mask16_bound : forall x : N, mask16 x < 65536.
 Proof.
   intro x.
-  unfold mask16.
+  rewrite mask16_eq_mod.
   apply N.mod_upper_bound.
   discriminate.
+Qed.
+
+(* masking is idempotent *)
+Theorem mask16_idempotent : forall x : N, mask16 (mask16 x) = mask16 x.
+Proof.
+  intro x.
+  unfold mask16.
+  rewrite <- N.land_assoc, N.land_diag.
+  reflexivity.
+Qed.
+
+(* the mask is the identity on the 16-bit space *)
+Theorem mask16_id : forall y : N, y < 65536 -> mask16 y = y.
+Proof.
+  intros y Hy.
+  rewrite mask16_eq_mod.
+  apply N.mod_small. exact Hy.
+Qed.
+
+(* r0 is an involution *)
+Theorem r0_involutive : forall x : N, r0 (r0 x) = x.
+Proof.
+  intro x.
+  unfold r0.
+  rewrite N.lxor_assoc, N.lxor_nilpotent, N.lxor_0_r.
+  reflexivity.
+Qed.
+
+(* bitwise land distributes over lxor *)
+Lemma land_lxor_distrib : forall a b c : N,
+  N.land (N.lxor a b) c = N.lxor (N.land a c) (N.land b c).
+Proof.
+  intros a b c.
+  apply N.bits_inj; intro n.
+  rewrite N.land_spec, N.lxor_spec, N.lxor_spec, !N.land_spec.
+  destruct (N.testbit a n), (N.testbit b n), (N.testbit c n); reflexivity.
+Qed.
+
+(* the involution acts inside the 16-bit space *)
+Theorem r0_mask16_commute : forall x : N, r0 (mask16 x) = mask16 (r0 x).
+Proof.
+  intro x.
+  unfold r0, mask16.
+  rewrite land_lxor_distrib.
+  replace (N.land 0xAAAA 0xFFFF) with 0xAAAA by (vm_compute; reflexivity).
+  reflexivity.
+Qed.
+
+Theorem r0_preserves_mask16 : forall x : N,
+  mask16 x < 65536 -> r0 (mask16 x) < 65536.
+Proof.
+  intros x Hx.
+  rewrite r0_mask16_commute.
+  apply mask16_bound.
+Qed.
+
+(* the involution is injective *)
+Theorem r0_injective : forall x y : N, r0 x = r0 y -> x = y.
+Proof.
+  intros x y H.
+  apply (f_equal r0) in H.
+  rewrite r0_involutive, r0_involutive in H.
+  exact H.
+Qed.
+
+(* the involution keeps 16-bit words inside the 16-bit space *)
+Theorem r0_space_closed : forall y : N, y < 65536 -> r0 y < 65536.
+Proof.
+  intros y Hy.
+  assert (H : r0 y = r0 (mask16 y)).
+  { rewrite (mask16_id y Hy). reflexivity. }
+  rewrite H, r0_mask16_commute.
+  apply mask16_bound.
+Qed.
+
+(* the involution is a permutation of the 16-bit space *)
+Theorem r0_space_bijection : forall y : N, y < 65536 ->
+  exists x : N, x < 65536 /\ r0 x = y.
+Proof.
+  intros y Hy.
+  exists (r0 y).
+  split.
+  - apply r0_space_closed. exact Hy.
+  - rewrite r0_involutive. reflexivity.
 Qed.
 
 Theorem delta16_width_preserving : forall x c : N, delta16 x c < 65536.

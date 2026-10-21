@@ -6,7 +6,7 @@
 
 ## 1. FIXED FILE-COUNT PROTECTION
 
-You are strictly ordered to lock the active `coq/` verification registry to exactly 70 modules and 392 fully discharged theorem anchors. You have zero authority to alter verified proof lines or add dynamic software loop components.
+You are strictly ordered to lock the active `coq/` verification registry to exactly 70 modules and 412 fully discharged theorem anchors. You have zero authority to alter verified proof lines or add dynamic software loop components.
 
 ## 2. PURE COGNITIVE TYPE-CUSTODY
 
@@ -18,7 +18,7 @@ All machine-readable file layers (`.omi`, `.imo`, `.o`, `.hs`) must remain flat 
 
 ## 4. FINAL 70-MODULE ACTIVE PROOF COMPLEX AND ECOSYSTEM SERIALIZATION LOCK
 
-The master `omi-axioms` repository has expanded to exactly 70 active modules and 392 theorem anchors, establishing the checked finite proof surface for the pure polyhedral and visibility overlays.
+The master `omi-axioms` repository has expanded to exactly 70 active modules and 412 theorem anchors, establishing the checked finite proof surface for the pure polyhedral and visibility overlays.
 
 ### 4.1 EXCLUSIVE REGISTRY CEILING
 

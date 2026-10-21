@@ -712,6 +712,23 @@ Source: `coq/02-closure/DiagonalGaugeCloses.v`
 - `active_byte_surface_is_240`: `15 * 16 = 240`.
 - `mask16_bound`, `delta16_width_preserving`, `delta16_deterministic`:
   bounded deterministic delta foundations.
+- `mask16_eq_mod`: the canonical bitmask `mask16 x = N.land x 0xFFFF` and the
+  earlier modulo form `x mod 65536` are the same function, so the change of
+  representation loses no statement.
+- `mask16_idempotent`: masking twice equals masking once.
+- `mask16_id`: on the 16-bit space (`y < 65536`) the mask is the identity.
+- `r0_involutive`: the involution `r0 x = N.lxor x 0xAAAA` returns to its input
+  after two applications.
+- `land_lxor_distrib`: bitwise `land` distributes over `lxor`; this is the
+  algebraic reason the involution and the mask agree inside the 16-bit space.
+- `r0_mask16_commute`: `r0 (mask16 x) = mask16 (r0 x)`.
+- `r0_preserves_mask16`: the involution keeps masked words inside the
+  16-bit space.
+- `r0_injective`: the involution is injective.
+- `r0_space_closed`: a 16-bit word stays inside the 16-bit space under the
+  involution.
+- `r0_space_bijection`: every 16-bit word is the image of a 16-bit word, so
+  the involution is a permutation of the 16-bit space.
 - `diagonal_phase_schedule_even`,
   `polybius_diagonal_race_forces_phase_schedule`: scheduled phase behavior.
 - `nat_induction_by_two`: induction support for alternating phases.
@@ -719,6 +736,29 @@ Source: `coq/02-closure/DiagonalGaugeCloses.v`
   `diagonal_accumulator_phase_matches_race`: accumulator and schedule agree.
 - `dplus_phase_sign`, `dminus_phase_sign`: modeled real signs are `1` and
   `-1`.
+
+### Weyl Reflection Mask and Involution
+
+Source: `coq/03-projection/WeylReflection.v`
+Source: `coq/03-projection/WeylReflection12.v`
+
+These two projection modules carry the same 16-bit mask and the same `r0`
+involution, under their own names, and discharge the same laws locally.
+
+- `weyl_reflection_mask16_full`, `weyl_reflection12_mask16_full`: the mask of a
+  32-bit word is its low 16 bits.
+- `weyl_reflection_land_lxor_distrib`,
+  `weyl_reflection12_land_lxor_distrib`: bitwise `land` distributes over
+  `lxor` in each module.
+- `weyl_reflection_mask16_idempotent`,
+  `weyl_reflection12_mask16_idempotent`: masking is idempotent in each module.
+- `weyl_reflection_mask16_bound`, `weyl_reflection12_mask16_bound`: the masked
+  value stays below `65536` in each module.
+- `weyl_reflection_r0_involutive`, `weyl_reflection12_r0_involutive`: the
+  involution returns to its input in each module.
+- `weyl_reflection_r0_mask16_commute`,
+  `weyl_reflection12_r0_mask16_commute`: the involution and the mask commute in
+  each module.
 
 ### Null Ring Closure
 
@@ -1202,7 +1242,7 @@ assumption-free promotion surfaces checked by `make proof-strict`.
 ```
 
 The three bridge modules record that the repository contains 38 current
-archive files and reaches the requested 64 active-module registry without
+archive files and reaches the requested 70 active-module registry without
 relabeling archive provenance.
 
 The first theorem-bearing promotion pass adds exact finite anchors for the
