@@ -12357,5 +12357,129 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-229",
+    "tag": "6D",
+    "title": "YHWH and its renderings — which keep the literal and which replace it",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-229.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 6141
+      },
+      "base64": "js/vm/6D.b64",
+      "base64url": "js/vm/6D.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Substitutions replace the base (P1)",
+        "text": "the base of ADONAI is DN"
+      },
+      {
+        "section": "Substitutions replace the base (P1)",
+        "text": "Adonai, 'my Lord', replaces the four letters"
+      },
+      {
+        "section": "Substitutions replace the base (P1)",
+        "text": "the base of THE LORD is THLRD"
+      },
+      {
+        "section": "Substitutions replace the base (P1)",
+        "text": "THE LORD translates the substitute, not the letters"
+      },
+      {
+        "section": "Supplying vowels keeps the base (P2)",
+        "text": "the base of YAHWEH is YHWH"
+      },
+      {
+        "section": "Supplying vowels keeps the base (P2)",
+        "text": "Yahweh is YHWH with vowels supplied"
+      },
+      {
+        "section": "Yah is the head of the Name (P3)",
+        "text": "the base of YAH is YH"
+      },
+      {
+        "section": "Yah is the head of the Name (P3)",
+        "text": "Yah: the first two letters"
+      },
+      {
+        "section": "Jah and Jehovah: the fold decides (P4)",
+        "text": "the base of JEHOVAH is JHVH"
+      },
+      {
+        "section": "Jah and Jehovah: the fold decides (P4)",
+        "text": "the base of JAH is JH"
+      },
+      {
+        "section": "Jah and Jehovah: the fold decides (P4)",
+        "text": "letter for letter, J and V are not Y and W"
+      },
+      {
+        "section": "Jah and Jehovah: the fold decides (P4)",
+        "text": "nor is Jah Yah, letter for letter"
+      },
+      {
+        "section": "Jah and Jehovah: the fold decides (P4)",
+        "text": "the fold takes JHVH to YHWH"
+      },
+      {
+        "section": "Jah and Jehovah: the fold decides (P4)",
+        "text": "under the fold, Jehovah is the four letters"
+      },
+      {
+        "section": "Jah and Jehovah: the fold decides (P4)",
+        "text": "and Jah is Yah"
+      },
+      {
+        "section": "Jah and Jehovah: the fold decides (P4)",
+        "text": "the fold is narrow: it rescues no substitution"
+      },
+      {
+        "section": "The two codices: same letters, one mark apart (P5)",
+        "text": "both are יהוה"
+      },
+      {
+        "section": "The two codices: same letters, one mark apart (P5)",
+        "text": "the consonant base is one literal: MIRROR"
+      },
+      {
+        "section": "The two codices: same letters, one mark apart (P5)",
+        "text": "the vowel layers differ by exactly one mark: holam"
+      },
+      {
+        "section": "The two codices: same letters, one mark apart (P5)",
+        "text": "MAM carries one mark more than Leningrad"
+      },
+      {
+        "section": "The two codices: same letters, one mark apart (P5)",
+        "text": "MAM's marks read E, O, A"
+      },
+      {
+        "section": "The two codices: same letters, one mark apart (P5)",
+        "text": "the vowels of JEHOVAH, in order"
+      },
+      {
+        "section": "The two codices: same letters, one mark apart (P5)",
+        "text": "Leningrad's pointing gives no O"
+      },
+      {
+        "section": "Yah in Hebrew is the head of the Name (P6)",
+        "text": "the letters of יָהּ are יה"
+      },
+      {
+        "section": "Yah in Hebrew is the head of the Name (P6)",
+        "text": "יה is the head of יהוה: MIRROR (prefix)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
