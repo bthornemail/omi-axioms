@@ -20,9 +20,18 @@
 // (what a rendering means, whether a fold is fair) are the author's and stay open.
 import assert from "node:assert";
 
-// The base, as src/terms.mjs takes it: letters only, upper case, the vowels A E I O U removed.
+// The base is src/terms.mjs's consonant stream: upper case, A-Z only, the vowels A E I O U
+// removed. (terms.mjs keeps the digits as a stream of their own; this record compares only
+// the consonants, so here 0-9 fall away.)
 const base = (s: string) => s.toUpperCase().replace(/[^A-Z]/g, "").replace(/[AEIOU]/g, "");
-const verdict = (a: string, b: string) => (a === b || a.startsWith(b) || b.startsWith(a)) ? "MIRROR" : "RAISE";
+// The guard, as in terms.mjs: identical, or a NON-EMPTY verbatim head of the other. Corrected
+// 2026-10-25: the first filing let the empty base count as a head, and the empty string heads
+// every string, so a name with no consonants (IOU, 1234) mirrored everything. Section 7 checks it.
+const verdict = (a: string, b: string) => {
+  if (a === b) return "MIRROR";
+  const [short, long] = a.length <= b.length ? [a, b] : [b, a];
+  return short.length > 0 && long.startsWith(short) ? "MIRROR" : "RAISE";
+};
 const fold = (s: string) => s.replace(/J/g, "Y").replace(/V/g, "W"); // the declared transliteration fold
 const N = "YHWH";
 
@@ -72,6 +81,13 @@ assert.equal(marks(wlc).map((m) => SOUND[m]).join(""), "EA", "Leningrad's pointi
 const yah = "יָהּ";                   // יָהּ  Exodus 15:2, with mappiq in the he
 assert.equal(cons(yah), "יה", "the letters of יָהּ are יה");
 assert.ok(cons(wlc).startsWith(cons(yah)), "יה is the head of יהוה: MIRROR (prefix)");
+
+// ── 7. The empty base heads nothing but itself ─────────────────
+assert.equal(base("IOU"), "", "IOU has no consonants: its base is empty");
+assert.equal(base("1234"), "", "the digits fall away: the base of 1234 is empty");
+assert.equal(verdict(N, base("IOU")), "RAISE", "an empty base does not mirror YHWH");
+assert.equal(verdict(N, base("1234")), "RAISE", "nor does a base of digits only");
+assert.equal(verdict(base("IOU"), base("1234")), "MIRROR", "the empty base mirrors only the empty base");
 
 console.log("I-229: YHWH and its renderings — which keep the literal and which replace it — passed");
 console.log("  RAISE (replace the base): ADONAI (DN), THE LORD (THLRD)");
