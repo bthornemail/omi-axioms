@@ -12370,7 +12370,7 @@
     ],
     "carriers": {
       "script": {
-        "bytes": 6141
+        "bytes": 7206
       },
       "base64": "js/vm/6D.b64",
       "base64url": "js/vm/6D.b64url",
@@ -12477,6 +12477,26 @@
       {
         "section": "Yah in Hebrew is the head of the Name (P6)",
         "text": "יה is the head of יהוה: MIRROR (prefix)"
+      },
+      {
+        "section": "The empty base heads nothing but itself",
+        "text": "IOU has no consonants: its base is empty"
+      },
+      {
+        "section": "The empty base heads nothing but itself",
+        "text": "the digits fall away: the base of 1234 is empty"
+      },
+      {
+        "section": "The empty base heads nothing but itself",
+        "text": "an empty base does not mirror YHWH"
+      },
+      {
+        "section": "The empty base heads nothing but itself",
+        "text": "nor does a base of digits only"
+      },
+      {
+        "section": "The empty base heads nothing but itself",
+        "text": "the empty base mirrors only the empty base"
       }
     ],
     "corrections": [],
