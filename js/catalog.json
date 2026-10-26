@@ -12501,5 +12501,133 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-230",
+    "tag": "6E",
+    "title": "the sonar's 75 is the 60-in-64 dial with five blocks, and closes at 25,200 = 7 x 3 x 5 x 240",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-230.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 5635
+      },
+      "base64": "js/vm/6E.b64",
+      "base64url": "js/vm/6E.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "One dial, three sizes (P1)",
+        "text": "the master clock is 7! = 5040"
+      },
+      {
+        "section": "One dial, three sizes (P1)",
+        "text": "${blocks} blocks of 15 time slots are ${used}"
+      },
+      {
+        "section": "One dial, three sizes (P1)",
+        "text": "the small dial holds back 4 of 64"
+      },
+      {
+        "section": "One dial, three sizes (P1)",
+        "text": "the large dial holds back 16 of 256"
+      },
+      {
+        "section": "One dial, three sizes (P1)",
+        "text": "the sonar's dial holds back 5 of 80"
+      },
+      {
+        "section": "Which periods close on the master clock (P2)",
+        "text": "60 closes: 5040 = 84 x 60"
+      },
+      {
+        "section": "Which periods close on the master clock (P2)",
+        "text": "75 does not divide 5040"
+      },
+      {
+        "section": "Which periods close on the master clock (P2)",
+        "text": "5040 mod 75 = 15: the shift is one channel exactly"
+      },
+      {
+        "section": "The precession, as the component computes it (P3)",
+        "text": "each master cycle starts one channel later"
+      },
+      {
+        "section": "The precession, as the component computes it (P3)",
+        "text": "over the full closure every channel gets the same number of ticks"
+      },
+      {
+        "section": "The full closure (P4)",
+        "text": "lcm(5040, 75) = 25,200"
+      },
+      {
+        "section": "The full closure (P4)",
+        "text": "five master cycles"
+      },
+      {
+        "section": "The full closure (P4)",
+        "text": "the 60-in-64 stack: 7 x 3 x 240 = 5040"
+      },
+      {
+        "section": "The full closure (P4)",
+        "text": "the closure adds a 5-part counter: 7 x 3 x 5 x 240"
+      },
+      {
+        "section": "The 5 is the reason (P5)",
+        "text": "15 = 3 x 5 carries one 5"
+      },
+      {
+        "section": "The 5 is the reason (P5)",
+        "text": "four channels keep one 5"
+      },
+      {
+        "section": "The 5 is the reason (P5)",
+        "text": "five channels make two: 75 = 3 x 5^2"
+      },
+      {
+        "section": "The 5 is the reason (P5)",
+        "text": "7! has one 5, from 5!"
+      },
+      {
+        "section": "The 5 is the reason (P5)",
+        "text": "the closure has 5^2"
+      },
+      {
+        "section": "The 5 is the reason (P5)",
+        "text": "the whole 80-slot dial closes: 5040 = 63 x 80"
+      },
+      {
+        "section": "Only the five-block dial is not a power of two (P6)",
+        "text": "64 and 256 are powers of two"
+      },
+      {
+        "section": "Only the five-block dial is not a power of two (P6)",
+        "text": "80 = 5 x 16 is not"
+      },
+      {
+        "section": "525 (P7)",
+        "text": "lcm(7, 75) = 525"
+      },
+      {
+        "section": "525 (P7)",
+        "text": "seven sonar periods"
+      },
+      {
+        "section": "The calendar cycles (P8)",
+        "text": "25,200 closes the 4-, 28- and 400-year cycles"
+      },
+      {
+        "section": "The calendar cycles (P8)",
+        "text": "and not the 19-year lunar cycle"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
