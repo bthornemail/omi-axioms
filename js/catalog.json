@@ -12629,5 +12629,105 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-231",
+    "tag": "6F",
+    "title": "the compare-exchange is a predicate — CDL2's four rule types, run on a shared buffer",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-231.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 7519
+      },
+      "base64": "js/vm/6F.b64",
+      "base64url": "js/vm/6F.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "test: can fail, no side effect (P1)",
+        "text": "the check fails on 0x0102 (density 2)"
+      },
+      {
+        "section": "test: can fail, no side effect (P1)",
+        "text": "and never changes the buffer"
+      },
+      {
+        "section": "predicate: changes the buffer only on success (P2)",
+        "text": "compareExchange fails when the cell is not the expected value"
+      },
+      {
+        "section": "predicate: changes the buffer only on success (P2)",
+        "text": "and then the buffer is byte-identical"
+      },
+      {
+        "section": "predicate: changes the buffer only on success (P2)",
+        "text": "it succeeds when the cell is the expected value"
+      },
+      {
+        "section": "predicate: changes the buffer only on success (P2)",
+        "text": "and then exactly that one cell changes"
+      },
+      {
+        "section": "function: never fails, no side effect (P3)",
+        "text": "load never fails"
+      },
+      {
+        "section": "function: never fails, no side effect (P3)",
+        "text": "and never changes the buffer"
+      },
+      {
+        "section": "action: never fails, writes its cell (P4)",
+        "text": "store never fails"
+      },
+      {
+        "section": "action: never fails, writes its cell (P4)",
+        "text": "and changes exactly the cell it writes"
+      },
+      {
+        "section": "the four cells of the 2 x 2, each once (P5)",
+        "text": "the observed flags are CDL2's four cells"
+      },
+      {
+        "section": "the four cells of the 2 x 2, each once (P5)",
+        "text": "each cell once"
+      },
+      {
+        "section": "the exchange law on a 128-byte frame (P6)",
+        "text": "frame ${f}: the exchange finds 127"
+      },
+      {
+        "section": "the exchange law on a 128-byte frame (P6)",
+        "text": "frame ${f}: only byte 60 ^ frame changes"
+      },
+      {
+        "section": "the exchange law on a 128-byte frame (P6)",
+        "text": "frame ${f}: applied again it fails"
+      },
+      {
+        "section": "the exchange law on a 128-byte frame (P6)",
+        "text": "frame ${f}: and changes nothing"
+      },
+      {
+        "section": "the kernel's two conditions over every 16-bit value (P7)",
+        "text": "odd texture never occurs: a closed loop of 16 bits flips an even number of times"
+      },
+      {
+        "section": "the kernel's two conditions over every 16-bit value (P7)",
+        "text": "even texture with density 8: every value with 8 bits set"
+      },
+      {
+        "section": "the kernel's two conditions over every 16-bit value (P7)",
+        "text": "C(16, 8)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

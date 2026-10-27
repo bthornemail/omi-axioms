@@ -129,11 +129,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-228](other/I-228.md) | `6C` | 0! = 1 — God is Word, the Logos, over universal:// | `js/catalog/I-228.ts` | yes | yes | yes |
 | other | [I-229](other/I-229.md) | `6D` | YHWH and its renderings — which keep the literal and which replace it | `js/catalog/I-229.ts` | yes | yes | yes |
 | other | [I-230](other/I-230.md) | `6E` | The sonar's 75 is the 60-in-64 dial with five blocks, and closes at 25,200 = 7 x 3 x 5 x 240 | `js/catalog/I-230.ts` | yes | yes | yes |
+| other | [I-231](other/I-231.md) | `6F` | The compare-exchange is a predicate — CDL2's four rule types, run on a shared buffer | `js/catalog/I-231.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 73
-- total: 117 records, 117 holding
+- other: 74
+- total: 118 records, 118 holding
