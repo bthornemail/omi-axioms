@@ -12837,5 +12837,105 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-233",
+    "tag": "6H",
+    "title": "the seven days from the eve — declare, define, separate, and the two generations",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-233.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 5990
+      },
+      "base64": "js/vm/6H.b64",
+      "base64url": "js/vm/6H.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The eve first (P1)",
+        "text": "six closes"
+      },
+      {
+        "section": "The eve first (P1)",
+        "text": "one close ends each of the six days"
+      },
+      {
+        "section": "The eve first (P1)",
+        "text": "evening before morning in every close"
+      },
+      {
+        "section": "The eve first (P1)",
+        "text": "and the seventh day has none"
+      },
+      {
+        "section": "Declare (P2)",
+        "text": "and said, ten times"
+      },
+      {
+        "section": "Declare (P2)",
+        "text": "on each of the six days"
+      },
+      {
+        "section": "Define (P3)",
+        "text": "naming only on days 1, 2 and 3"
+      },
+      {
+        "section": "Separate (P4)",
+        "text": "separating only on days 1, 2 and 4"
+      },
+      {
+        "section": "Good (P5)",
+        "text": "no 'good' on day 2"
+      },
+      {
+        "section": "Good (P5)",
+        "text": "twice on day 3"
+      },
+      {
+        "section": "Good (P5)",
+        "text": "'very good' closes day 6"
+      },
+      {
+        "section": "The two generations (P6)",
+        "text": "seed in itself: day 3's plants"
+      },
+      {
+        "section": "The two generations (P6)",
+        "text": "and day 3 is not blessed"
+      },
+      {
+        "section": "The two generations (P6)",
+        "text": "the first blessing is on day 5"
+      },
+      {
+        "section": "The two generations (P6)",
+        "text": "where the living souls first are"
+      },
+      {
+        "section": "The two generations (P6)",
+        "text": "be fruitful: days 5 and 6"
+      },
+      {
+        "section": "The two generations (P6)",
+        "text": "blessing on days 5, 6 and 7"
+      },
+      {
+        "section": "The two generations (P6)",
+        "text": "seed on day 3, and given again on day 6"
+      },
+      {
+        "section": "The two generations (P6)",
+        "text": "the seed's day is not the blessing's day"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
