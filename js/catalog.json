@@ -13013,5 +13013,93 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-235",
+    "tag": "6J",
+    "title": "the WAS, and the Name's letters against the vowels",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-235.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 5874
+      },
+      "base64": "js/vm/6J.b64",
+      "base64url": "js/vm/6J.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "V1: sometimes Y",
+        "text": "${f}: the same verdict with Y a vowel"
+      },
+      {
+        "section": "V1: sometimes Y",
+        "text": "${f}: and under the fold"
+      },
+      {
+        "section": "V1: sometimes Y",
+        "text": "with Y a vowel, the Name's base is HWH"
+      },
+      {
+        "section": "V1: sometimes Y",
+        "text": "and YAH's is H, the he"
+      },
+      {
+        "section": "V1: sometimes Y",
+        "text": "under AEIOU, IOU raises"
+      },
+      {
+        "section": "V1: sometimes Y",
+        "text": "under a set that takes Y, H and W, it mirrors: a verdict changed"
+      },
+      {
+        "section": "V2, V3: the Hebrew vowel letters",
+        "text": "every letter of the Name is a vowel letter"
+      },
+      {
+        "section": "V2, V3: the Hebrew vowel letters",
+        "text": "three of the four"
+      },
+      {
+        "section": "V2, V3: the Hebrew vowel letters",
+        "text": "the one it lacks is א"
+      },
+      {
+        "section": "W1, W2: the WAS (derived facts)",
+        "text": "W1: was, three times"
+      },
+      {
+        "section": "W1, W2: the WAS (derived facts)",
+        "text": "and never is"
+      },
+      {
+        "section": "W1, W2: the WAS (derived facts)",
+        "text": "the order: GOD WAS (THE) WORD"
+      },
+      {
+        "section": "W1, W2: the WAS (derived facts)",
+        "text": "the article before WORD: WORD the subject"
+      },
+      {
+        "section": "W1, W2: the WAS (derived facts)",
+        "text": "W2: Genesis 1:1 has no form of to be"
+      },
+      {
+        "section": "W1, W2: the WAS (derived facts)",
+        "text": "the first is the earth's, in 1:2"
+      },
+      {
+        "section": "W1, W2: the WAS (derived facts)",
+        "text": "and the first 'let there be', יהי, begins with יה"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
