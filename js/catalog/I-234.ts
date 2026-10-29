@@ -16,7 +16,7 @@
 // Found, not predicted (recorded as found):
 //   F1  the command (1:11, "let the earth sprout") says fruit tree, עץ פרי; what the earth brought forth
 //       (1:12) is a tree, עץ, with no פרי before its verb: the command and its execution differ by one
-//       word (Rashi on 1:11-12 reads the earth's not doing as commanded; a reading, the author's to take)
+//       word (Rashi on 1:11-12 reads the earth's not doing as commanded; a reading, Rashi's, not the author's)
 //   F2  the seeding verb on day 3 is מזריע (causative, with מ and an inner י); where the same plants are
 //       given as food on day 6 (1:29) it is זרע (simple): the seeding word changes form between the days
 //

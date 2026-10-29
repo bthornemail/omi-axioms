@@ -8,8 +8,9 @@
 // yod; woman, אשה, holds the he; together יה, Yah; take Yah from both and each is אש, fire (as cited:
 // Talmud, Sotah 17a). And names that gain, lose and pass a letter of the Name: Abram to Abraham
 // (Genesis 17:5), Sarai to Sarah (17:15), Hoshea to Joshua (Numbers 13:16), Sarai's yod said to be the
-// yod Joshua received (as cited: Genesis Rabbah 47:1). The citations are readings and stay the
-// author's; this record checks only letters. Predictions, stated here before the checks:
+// yod Joshua received (as cited: Genesis Rabbah 47:1). These are the tradition's readings, not the
+// author's: the author recalled the teaching loosely ("I think I read it somewhere"), and Claude named
+// the sources; this record checks only their letters. Predictions, stated here before the checks:
 //
 //   P1  איש less its yod and אשה less its he are one base, אש
 //   P2  that pair is the only one: removing one letter from each word gives a common base only for

@@ -4,7 +4,9 @@
 // generation principle right and not adam because the singular is fire but plural is yah but eve can
 // begin with yah"; with an alignment of their own: "א..ה : The earth (אדמה) ... א..ה: Eve (אשה) ...
 // .ש. ... ..ש : Adam (איש) ... א.. ... א... ...". The pair, man and woman together, giving Yah, and
-// each alone fire, is I-232's and is cited, not redone. Read on the consonants of the Westminster Leningrad
+// each alone fire, is the tradition's teaching (Talmud, Sotah 17a), which the author restated from
+// memory and I-232 checked on the letters: not the author's reading, and cited, not redone. The
+// predictions below are this record's, prompted by the author's words; the alignment is the author's. Read on the consonants of the Westminster Leningrad
 // Codex (public domain; via Sefaria; the verse text not carried). Predictions, stated before the words
 // were located:
 //
