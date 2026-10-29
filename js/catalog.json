@@ -13108,18 +13108,18 @@
     "title": "Eve and the earth — one frame, one \"was\", and Yah in the living",
     "category": "other",
     "status": "P1",
-    "holds": false,
+    "holds": true,
     "owners": [
       "js/catalog/I-236.ts"
     ],
     "carriers": {
       "script": {
-        "bytes": 5416
+        "bytes": 6176
       },
       "base64": "js/vm/6K.b64",
       "base64url": "js/vm/6K.b64url",
-      "vm": "fails: אדם is אדמה less its final ה",
-      "worker": "fails: אדם is אדמה less its final ה"
+      "vm": "holds",
+      "worker": "holds"
     },
     "statements": [
       {
@@ -13128,7 +13128,11 @@
       },
       {
         "section": "Adam is the earth less its he (P1)",
-        "text": "אדם is אדמה less its final ה"
+        "text": "letter for letter, אדמה less its ה is אדמ, not אדם"
+      },
+      {
+        "section": "Adam is the earth less its he (P1)",
+        "text": "under the final-letter fold it is אדם"
       },
       {
         "section": "The frame (P2)",

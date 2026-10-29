@@ -9,6 +9,7 @@
 // were located:
 //
 //   P1  in Genesis 2:7 the man, האדם, is formed from the ground, האדמה; and אדם is אדמה less its final ה
+//       (did not hold letter for letter: the mem turns final, מ to ם; held only under the final-letter fold)
 //   P2  the earth and the woman share the frame א...ה (the author's א..ה); the man's word is א...ש
 //   P3  in Genesis 3:20, the reason for Eve's name, "mother of all living", uses היתה, "she was", the
 //       same form as the earth's "was" in 1:2 (I-235)
@@ -20,7 +21,7 @@
 //       says whose): its letters are the Name's ה and ו with the א the Name lacks (I-235)
 //
 // Derived from the codex, word index in its verse: 2:7 האדם 4, האדמה 7, האדם 13; 3:20 חוה 4, הוא 6,
-// היתה 7, אם 8, כל 9, חי 10; 1:2 היתה 1; 1:20 חיה 6. All four predictions held.
+// היתה 7, אם 8, כל 9, חי 10; 1:2 היתה 1; 1:20 חיה 6. P2, P3 and P4 held; P1 only under the final-letter fold.
 import assert from "node:assert";
 
 const without = (w: string, i: number) => [...w].filter((_, j) => j !== i).join("");
@@ -30,7 +31,12 @@ const NAME = "יהוה", MATRES = [..."אהוי"];
 // ── 1. Adam is the earth less its he (P1) ─────────────────────────
 const V2_7 = ["האדם", "האדמה", "האדם"]; // derived, in order
 assert.deepEqual(V2_7.map((w) => w.slice(1)), [ADAM, EARTH, ADAM], "the man, the ground, the man, each with the article ה");
-assert.equal(without(EARTH, 3), ADAM, "אדם is אדמה less its final ה");
+// P1 as stated does not hold letter for letter: without its ה the earth ends in a plain mem, מ, and
+// the man's name in the final mem, ם. It holds under the final-letter fold (a mem ending a word is
+// written ם), a declared reading of the kind of I-229's J -> Y, which the prediction had not declared
+const sofit = (w: string) => w.replace(/מ$/, "ם").replace(/נ$/, "ן").replace(/צ$/, "ץ").replace(/פ$/, "ף").replace(/כ$/, "ך");
+assert.notEqual(without(EARTH, 3), ADAM, "letter for letter, אדמה less its ה is אדמ, not אדם");
+assert.equal(sofit(without(EARTH, 3)), ADAM, "under the final-letter fold it is אדם");
 
 // ── 2. The frame (P2) ─────────────────────────────────────────────
 const frame = (w: string) => w[0] + ".".repeat(w.length - 2) + w[w.length - 1];
@@ -63,6 +69,6 @@ assert.ok([...SHE].every((c) => MATRES.includes(c)), "all three vowel letters");
 assert.notEqual(frame(MAN).at(-1), frame(EARTH).at(-1), "the man's frame is not the earth's");
 
 console.log("I-236: Eve and the earth — one frame, one 'was', and Yah in the living — passed");
-console.log("  2:7: אדם is אדמה less its ה; the earth and the woman are both א..ה, the man א..ש");
+console.log("  2:7: אדם is אדמה less its ה under the final-letter fold (letter for letter אדמ); the earth and the woman are both א..ה, the man א..ש");
 console.log("  היתה: the earth was (1:2), she was the mother of all living (3:20)");
 console.log("  חוה and חיה differ by ו/י; חיה ends in יה; 'she' in 3:20 is הוא, the Name's ה and ו with the א it lacks");
