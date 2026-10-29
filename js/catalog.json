@@ -13205,5 +13205,73 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-237",
+    "tag": "6L",
+    "title": "the final letters, a cast of one code point gated by the end of the word",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-237.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 4389
+      },
+      "base64": "js/vm/6L.b64",
+      "base64url": "js/vm/6L.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "P1: a cast of one code point",
+        "text": "מ - 1 = ם"
+      },
+      {
+        "section": "P1: a cast of one code point",
+        "text": "the fold, at the end of a word, is that cast: I-236's אדמ to אדם"
+      },
+      {
+        "section": "P1: a cast of one code point",
+        "text": "and nothing where the word goes on past the mem"
+      },
+      {
+        "section": "P2: the Name has none",
+        "text": "no letter of the Name has a final form"
+      },
+      {
+        "section": "P2: the Name has none",
+        "text": "the fold leaves the Name as it is"
+      },
+      {
+        "section": "P3: the rule in every word (derived counts)",
+        "text": "no final form inside a word"
+      },
+      {
+        "section": "P3: the rule in every word (derived counts)",
+        "text": "the only ordinary forms at an end are the seven open marks"
+      },
+      {
+        "section": "P3: the rule in every word (derived counts)",
+        "text": "154 of 476 words end in a final form"
+      },
+      {
+        "section": "Found: one open mark a day",
+        "text": "each of the six closes is followed by an open mark"
+      },
+      {
+        "section": "Found: one open mark a day",
+        "text": "and the seventh day, with no close, ends open too"
+      },
+      {
+        "section": "Found: one open mark a day",
+        "text": "+1 from מ is ן, the final nun: the direction matters"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
