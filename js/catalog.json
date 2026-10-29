@@ -13273,5 +13273,85 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-238",
+    "tag": "6M",
+    "title": "day 5 — each kind by its own root, and \"created\" returns with the living",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-238.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 4662
+      },
+      "base64": "js/vm/6M.b64",
+      "base64url": "js/vm/6M.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "P1: each kind by its own root",
+        "text": "swarm swarms: one root, ש-ר-צ (צ final in שרץ)"
+      },
+      {
+        "section": "P1: each kind by its own root",
+        "text": "fowl fly: one root, ע-ו-פ"
+      },
+      {
+        "section": "P1: each kind by its own root",
+        "text": "day 3: sprout vegetation, one root"
+      },
+      {
+        "section": "P1: each kind by its own root",
+        "text": "day 3: seeding seed, one root"
+      },
+      {
+        "section": "P1: each kind by its own root",
+        "text": "and the tree's fruit is made with another verb"
+      },
+      {
+        "section": "P2: created returns with the living",
+        "text": "created at the beginning, then on days 5, 6 and 7"
+      },
+      {
+        "section": "P2: created returns with the living",
+        "text": "never on days 2, 3 and 4"
+      },
+      {
+        "section": "P2: created returns with the living",
+        "text": "its first after 1:1 is the great sea creatures and every living soul"
+      },
+      {
+        "section": "P3: made and created on day 6",
+        "text": "1:25: the animals made"
+      },
+      {
+        "section": "P3: made and created on day 6",
+        "text": "1:27: man created, three times"
+      },
+      {
+        "section": "Found: the mirror (F1)",
+        "text": "swarm: verb then noun"
+      },
+      {
+        "section": "Found: the mirror (F1)",
+        "text": "fowl: noun then verb"
+      },
+      {
+        "section": "Found: the mirror (F1)",
+        "text": "day 3: both verb then noun"
+      },
+      {
+        "section": "Found: the mirror (F1)",
+        "text": "the two orders are opposite"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

@@ -136,11 +136,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-235](other/I-235.md) | `6J` | The WAS, and the Name's letters against the vowels | `js/catalog/I-235.ts` | yes | yes | yes |
 | other | [I-236](other/I-236.md) | `6K` | Eve and the earth — one frame, one "was", and Yah in the living | `js/catalog/I-236.ts` | yes | yes | yes |
 | other | [I-237](other/I-237.md) | `6L` | The final letters, a cast of one code point gated by the end of the word | `js/catalog/I-237.ts` | yes | yes | yes |
+| other | [I-238](other/I-238.md) | `6M` | Day 5 — each kind by its own root, and "created" returns with the living | `js/catalog/I-238.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 80
-- total: 124 records, 124 holding
+- other: 81
+- total: 125 records, 125 holding
