@@ -12937,5 +12937,81 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-234",
+    "tag": "6I",
+    "title": "the two plants of day 3 — the herb seeding seed, the tree making fruit",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-234.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 5683
+      },
+      "base64": "js/vm/6I.b64",
+      "base64url": "js/vm/6I.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "Two kinds (P1)",
+        "text": "vegetation; herb seeding seed; fruit tree making fruit"
+      },
+      {
+        "section": "The seed in it follows the tree (P2)",
+        "text": "in 1:11 'whose seed is in it' comes after the tree makes fruit"
+      },
+      {
+        "section": "The seed in it follows the tree (P2)",
+        "text": "and in 1:12 after the tree, past the herb's 'after its kind'"
+      },
+      {
+        "section": "The verbs (P3)",
+        "text": "מזריע holds the seed's root"
+      },
+      {
+        "section": "The verbs (P3)",
+        "text": "עשה does not"
+      },
+      {
+        "section": "After its kind, both (P4)",
+        "text": "1:12: the herb after its kind, the tree after its kind"
+      },
+      {
+        "section": "After its kind, both (P4)",
+        "text": "one for each"
+      },
+      {
+        "section": "Given as food (P5)",
+        "text": "1:29: herb and tree, for food"
+      },
+      {
+        "section": "Found (F1, F2)",
+        "text": "F1: the command has פרי twice, fruit tree making fruit"
+      },
+      {
+        "section": "Found (F1, F2)",
+        "text": "and the execution once: a tree making fruit"
+      },
+      {
+        "section": "Found (F1, F2)",
+        "text": "F2: מזריע on day 3, twice told; not in 1:29"
+      },
+      {
+        "section": "Found (F1, F2)",
+        "text": "where it is זרע: herb seeding seed, and fruit of a tree seeding seed"
+      },
+      {
+        "section": "Found (F1, F2)",
+        "text": "each verb stands with its own kind: מזריע before the tree, עשה after it"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

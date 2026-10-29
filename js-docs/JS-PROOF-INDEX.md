@@ -132,11 +132,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-231](other/I-231.md) | `6F` | The compare-exchange is a predicate — CDL2's four rule types, run on a shared buffer | `js/catalog/I-231.ts` | yes | yes | yes |
 | other | [I-232](other/I-232.md) | `6G` | Yah between man and woman — the letters of the Name given, moved and kept | `js/catalog/I-232.ts` | yes | yes | yes |
 | other | [I-233](other/I-233.md) | `6H` | The seven days from the eve — declare, define, separate, and the two generations | `js/catalog/I-233.ts` | yes | yes | yes |
+| other | [I-234](other/I-234.md) | `6I` | The two plants of day 3 — the herb seeding seed, the tree making fruit | `js/catalog/I-234.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 76
-- total: 120 records, 120 holding
+- other: 77
+- total: 121 records, 121 holding
