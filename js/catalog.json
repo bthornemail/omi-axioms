@@ -12729,5 +12729,113 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-232",
+    "tag": "6G",
+    "title": "Yah between man and woman — the letters of the Name given, moved and kept",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-232.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 6180
+      },
+      "base64": "js/vm/6G.b64",
+      "base64url": "js/vm/6G.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The man's yod, the woman's he, one base left (P1)",
+        "text": "the man's word holds the yod"
+      },
+      {
+        "section": "The man's yod, the woman's he, one base left (P1)",
+        "text": "the woman's word holds the he"
+      },
+      {
+        "section": "The man's yod, the woman's he, one base left (P1)",
+        "text": "the man's word without its yod is אש"
+      },
+      {
+        "section": "The man's yod, the woman's he, one base left (P1)",
+        "text": "the woman's word without its he is אש"
+      },
+      {
+        "section": "The only pair (P2)",
+        "text": "one letter from each makes a common base only for yod and he"
+      },
+      {
+        "section": "Yah, the head of the Name (P3)",
+        "text": "the letters removed, man's then woman's, are יה"
+      },
+      {
+        "section": "Yah, the head of the Name (P3)",
+        "text": "יה is the head of יהוה"
+      },
+      {
+        "section": "Yah, the head of the Name (P3)",
+        "text": "MIRROR by I-229's rule: a verbatim head"
+      },
+      {
+        "section": "Yah, the head of the Name (P3)",
+        "text": "the falsifier: the other order, הי, heads nothing"
+      },
+      {
+        "section": "Eve's name and the whole Name (P4)",
+        "text": "חוה ends in וה"
+      },
+      {
+        "section": "Eve's name and the whole Name (P4)",
+        "text": "וה is the tail of יהוה"
+      },
+      {
+        "section": "Eve's name and the whole Name (P4)",
+        "text": "the man's yod, the woman's he, the tail of her name: יהוה"
+      },
+      {
+        "section": "Eve's name and the whole Name (P4)",
+        "text": "four letters, given by three words"
+      },
+      {
+        "section": "A letter gained, a letter moved (P5)",
+        "text": "Abram to Abraham: a he before the final mem"
+      },
+      {
+        "section": "A letter gained, a letter moved (P5)",
+        "text": "Sarai to Sarah: a he where the yod was"
+      },
+      {
+        "section": "A letter gained, a letter moved (P5)",
+        "text": "and the yod is what Sarai gives up"
+      },
+      {
+        "section": "A letter gained, a letter moved (P5)",
+        "text": "Hoshea to Joshua: a yod before the name"
+      },
+      {
+        "section": "A letter gained, a letter moved (P5)",
+        "text": "the yod that leaves Sarai is a yod that enters Joshua"
+      },
+      {
+        "section": "A letter gained, a letter moved (P5)",
+        "text": "and two he are added, to Abraham and to Sarah"
+      },
+      {
+        "section": "A letter gained, a letter moved (P5)",
+        "text": "Joshua's name, with its yod, begins with יה"
+      },
+      {
+        "section": "A letter gained, a letter moved (P5)",
+        "text": "its head mirrors the Name's"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
