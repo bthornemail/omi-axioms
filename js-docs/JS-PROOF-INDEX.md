@@ -134,11 +134,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-233](other/I-233.md) | `6H` | The seven days from the eve — declare, define, separate, and the two generations | `js/catalog/I-233.ts` | yes | yes | yes |
 | other | [I-234](other/I-234.md) | `6I` | The two plants of day 3 — the herb seeding seed, the tree making fruit | `js/catalog/I-234.ts` | yes | yes | yes |
 | other | [I-235](other/I-235.md) | `6J` | The WAS, and the Name's letters against the vowels | `js/catalog/I-235.ts` | yes | yes | yes |
+| other | [I-236](other/I-236.md) | `6K` | Eve and the earth — one frame, one "was", and Yah in the living | `js/catalog/I-236.ts` | **no** | no | no |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 78
-- total: 122 records, 122 holding
+- other: 79
+- total: 123 records, 122 holding

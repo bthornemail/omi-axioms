@@ -13101,5 +13101,105 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-236",
+    "tag": "6K",
+    "title": "Eve and the earth — one frame, one \"was\", and Yah in the living",
+    "category": "other",
+    "status": "P1",
+    "holds": false,
+    "owners": [
+      "js/catalog/I-236.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 5416
+      },
+      "base64": "js/vm/6K.b64",
+      "base64url": "js/vm/6K.b64url",
+      "vm": "fails: אדם is אדמה less its final ה",
+      "worker": "fails: אדם is אדמה less its final ה"
+    },
+    "statements": [
+      {
+        "section": "Adam is the earth less its he (P1)",
+        "text": "the man, the ground, the man, each with the article ה"
+      },
+      {
+        "section": "Adam is the earth less its he (P1)",
+        "text": "אדם is אדמה less its final ה"
+      },
+      {
+        "section": "The frame (P2)",
+        "text": "the earth: א..ה"
+      },
+      {
+        "section": "The frame (P2)",
+        "text": "the woman: א.ה, the same ends"
+      },
+      {
+        "section": "The frame (P2)",
+        "text": "the man: א.ש"
+      },
+      {
+        "section": "The frame (P2)",
+        "text": "the earth and the woman share first and last"
+      },
+      {
+        "section": "The frame (P2)",
+        "text": "the man does not end as they do"
+      },
+      {
+        "section": "One \"was\" (P3)",
+        "text": "1:2: the earth was, היתה"
+      },
+      {
+        "section": "One \"was\" (P3)",
+        "text": "3:20: she was, היתה, the same form"
+      },
+      {
+        "section": "One \"was\" (P3)",
+        "text": "with Eve's name and 'all living'"
+      },
+      {
+        "section": "Eve and the living (P4)",
+        "text": "חוה and חיה differ only in the middle letter, ו against י"
+      },
+      {
+        "section": "Eve and the living (P4)",
+        "text": "חיה ends in יה, Yah"
+      },
+      {
+        "section": "Eve and the living (P4)",
+        "text": "and חוה in וה, the tail of the Name (I-232)"
+      },
+      {
+        "section": "Eve and the living (P4)",
+        "text": "the living's tail, יה, is the Name's head"
+      },
+      {
+        "section": "Found: she (F1)",
+        "text": "F1: 'she' written הוא in 3:20"
+      },
+      {
+        "section": "Found: she (F1)",
+        "text": "its ה and ו are the Name's"
+      },
+      {
+        "section": "Found: she (F1)",
+        "text": "its א is the one vowel letter the Name lacks"
+      },
+      {
+        "section": "Found: she (F1)",
+        "text": "all three vowel letters"
+      },
+      {
+        "section": "Found: she (F1)",
+        "text": "the man's frame is not the earth's"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
