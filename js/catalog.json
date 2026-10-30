@@ -13666,7 +13666,7 @@
     ],
     "carriers": {
       "script": {
-        "bytes": 6272
+        "bytes": 7052
       },
       "base64": "js/vm/6R.b64",
       "base64url": "js/vm/6R.b64url",
@@ -13705,6 +13705,14 @@
       {
         "section": "P3: the azimuth",
         "text": "and so is its byte swap"
+      },
+      {
+        "section": "P3: the azimuth",
+        "text": "the boot signature read little-endian is the azimuth"
+      },
+      {
+        "section": "P3: the azimuth",
+        "text": "read big-endian, its complement"
       },
       {
         "section": "P4: the clock and the boundaries",

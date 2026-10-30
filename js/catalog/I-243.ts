@@ -14,6 +14,11 @@
 //   P2  the difference law cannot be undone: over GF(2), (I + L)^(W/2) = L^(W/2) + I = 0, so it brings
 //       every word to a single point within W/2 steps; with constant 0 the point is 0
 //   P3  the azimuth 0xAA55: its complement is its byte swap, 0x55AA (I-112: swap = presentation)
+//       (the author, after: "The azimuth 0xAA55 was specifically used because i was modeling x86 boot kernel
+//       and named it that or used that name to bind the modeling of projective geometry to the ascii table,
+//       but an azimuth actually is a more specific definition than i abstracted for a canonical use case".
+//       It is the boot signature, I-154: bytes 0x55 0xAA at 0x7DFE, read little-endian 0xAA55, big-endian
+//       0x55AA: the two readings of one pair of bytes are each other's complement.)
 //   P4  the clock 4320 = 6 x 3 x 4 x 60 = 72 x 60 = 6 x 720 (I-239's 72, I-182's 720); the boundaries
 //       16^4 = 65,536 (I-241's blob) and 256^4 = 2^32 (I-179's meta-memory)
 //
@@ -66,6 +71,9 @@ assert.equal(img.size, 65536, "the replacement law is one-to-one");
 const swap16 = (x: number) => ((x & 0xff) << 8) | (x >> 8);
 assert.equal(0xaa55 ^ 0xffff, 0x55aa, "0xAA55's complement is 0x55AA");
 assert.equal(swap16(0xaa55), 0x55aa, "and so is its byte swap");
+const SIG = Buffer.from([0x55, 0xaa]); // I-154: the boot signature at 0x7C00 + 510
+assert.equal(SIG.readUInt16LE(0), 0xaa55, "the boot signature read little-endian is the azimuth");
+assert.equal(SIG.readUInt16BE(0), 0x55aa, "read big-endian, its complement");
 
 // ── P4: the clock and the boundaries ──────────────────────────────
 assert.equal(6 * 3 * 4 * 60, 4320, "4320 = 6 x 3 x 4 x 60");
