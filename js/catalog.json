@@ -13845,5 +13845,57 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-245",
+    "tag": "6T",
+    "title": "the delta law scaled up the truth-table ladder — returns at W/2, collapses at ceil(W/3)",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-245.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 4018
+      },
+      "base64": "js/vm/6T.b64",
+      "base64url": "js/vm/6T.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "${n} inputs: a ${W}-bit truth-table word"
+      },
+      {
+        "section": "P1: replacement, order W/2",
+        "text": "W = ${W}: L has order W/2 = ${W / 2}"
+      },
+      {
+        "section": "P2: difference, collapse at ceil(W/3)",
+        "text": "W = ${W}: (I + L)^k = 0 first at k = ceil(W/3) = ${Math.ceil(W / 3)}"
+      },
+      {
+        "section": "P2: difference, collapse at ceil(W/3)",
+        "text": "W = ${W}: at k - 1 = ${k - 1} not yet zero"
+      },
+      {
+        "section": "P2: difference, collapse at ceil(W/3)",
+        "text": "x^2 (I + L) = y^3 + y^4 + y^5"
+      },
+      {
+        "section": "P2: difference, collapse at ceil(W/3)",
+        "text": "= y^3 (1 + y + y^2)"
+      },
+      {
+        "section": "P2: difference, collapse at ceil(W/3)",
+        "text": "and 1 + y + y^2 has constant term 1: a unit mod y^W"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
