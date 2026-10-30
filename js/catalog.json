@@ -13513,5 +13513,57 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-241",
+    "tag": "6P",
+    "title": "the 65,536 blob — any state from any other by one XOR, the same arrangement from every point",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-241.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3936
+      },
+      "base64": "js/vm/6P.b64",
+      "base64url": "js/vm/6P.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "P1: one XOR between any two",
+        "text": "one d takes ${x} to ${y}"
+      },
+      {
+        "section": "P1: one XOR between any two",
+        "text": "and it is their difference"
+      },
+      {
+        "section": "P2: every row the same arrangement",
+        "text": "row ${x} holds each word once"
+      },
+      {
+        "section": "P3: the same distances from every point",
+        "text": "from ${x}: 1, 16, 120, ..., 12870, ..., 16, 1"
+      },
+      {
+        "section": "P3: the same distances from every point",
+        "text": "XOR keeps every distance"
+      },
+      {
+        "section": "P4: addition does not",
+        "text": "d(0, 1) = 1"
+      },
+      {
+        "section": "P4: addition does not",
+        "text": "but d(0 + 1, 1 + 1) = 2: adding the same to both moved them apart"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
