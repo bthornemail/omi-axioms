@@ -13653,5 +13653,93 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-243",
+    "tag": "6R",
+    "title": "the declared Delta law — replacement returns, difference collapses to one point",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-243.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 6272
+      },
+      "base64": "js/vm/6R.b64",
+      "base64url": "js/vm/6R.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "P1: replacement returns by 32",
+        "text": "word ${i} back by step 32"
+      },
+      {
+        "section": "P2 and the found: difference collapses",
+        "text": "16 bits, C = ${c.toString(16)}: by eight a step, one at step 6"
+      },
+      {
+        "section": "P2 and the found: difference collapses",
+        "text": "the eight a step: the replacement law's eight fixed points, three bits (I-240)"
+      },
+      {
+        "section": "P2 and the found: difference collapses",
+        "text": "64 bits: one point at step 22"
+      },
+      {
+        "section": "P2 and the found: difference collapses",
+        "text": "and still one at step 32"
+      },
+      {
+        "section": "P2 and the found: difference collapses",
+        "text": "the replacement law is one-to-one"
+      },
+      {
+        "section": "P3: the azimuth",
+        "text": "0xAA55's complement is 0x55AA"
+      },
+      {
+        "section": "P3: the azimuth",
+        "text": "and so is its byte swap"
+      },
+      {
+        "section": "P4: the clock and the boundaries",
+        "text": "4320 = 6 x 3 x 4 x 60"
+      },
+      {
+        "section": "P4: the clock and the boundaries",
+        "text": "= 72 x 60"
+      },
+      {
+        "section": "P4: the clock and the boundaries",
+        "text": "= 6 x 720"
+      },
+      {
+        "section": "P4: the clock and the boundaries",
+        "text": "16^4: the blob"
+      },
+      {
+        "section": "P4: the clock and the boundaries",
+        "text": "256^4: the 4 GB meta-memory"
+      },
+      {
+        "section": "KERNEL.v's kernel_delta64, against §9",
+        "text": "KERNEL.v at x = axis = 1"
+      },
+      {
+        "section": "KERNEL.v's kernel_delta64, against §9",
+        "text": "§9 at x = 1"
+      },
+      {
+        "section": "KERNEL.v's kernel_delta64, against §9",
+        "text": "another law"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
