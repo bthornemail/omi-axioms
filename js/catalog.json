@@ -13578,7 +13578,7 @@
     ],
     "carriers": {
       "script": {
-        "bytes": 6676
+        "bytes": 7970
       },
       "base64": "js/vm/6Q.b64",
       "base64url": "js/vm/6Q.b64url",
@@ -13640,7 +13640,15 @@
       },
       {
         "section": "P3 and the found: delta64's period",
-        "text": "the 16-bit law is not back at step 4; delta64's 4 is its own"
+        "text": "the 16-bit law is not back at step 4"
+      },
+      {
+        "section": "P4: delta16 of index.ts, the atomic kernel's, within 12",
+        "text": "ruler ${i} back by step 12 (at ${n})"
+      },
+      {
+        "section": "P4: delta16 of index.ts, the atomic kernel's, within 12",
+        "text": "and 12 is reached: the full cycle"
       }
     ],
     "corrections": [],

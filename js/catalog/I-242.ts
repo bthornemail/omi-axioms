@@ -17,10 +17,15 @@
 //   P3  delta64 (index.ts), the delta law's shape on eight bytes, has a period to be stated, not assumed
 //
 // Found: the knot stays a set of pairs only while each key is bound once: after bind(a, b) and bind(a,
-// c), b still points at a and a at c. And delta64 returns in 4 steps, not 8: it rotates eight byte
-// lanes, not sixteen bits, and over GF(2) its map is L = x + x^3 + x^6 mod x^8 - 1, with L^4 = x^4 + x^12
-// + x^24 = x^4 + x^4 + 1 = 1. index.ts has no popcount: the zip as the author describes it, the popcount
-// of each XOR and XNOR, is the fold below, not delta64 (DeepSeek's relay called delta64 the zip).
+// c), b still points at a and a at c. And delta64 returns in 4 steps: it rotates eight byte lanes, and
+// over GF(2) its map is L = x + x^3 + x^6 mod x^8 - 1, with L^4 = x^4 + x^12 + x^24 = x^4 + x^4 + 1 = 1.
+// The author, on reading this: "yes the 4 steps is the original delta law and the 12 steps of delta16
+// one is the atomic kernel, there is also a delta64 for scaling metamemory" ("not atomic clock but
+// atomic kernel"). So added, P4: index.ts's delta16 (the ruler: delta64 of its first eight bytes by its
+// last eight, which then take the old first eight) returns every ruler tested by step 12: at 12, 6 or 3.
+// The delta64 for scaling metamemory is not in index.ts; the meta-memory is I-179 ("the 4gb is
+// virtual"). index.ts has no popcount: the zip as the author describes it, the popcount of each XOR and
+// XNOR, is the fold below, not delta64 (DeepSeek's relay called delta64 the zip).
 import assert from "node:assert";
 
 // ── from core/src/index.ts, as written ────────────────────────────
@@ -85,12 +90,31 @@ for (const c of ["0000000000000000", "1d1d1d1d1d1d1d1d", "5a3c5a3c5a3c5a3c"]) {
 const mul = (p: number[], q: number[]) => { const r = new Array(8).fill(0); p.forEach((a, i) => q.forEach((b, j) => { r[(i + j) % 8] ^= a & b; })); return r; };
 const L = [0, 1, 0, 1, 0, 0, 1, 0];
 assert.deepEqual(mul(mul(L, L), mul(L, L)), [1, 0, 0, 0, 0, 0, 0, 0], "L^4 = 1");
-// the falsifier: the bit-level law at 16 bits does not return in 4
+// the falsifier: the bit-level law at 16 bits does not return in 4; the original law's 4 is its own
 const r16 = (x: number) => ((((x << 1) | (x >>> 15)) ^ ((x << 3) | (x >>> 13)) ^ ((x >>> 2) | (x << 14))) & 0xffff);
 let y = 0x0001; for (let i = 0; i < 4; i++) y = r16(y);
-assert.notEqual(y, 0x0001, "the 16-bit law is not back at step 4; delta64's 4 is its own");
+assert.notEqual(y, 0x0001, "the 16-bit law is not back at step 4");
+
+// ── P4: delta16 of index.ts, the atomic kernel's, within 12 ───────
+function delta16(ruler: Buffer) { // from index.ts, as written
+  const state = Buffer.from(ruler.subarray(0, 8));
+  const K = Buffer.from(ruler.subarray(8, 16));
+  const next = delta64(state, K);
+  ruler.set(next, 0);
+  ruler.set(state, 8);
+  return ruler;
+}
+const seen = new Set<number>();
+for (let i = 0; i < 1000; i++) {
+  const r = Buffer.alloc(16); for (let j = 0; j < 16; j++) r[j] = (i * 131 + j * 37 + ((i * j) >> 2)) & 0xff;
+  const s0 = Buffer.from(r); let n = 0;
+  do { delta16(r); n++; } while (!r.equals(s0) && n < 64);
+  assert.ok(12 % n === 0, `ruler ${i} back by step 12 (at ${n})`);
+  seen.add(n);
+}
+assert.ok(seen.has(12), "and 12 is reached: the full cycle");
 
 console.log("I-242: the knot, the fold, and delta64 — the author's words in the author's code — passed");
 console.log("  bind: knot[knot[a]] = a; a key bound twice breaks its earlier pair");
 console.log("  the fold 16-8-4-2-1 by XOR: 2^(16-w) C(w,k) at each width, XNOR w - k, the parity last, 0 for half");
-console.log("  delta64 rotates bytes: L = x + x^3 + x^6 mod x^8 - 1, L^4 = 1, period 4, not 8; no popcount in index.ts");
+console.log("  delta64, the original law (the author): bytes, L = x + x^3 + x^6, L^4 = 1, period 4; delta16, the atomic kernel's: within 12");
