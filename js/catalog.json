@@ -13945,5 +13945,53 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-247",
+    "tag": "6V",
+    "title": "the tetrahedron as three pairs of orthogonal edges in parallel planes",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-247.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 3725
+      },
+      "base64": "js/vm/6V.b64",
+      "base64url": "js/vm/6V.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "six edges"
+      },
+      {
+        "section": "P1: three pairs of opposite edges",
+        "text": "three pairs of opposite edges"
+      },
+      {
+        "section": "P2: parallel planes",
+        "text": "${a}-${b} and ${c}-${d}: in two parallel faces of the cube"
+      },
+      {
+        "section": "P3: orthogonal",
+        "text": "${a}-${b} and ${c}-${d}: orthogonal"
+      },
+      {
+        "section": "P4: the two segments make the tetrahedron",
+        "text": "their endpoints joined: all six edges"
+      },
+      {
+        "section": "P4: the two segments make the tetrahedron",
+        "text": "adjacent edges are not in parallel faces"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

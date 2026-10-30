@@ -77,5 +77,6 @@
   "I-243": "the author, 2026-10-30, after I-242, pointing to boxedPINE core/src/index.ts 291-294 (delta64), the Omnicron Meta-Assembler Executable Trace Log Specification (omi-ii Research Lab _import/_abi, lines 847-1760) and proofs/coq/04-execution/KERNEL.v (kernel_delta64)",
   "I-244": "the author, 2026-10-30: \"okay i found it thi explais why i used the names. i was trying to bind them to narratives so that they help me narrate the model build boundaries constraints and nesting and inference rules or references\", pointing to omi-canon dev-docs and _temp/projection vs affine/The Renaming of the OMI Resolver Authorities.md, whose witnesses are checked",
   "I-245": "the author, 2026-10-30, of omi-canon dev-docs/\"scaling the delta law.md\": \"well just read this as its where i was first explaining the need for a delta64\"",
-  "I-246": "the author, 2026-10-30: \"cool lets prove it, i think the proof is in coq but let s prove it agaign so we can port to plan9\", of the delta law's order W/2 at every width (questions.vtt delta-order)"
+  "I-246": "the author, 2026-10-30: \"cool lets prove it, i think the proof is in coq but let s prove it agaign so we can port to plan9\", of the delta law's order W/2 at every width (questions.vtt delta-order)",
+  "I-247": "the author, 2026-10-30, of I-246's proof: \"yes two infinite parallel lines, cross with 2 orthogonal pairs of parallel incidences of instationtaions and its a tetrahedron\"; read on the even tetrahedron {0, 3, 5, 6} of the 3-bit cube"
 }
