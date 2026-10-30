@@ -13441,5 +13441,77 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-240",
+    "tag": "6O",
+    "title": "Agreement Is All You Need — the omicron cast, the frame's width, the period within eight",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-240.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 4718
+      },
+      "base64": "js/vm/6O.b64",
+      "base64url": "js/vm/6O.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "P1: the omicron cast",
+        "text": "segment 2: omi, small omicron"
+      },
+      {
+        "section": "P1: the omicron cast",
+        "text": "segment 7: imo, capital omicron"
+      },
+      {
+        "section": "P1: the omicron cast",
+        "text": "they differ by 0x20, the case cast"
+      },
+      {
+        "section": "P1: the omicron cast",
+        "text": "ο upper is Ο"
+      },
+      {
+        "section": "P3: the width",
+        "text": "eight 16-bit segments, 128 bits, an IPv6 address"
+      },
+      {
+        "section": "P3: the width",
+        "text": "each a 16-bit word"
+      },
+      {
+        "section": "P2 and the found: the period within eight",
+        "text": "C = ${C.toString(16)}: ${x} returns by step 8"
+      },
+      {
+        "section": "P2 and the found: the period within eight",
+        "text": "C = ${C.toString(16)}: least periods 1, 2, 4, 8"
+      },
+      {
+        "section": "P2 and the found: the period within eight",
+        "text": "returned by 1, 2, 4, 8 steps: 2^3, 2^6, 2^12, 2^16"
+      },
+      {
+        "section": "P2 and the found: the period within eight",
+        "text": "eight states are fixed: they return in one step, not eight"
+      },
+      {
+        "section": "P4: the quadratic law",
+        "text": "Q(1,1) = 60 + 16 + 4"
+      },
+      {
+        "section": "P4: the quadratic law",
+        "text": "bqf x y = 4 (15x^2 + 4xy + y^2), omi_pi_proof.v's bqf_decompose"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
