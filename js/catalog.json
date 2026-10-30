@@ -13993,5 +13993,97 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-248",
+    "tag": "6W",
+    "title": "the algorithmic clock — time as a word of the 65,536 blob, and step recovery proved again",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-248.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 9368
+      },
+      "base64": "js/vm/6W.b64",
+      "base64url": "js/vm/6W.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "P1: the cycle from 0x0001",
+        "text": "the whitepaper's 8-cycle"
+      },
+      {
+        "section": "P2: 0x1D1D turns unevenly; eight states never move",
+        "text": "periods under 0x1D1D"
+      },
+      {
+        "section": "P2: 0x1D1D turns unevenly; eight states never move",
+        "text": "the eight fixed points"
+      },
+      {
+        "section": "P3: with B injected every state returns at 16",
+        "text": "${x}: not back after one spin"
+      },
+      {
+        "section": "P3: with B injected every state returns at 16",
+        "text": "${x}: back after two spins"
+      },
+      {
+        "section": "the hands (§7.2), found: their periods hold for 65,280 states",
+        "text": "minute hand"
+      },
+      {
+        "section": "the hands (§7.2), found: their periods hold for 65,280 states",
+        "text": "hour hand"
+      },
+      {
+        "section": "the cyclic numbers",
+        "text": "R for ${q}"
+      },
+      {
+        "section": "the cyclic numbers",
+        "text": "${q}: every step recovered"
+      },
+      {
+        "section": "P4: rotation exactly at full period",
+        "text": "${q}: k R a rotation of R iff T = q - 1"
+      },
+      {
+        "section": "P4: rotation exactly at full period",
+        "text": "73: the smallest prime of period 8"
+      },
+      {
+        "section": "P4: rotation exactly at full period",
+        "text": "B: the digits of 1/73"
+      },
+      {
+        "section": "P4: rotation exactly at full period",
+        "text": "sum B = 36"
+      },
+      {
+        "section": "the proof's condition: recovery holds exactly where q does not divide R",
+        "text": "${q}: recovered iff q does not divide R"
+      },
+      {
+        "section": "the proof's condition: recovery holds exactly where q does not divide R",
+        "text": "below 2000, q divides R at 3 and 487 only"
+      },
+      {
+        "section": "P5: the axiom fermat_little at p = 2, a = 1",
+        "text": "fermat_little's premises hold at p = 2, a = 1 and its conclusion does not"
+      },
+      {
+        "section": "the falsifier: without the injection a spin of 8 returns",
+        "text": "the bare law returns every state at 8 (I-197), so P3's 16 is the injection's"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
