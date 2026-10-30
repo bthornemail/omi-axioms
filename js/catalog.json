@@ -13353,5 +13353,93 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-239",
+    "tag": "6N",
+    "title": "the celestial orbit, 72 — the clock of 1/73, Wilson at its neighbours, the two periods",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-239.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 5119
+      },
+      "base64": "js/vm/6N.b64",
+      "base64url": "js/vm/6N.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "P1",
+        "text": "1008 x 5 = 5040 = 7!"
+      },
+      {
+        "section": "P1",
+        "text": "72 x 5 = 360"
+      },
+      {
+        "section": "P1",
+        "text": "the same five"
+      },
+      {
+        "section": "P1",
+        "text": "and 5040 = 72 x 70"
+      },
+      {
+        "section": "P2: Wilson",
+        "text": "(${n - 1})! mod ${n} = ${isPrime(n) ? n - 1 : 0}"
+      },
+      {
+        "section": "P3: the two periods",
+        "text": "1/73 in base 10: period 8"
+      },
+      {
+        "section": "P3: the two periods",
+        "text": "1/73 in base 2: period 9"
+      },
+      {
+        "section": "P3: the two periods",
+        "text": "511 = 7 x 73 (I-194)"
+      },
+      {
+        "section": "P3: the two periods",
+        "text": "the repeating block of 1/73"
+      },
+      {
+        "section": "P3: the two periods",
+        "text": "is the kernel's B (crystal.py, the author's)"
+      },
+      {
+        "section": "P3: the two periods",
+        "text": "and its digits sum to W = 36"
+      },
+      {
+        "section": "P4: the orbit of 72",
+        "text": "20 = 2 x 10 has order 72 mod 73"
+      },
+      {
+        "section": "P4: the orbit of 72",
+        "text": "its powers are all 72 residues: one orbit"
+      },
+      {
+        "section": "P4: the orbit of 72",
+        "text": "8 x 9 = 72, the decimal and the binary periods"
+      },
+      {
+        "section": "P4: the orbit of 72",
+        "text": "neither base alone runs all 72"
+      },
+      {
+        "section": "P4: the orbit of 72",
+        "text": "1/59 and 1/61 repeat with periods 58 and 60"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

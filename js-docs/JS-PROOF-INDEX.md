@@ -137,11 +137,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-236](other/I-236.md) | `6K` | Eve and the earth — one frame, one "was", and Yah in the living | `js/catalog/I-236.ts` | yes | yes | yes |
 | other | [I-237](other/I-237.md) | `6L` | The final letters, a cast of one code point gated by the end of the word | `js/catalog/I-237.ts` | yes | yes | yes |
 | other | [I-238](other/I-238.md) | `6M` | Day 5 — each kind by its own root, and "created" returns with the living | `js/catalog/I-238.ts` | yes | yes | yes |
+| other | [I-239](other/I-239.md) | `6N` | The celestial orbit, 72 — the clock of 1/73, Wilson at its neighbours, the two periods | `js/catalog/I-239.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 81
-- total: 125 records, 125 holding
+- other: 82
+- total: 126 records, 126 holding
