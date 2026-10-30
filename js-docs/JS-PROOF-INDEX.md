@@ -144,11 +144,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-243](other/I-243.md) | `6R` | The declared Delta law — replacement returns, difference collapses to one point | `js/catalog/I-243.ts` | yes | yes | yes |
 | other | [I-244](other/I-244.md) | `6S` | The renamed authorities' witnesses — 0x1E, 0x3C, 0x78, 0x18, and the azimuth's seam | `js/catalog/I-244.ts` | yes | yes | yes |
 | other | [I-245](other/I-245.md) | `6T` | The delta law scaled up the truth-table ladder — returns at W/2, collapses at ceil(W/3) | `js/catalog/I-245.ts` | yes | yes | yes |
+| other | [I-246](other/I-246.md) | `6U` | The delta law's period is W/2 at every width W = 2^n, and from 8 bits up every constant drops out | `js/catalog/I-246.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 88
-- total: 132 records, 132 holding
+- other: 89
+- total: 133 records, 133 holding

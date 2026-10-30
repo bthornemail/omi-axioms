@@ -13897,5 +13897,53 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-246",
+    "tag": "6U",
+    "title": "the delta law's period is W/2 at every width W = 2^n, and from 8 bits up every constant drops out",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-246.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 4331
+      },
+      "base64": "js/vm/6U.b64",
+      "base64url": "js/vm/6U.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "the certificate: exponents of L^(2^k), pairs cancelling over GF(2)",
+        "text": "W = 2^${n}: L^(W/2) = x^0 = 1"
+      },
+      {
+        "section": "the certificate: exponents of L^(2^k), pairs cancelling over GF(2)",
+        "text": "W = 2^${n}: L^(W/4) has three non-zero exponents, not 1"
+      },
+      {
+        "section": "the certificate: exponents of L^(2^k), pairs cancelling over GF(2)",
+        "text": "W = 2^${n}: S = (1 + L)^(W/2 - 1) is 0 iff W >= 8"
+      },
+      {
+        "section": "witnesses: the law itself",
+        "text": "W = ${W}, C = ${C.toString(16)}: back at W/2"
+      },
+      {
+        "section": "witnesses: the law itself",
+        "text": "W = ${W}: not back at W/4"
+      },
+      {
+        "section": "the falsifier: at W = 4 a constant survives",
+        "text": "W = 4: some constant does not drop out (3 (W/2 - 1) < W)"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
