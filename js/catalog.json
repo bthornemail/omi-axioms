@@ -13565,5 +13565,85 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-242",
+    "tag": "6Q",
+    "title": "the knot, the fold, and delta64 — the author's words in the author's code",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-242.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 6676
+      },
+      "base64": "js/vm/6Q.b64",
+      "base64url": "js/vm/6Q.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "P1: the knot is a pair",
+        "text": "knot[knot[a]] = a"
+      },
+      {
+        "section": "P1: the knot is a pair",
+        "text": "and for b"
+      },
+      {
+        "section": "P1: the knot is a pair",
+        "text": "two entries, one pair"
+      },
+      {
+        "section": "P1: the knot is a pair",
+        "text": "a bound to itself: one entry, its own pair"
+      },
+      {
+        "section": "Found: a second bind of a key breaks the earlier pair",
+        "text": "a now to c"
+      },
+      {
+        "section": "Found: a second bind of a key breaks the earlier pair",
+        "text": "b still to a"
+      },
+      {
+        "section": "Found: a second bind of a key breaks the earlier pair",
+        "text": "so b's pair is no longer a pair"
+      },
+      {
+        "section": "P2: the fold",
+        "text": "the XNOR popcount is w - k"
+      },
+      {
+        "section": "P2: the fold",
+        "text": "folded to ${w} bits: 2^(16-${w}) C(${w}, k)"
+      },
+      {
+        "section": "P2: the fold",
+        "text": "the last fold is the parity: 0 for half the blob"
+      },
+      {
+        "section": "P2: the fold",
+        "text": "and it is the parity of the word's bits"
+      },
+      {
+        "section": "P3 and the found: delta64's period",
+        "text": "delta64 with C ${c} from ${s}: back in ${n}, a divisor of 4"
+      },
+      {
+        "section": "P3 and the found: delta64's period",
+        "text": "L^4 = 1"
+      },
+      {
+        "section": "P3 and the found: delta64's period",
+        "text": "the 16-bit law is not back at step 4; delta64's 4 is its own"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

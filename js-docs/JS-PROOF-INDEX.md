@@ -140,11 +140,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-239](other/I-239.md) | `6N` | The celestial orbit, 72 — the clock of 1/73, Wilson at its neighbours, the two periods | `js/catalog/I-239.ts` | yes | yes | yes |
 | other | [I-240](other/I-240.md) | `6O` | Agreement Is All You Need — the omicron cast, the frame's width, the period within eight | `js/catalog/I-240.ts` | yes | yes | yes |
 | other | [I-241](other/I-241.md) | `6P` | The 65,536 blob — any state from any other by one XOR, the same arrangement from every point | `js/catalog/I-241.ts` | yes | yes | yes |
+| other | [I-242](other/I-242.md) | `6Q` | The knot, the fold, and delta64 — the author's words in the author's code | `js/catalog/I-242.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 84
-- total: 128 records, 128 holding
+- other: 85
+- total: 129 records, 129 holding
