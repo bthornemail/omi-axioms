@@ -13749,5 +13749,101 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-244",
+    "tag": "6S",
+    "title": "the renamed authorities' witnesses — 0x1E, 0x3C, 0x78, 0x18, and the azimuth's seam",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-244.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 5006
+      },
+      "base64": "js/vm/6S.b64",
+      "base64url": "js/vm/6S.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "P1",
+        "text": "D+ XORs to 0"
+      },
+      {
+        "section": "P1",
+        "text": "D- XORs to 0"
+      },
+      {
+        "section": "P1",
+        "text": "D+ sums to 0x1E"
+      },
+      {
+        "section": "P1",
+        "text": "D- sums to 0x1E"
+      },
+      {
+        "section": "P2",
+        "text": "the complement {1,2,4,7,8,B,D,E}"
+      },
+      {
+        "section": "P2",
+        "text": "the diagonals sum to 0x3C"
+      },
+      {
+        "section": "P2",
+        "text": "and so does the rest"
+      },
+      {
+        "section": "P2",
+        "text": "the field sums to 0x78"
+      },
+      {
+        "section": "P2",
+        "text": "0x3C << 1 = 0x78"
+      },
+      {
+        "section": "P2",
+        "text": "0x3C ^ 0x78 = 0x44"
+      },
+      {
+        "section": "P3",
+        "text": "0x18 = 24 = 4!"
+      },
+      {
+        "section": "P3",
+        "text": "the falsifier: with addition, no B gives 0x18"
+      },
+      {
+        "section": "P4 and the found",
+        "text": "eight ones each"
+      },
+      {
+        "section": "P4 and the found",
+        "text": "complements"
+      },
+      {
+        "section": "P4 and the found",
+        "text": "one pair of equal neighbours each"
+      },
+      {
+        "section": "P4 and the found",
+        "text": "and it is at the seam, bits 7 and 8"
+      },
+      {
+        "section": "P4 and the found",
+        "text": "a word alternating throughout has none"
+      },
+      {
+        "section": "P4 and the found",
+        "text": "each byte alone alternates"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
