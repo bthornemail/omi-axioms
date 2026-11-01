@@ -146,11 +146,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-245](other/I-245.md) | `6T` | The delta law scaled up the truth-table ladder — returns at W/2, collapses at ceil(W/3) | `js/catalog/I-245.ts` | yes | yes | yes |
 | other | [I-246](other/I-246.md) | `6U` | The delta law's period is W/2 at every width W = 2^n, and from 8 bits up every constant drops out | `js/catalog/I-246.ts` | yes | yes | yes |
 | other | [I-247](other/I-247.md) | `6V` | The tetrahedron as three pairs of orthogonal edges in parallel planes | `js/catalog/I-247.ts` | yes | yes | yes |
+| other | [I-248](other/I-248.md) | `6W` | The algorithmic clock — time as a word of the 65,536 blob, and step recovery proved again | `js/catalog/I-248.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 90
-- total: 134 records, 134 holding
+- other: 91
+- total: 135 records, 135 holding
