@@ -147,11 +147,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-246](other/I-246.md) | `6U` | The delta law's period is W/2 at every width W = 2^n, and from 8 bits up every constant drops out | `js/catalog/I-246.ts` | yes | yes | yes |
 | other | [I-247](other/I-247.md) | `6V` | The tetrahedron as three pairs of orthogonal edges in parallel planes | `js/catalog/I-247.ts` | yes | yes | yes |
 | other | [I-248](other/I-248.md) | `6W` | The algorithmic clock — time as a word of the 65,536 blob, and step recovery proved again | `js/catalog/I-248.ts` | yes | yes | yes |
+| other | [I-249](other/I-249.md) | `6X` | The Klein configuration from the author's coordinates, and Miquel's cube inside it | `js/catalog/I-249.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 91
-- total: 135 records, 135 holding
+- other: 92
+- total: 136 records, 136 holding

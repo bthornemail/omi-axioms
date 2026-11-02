@@ -14085,5 +14085,97 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-249",
+    "tag": "6X",
+    "title": "the Klein configuration from the author's coordinates, and Miquel's cube inside it",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-249.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 8426
+      },
+      "base64": "js/vm/6X.b64",
+      "base64url": "js/vm/6X.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "the orbits"
+      },
+      {
+        "section": null,
+        "text": "exactly one union of orbits: 60 points, each on 15 of the 60 planes, the named three among them"
+      },
+      {
+        "section": null,
+        "text": "32 with four coordinates, 24 with two, 4 units"
+      },
+      {
+        "section": null,
+        "text": "each plane holds 15: the incidence is symmetric"
+      },
+      {
+        "section": "P1: the cube's 8 points",
+        "text": "P1: [1:±1:±1:±1] among the 60"
+      },
+      {
+        "section": "P2, P3: the 6 face planes",
+        "text": "P2: the face plane among the 60"
+      },
+      {
+        "section": "P2, P3: the 6 face planes",
+        "text": "P2: a face, 4 of the cube's 8"
+      },
+      {
+        "section": "P2, P3: the 6 face planes",
+        "text": "P2: the face where coordinate j is s"
+      },
+      {
+        "section": "P2, P3: the 6 face planes",
+        "text": "P3: 15 of the 60 on it"
+      },
+      {
+        "section": "P2, P3: the 6 face planes",
+        "text": "P2: each cube point on 3 faces: (8_3 6_4)"
+      },
+      {
+        "section": "P4: the stella octangula",
+        "text": "P4: 2 of each tetrahedron on each face"
+      },
+      {
+        "section": "found: the other 32 of the 64 give a (60_15) too, the same configuration with one coordinate times i;",
+        "text": "`assert.equal(K2.length, 60);`"
+      },
+      {
+        "section": "found: the other 32 of the 64 give a (60_15) too, the same configuration with one coordinate times i;",
+        "text": "found: the other half gives (60_15) as well"
+      },
+      {
+        "section": "found: the other 32 of the 64 give a (60_15) too, the same configuration with one coordinate times i;",
+        "text": "found: it is the first with the last coordinate times i"
+      },
+      {
+        "section": "found: the other 32 of the 64 give a (60_15) too, the same configuration with one coordinate times i;",
+        "text": "found: it holds neither P60 nor the cube"
+      },
+      {
+        "section": "the falsifier: one point swapped between the two halves breaks the 15",
+        "text": "`assert.equal(swapped.length, 60);`"
+      },
+      {
+        "section": "the falsifier: one point swapped between the two halves breaks the 15",
+        "text": "one point swapped: no longer each on 15"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
