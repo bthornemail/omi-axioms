@@ -69,7 +69,7 @@ A two-input rule is its truth table t, bit a·2 + b = f(a, b) (the order the org
 
 - [fano-subspaces.svg](../svg/hasse/fano-subspaces.svg): the Fano plane's subspaces, empty, the 7 points, the 7 lines, full, with 35 covering edges (7 + 21 + 7).
 - [rules.svg](../svg/hasse/rules.svg): the 16 rules ordered by implication, the 4-cube, with 32 covering edges; each node carries its icon. A rule and its complement are opposite corners, four steps apart.
-- `pair-0.svg` … `pair-7.svg`: each rule pair as a Hasse diagram pair, the rules on the left and the subspaces on the right, both marked.
+- `pair-0.svg` … `pair-7.svg`: each rule pair as a Hasse diagram pair, the rules on the left and the subspaces on the right, both marked: the rule ringed red and its complement blue on the left; on the right the point they share ringed in both, red inside and blue outside (for pair-0, the empty plane red and the full blue). Every red ring is the rule's and every blue its complement's, so either colour alone is one variant of the pair, as each tree set's Hasse_XOR (red, read) and Hasse_XNOR (blue, write) are.
 - [lines.svg](../svg/hasse/lines.svg): the seven lines in turn (SMIL, 2 s each), each with its three points and its six rules.
 
 ## The margins

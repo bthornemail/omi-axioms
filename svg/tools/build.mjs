@@ -188,7 +188,7 @@ for (const [t, u] of PAIRS) {
   const R = ruleLattice(560, 110), F = fanoLattice(1640, 100);
   const marks = [ring(R.pos[t], 46), ring(R.pos[u], 46, 'ring2')];
   if (t === 0) marks.push(ring(F.pos['Fano_empty.svg'], 42), ring(F.pos['Fano_full.svg'], 42, 'ring2'));
-  else marks.push(ring(F.pos[iconOf(t)], 42));
+  else marks.push(ring(F.pos[iconOf(t)], 42), ring(F.pos[iconOf(t)], 48, 'ring2')); // the point is the pair's: ringed for the rule (red) and its complement (blue)
   const caption = `<text x="40" y="34">${esc(NAMES[t])} (${table(t)}) and ${esc(NAMES[u])} (${table(u)}): ${t === 0 ? 'the empty and the full plane' : `point ${t}, mask ${hex2(1 << (t - 1))}`}</text>`;
   write(`pair-${t}.svg`, svg(2240, 720, `${NAMES[t]} / ${NAMES[u]}: a Hasse diagram pair`, [caption, R.out, F.out, ...marks].join('\n')));
 }
@@ -275,7 +275,7 @@ for (const [t, u] of PAIRS) doc.push(`| ${t === 0 ? 'empty / full' : t} | ${NAME
 doc.push('', '## The diagrams', '');
 doc.push('- [fano-subspaces.svg](../svg/hasse/fano-subspaces.svg): the Fano plane\'s subspaces, empty, the 7 points, the 7 lines, full, with 35 covering edges (7 + 21 + 7).');
 doc.push('- [rules.svg](../svg/hasse/rules.svg): the 16 rules ordered by implication, the 4-cube, with 32 covering edges; each node carries its icon. A rule and its complement are opposite corners, four steps apart.');
-doc.push('- `pair-0.svg` … `pair-7.svg`: each rule pair as a Hasse diagram pair, the rules on the left and the subspaces on the right, both marked.');
+doc.push('- `pair-0.svg` … `pair-7.svg`: each rule pair as a Hasse diagram pair, the rules on the left and the subspaces on the right, both marked: the rule ringed red and its complement blue on the left; on the right the point they share ringed in both, red inside and blue outside (for pair-0, the empty plane red and the full blue). Every red ring is the rule\'s and every blue its complement\'s, so either colour alone is one variant of the pair, as each tree set\'s Hasse_XOR (red, read) and Hasse_XNOR (blue, write) are.');
 doc.push('- [lines.svg](../svg/hasse/lines.svg): the seven lines in turn (SMIL, 2 s each), each with its three points and its six rules.', '');
 doc.push('## The margins', '', 'Each icon\'s drawing sits about 8 units in from every edge. The author: "the 8 units on each side are for non-printing control coded image filtering; if we xor those we can change the interpretation without changing the image". [margin/Fano_point_1.codes.svg](../svg/margin/Fano_point_1.codes.svg) carries the bytes 0x13 0x3f 0x1c 0x1f (DC3, ?, FS, US), one per side, as invisible one-unit cells; [margin/Fano_point_1.codes-xor-ff.svg](../svg/margin/Fano_point_1.codes-xor-ff.svg) carries them XORed with 0xff. The build checks, for all seven points, that the bytes read back, that the two margins differ by the key, and that the drawing still reads as the same point.', '', 'Measured once, 2026-10-13: rendered at ten times their size in Chrome (headless), the original Fano_point_1.svg and both copies give byte-identical pixels (SHA-256 7c1dbb9a71293b66…), while the three files differ as text. The build does not render, so it does not repeat that measurement.', '');
 doc.push('E8 on its Coxeter plane, in both frames (the 240 roots, 8 rings of 30, the two parity halves of the byte): [E8.md](E8.md). All five exceptional Lie algebras, G2, F4, E6, E7, E8, on their Coxeter planes: [LIE.md](LIE.md).', '');
