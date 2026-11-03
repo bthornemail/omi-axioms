@@ -148,11 +148,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-247](other/I-247.md) | `6V` | The tetrahedron as three pairs of orthogonal edges in parallel planes | `js/catalog/I-247.ts` | yes | yes | yes |
 | other | [I-248](other/I-248.md) | `6W` | The algorithmic clock — time as a word of the 65,536 blob, and step recovery proved again | `js/catalog/I-248.ts` | yes | yes | yes |
 | other | [I-249](other/I-249.md) | `6X` | The Klein configuration from the author's coordinates, and Miquel's cube inside it | `js/catalog/I-249.ts` | yes | yes | yes |
+| other | [I-250](other/I-250.md) | `6Y` | The dominoes' empty places, the stella octangula they make and the Fano plane of its moves | `js/catalog/I-250.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 92
-- total: 136 records, 136 holding
+- other: 93
+- total: 137 records, 137 holding

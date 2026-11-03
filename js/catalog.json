@@ -14177,5 +14177,161 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-250",
+    "tag": "6Y",
+    "title": "the dominoes' empty places, the stella octangula they make and the Fano plane of its moves",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-250.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 12874
+      },
+      "base64": "js/vm/6Y.b64",
+      "base64url": "js/vm/6Y.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "the places read: each place of a half, the values holding a pip there",
+        "text": "each half of value ${v} holds ${v} pips"
+      },
+      {
+        "section": "the places read: each place of a half, the values holding a pip there",
+        "text": "vertical: row0col1, row2col1, row3col1, row5col1 never hold a pip"
+      },
+      {
+        "section": "the places read: each place of a half, the values holding a pip there",
+        "text": "horizontal: row1 col0, col2, col3, col5 never hold a pip"
+      },
+      {
+        "section": "the places read: each place of a half, the values holding a pip there",
+        "text": "a half uses seven of its nine places, a tile fourteen of eighteen"
+      },
+      {
+        "section": "the places read: each place of a half, the values holding a pip there",
+        "text": "a quarter turn carries each vertical place to the horizontal place of the same values, high to left"
+      },
+      {
+        "section": "the moves of the 8 empty dots: three bits, the Fano plane",
+        "text": "D is the quarter turn on the empty dots"
+      },
+      {
+        "section": "the moves of the 8 empty dots: three bits, the Fano plane",
+        "text": "the 8 moves distinct"
+      },
+      {
+        "section": "the moves of the 8 empty dots: three bits, the Fano plane",
+        "text": "each its own inverse"
+      },
+      {
+        "section": "the moves of the 8 empty dots: three bits, the Fano plane",
+        "text": "all commuting"
+      },
+      {
+        "section": "the moves of the 8 empty dots: three bits, the Fano plane",
+        "text": "from any dot, each move to a different dot"
+      },
+      {
+        "section": "the moves of the 8 empty dots: three bits, the Fano plane",
+        "text": "the 7 moves, the Fano plane: 7 lines, the triples composing to none"
+      },
+      {
+        "section": "the moves of the 8 empty dots: three bits, the Fano plane",
+        "text": "the kept line, the moves keeping each orientation: T W TW"
+      },
+      {
+        "section": "the moves of the 8 empty dots: three bits, the Fano plane",
+        "text": "the 4 off it reach the 4 horizontal dots: the tetrahedron the other orientation's empty dots"
+      },
+      {
+        "section": "the cube and its dark and light tetrahedra: the stella octangula",
+        "text": "joined by the turning moves, the 8 dots are a cube's corners"
+      },
+      {
+        "section": "the cube and its dark and light tetrahedra: the stella octangula",
+        "text": "its two colours: the vertical dots and the horizontal, dark and light"
+      },
+      {
+        "section": "the cube and its dark and light tetrahedra: the stella octangula",
+        "text": "each colour's 4 joined by face diagonals: two tetrahedra"
+      },
+      {
+        "section": "the cube and its dark and light tetrahedra: the stella octangula",
+        "text": "every face of the cube holds 2 of each"
+      },
+      {
+        "section": "4!: the tetrahedron's flags, the Fano plane's 24, the Hasse diagram's chains",
+        "text": "vertex to face: 12"
+      },
+      {
+        "section": "4!: the tetrahedron's flags, the Fano plane's 24, the Hasse diagram's chains",
+        "text": "edge to face: 12"
+      },
+      {
+        "section": "4!: the tetrahedron's flags, the Fano plane's 24, the Hasse diagram's chains",
+        "text": "flags, a vertex in an edge in a face: 24, 4!"
+      },
+      {
+        "section": "4!: the tetrahedron's flags, the Fano plane's 24, the Hasse diagram's chains",
+        "text": "the Fano plane's symmetries: 168"
+      },
+      {
+        "section": "4!: the tetrahedron's flags, the Fano plane's 24, the Hasse diagram's chains",
+        "text": "keeping a line: 168 / 7 = 24"
+      },
+      {
+        "section": "4!: the tetrahedron's flags, the Fano plane's 24, the Hasse diagram's chains",
+        "text": "and on the 4 points off it, every one of the 4! orders: the tetrahedron's"
+      },
+      {
+        "section": "4!: the tetrahedron's flags, the Fano plane's 24, the Hasse diagram's chains",
+        "text": "opposite edges meet the kept line at the same point"
+      },
+      {
+        "section": "4!: the tetrahedron's flags, the Fano plane's 24, the Hasse diagram's chains",
+        "text": "the 16 rules, 32 one-bit steps"
+      },
+      {
+        "section": "4!: the tetrahedron's flags, the Fano plane's 24, the Hasse diagram's chains",
+        "text": "the Hasse diagram's chains from FALSE to TRUE: 24, the flags"
+      },
+      {
+        "section": "4!: the tetrahedron's flags, the Fano plane's 24, the Hasse diagram's chains",
+        "text": "2! x 2! = 4 through each weight-2 rule: a half's two dots, then the other's"
+      },
+      {
+        "section": "4!: the tetrahedron's flags, the Fano plane's 24, the Hasse diagram's chains",
+        "text": "of the 4! orders of a tile's 4 dots, 2! x 2! take the high half's first"
+      },
+      {
+        "section": "against a reading: the seven places are not a Fano plane by straight lines",
+        "text": "found: the seven places hold five straight lines"
+      },
+      {
+        "section": "against a reading: the seven places are not a Fano plane by straight lines",
+        "text": "six pairs on no line"
+      },
+      {
+        "section": "against a reading: the seven places are not a Fano plane by straight lines",
+        "text": "and no line can be added: not a Fano plane as drawn"
+      },
+      {
+        "section": "the falsifier: W replaced by a flip of one half alone",
+        "text": "one half flipped alone: the moves no longer commute"
+      },
+      {
+        "section": "the falsifier: W replaced by a flip of one half alone",
+        "text": "and make no three bits, no Fano plane"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
