@@ -50,6 +50,10 @@ The vault's sixteen Fano constants (`core/src/verified/fano.ts`) are these sixte
 | 14 | Fano_line_2_6_4 | 0x2a |
 | 15 | Fano_full | 0x7f |
 
+## The parity check
+
+The author: "i think wecan paritty check with svg sets of fano plane". A set of points is a 7-bit word and its syndrome the XOR of its points' numbers. The 16 words of syndrome 0 are the Hamming (7,4) code: the empty and the full plane, the seven lines, and the seven lines' complements (no icon draws those). Each point icon's syndrome is its own number, so a codeword with one point flipped is named by its syndrome, and a line with one of its points moved off it is no codeword. So the sixteen icons are the parity check itself: nine codewords and the seven names of a single error. The build checks all of it from the icons' marked dots.
+
 ## The rules as the icons
 
 A two-input rule is its truth table t, bit a·2 + b = f(a, b) (the order the organ uses, `breadboard/esp32`). The constants are the empty and the full plane. The other fourteen, paired with their complements (t and t ^ 15), are the seven points: point p is the pair p / p ^ 15. On every line, two rules from two of its points XOR to a rule of the third.

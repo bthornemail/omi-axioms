@@ -102,6 +102,22 @@ const allLines = new Set();
 for (let a = 1; a < 8; a++) for (let b = a + 1; b < 8; b++) allLines.add([a, b, a ^ b].sort().join());
 assert.deepStrictEqual(new Set(lines.map((l) => l.pts.join())), allLines, 'the seven files are the seven lines {a, b, a ^ b}');
 
+// ── The parity check: the icons as the Hamming (7,4) code ───
+// The author, 2026-11-03: "i think wecan paritty check with svg sets of fano plane". A set of points is a 7-bit
+// word; its syndrome is the XOR of its points' numbers. The words of syndrome 0 are the Hamming (7,4) code: 16 of
+// them, the empty and full planes, the 7 lines and the lines' complements. Each point icon's syndrome is its own
+// number, so one point flipped in a codeword is named by the syndrome. Read from the icons' marked dots above.
+const syndrome = (m) => pointsOf(m).reduce((a, n) => a ^ n, 0);
+const code = [...Array(128).keys()].filter((m) => syndrome(m) === 0);
+assert.strictEqual(code.length, 16, 'the parity check: 16 words of syndrome 0, the Hamming (7,4) code');
+for (const f of ['Fano_empty.svg', 'Fano_full.svg', ...LINES]) assert.strictEqual(syndrome(masks[f]), 0, `${f}: a codeword`);
+assert.deepStrictEqual(code.filter((m) => pointsOf(m).length === 3).sort((a, b) => a - b), LINES.map((f) => masks[f]).sort((a, b) => a - b), 'the codewords of three points are the seven line icons');
+assert.deepStrictEqual(code.filter((m) => pointsOf(m).length === 4).sort((a, b) => a - b), LINES.map((f) => masks[f] ^ 0x7f).sort((a, b) => a - b), 'those of four, the lines\' complements (no icon draws them)');
+for (let n = 1; n <= 7; n++) assert.strictEqual(syndrome(masks[`Fano_point_${n}.svg`]), n, `Fano_point_${n}: its syndrome its own number`);
+for (const c of code) for (let n = 1; n <= 7; n++) assert.strictEqual(syndrome(c ^ (1 << (n - 1))), n, 'one point flipped in a codeword: the syndrome names it');
+// the falsifier: a line icon with one point moved off it is no codeword
+for (const f of LINES) for (let n = 1; n <= 7; n++) if (!(masks[f] >> (n - 1) & 1)) assert.notStrictEqual(syndrome((masks[f] & (masks[f] - 1)) | (1 << (n - 1))), 0, `${f}, a point moved off it: no codeword`);
+
 // ── The 16 rules ────────────────────────────────────────────
 const NAMES = ['FALSE', 'NOR', 'B AND NOT A', 'NOT A', 'A AND NOT B', 'NOT B', 'XOR', 'NAND', 'AND', 'XNOR', 'B', 'A IMPLIES B', 'A', 'B IMPLIES A', 'OR', 'TRUE'];
 const f = (t, a, b) => (t >> (a * 2 + b)) & 1;
@@ -270,6 +286,7 @@ doc.push('### The 16-index', '', 'The vault\'s sixteen Fano constants (`core/src
 const INDEX16 = ['Fano_empty.svg', ...[1, 2, 3, 4, 5, 6, 7].map((n) => `Fano_point_${n}.svg`), 'Fano_line_3_5_6.svg', 'Fano_line_1_7_6.svg', 'Fano_line_2_7_5.svg', 'Fano_line_1_3_2.svg', 'Fano_line_4_7_3.svg', 'Fano_line_1_5_4.svg', 'Fano_line_2_6_4.svg', 'Fano_full.svg'];
 INDEX16.forEach((file, i) => doc.push(`| ${i} | ${file.replace('.svg', '')} | ${hex2(masks[file])} |`));
 doc.push('');
+doc.push('## The parity check', '', 'The author: "i think wecan paritty check with svg sets of fano plane". A set of points is a 7-bit word and its syndrome the XOR of its points\' numbers. The 16 words of syndrome 0 are the Hamming (7,4) code: the empty and the full plane, the seven lines, and the seven lines\' complements (no icon draws those). Each point icon\'s syndrome is its own number, so a codeword with one point flipped is named by its syndrome, and a line with one of its points moved off it is no codeword. So the sixteen icons are the parity check itself: nine codewords and the seven names of a single error. The build checks all of it from the icons\' marked dots.', '');
 doc.push('## The rules as the icons', '', 'A two-input rule is its truth table t, bit a·2 + b = f(a, b) (the order the organ uses, `breadboard/esp32`). The constants are the empty and the full plane. The other fourteen, paired with their complements (t and t ^ 15), are the seven points: point p is the pair p / p ^ 15. On every line, two rules from two of its points XOR to a rule of the third.', '', '| Point | Rule | Table | Complement | Table | Hasse pair |', '|-------|------|-------|------------|-------|------------|');
 for (const [t, u] of PAIRS) doc.push(`| ${t === 0 ? 'empty / full' : t} | ${NAMES[t]} | \`${table(t)}\` | ${NAMES[u]} | \`${table(u)}\` | [pair-${t}.svg](../svg/hasse/pair-${t}.svg) |`);
 doc.push('', '## The diagrams', '');
