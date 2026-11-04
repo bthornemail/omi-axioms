@@ -118,6 +118,31 @@ for (const c of code) for (let n = 1; n <= 7; n++) assert.strictEqual(syndrome(c
 // the falsifier: a line icon with one point moved off it is no codeword
 for (const f of LINES) for (let n = 1; n <= 7; n++) if (!(masks[f] >> (n - 1) & 1)) assert.notStrictEqual(syndrome((masks[f] & (masks[f] - 1)) | (1 << (n - 1))), 0, `${f}, a point moved off it: no codeword`);
 
+// ── The matroid: the icons are its flats ─────────────────────
+// The author, 2026-11-03: "every step.svg presents a matroid", with Wikipedia's "a finite simple matroid is
+// equivalent to a geometric lattice". The 7 points as vectors over two elements (point n the 3-bit word n) are the
+// Fano matroid; its flats (the sets closed under span) are exactly the 16 icons, and their lattice is
+// fano-subspaces.svg. Read from the icons' marked dots above.
+{
+  const spanOf = (m) => { const v = new Set([0]); for (const p of pointsOf(m)) for (const x of [...v]) v.add(x ^ p); return v; };
+  const rank = (m) => Math.log2(spanOf(m).size);
+  const indep = (m) => rank(m) === pointsOf(m).length;
+  const all = [...Array(128).keys()], sub = (a, b) => (a & b) === a;
+  const I = all.filter(indep);
+  assert.strictEqual(I.length, 57, 'the Fano matroid: 57 independent sets');
+  assert.ok(I.every((s) => all.every((t) => !sub(t, s) || indep(t))), 'every subset of an independent set is independent');
+  assert.ok(I.every((a) => I.every((b) => pointsOf(a).length >= pointsOf(b).length || pointsOf(b).some((x) => !(a >> (x - 1) & 1) && indep(a | 1 << (x - 1))))), 'the exchange axiom');
+  assert.strictEqual(I.filter((s) => pointsOf(s).length === 3).length, 28, '28 bases, rank 3');
+  const circuits = all.filter((s) => s && !indep(s) && pointsOf(s).every((x) => indep(s & ~(1 << (x - 1)))));
+  assert.strictEqual(circuits.length, 14, '14 circuits: the 7 lines and their complements');
+  const closure = (s) => [1, 2, 4, 8, 16, 32, 64].reduce((c, b) => (rank(s | b) === rank(s) ? c | b : c), s);
+  const flats = all.filter((s) => closure(s) === s).sort((a, b) => a - b);
+  assert.deepStrictEqual(flats, Object.values(masks).sort((a, b) => a - b), 'the 16 icons are the matroid\'s 16 flats: empty, 7 points, 7 lines, full');
+  assert.strictEqual(flats.flatMap((a) => flats.filter((b) => sub(a, b) && a !== b && rank(b) === rank(a) + 1)).length, 35, 'their lattice, 35 covering pairs: fano-subspaces.svg');
+  // the falsifier: a line's icon with one point moved is no flat
+  assert.ok(LINES.every((f) => closure((masks[f] & (masks[f] - 1)) | (1 << (pointsOf(127 & ~masks[f])[0] - 1))) !== ((masks[f] & (masks[f] - 1)) | (1 << (pointsOf(127 & ~masks[f])[0] - 1)))), 'a line with a point moved off it: no flat');
+}
+
 // ── The 16 rules ────────────────────────────────────────────
 const NAMES = ['FALSE', 'NOR', 'B AND NOT A', 'NOT A', 'A AND NOT B', 'NOT B', 'XOR', 'NAND', 'AND', 'XNOR', 'B', 'A IMPLIES B', 'A', 'B IMPLIES A', 'OR', 'TRUE'];
 const f = (t, a, b) => (t >> (a * 2 + b)) & 1;
@@ -287,6 +312,7 @@ const INDEX16 = ['Fano_empty.svg', ...[1, 2, 3, 4, 5, 6, 7].map((n) => `Fano_poi
 INDEX16.forEach((file, i) => doc.push(`| ${i} | ${file.replace('.svg', '')} | ${hex2(masks[file])} |`));
 doc.push('');
 doc.push('## The parity check', '', 'The author: "i think wecan paritty check with svg sets of fano plane". A set of points is a 7-bit word and its syndrome the XOR of its points\' numbers. The 16 words of syndrome 0 are the Hamming (7,4) code: the empty and the full plane, the seven lines, and the seven lines\' complements (no icon draws those). Each point icon\'s syndrome is its own number, so a codeword with one point flipped is named by its syndrome, and a line with one of its points moved off it is no codeword. So the sixteen icons are the parity check itself: nine codewords and the seven names of a single error. The build checks all of it from the icons\' marked dots.', '');
+doc.push('## The matroid', '', 'The author: "every step.svg presents a matroid". The seven points, as vectors over two elements, are the Fano matroid: 57 independent sets, 28 bases (rank 3), 14 circuits (the seven lines and their complements). Its flats, the sets closed under span, are exactly the sixteen icons, by rank 1, 7, 7, 1, and a finite simple matroid being its geometric lattice, that lattice is fano-subspaces.svg, 35 covering pairs. A line with one of its points moved off it is no flat. The build checks all of it from the icons\' marked dots.', '');
 doc.push('## The rules as the icons', '', 'A two-input rule is its truth table t, bit a·2 + b = f(a, b) (the order the organ uses, `breadboard/esp32`). The constants are the empty and the full plane. The other fourteen, paired with their complements (t and t ^ 15), are the seven points: point p is the pair p / p ^ 15. On every line, two rules from two of its points XOR to a rule of the third.', '', '| Point | Rule | Table | Complement | Table | Hasse pair |', '|-------|------|-------|------------|-------|------------|');
 for (const [t, u] of PAIRS) doc.push(`| ${t === 0 ? 'empty / full' : t} | ${NAMES[t]} | \`${table(t)}\` | ${NAMES[u]} | \`${table(u)}\` | [pair-${t}.svg](../svg/hasse/pair-${t}.svg) |`);
 doc.push('', '## The diagrams', '');

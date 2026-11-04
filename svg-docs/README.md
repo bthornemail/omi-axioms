@@ -54,6 +54,10 @@ The vault's sixteen Fano constants (`core/src/verified/fano.ts`) are these sixte
 
 The author: "i think wecan paritty check with svg sets of fano plane". A set of points is a 7-bit word and its syndrome the XOR of its points' numbers. The 16 words of syndrome 0 are the Hamming (7,4) code: the empty and the full plane, the seven lines, and the seven lines' complements (no icon draws those). Each point icon's syndrome is its own number, so a codeword with one point flipped is named by its syndrome, and a line with one of its points moved off it is no codeword. So the sixteen icons are the parity check itself: nine codewords and the seven names of a single error. The build checks all of it from the icons' marked dots.
 
+## The matroid
+
+The author: "every step.svg presents a matroid". The seven points, as vectors over two elements, are the Fano matroid: 57 independent sets, 28 bases (rank 3), 14 circuits (the seven lines and their complements). Its flats, the sets closed under span, are exactly the sixteen icons, by rank 1, 7, 7, 1, and a finite simple matroid being its geometric lattice, that lattice is fano-subspaces.svg, 35 covering pairs. A line with one of its points moved off it is no flat. The build checks all of it from the icons' marked dots.
+
 ## The rules as the icons
 
 A two-input rule is its truth table t, bit a·2 + b = f(a, b) (the order the organ uses, `breadboard/esp32`). The constants are the empty and the full plane. The other fourteen, paired with their complements (t and t ^ 15), are the seven points: point p is the pair p / p ^ 15. On every line, two rules from two of its points XOR to a rule of the third.
