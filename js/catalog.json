@@ -14593,5 +14593,101 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-253",
+    "tag": "71",
+    "title": "the translation fixation in two trilingual inscriptions — which renderings of a name keep its literal, Behistun and Rosetta, by I-229's rule",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-253.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 6546
+      },
+      "base64": "js/vm/71.b64",
+      "base64url": "js/vm/71.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "the guard, as I-229 states it",
+        "text": "I-229: YAHWEH mirrors YHWH"
+      },
+      {
+        "section": "the guard, as I-229 states it",
+        "text": "I-229: ADONAI raises"
+      },
+      {
+        "section": "the guard, as I-229 states it",
+        "text": "I-229's correction: an empty base heads nothing"
+      },
+      {
+        "section": "Behistun: King and Thompson's 37 pairs, English then Persian",
+        "text": "37 pairs"
+      },
+      {
+        "section": "Behistun: King and Thompson's 37 pairs, English then Persian",
+        "text": "each English name once"
+      },
+      {
+        "section": "Behistun: King and Thompson's 37 pairs, English then Persian",
+        "text": "P1: Persia, Parsa"
+      },
+      {
+        "section": "Behistun: King and Thompson's 37 pairs, English then Persian",
+        "text": "P1: Media, Mada"
+      },
+      {
+        "section": "Behistun: King and Thompson's 37 pairs, English then Persian",
+        "text": "P1: Maka is one literal"
+      },
+      {
+        "section": "Behistun: King and Thompson's 37 pairs, English then Persian",
+        "text": "DRYVS"
+      },
+      {
+        "section": "Behistun: King and Thompson's 37 pairs, English then Persian",
+        "text": "P2: Darius raises"
+      },
+      {
+        "section": "Behistun: King and Thompson's 37 pairs, English then Persian",
+        "text": "P4: Arabia, Arabaya"
+      },
+      {
+        "section": "Behistun: King and Thompson's 37 pairs, English then Persian",
+        "text": "P5: fewer than half mirror (${mirrors.length} of 37)"
+      },
+      {
+        "section": "Rosetta: Champollion's fixations, in Budge's words",
+        "text": "P6: KAISAROS, KISRS"
+      },
+      {
+        "section": "Rosetta: Champollion's fixations, in Budge's words",
+        "text": "P6: AUTOKRATOR, A.T.KRTR"
+      },
+      {
+        "section": "Rosetta: Champollion's fixations, in Budge's words",
+        "text": "P7: Alexandros raises letter for letter"
+      },
+      {
+        "section": "Rosetta: Champollion's fixations, in Budge's words",
+        "text": "P7: and mirrors under X as KS, D as T"
+      },
+      {
+        "section": "the falsifier: the fold is not free",
+        "text": "Champollion's fold does not rescue a replaced name"
+      },
+      {
+        "section": "the falsifier: the fold is not free",
+        "text": "Darius mirrors only once Y and V are taken from the Persian"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
