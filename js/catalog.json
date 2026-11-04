@@ -14445,5 +14445,153 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-252",
+    "tag": "70",
+    "title": "the Name's 0-sphere — YHWH and YAHWEH its poles, YAH the face; GOD IS|OF WORD as sine and cosine, GOD WAS WORD as the tangent",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-252.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 9718
+      },
+      "base64": "js/vm/70.b64",
+      "base64url": "js/vm/70.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "C1. one base",
+        "text": "C1: YHWH's base is YHWH"
+      },
+      {
+        "section": "C1. one base",
+        "text": "C1: YAHWEH's base is YHWH"
+      },
+      {
+        "section": "C1. one base",
+        "text": "C1: the poles mirror"
+      },
+      {
+        "section": "C2. the vowels alone",
+        "text": "C2: YAHWEH less YHWH is A and E"
+      },
+      {
+        "section": "C2. the vowels alone",
+        "text": "C2: A and E removed in place, YAHWEH is YHWH, the order kept"
+      },
+      {
+        "section": "C3. the face projects to both",
+        "text": "C3: YAH's base is YH"
+      },
+      {
+        "section": "C3. the face projects to both",
+        "text": "the control: ADONAI does not (I-229)"
+      },
+      {
+        "section": "C4. differently",
+        "text": "C4: YAH heads YAHWEH literally"
+      },
+      {
+        "section": "C4. differently",
+        "text": "C4: YAH does not head YHWH literally"
+      },
+      {
+        "section": "C4. differently",
+        "text": "C4: it heads YHWH through the base"
+      },
+      {
+        "section": "C5. the cells",
+        "text": "the table: Y is dots 1 3 4 5 6"
+      },
+      {
+        "section": "C5. the cells",
+        "text": "C5: YHWH's cells XOR to dots 1 2 3"
+      },
+      {
+        "section": "C5. the cells",
+        "text": "C5: YAHWEH's XOR is YHWH's XOR A XOR E"
+      },
+      {
+        "section": "C6. the 0-sphere on the circle",
+        "text": "C6: c - r and c + r, the two poles"
+      },
+      {
+        "section": "C6. the 0-sphere on the circle",
+        "text": "C6: sine 0 at the pole ${p}"
+      },
+      {
+        "section": "C6. the 0-sphere on the circle",
+        "text": "C6: cosine is the pole's sign, ${p}"
+      },
+      {
+        "section": "C6. the 0-sphere on the circle",
+        "text": "C6: tangent 0 at the pole ${p}"
+      },
+      {
+        "section": "C6. the 0-sphere on the circle",
+        "text": "C6: arccosine returns the pole's angle, ${t}"
+      },
+      {
+        "section": "C6. the 0-sphere on the circle",
+        "text": "C6: arcsine gives 0 at one pole"
+      },
+      {
+        "section": "C6. the 0-sphere on the circle",
+        "text": "C6: arcsine and arctangent give 0 at the other too: they cannot tell the poles apart"
+      },
+      {
+        "section": "C7, C8. the lines",
+        "text": "C7: one length"
+      },
+      {
+        "section": "C7, C8. the lines",
+        "text": "C7: they differ only at the copula, places 4 and 5"
+      },
+      {
+        "section": "K1 to K3, carried",
+        "text": "K2: WAS's final D at 11"
+      },
+      {
+        "section": "K1 to K3, carried",
+        "text": "K2: IS's at 10"
+      },
+      {
+        "section": "K1 to K3, carried",
+        "text": "K3: FIRE and YHWH, one cell"
+      },
+      {
+        "section": "the falsifiers",
+        "text": "a pole replaced: ELOHIM's base is not the Name's"
+      },
+      {
+        "section": "the falsifiers",
+        "text": "F1: IS against OF's reversal, the same two"
+      },
+      {
+        "section": "the falsifiers",
+        "text": "F1: OF against IS's reversal, the same two"
+      },
+      {
+        "section": "the falsifiers",
+        "text": "F2: IS against WAS's reversal, the O alone"
+      },
+      {
+        "section": "the falsifiers",
+        "text": "a word replaced: with LOGOS the final D is not fixed"
+      },
+      {
+        "section": "the falsifiers",
+        "text": "the poles' cells differ: the vowels are not nothing"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

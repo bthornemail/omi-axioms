@@ -150,11 +150,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-249](other/I-249.md) | `6X` | The Klein configuration from the author's coordinates, and Miquel's cube inside it | `js/catalog/I-249.ts` | yes | yes | yes |
 | other | [I-250](other/I-250.md) | `6Y` | The dominoes' empty places, the stella octangula they make and the Fano plane of its moves | `js/catalog/I-250.ts` | yes | yes | yes |
 | other | [I-251](other/I-251.md) | `6Z` | A transcription of any text to Braille's 6-dot and 8-dot constants, Aegean vowels carrying the diacritics | `js/catalog/I-251.ts` | yes | yes | yes |
+| other | [I-252](other/I-252.md) | `70` | The Name's 0-sphere — YHWH and YAHWEH its poles, YAH the face; GOD IS\|OF WORD as sine and cosine, GOD WAS WORD as the tangent | `js/catalog/I-252.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 94
-- total: 138 records, 138 holding
+- other: 95
+- total: 139 records, 139 holding
