@@ -14737,5 +14737,45 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-255",
+    "tag": "73",
+    "title": "Euclid I.2 on the triangular grid — a line equal to a given line placed at a given point, carried whole and turned by the six units",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-255.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 4288
+      },
+      "base64": "js/vm/73.b64",
+      "base64url": "js/vm/73.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "K1, K2: 115248 115248 115248 0, as both simulators printed"
+      },
+      {
+        "section": null,
+        "text": "P1: the six turns of a line are six places"
+      },
+      {
+        "section": null,
+        "text": "P2: 121 places for A times 14,520 pairs B, C"
+      },
+      {
+        "section": null,
+        "text": "P3: six grid points at norm 1"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
