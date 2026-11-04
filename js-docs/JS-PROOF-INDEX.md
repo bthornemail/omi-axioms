@@ -152,11 +152,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-251](other/I-251.md) | `6Z` | A transcription of any text to Braille's 6-dot and 8-dot constants, Aegean vowels carrying the diacritics | `js/catalog/I-251.ts` | yes | yes | yes |
 | other | [I-252](other/I-252.md) | `70` | The Name's 0-sphere — YHWH and YAHWEH its poles, YAH the face; GOD IS\|OF WORD as sine and cosine, GOD WAS WORD as the tangent | `js/catalog/I-252.ts` | yes | yes | yes |
 | other | [I-253](other/I-253.md) | `71` | The translation fixation in two trilingual inscriptions — which renderings of a name keep its literal, Behistun and Rosetta, by I-229's rule | `js/catalog/I-253.ts` | yes | yes | yes |
+| other | [I-254](other/I-254.md) | `72` | Euclid I.1 on the triangular grid — the equilateral triangle on a given line, its two meeting points by whole-number turns, checked by the norm | `js/catalog/I-254.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 96
-- total: 140 records, 140 holding
+- other: 97
+- total: 141 records, 141 holding

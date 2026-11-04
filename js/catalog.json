@@ -14689,5 +14689,53 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-254",
+    "tag": "72",
+    "title": "Euclid I.1 on the triangular grid — the equilateral triangle on a given line, its two meeting points by whole-number turns, checked by the norm",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-254.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 6190
+      },
+      "base64": "js/vm/72.b64",
+      "base64url": "js/vm/72.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "P2: bytes and integers agree"
+      },
+      {
+        "section": null,
+        "text": "K1-K3: 28392 28392 28392 0, as both simulators printed"
+      },
+      {
+        "section": null,
+        "text": "P1: every pair in -20..20"
+      },
+      {
+        "section": null,
+        "text": "P3: the wrong turn holds in no pair"
+      },
+      {
+        "section": null,
+        "text": "P4: no equilateral triangle on the square grid"
+      },
+      {
+        "section": null,
+        "text": "under the square grid's length the turn (1,0) -> (1,1) is not a rotation"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]
