@@ -14333,5 +14333,117 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-251",
+    "tag": "6Z",
+    "title": "a transcription of any text to Braille's 6-dot and 8-dot constants, Aegean vowels carrying the diacritics",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-251.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 11886
+      },
+      "base64": "js/vm/6Z.b64",
+      "base64url": "js/vm/6Z.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": "The 6-dot constants: Braille ASCII",
+        "text": "64 cells, 64 characters"
+      },
+      {
+        "section": "The 6-dot constants: Braille ASCII",
+        "text": "every ASCII character 0x20 to 0x5F once"
+      },
+      {
+        "section": "The 6-dot constants: Braille ASCII",
+        "text": "A dot 1, B dots 12, C dots 14, K dots 13: the standard letters"
+      },
+      {
+        "section": "The 6-dot constants: Braille ASCII",
+        "text": "letters, digits and punctuation six-dot cells: dots 7 and 8 clear"
+      },
+      {
+        "section": "The 8-dot constants: dot 7 a capital",
+        "text": "each capital its letter's cell with dot 7"
+      },
+      {
+        "section": "The 8-dot constants: dot 7 a capital",
+        "text": "26 capitals, 26 cells"
+      },
+      {
+        "section": "The Aegean vowels carry the diacritics",
+        "text": "Linear B's five vowels, A E I O U"
+      },
+      {
+        "section": "The Aegean vowels carry the diacritics",
+        "text": "no block of marks past 256: one cell holds a mark's place"
+      },
+      {
+        "section": "The Aegean vowels carry the diacritics",
+        "text": "248 nonspacing marks in the five blocks, each carried by its block's vowel and one cell"
+      },
+      {
+        "section": "The Aegean vowels carry the diacritics",
+        "text": "é: e, then the vowel A and the cell 1, the acute U+0301"
+      },
+      {
+        "section": "Every text reads back",
+        "text": "and composed again, the text"
+      },
+      {
+        "section": "Every text reads back",
+        "text": "every carried mark after a letter, read back"
+      },
+      {
+        "section": "Every text reads back",
+        "text": "every one of the 1,112,064 scalar values reads back to itself"
+      },
+      {
+        "section": "The constants",
+        "text": "the whole: 256 Braille cells, 5 Aegean vowels, 17 Aegean plane signs, 278 constants"
+      },
+      {
+        "section": "In WSN: the 6-dot the literal, the 8-dot letter, the Aegean character",
+        "text": "`assert.equal(ts[i++]![3], close);`"
+      },
+      {
+        "section": "In WSN: the 6-dot the literal, the 8-dot letter, the Aegean character",
+        "text": "the literal's first cell, the blank, is Braille ASCII's space"
+      },
+      {
+        "section": "In WSN: the 6-dot the literal, the 8-dot letter, the Aegean character",
+        "text": "the space's four 8-dot forms, dots 7 and 8 off or on"
+      },
+      {
+        "section": "In WSN: the 6-dot the literal, the 8-dot letter, the Aegean character",
+        "text": "each 6-dot cell has four 8-dot forms: 64 x 4 = 256, the letters"
+      },
+      {
+        "section": "In WSN: the 6-dot the literal, the 8-dot letter, the Aegean character",
+        "text": "every scalar value's transcription a sentence"
+      },
+      {
+        "section": "In WSN: the 6-dot the literal, the 8-dot letter, the Aegean character",
+        "text": "not sentences: a vowel alone, a plane sign with one letter, an 8-dot cell alone that is no capital"
+      },
+      {
+        "section": "The falsifier: a mark without its vowel",
+        "text": "the acute written as a bare cell reads as a letter (cell 1, a): without the vowel the diacritic is lost"
+      },
+      {
+        "section": "The falsifier: a mark without its vowel",
+        "text": "café without the vowel reads back as cafea"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

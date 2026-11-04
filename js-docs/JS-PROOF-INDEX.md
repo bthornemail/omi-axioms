@@ -149,11 +149,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-248](other/I-248.md) | `6W` | The algorithmic clock — time as a word of the 65,536 blob, and step recovery proved again | `js/catalog/I-248.ts` | yes | yes | yes |
 | other | [I-249](other/I-249.md) | `6X` | The Klein configuration from the author's coordinates, and Miquel's cube inside it | `js/catalog/I-249.ts` | yes | yes | yes |
 | other | [I-250](other/I-250.md) | `6Y` | The dominoes' empty places, the stella octangula they make and the Fano plane of its moves | `js/catalog/I-250.ts` | yes | yes | yes |
+| other | [I-251](other/I-251.md) | `6Z` | A transcription of any text to Braille's 6-dot and 8-dot constants, Aegean vowels carrying the diacritics | `js/catalog/I-251.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 93
-- total: 137 records, 137 holding
+- other: 94
+- total: 138 records, 138 holding
