@@ -168,6 +168,64 @@ ${cells}
 <text x="40" y="560">128 even (green) + 128 odd (orange) = 256; one bit flipped crosses from one frame to the other</text>`));
 }
 
+// ── The state: the points coloured, 30 bytes as 30 Braille cells ──
+// The author, 2026-11-03: "I dont think it would take much more than coloring these points in for full state
+// transliteration". 240 points = 8 rings x 30 steps: ring i (inner to outer) is Braille dot i + 1 (bit i), and the
+// step-k point of every ring together is one 8-dot cell, U+2800 + the byte. A point filled is a bit set, hollow a bit
+// clear. c carries the step-k point of each ring to step k + 1, so the turn of 12 degrees moves the whole state one
+// cell along: the timing is the rotation itself. The centre, where no root lies, shows the cell at the top and the
+// step as an Aegean numeral. The literal is UTF-8, padded with blank cells (byte 0) to 30.
+const STATE_LITERAL = process.env.E8_LITERAL ?? 'ENOCH METATRON SOLOMON SOLON';
+{
+  const F = FRAMES.even, cx = 300, cy = 300, R = 240, scale = R / F.radii[F.radii.length - 1];
+  const bytes = new Uint8Array(30); const enc = new TextEncoder().encode(STATE_LITERAL);
+  assert.ok(enc.length <= 30, `the literal fits 30 bytes (${enc.length})`); bytes.set(enc);
+  const ang = (r) => { const [x, y] = F.at(r); return Math.atan2(y, x); };
+  // ring order by radius; each ring's cycle started at the root nearest the top, so step k is one column
+  const rings = [...F.cycles].sort((a, b) => Math.hypot(...F.at(a[0])) - Math.hypot(...F.at(b[0]))).map((cyc) => {
+    let best = 0; cyc.forEach((r, k) => { const d = Math.abs(Math.atan2(Math.sin(ang(r) - Math.PI / 2), Math.cos(ang(r) - Math.PI / 2))); if (d < Math.abs(Math.atan2(Math.sin(ang(cyc[best]) - Math.PI / 2), Math.cos(ang(cyc[best]) - Math.PI / 2)))) best = k; });
+    return [...cyc.slice(best), ...cyc.slice(0, best)];
+  });
+  const ringSvg = F.radii.map((rad) => `<circle class="ring" cx="${cx}" cy="${cy}" r="${f2(rad * scale)}"/>`).join('\n');
+  let dots = '';
+  rings.forEach((cyc, i) => cyc.forEach((r, k) => {
+    const [x, y] = F.at(r), on = (bytes[k] >> i) & 1;
+    dots += `<circle class="${on ? 'set' : 'clear'}" data-ring="${i}" data-step="${k}" cx="${f2(cx + x * scale)}" cy="${f2(cy - y * scale)}" r="${on ? 4.2 : 3.2}"/>`;
+  }));
+  // which column is at the top after t turns of -12 degrees (as step.svg turns)
+  const topAt = (t) => {
+    let best = 0, bd = Infinity;
+    for (let k = 0; k < 30; k++) { const [x, y] = F.at(rings[7][k]); const a = Math.atan2(y, x) - (12 * t * Math.PI) / 180; const d = Math.abs(Math.atan2(Math.sin(a - Math.PI / 2), Math.cos(a - Math.PI / 2))); if (d < bd) { bd = d; best = k; } }
+    return best;
+  };
+  const tops = Array.from({ length: 30 }, (_, t) => topAt(t));
+  assert.strictEqual(new Set(tops).size, 30, 'each of the 30 turns brings a different step to the top');
+  const aegean = (n) => (n >= 10 ? String.fromCodePoint(0x10110 + Math.floor(n / 10) - 1) : '') + (n % 10 ? String.fromCodePoint(0x10107 + (n % 10) - 1) : '');
+  const kt = (t) => [0, t / 30, (t + 1) / 30, 1].map((v) => v.toFixed(4)).join(';');
+  let centre = '';
+  for (let t = 0; t < 30; t++) {
+    const k = tops[t], cell = String.fromCodePoint(0x2800 + bytes[k]);
+    const vis = (v) => `<animate attributeName="visibility" values="${t === 0 ? 'visible' : 'hidden'};${v};hidden;hidden" keyTimes="${kt(t)}" dur="15s" calcMode="discrete" repeatCount="indefinite"/>`;
+    centre += `<g visibility="${t === 0 ? 'visible' : 'hidden'}">${vis('visible')}<text class="cell8" x="${cx}" y="${cy + 6}" text-anchor="middle">${cell}</text><text class="small" x="${cx}" y="${cy + 30}" text-anchor="middle">${aegean(t + 1)} · step ${t + 1}</text></g>`;
+  }
+  const values = Array.from({ length: 31 }, (_, k) => `${-12 * k} ${cx} ${cy}`).join(';');
+  const keyTimes = Array.from({ length: 31 }, (_, k) => (k / 30).toFixed(4)).join(';');
+  const braille = String.fromCodePoint(...Array.from(bytes, (b) => 0x2800 + b));
+  const text = svg(600, 680, `The state on E8's Coxeter plane: 240 points, 30 Braille cells`, `<style>.set { fill: #1f4e9c; } .clear { fill: none; stroke: #9cb6e0; stroke-width: 1; } .cell8 { font-size: 34px; } @media (prefers-color-scheme: dark) { .set { fill: #9cc2ff; } .clear { stroke: #4a5f80; } }</style>
+${ringSvg}
+<g>${dots}<animateTransform attributeName="transform" type="rotate" values="${values}" keyTimes="${keyTimes}" dur="15s" calcMode="discrete" repeatCount="indefinite"/></g>
+${centre}
+<text x="20" y="${cy + R + 50}">ring i = dot i + 1; a step's 8 points = one cell; filled = set</text>
+<text x="20" y="${cy + R + 70}" class="small" data-literal="${STATE_LITERAL.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}">${braille}</text>`);
+  // read the state back from the drawing alone: every point's ring, step and fill
+  const back = new Uint8Array(30);
+  for (const m of text.matchAll(/<circle class="(set|clear)" data-ring="(\d)" data-step="(\d+)"/g)) if (m[1] === 'set') back[+m[3]] |= 1 << +m[2];
+  assert.deepStrictEqual(back, bytes, 'the state reads back from the coloured points');
+  const read = new TextDecoder().decode(back.subarray(0, back.indexOf(0) < 0 ? 30 : back.indexOf(0)));
+  assert.strictEqual(read, STATE_LITERAL, 'and decodes to the literal');
+  write('state.svg', text);
+}
+
 // ── Docs ────────────────────────────────────────────────────
 const doc = [
   '# E8 on its Coxeter plane, in both frames', '',
@@ -176,6 +234,7 @@ const doc = [
   '- **The roots.** 112 integer roots (±e_i ± e_j) and 128 half-integer ones (±½ in every place). A half-integer root is a sign pattern on 8 places: a byte. The module builds the even-parity bytes; its first simple root, ½(-1,…,-1, 1), is an odd one. So the two frames are the two parity halves of the 256 bytes, sharing the 112 integer roots. [frames.svg](../svg/e8/frames.svg)',
   '- **The step.** In each frame, c, the product of its 8 simple reflections, satisfies c^30 = 1 and c^15 = -1 on all of 8D; it carries the 240 roots in 8 cycles of 30, each cycle 15 steps and their negatives. The even frame uses ½(-1,…,-1) as its first simple root; it meets the others at the same angles as the module\'s.',
   `- **The plane.** On the plane of c's eigenvalues e^{±2πi/30}, c is exactly a turn of 360/30 = 12 degrees, and the roots lie on 8 rings of 30 (radii ${FRAMES.even.radii.map((r) => r.toFixed(3)).join(', ')}, in units of the plane), one cycle per ring. [coxeter-plane.svg](../svg/e8/coxeter-plane.svg), [step.svg](../svg/e8/step.svg) (the step, animated)`,
+  `- **The state.** The 240 points are 8 rings x 30 steps: ring i is Braille dot i + 1, and each step's 8 points are one 8-dot cell (U+2800 + the byte), filled for a bit set. c carries every step to the next, so a turn of 12 degrees moves the state one cell along, and the timing is the rotation. The centre, where no root lies, shows the cell at the top and the step as an Aegean numeral. The build writes the literal "${STATE_LITERAL}" (UTF-8, ${new TextEncoder().encode(STATE_LITERAL).length} bytes, padded to 30) and reads it back from the coloured points alone. [state.svg](../svg/e8/state.svg)`,
   '', 'So 30 is either side, the whole cycle in each frame, 15 + 15 as + and -; and the two frames together, 30 + 30, are the 60.', '',
 ];
 writeFileSync(new URL('E8.md', DOCS), doc.join('\n'));
