@@ -14777,5 +14777,61 @@
     ],
     "corrections": [],
     "witnesses": []
+  },
+  {
+    "id": "I-256",
+    "tag": "74",
+    "title": "Euclid I.3 on the triangular grid — the cut is a root, and a root's continued fraction repeats: the natural repetend",
+    "category": "other",
+    "status": "P1",
+    "holds": true,
+    "owners": [
+      "js/catalog/I-256.ts"
+    ],
+    "carriers": {
+      "script": {
+        "bytes": 6115
+      },
+      "base64": "js/vm/74.b64",
+      "base64url": "js/vm/74.b64url",
+      "vm": "holds",
+      "worker": "holds"
+    },
+    "statements": [
+      {
+        "section": null,
+        "text": "sqrt ${n}: d divides n - m^2"
+      },
+      {
+        "section": null,
+        "text": "K1, K2: 240 non-squares, all certified by Pell, the opposite sign in none"
+      },
+      {
+        "section": null,
+        "text": "P1: lam^2 na = nc in whole numbers"
+      },
+      {
+        "section": null,
+        "text": "P1: the root's continued fraction closes its period"
+      },
+      {
+        "section": null,
+        "text": "P1: both kinds occur (${rational} rational, ${root} roots)"
+      },
+      {
+        "section": null,
+        "text": "P2: sqrt ${n}: the state after L + 1 steps is the state after one"
+      },
+      {
+        "section": null,
+        "text": "P3: the decimal repetends 5, 6, 8, 10 (repetend)"
+      },
+      {
+        "section": null,
+        "text": "P3: periods 4, 5, 6, 8, 10 at sqrt 7, 13, 19, 31, 43"
+      }
+    ],
+    "corrections": [],
+    "witnesses": []
   }
 ]

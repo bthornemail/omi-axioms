@@ -154,11 +154,12 @@ among them are indexed by subject, predicate and object in `js/spo/`.
 | other | [I-253](other/I-253.md) | `71` | The translation fixation in two trilingual inscriptions — which renderings of a name keep its literal, Behistun and Rosetta, by I-229's rule | `js/catalog/I-253.ts` | yes | yes | yes |
 | other | [I-254](other/I-254.md) | `72` | Euclid I.1 on the triangular grid — the equilateral triangle on a given line, its two meeting points by whole-number turns, checked by the norm | `js/catalog/I-254.ts` | yes | yes | yes |
 | other | [I-255](other/I-255.md) | `73` | Euclid I.2 on the triangular grid — a line equal to a given line placed at a given point, carried whole and turned by the six units | `js/catalog/I-255.ts` | yes | yes | yes |
+| other | [I-256](other/I-256.md) | `74` | Euclid I.3 on the triangular grid — the cut is a root, and a root's continued fraction repeats: the natural repetend | `js/catalog/I-256.ts` | yes | yes | yes |
 
 ## Counts
 
 - point-line-duality: 28
 - catch-at-0: 11
 - head-value-tail: 5
-- other: 98
-- total: 142 records, 142 holding
+- other: 99
+- total: 143 records, 143 holding
